@@ -1,0 +1,14 @@
+{ "translations": {
+    "This file is too big to be opened. Please download the file instead." : "Ֆայլը չափից ավելի մեծ է բացելու համար։ Փոխարենը ներբեռնիր խնդրում եմ:",
+    "Cannot read the file." : "Չկարողացա կարդալ ֆայլը։",
+    "Invalid file path supplied." : "Անվավեր ֆայլի հասցե է տրամադրված։",
+    "The file is locked." : "Ֆայլը կողպած է։",
+    "An internal server error occurred." : "Սերվերի ներքին սխալ։",
+    "File path not supplied" : "Ֆայլի հասցեն տրամադրված չէ",
+    "File mtime not supplied" : "Ֆայլի mtimeը տրամադրված չէ",
+    "File not found" : "Նիշքը չգտնվեց",
+    "Edit" : "մշակել",
+    "Save" : "Պահպանել",
+    "Export" : "Արտահանում"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

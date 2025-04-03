@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "File not found" : "Fajl nije nađen",
     "Edit" : "Izmeni",
     "Save" : "Sačuvaj"
 },

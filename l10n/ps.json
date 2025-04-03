@@ -1,4 +1,5 @@
 { "translations": {
+    "File not found" : "فایل نشته",
     "Save" : "ساتل"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

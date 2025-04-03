@@ -1,5 +1,6 @@
 { "translations": {
     "Edit" : "Modificar",
-    "Save" : "Salveguardar"
+    "Save" : "Salveguardar",
+    "Export" : "Exportar"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

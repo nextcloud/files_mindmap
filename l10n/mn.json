@@ -1,0 +1,7 @@
+{ "translations": {
+    "File not found" : "Файл олдсонгүй",
+    "Edit" : "Өөрчлөх",
+    "Save" : "Хадгалах",
+    "Export" : "Экспорт"
+},"pluralForm" :"nplurals=2; plural=(n != 1);"
+}

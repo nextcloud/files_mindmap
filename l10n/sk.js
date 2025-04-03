@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "You can not open a folder" : "Tento priečinok nemôžete otvoriť",
     "This file is too big to be opened. Please download the file instead." : "Tento súbor je príliš veľký na to, aby ho bolo možné otvoriť. Prosím, namiesto toho si ho stiahnite.",
+    "Cannot read the file." : "Nemožno čítať súbor.",
     "Invalid file path supplied." : "Neplatná cesta k súboru.",
     "The file is locked." : "Súbor je zamknutý.",
     "An internal server error occurred." : "Vyskytla sa vnútorná chyba na serveri.",
@@ -13,6 +14,7 @@ OC.L10N.register(
     "File mtime not supplied" : "Nebol uvedený mtime súboru",
     "Share not found" : "Zdieľanie sa nenašlo",
     "You are not authorized to open this share" : "Nemáte oprávnenie otvoriť toto zdieľanie",
+    "File not found" : "Súbor nenájdený",
     "Edit" : "Upraviť",
     "Save" : "Uložiť",
     "Export" : "Export"

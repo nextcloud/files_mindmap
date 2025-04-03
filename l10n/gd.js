@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "File not found" : "Cha deach am faidhle a lorg",
     "Edit" : "Deasaich",
     "Save" : "Sàbhail"
 },
