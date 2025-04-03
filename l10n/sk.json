@@ -1,31 +1,18 @@
-{
-  "translations": {
-    "New mind map file": "Nový súbor myšlienkovej mapy",
-    "New mind map.km": "Nové mindmap.km",
-    "Main Topic": "Hlavná téma",
-    "Saving...": "Ukladá sa...",
-    "This file is not a valid mind map file and may cause file corruption if you continue editing.": "Tento súbor nie je platným myšlienko-mapovým súborom, jeho úpravou ho môžete poškodiť",
-    "Load file fail!": "Súbor sa nepodarilo načítať",
-    "File Saved": "Súbor bol uložený",
-    "Save failed": "Uloženie zlyhalo",
-    "Export": "Exportovať",
-    "Export to PNG": "Exportovať do formátu PNG",
-    "Export to SVG": "Exportovať do formátu SVG",
-    "You are not permission to write this file": "You are not permission to write this file",
-    "File not found": "File not found",
-    "The file is locked.": "The file is locked.",
-    "Share not found": "Share not found",
-    "You are not authorized to open this share": "You are not authorized to open this share",
-    "Could not write to file.": "Could not write to file.",
-    "Export to Markdown": "Export to Markdown",
-    "Export to Text": "Export to Text",
-    "Export to PDF": "Export to PDF",
-    "Save": "Save",
-    "The file has not been saved. Is it saved?": "The file has not been saved. Is it saved?",
-    "Unsaved file": "Unsaved file",
-    "AutoSave": "AutoSave",
-    "Does not support saving {extension} files.": "Does not support saving {extension} files.",
-    "Unsupported file type: {mimetype}": "Unsupported file type: {mimetype}"
-  },
-  "pluralForm": "nplurals=1; plural=0;"
+{ "translations": {
+    "You can not open a folder" : "Tento priečinok nemôžete otvoriť",
+    "This file is too big to be opened. Please download the file instead." : "Tento súbor je príliš veľký na to, aby ho bolo možné otvoriť. Prosím, namiesto toho si ho stiahnite.",
+    "Invalid file path supplied." : "Neplatná cesta k súboru.",
+    "The file is locked." : "Súbor je zamknutý.",
+    "An internal server error occurred." : "Vyskytla sa vnútorná chyba na serveri.",
+    "You can not write to a folder" : "Do tohto priečinka nemôžete zapisovať",
+    "Could not write to file." : "Do súboru sa nepodarilo zapísať",
+    "Insufficient permissions" : "Nedostatočné oprávnenia",
+    "File path not supplied" : "Nebola uvedená cesta k súboru",
+    "File mtime not supplied" : "Nebol uvedený mtime súboru",
+    "Share not found" : "Zdieľanie sa nenašlo",
+    "You are not authorized to open this share" : "Nemáte oprávnenie otvoriť toto zdieľanie",
+    "Edit" : "Upraviť",
+    "Save" : "Uložiť",
+    "Export" : "Export"
+},"pluralForm" :"nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);"
 }

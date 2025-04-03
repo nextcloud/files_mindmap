@@ -1,0 +1,17 @@
+OC.L10N.register(
+    "files_mindmap",
+    {
+    "This file is too big to be opened. Please download the file instead." : "ไฟล์นี้เปิดไม่ได้เพราะมีขนาดใหญ่เกินไป กรุณาดาวน์โหลดไฟล์แทน",
+    "Cannot read the file." : "ไม่สามารถอ่านไฟล์",
+    "Invalid file path supplied." : "เส้นทางของไฟล์ที่ให้มาไม่ถูกต้อง",
+    "The file is locked." : "ไฟล์ถูกล็อก",
+    "An internal server error occurred." : "เกิดข้อผิดพลาดภายในเซิร์ฟเวอร์",
+    "Insufficient permissions" : "สิทธิ์ไม่เพียงพอ",
+    "File path not supplied" : "ไม่ได้ระบุเส้นทางของไฟล์",
+    "File mtime not supplied" : "ไม่ได้ให้ระบุ mtime ของไฟล์",
+    "File not found" : "ไม่พบไฟล์",
+    "Edit" : "แก้ไข",
+    "Save" : "บันทึก",
+    "Export" : "ส่งออก"
+},
+"nplurals=1; plural=0;");
