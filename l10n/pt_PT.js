@@ -14,6 +14,10 @@ OC.L10N.register(
     "File mtime not supplied" : "O Ficheiro mtime não foi indicado",
     "Share not found" : "Partilha não encontrada",
     "File not found" : "Ficheiro não encontrado",
+    "You are not permission to write this file" : "Não tem permissões para escrever neste ficheiro",
+    "Mind Map" : "Mind Map",
+    "A Mind map editor" : "Editor de Mind Map",
+    "Does not support saving {extension} files." : "Não é compatível com a gravação de ficheiros {extension}.",
     "Edit" : "Editar",
     "Save" : "Guardar",
     "Export" : "Exportar"

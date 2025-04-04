@@ -13,8 +13,20 @@
     "Share not found" : "Partage non trouvé",
     "You are not authorized to open this share" : "Vous n'êtes pas autorisé à ouvrir ce partage",
     "File not found" : "Fichier non trouvé",
+    "Mind Map" : "Carte mentale",
+    "A Mind map editor" : "Éditeur de carte mentale",
+    "File Saved" : "Fichier enregistré",
+    "Save failed" : "Erreur d'enregistrement",
     "Edit" : "Éditer",
+    "New mind map file" : "Nouveau fichier de carte mentale",
+    "New mind map.km" : "Nouvelle carte mentale.km",
+    "AutoSave" : "Enregistrement automatique",
     "Save" : "Enregistrer",
-    "Export" : "Exporter"
+    "Export" : "Exporter",
+    "Export to PNG" : "Exporter en PNG",
+    "Export to SVG" : "Exporter en SVG",
+    "Export to PDF" : "Exporter en PDF",
+    "Export to Markdown" : "Exporter en Markdown",
+    "Export to Text" : "Exporter en Text"
 },"pluralForm" :"nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }
