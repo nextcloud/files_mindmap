@@ -15,8 +15,20 @@ OC.L10N.register(
     "Share not found" : "Jakoa ei löytynyt",
     "You are not authorized to open this share" : "Sinulla ei ole valtuuksia avata tätä jakoa",
     "File not found" : "Tiedostoa ei löytynyt",
+    "Mind Map" : "Ajatuskartta",
+    "File Saved" : "Tiedosto tallennettu",
+    "Save failed" : "Tallentaminen epäonnistui",
+    "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",
     "Edit" : "Muokkaa",
+    "New mind map file" : "Uusi ajatuskarttatiedosto",
+    "New mind map.km" : "Uusi ajatuskartta.km",
+    "AutoSave" : "Automaattinen tallennus",
     "Save" : "Tallenna",
-    "Export" : "Vie"
+    "Export" : "Vie",
+    "Export to PNG" : "Vie PNG-muotoon",
+    "Export to SVG" : "Vie SVG-muotoon",
+    "Export to PDF" : "Vie PDF-muotoon",
+    "Export to Markdown" : "Vie Markdown-muotoon",
+    "Export to Text" : "Vie tekstinä"
 },
 "nplurals=2; plural=(n != 1);");
