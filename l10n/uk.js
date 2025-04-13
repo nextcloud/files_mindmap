@@ -1,13 +1,12 @@
 OC.L10N.register(
     "files_mindmap",
     {
-    "You can not open a folder" : "Неможливо відкрити каталог",
+    "You cannot open a folder" : "Неможливо відкрити каталог",
     "This file is too big to be opened. Please download the file instead." : "Файл занадто великий для відкриття. Рекомендуємо звантажити його на ваш пристрій.",
     "Cannot read the file." : "Неможливо прочитати файл.",
     "Invalid file path supplied." : "Помилковий шлях до файлу.",
     "The file is locked." : "Файл заблоковано.",
     "An internal server error occurred." : "Виникла внутрішня помилка серверу.",
-    "You can not write to a folder" : "Каталог тільки для читання",
     "Could not write to file." : "Не вдалося записати до файлу.",
     "Insufficient permissions" : "Недостатньо прав доступу",
     "File path not supplied" : "Невідомий шлях файлу",

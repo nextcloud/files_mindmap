@@ -1,13 +1,11 @@
 OC.L10N.register(
     "files_mindmap",
     {
-    "You can not open a folder" : "Þú getur ekki opnað möppu",
     "This file is too big to be opened. Please download the file instead." : "Þessi skrá er of stór til að opna hana hér. Halaðu henni niður í staðinn.",
     "Cannot read the file." : "Get ekki lesið skrána.",
     "Invalid file path supplied." : "Ógild skráarslóð.",
     "The file is locked." : "Skráin er læst.",
     "An internal server error occurred." : "Innri villa kom upp.",
-    "You can not write to a folder" : "Þú getur ekki skrifað í möppu",
     "Could not write to file." : "Ekki tókst að skrifa í skrá.",
     "Insufficient permissions" : "Ekki næg réttindi",
     "File path not supplied" : "Skrá slóð fylgir ekki",

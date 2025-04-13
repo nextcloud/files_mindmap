@@ -1,13 +1,12 @@
 OC.L10N.register(
     "files_mindmap",
     {
-    "You can not open a folder" : "Vous ne pouvez pas ouvrir ce dossier",
+    "You cannot open a folder" : "Vous ne pouvez pas ouvrir un dossier",
     "This file is too big to be opened. Please download the file instead." : "Ce fichier est trop volumineux pour être ouvert. Veuillez plutôt le télécharger.",
     "Cannot read the file." : "Impossible de lire le fichier.",
     "Invalid file path supplied." : "Chemin de fichier fourni non valide.",
     "The file is locked." : "Le fichier est verrouillé.",
     "An internal server error occurred." : "Une erreur interne au serveur est survenue.",
-    "You can not write to a folder" : "Vous ne pouvez pas écrire dans ce dossier",
     "Could not write to file." : "Impossible d'écrire dans le fichier.",
     "Insufficient permissions" : "Droits insuffisants",
     "File path not supplied" : "Chemin du fichier non fourni",
@@ -16,7 +15,6 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Vous n'êtes pas autorisé à ouvrir ce partage",
     "File not found" : "Fichier non trouvé",
     "Mind Map" : "Carte mentale",
-    "A Mind map editor" : "Éditeur de carte mentale",
     "File Saved" : "Fichier enregistré",
     "Save failed" : "Erreur d'enregistrement",
     "Edit" : "Éditer",

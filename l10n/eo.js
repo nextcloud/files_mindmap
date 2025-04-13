@@ -1,13 +1,11 @@
 OC.L10N.register(
     "files_mindmap",
     {
-    "You can not open a folder" : "Ne povas malfermi dosierujo",
     "This file is too big to be opened. Please download the file instead." : "La dosiero tro grandas por malfermi. Bonvolu elŝuti la dosieron anstataŭe.",
     "Cannot read the file." : "Ne legeblas la dosiero.",
     "Invalid file path supplied." : "Nevalida dosiervojo provizita.",
     "The file is locked." : "La dosiero estas ŝlosa.",
     "An internal server error occurred." : "Ena servileraro okazis.",
-    "You can not write to a folder" : "Ne povas skribi al dosierujo",
     "Could not write to file." : "Ne povis skribi al dosiero.",
     "Insufficient permissions" : "Nesufiĉaj permesoj",
     "File path not supplied" : "Dosiervojo ne provizita.",

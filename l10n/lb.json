@@ -1,5 +1,6 @@
 { "translations": {
     "Edit" : "Änneren",
-    "Save" : "Späicheren"
+    "Save" : "Späicheren",
+    "Export" : "Exportéieren"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

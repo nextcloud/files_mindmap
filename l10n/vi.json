@@ -1,4 +1,5 @@
 { "translations": {
+    "You cannot open a folder" : "Bạn không thể mở một thư mục",
     "This file is too big to be opened. Please download the file instead." : "Tệp này quá lớn để mở. Vui lòng tải xuống thay vì mở trực tiếp.",
     "Cannot read the file." : "Không thể đọc thư mục",
     "Invalid file path supplied." : "Đường dẫn tệp không hợp lệ được cung cấp",

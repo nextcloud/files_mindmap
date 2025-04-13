@@ -1,13 +1,12 @@
 OC.L10N.register(
     "files_mindmap",
     {
-    "You can not open a folder" : "Nie możesz otworzyć katalogu",
+    "You cannot open a folder" : "Nie możesz otworzyć katalogu",
     "This file is too big to be opened. Please download the file instead." : "Plik jest zbyt duży, aby go otworzyć. Proszę pobrać plik.",
     "Cannot read the file." : "Nie można odczytać pliku.",
     "Invalid file path supplied." : "Podano nieprawidłową ścieżkę do pliku.",
     "The file is locked." : "Plik jest zablokowany.",
     "An internal server error occurred." : "Wystąpił wewnętrzny błąd serwera.",
-    "You can not write to a folder" : "Nie możesz zapisać do katalogu",
     "Could not write to file." : "Nie można zapisać pliku.",
     "Insufficient permissions" : "Niewystarczające uprawnienia",
     "File path not supplied" : "Nie została podana ścieżka do pliku",

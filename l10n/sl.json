@@ -1,11 +1,10 @@
 { "translations": {
-    "You can not open a folder" : "Mape ni mogoče odpreti",
+    "You cannot open a folder" : "Mape ni mogoče odpreti",
     "This file is too big to be opened. Please download the file instead." : "Datoteka je prevelika in je ni mogoče odpreti. Datoteko prejmite na disk in urejajte krajevno.",
     "Cannot read the file." : "Datoteke ni mogoče prebrati.",
     "Invalid file path supplied." : "Podana je neveljavna pot do datoteke.",
     "The file is locked." : "Datoteka je zaklenjena.",
     "An internal server error occurred." : "Prišlo je do notranje napake strežnika.",
-    "You can not write to a folder" : "V mapo ni mogoče pisati",
     "Could not write to file." : "Ni mogoče zapisati v datoteko.",
     "Insufficient permissions" : "Neustrezna dovoljenja",
     "File path not supplied" : "Pot do datoteke ni podana",

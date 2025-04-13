@@ -1,11 +1,10 @@
 { "translations": {
-    "You can not open a folder" : "Jūs negalite atverti aplanko",
+    "You cannot open a folder" : "Negalite atverti aplanką",
     "This file is too big to be opened. Please download the file instead." : "Šis failas yra per didelis, kad būtų atvertas. Vietoj to, prašome jį atsisiųsti.",
     "Cannot read the file." : "Nepavyko perskaityti failo.",
     "Invalid file path supplied." : "Pateiktas neteisingas failo kelias.",
     "The file is locked." : "Failas užrakintas.",
     "An internal server error occurred." : "Įvyko vidinė serverio klaida.",
-    "You can not write to a folder" : "Negalite rašyti į aplanką",
     "Could not write to file." : "Nepavyko rašyti į failą.",
     "Insufficient permissions" : "Nepakanka leidimų",
     "File path not supplied" : "Nepateiktas failo kelias",
