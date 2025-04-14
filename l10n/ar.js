@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "You cannot open a folder" : "لا يمكنك فتح المجلد",
     "This file is too big to be opened. Please download the file instead." : "هذا الملف كبير جدًا بحيث لا يمكن فتحه. يرجى تنزيل الملف بدلاً من ذلك.",
     "Cannot read the file." : "لا يمكن قراءة الملف.",
     "Invalid file path supplied." : "مسار الملف المُعطى غير صالح.",

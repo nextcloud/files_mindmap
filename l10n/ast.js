@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "You cannot open a folder" : "Nun pues abrir una carpeta",
     "Cannot read the file." : "Nun se pue lleer el ficheru.",
     "The file is locked." : "El ficheru ta bloquiáu.",
     "An internal server error occurred." : "Prodúxose un error internu del sirvidor.",

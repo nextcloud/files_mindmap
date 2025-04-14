@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "You cannot open a folder" : "Не можете да отворите папка",
     "This file is too big to be opened. Please download the file instead." : "Този файл е твърде голям, за да се отвори. Моля, изтеглете файла.",
     "Cannot read the file." : "файлът неможе да бъде прочетен.",
     "Invalid file path supplied." : "Предоставен е невалиден път до файл.",
