@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "You cannot open a folder" : "No podeu obrir una carpeta",
     "This file is too big to be opened. Please download the file instead." : "Aquest fitxer és massa gran per a obrir-lo. Baixeu el fitxer.",
     "Cannot read the file." : "No es pot llegir el fitxer.",
     "Invalid file path supplied." : "S'ha proporcionat un camí de fitxer no vàlid.",
