@@ -7,7 +7,7 @@
     "An internal server error occurred." : "Es ist ein interner Fehler aufgetreten.",
     "You cannot write to a folder" : "Du kannst nicht in einen Ordner schreiben",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Die Datei, an der Du arbeitest, wurde inzwischen aktualisiert. Du kannst deinen Fortschritt nicht speichern, da das Speichern die Änderungen überschreiben würde. Bitte lade die Seite neu.",
-    "Could not write to file." : "Konnte Datei nicht schreiben.",
+    "Could not write to file." : "In die Datei konnte nicht geschrieben werden.",
     "Insufficient permissions" : "Nicht ausreichende Berechtigungen",
     "File path not supplied" : "Dateipfad nicht angegeben",
     "File mtime not supplied" : "Dateiänderungsdatum nicht angegeben",
