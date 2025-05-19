@@ -53,23 +53,18 @@
 			left: 0;
 			right: 0;
 		}
-		#autosave-div {
-			z-index: 10000;
+		#autosave-div label {
+			text-wrap-mode: nowrap;
 		}
 		#autosave-checkbox {
 			bottom: 3px;
-		}
-		#save-div {
-			z-index: 10000;
-		}
-		#export-button {
-			z-index: 10000;
 		}
 		#menu-header {
 			display: flex;
 		}
 		#menu-header .header-left-spacer {
-			flex: 1;
+			flex-grow: 1;
+			min-width: 240px;
 		}
 	</style>
 </head>
