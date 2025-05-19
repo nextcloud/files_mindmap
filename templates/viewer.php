@@ -53,67 +53,62 @@
 			left: 0;
 			right: 0;
 		}
-        #autosave-div {
-            position: absolute;
-            right: 260px;
-            z-index: 10000;
-            width: 100px;
-        }
-        #autosave-checkbox {
-            bottom: 3px;
-        }
-        #save-div {
-            position: absolute;
-            right: 105px;
-            z-index: 10000;
-            width: 160px;
-        }
-
-        #export-button {
-            position: absolute;
-            right: 5px;
-            z-index: 10000;
-        }
+		#autosave-div label {
+			text-wrap-mode: nowrap;
+		}
+		#autosave-checkbox {
+			bottom: 3px;
+		}
+		#menu-header {
+			display: flex;
+		}
+		#menu-header .header-left-spacer {
+			flex-grow: 1;
+			min-width: 240px;
+		}
 	</style>
 </head>
 <script nonce="<?=$nonce?>">
     var lang = '<?=$lang?>';
 </script>
 <body ng-app="mindmap" ng-controller="MainController">
-<div id="autosave-div" class="checkbox btn-group-vertical">
-    <label>
-      <input type="checkbox" id="autosave-checkbox" checked="checked" title="<?php p($l->t('AutoSave')); ?>"><?php p($l->t('AutoSave')); ?>
-    </label>
-  </div>
-<div id="save-div" class="btn-group-vertical" >
-<button id="save-button" type="button" class="btn btn-default export-caption dropdown-toggle" title="<?php p($l->t('Save')); ?>"><?php p($l->t('Save')); ?></button>
-</div>
-<div id="export-button" class="btn-group-vertical" dropdown is-open="isopen">
-    <button type="button"
+<div id="menu-header">
+	<div class="header-left-spacer"></div>
+    <div id="autosave-div" class="checkbox btn-group-vertical">
+        <label>
+            <input type="checkbox" id="autosave-checkbox" checked="checked" title="<?php p($l->t('AutoSave')); ?>"><?php p($l->t('AutoSave')); ?>
+        </label>
+    </div>
+    <div id="save-div" class="btn-group-vertical" >
+        <button id="save-button" type="button" class="btn btn-default export-caption dropdown-toggle" title="<?php p($l->t('Save')); ?>"><?php p($l->t('Save')); ?></button>
+    </div>
+    <div id="export-button" class="btn-group-vertical" dropdown is-open="isopen">
+        <button type="button"
             class="btn btn-default export-caption dropdown-toggle"
             title="<?php p($l->t('Export')); ?>"
             dropdown-toggle>
-        <span class="caption"><?php p($l->t('Export')); ?></span>
-        <span class="caret"></span>
-        <span class="sr-only"><?php p($l->t('Export')); ?></span>
-    </button>
-    <ul class="dropdown-menu" role="menu">
-        <li>
-            <a id="export-png" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PNG')); ?></a>
-        </li>
-        <li>
-            <a id="export-svg" href="javascript:void(0)" target="_self"><?php p($l->t('Export to SVG')); ?></a>
-        </li>
-        <li>
-            <a id="export-pdf" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PDF')); ?></a>
-        </li>
-        <li>
-            <a id="export-markdown" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Markdown')); ?></a>
-        </li>
-        <li>
-            <a id="export-text" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Text')); ?></a>
-        </li>
-    </ul>
+            <span class="caption"><?php p($l->t('Export')); ?></span>
+            <span class="caret"></span>
+            <span class="sr-only"><?php p($l->t('Export')); ?></span>
+        </button>
+        <ul class="dropdown-menu" role="menu">
+            <li>
+                <a id="export-png" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PNG')); ?></a>
+            </li>
+            <li>
+                <a id="export-svg" href="javascript:void(0)" target="_self"><?php p($l->t('Export to SVG')); ?></a>
+            </li>
+            <li>
+                <a id="export-pdf" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PDF')); ?></a>
+            </li>
+            <li>
+                <a id="export-markdown" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Markdown')); ?></a>
+            </li>
+            <li>
+                <a id="export-text" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Text')); ?></a>
+            </li>
+        </ul>
+    </div>
 </div>
 <kityminder-editor id="viewer" lang="<?=$lang?>" on-init="initEditor(editor, minder)"></kityminder-editor>
 </body>
