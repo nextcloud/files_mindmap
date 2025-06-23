@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Vous n'êtes pas autorisé à ouvrir ce partage",
     "File not found" : "Fichier non trouvé",
     "Mind Map" : "Carte mentale",
+    "A mind map editor" : "Un éditeur de carte mentale",
     "File Saved" : "Fichier enregistré",
     "Save failed" : "Erreur d'enregistrement",
     "Edit" : "Éditer",
