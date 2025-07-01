@@ -2,7 +2,7 @@ OC.L10N.register(
     "files_mindmap",
     {
     "You cannot open a folder" : "Du hast keine Berechtigung zum Öffnen eines Ordners ",
-    "This file is too big to be opened. Please download the file instead." : "Die Datei ist zu groß zum Öffnen. Bitte lade stattdessen die Datei herunter.",
+    "This file is too big to be opened. Please download the file instead." : "Die Datei ist zu groß zum Öffnen. Bitte stattdessen die Datei herunterlden.",
     "Cannot read the file." : "Datei kann nicht gelesen werden.",
     "Invalid file path supplied." : "Ungültiger Dateipfad angegeben.",
     "The file is locked." : "Die Datei ist gesperrt.",
