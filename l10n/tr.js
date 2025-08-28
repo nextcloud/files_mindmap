@@ -34,6 +34,6 @@ OC.L10N.register(
     "Export to SVG" : "SVG olarak dışa aktar",
     "Export to PDF" : "PDF olarak dışa aktar",
     "Export to Markdown" : "Markdown olarak dışa aktar",
-    "Export to Text" : "Metin olarak dışa aktar"
+    "Export to Text" : "Yazı olarak dışa aktar"
 },
 "nplurals=2; plural=(n > 1);");
