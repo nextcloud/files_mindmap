@@ -12,6 +12,7 @@
     "Share not found" : "Ресурс с общим доступом не найден",
     "You are not authorized to open this share" : "Вы не авторизованы для открытия этого общего доступа",
     "File not found" : "Файл не найден",
+    "You have no permission to write this file" : "У вас нет разрешения на запись этого файла",
     "Edit" : "Редактирование",
     "Save" : "Сохранить",
     "Export" : "Экспорт"
