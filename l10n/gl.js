@@ -12,7 +12,7 @@ OC.L10N.register(
     "File path not supplied" : "Non forneceu unha ruta de ficheiro",
     "File mtime not supplied" : "Non forneceu o ficheiro mtime",
     "Share not found" : "Non se atopou a compartición",
-    "You are not authorized to open this share" : "Non está autorizado a abrir esta compartición",
+    "You are not authorized to open this share" : "Vde. non está autorizado a abrir esta compartición",
     "File not found" : "Non se atopou o ficheiro",
     "Edit" : "Editar",
     "Save" : "Gardar",
