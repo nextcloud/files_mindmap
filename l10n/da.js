@@ -14,7 +14,7 @@ OC.L10N.register(
     "Share not found" : "Delt fil ikke fundet",
     "You are not authorized to open this share" : "Du har ikke adgang til at åbne denne delte fil",
     "File not found" : "Filen blev ikke fundet",
-    "Edit" : "Rediger",
+    "Edit" : "Redigér",
     "Save" : "Gem",
     "Export" : "Eksporter"
 },
