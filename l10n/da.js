@@ -16,6 +16,6 @@ OC.L10N.register(
     "File not found" : "Filen blev ikke fundet",
     "Edit" : "Redigér",
     "Save" : "Gem",
-    "Export" : "Eksporter"
+    "Export" : "Eksportér"
 },
 "nplurals=2; plural=(n != 1);");
