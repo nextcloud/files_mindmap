@@ -2,7 +2,7 @@ OC.L10N.register(
     "files_mindmap",
     {
     "You cannot open a folder" : "Du hast keine Berechtigung zum Öffnen eines Ordners ",
-    "This file is too big to be opened. Please download the file instead." : "Die Datei ist zu groß zum Öffnen. Bitte stattdessen die Datei herunterlden.",
+    "This file is too big to be opened. Please download the file instead." : "Die Datei ist zu groß zum Öffnen. Bitte die Datei stattdessen herunterladen.",
     "Cannot read the file." : "Datei kann nicht gelesen werden.",
     "Invalid file path supplied." : "Ungültiger Dateipfad angegeben.",
     "The file is locked." : "Die Datei ist gesperrt.",
@@ -20,7 +20,7 @@ OC.L10N.register(
     "Mind Map" : "Mindmap",
     "A mind map editor" : "Ein Mindmap-Editor",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Diese Anwendung ermöglicht es Nextcloud-Nutzern, Mindmap-Dateien im Webbrowser zu öffnen, zu speichern und zu bearbeiten. Ist die Anwendung aktiviert, erscheint oben im Webbrowser über die Schaltfläche „Neu“ ein Eintrag für die Mindmap-Datei. Durch Anklicken öffnet sich eine neue Mindmap-Datei im Browser und kann im aktuellen Nextcloud-Ordner gespeichert werden.",
-    "Does not support saving {extension} files." : "Unterstützt das Speichern von {extension}-Dateien nicht.",
+    "Does not support saving {extension} files." : "Das Speichern von {extension}-Dateien wird nicht unterstützt.",
     "File Saved" : "Datei gespeichert",
     "Save failed" : "Speichern fehlgeschlagen",
     "Unsupported file type: {mimetype}" : "Nicht unterstützter Dateityp: {mimetype}",
