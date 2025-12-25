@@ -14,8 +14,8 @@
     "url": "git+https://github.com/ACTom/files_mindmap.git"
   },
   "engines": {
-    "node": "^20.0.0",
-    "npm": "^10.0.0"
+    "node": "^24.0.0",
+    "npm": "^11.3.0"
   },
   "browserslist": [
     "extends @nextcloud/browserslist-config"
