@@ -10,6 +10,7 @@ OC.L10N.register(
     "Insufficient permissions" : "Izin tidak cukup",
     "File path not supplied" : "Lokasi berkas belum diberikan",
     "File mtime not supplied" : "Berkas mtime belum diberikan",
+    "Share not found" : "Berbagi tidak ditemukan",
     "File not found" : "Berkas tidak ditemukan",
     "Edit" : "Sunting",
     "Save" : "Simpan",
