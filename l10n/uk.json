@@ -4,7 +4,7 @@
     "Cannot read the file." : "Неможливо прочитати файл.",
     "Invalid file path supplied." : "Помилковий шлях до файлу.",
     "The file is locked." : "Файл заблоковано.",
-    "An internal server error occurred." : "Виникла внутрішня помилка серверу.",
+    "An internal server error occurred." : "Внутрішня помилка сервера.",
     "You cannot write to a folder" : "Ви не можете писати до папки",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Файл, над яким ви працюєте, був оновлений. Ви не можете зберегти свої зміни, оскільки це призведе до їх перезапису. Будь ласка, перезавантажте сторінку.",
     "Could not write to file." : "Не вдалося записати до файлу.",
