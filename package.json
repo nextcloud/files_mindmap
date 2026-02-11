@@ -6,12 +6,12 @@
   "license": "AGPL-3.0-or-later",
   "type": "module",
   "bugs": {
-    "url": "https://github.com/ACTom/files_mindmap/issues"
+    "url": "https://github.com/nextcloud/files_mindmap/issues"
   },
-  "homepage": "https://github.com/ACTom/files_mindmap#readme",
+  "homepage": "https://github.com/nextcloud/files_mindmap#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ACTom/files_mindmap.git"
+    "url": "git+https://github.com/nextcloud/files_mindmap.git"
   },
   "engines": {
     "node": "^20.0.0",

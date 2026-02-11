@@ -12,7 +12,7 @@ You can also click a .km file to edit.
 
 ## Contribute
 translations will be added to https://www.transifex.com/nextcloud/nextcloud/
-~~translate: Go to [https://github.com/ACTom/kityminder-editor](https://github.com/ACTom/kityminder-editor), and translate strings in l10n directory.~~
+~~translate: Go to [https://github.com/nextcloud/kityminder-editor](https://github.com/nextcloud/kityminder-editor), and translate strings in l10n directory.~~
 
 ## Support Format
 | Format Name | File Extension | Read | Save |
