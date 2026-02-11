@@ -6,11 +6,8 @@ import {
 	FileAction,
 	addNewFileMenuEntry,
 	registerFileAction,
-	davGetClient,
-	davResultToNode,
 	File,
 	Permission,
-	davGetDefaultPropfind,
 	getUniqueName
 } from '@nextcloud/files'
 import { emit } from '@nextcloud/event-bus'
@@ -83,7 +80,7 @@ var FilesMindMap = {
 
 		return this.isSupportedMime($('#mimetype').val());
     },
-	
+
 	save: function(data, success, fail) {
 		var url = '';
 		var path = this._file.dir + '/' + this._file.name;
@@ -229,7 +226,7 @@ var FilesMindMap = {
 				const contentNames = content.map((node) => node.basename)
 				const fileName = getUniqueName(t('files_mindmap', "New mind map.km"), contentNames)
 				const source = context.encodedSource + '/' + encodeURIComponent(fileName)
-	
+
 				const response = await axios({
 					method: 'PUT',
 					url: source,
@@ -238,7 +235,7 @@ var FilesMindMap = {
 					},
 					data: ' ',
 				})
-	
+
 				const fileid = parseInt(response.headers['oc-fileid'])
 				const file = new File({
 					source: context.source + '/' + fileName,
@@ -249,9 +246,9 @@ var FilesMindMap = {
 					permissions: Permission.ALL,
 					root: context?.root || '/files/' + getCurrentUser()?.uid,
 				})
-	
+
 				// FilesMindMap.showMessage(t('files_mindmap', 'Created "{name}"', { name: fileName }))
-	
+
 				emit('files:node:created', file)
 
 				OCA.Viewer.openWith('mindmap', { path: file.path });
@@ -262,7 +259,7 @@ var FilesMindMap = {
 	setFile: function(file) {
 		let filename = file.filename + '';
 		let basename = file.basename + '';
-		
+
 		this._file.name = basename;
 		this._file.root = '/files/' + getCurrentUser()?.uid;
 		this._file.dir = dirname(filename);

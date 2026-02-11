@@ -4,24 +4,25 @@ namespace OCA\Files_MindMap\Controller;
 use OCP\AppFramework\Controller;
 use OCP\AppFramework\Http;
 use OCP\AppFramework\Http\DataResponse;
+use OCP\Files\File;
 use OCP\Files\Folder;
 use OCP\Files\ForbiddenException;
 use OCP\Files\GenericFileException;
 use OCP\Files\NotFoundException;
 use OCP\IL10N;
-use OCP\ILogger;
 use OCP\IRequest;
 use OCP\ISession;
 use OCP\Lock\LockedException;
 use OCP\Share\Exceptions\ShareNotFound;
 use OCP\Share\IManager as ShareManager;
+use Psr\Log\LoggerInterface;
 
 class PublicFileHandlingController extends Controller{
 
     /** @var IL10N */
     private $l;
 
-    /** @var ILogger */
+    /** @var LoggerInterface */
     private $logger;
 
     /** @var ShareManager */
@@ -41,7 +42,7 @@ class PublicFileHandlingController extends Controller{
     public function __construct($AppName,
                                 IRequest $request,
                                 IL10N $l10n,
-                                ILogger $logger,
+                                LoggerInterface $logger,
                                 ShareManager $shareManager,
                                 ISession $session) {
         parent::__construct($AppName, $request);
@@ -101,6 +102,9 @@ class PublicFileHandlingController extends Controller{
                 return new DataResponse(['message' => $this->l->t('File not found')], Http::STATUS_NOT_FOUND);
             }
         }
+        if (!($fileNode instanceof File)) {
+			return new DataResponse(['message' => $this->l->t('The requested resource is not a file.')], Http::STATUS_BAD_REQUEST);
+		}
 
         // default of 100MB
         $maxSize = 104857600;
@@ -177,7 +181,7 @@ class PublicFileHandlingController extends Controller{
             }
         }
 
-        if($file->isUpdateable()) {
+        if(($file instanceof File) && $file->isUpdateable()) {
             if ($mtime != $file->getMTime()) {
                 $this->logger->error("Anonymous cannot save shared mind map (someone updated it in the meantime): {$mtime} vs. {$file->getMTime()} {$file->getPath()}", ['app' => 'files_mindmap']);
                 return new DataResponse([ 'message' => $this->l->t('The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page.')],Http::STATUS_BAD_REQUEST);

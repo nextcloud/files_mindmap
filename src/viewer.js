@@ -1,3 +1,4 @@
+
 /**
  * Checks if the page is displayed in an iframe. If not redirect to /.
  **/
@@ -17,7 +18,7 @@ redirectIfNotDisplayedInFrame();
 		return window.parent.t('files_mindmap', msg);
 	};
 
-	var lang = window.lang || 
+	var lang = window.lang ||
 				 (document.getElementById("viewer") && document.getElementById("viewer").getAttribute("lang")) ||
 				 'en';
 
