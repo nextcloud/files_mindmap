@@ -7,16 +7,16 @@
 	<description><![CDATA[This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the "New" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder.]]></description>
 	<version>0.0.34</version>
 	<licence>agpl</licence>
-	<author mail="i@actom.me" homepage="https://actom.me">Jingtao Yan</author>
+	<author>Jingtao Yan</author>
 	<namespace>Files_MindMap</namespace>
 	<category>files</category>
 	<category>office</category>
-	<website>https://github.com/ACTom/files_mindmap</website>
-	<bugs>https://github.com/ACTom/files_mindmap/issues</bugs>
-	<repository type="git">https://github.com/ACTom/files_mindmap.git</repository>
-	<screenshot small-thumbnail="https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/1-small.png">https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/1.png</screenshot>
-	<screenshot small-thumbnail="https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/2-small.png">https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/2.png</screenshot>
-	<screenshot small-thumbnail="https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/3-small.png">https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/3.png</screenshot>
+	<website>https://github.com/nextcloud/files_mindmap</website>
+	<bugs>https://github.com/nextcloud/files_mindmap/issues</bugs>
+	<repository type="git">https://github.com/nextcloud/files_mindmap.git</repository>
+	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/1-small.png">https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/1.png</screenshot>
+	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2-small.png">https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2.png</screenshot>
+	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3-small.png">https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3.png</screenshot>
 	<dependencies>
 		<nextcloud min-version="28" max-version="32"/>
 	</dependencies>
