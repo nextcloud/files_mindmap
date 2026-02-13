@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "Jagamist ei leidu",
     "You are not authorized to open this share" : "Sul pole luba selle jagamise avamiseks",
     "File not found" : "Faili ei leitud",
+    "The requested resource is not a file." : "Soovitud ressurss pole fail.",
     "You have no permission to write this file" : "Sul puuduvad õigused siia faili salvestamiseks",
     "Mind Map" : "Mõttekaart",
     "A mind map editor" : "Mõttekaartide koostaja",

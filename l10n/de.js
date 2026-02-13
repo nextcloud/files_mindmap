@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "Freigabe nicht gefunden",
     "You are not authorized to open this share" : "Du darfst diese Freigabe nicht öffnen.",
     "File not found" : "Datei nicht gefunden",
+    "The requested resource is not a file." : "Die angeforderte Ressource ist keine Datei.",
     "You have no permission to write this file" : "Du hast keine Berechtigung, diese Datei zu schreiben",
     "Mind Map" : "Mindmap",
     "A mind map editor" : "Ein Mindmap-Editor",

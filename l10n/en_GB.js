@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "Share not found",
     "You are not authorized to open this share" : "You are not authorised to open this share",
     "File not found" : "File not found",
+    "The requested resource is not a file." : "The requested resource is not a file.",
     "You have no permission to write this file" : "You have no permission to write this file",
     "Mind Map" : "Mind Map",
     "A mind map editor" : "A mind map editor",
