@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "找不到分享",
     "You are not authorized to open this share" : "你沒有開啟這個分享連結的權限",
     "File not found" : "找不到檔案",
+    "The requested resource is not a file." : "所請求的資源並非檔案。",
     "You have no permission to write this file" : "您無權寫入此檔案",
     "Mind Map" : "心智圖",
     "A mind map editor" : "心智圖編輯器",
