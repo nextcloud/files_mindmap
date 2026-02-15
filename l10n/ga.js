@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "Ní bhfuarthas an sciar",
     "You are not authorized to open this share" : "Níl tú údaraithe an sciar seo a oscailt",
     "File not found" : "Comhad gan aimsiú",
+    "The requested resource is not a file." : "Ní comhad é an acmhainn iarrtha.",
     "You have no permission to write this file" : "Níl aon chead agat an comhad seo a scríobh",
     "Mind Map" : "Léarscáil aigne",
     "A mind map editor" : "Eagarthóir léarscáil aigne",
