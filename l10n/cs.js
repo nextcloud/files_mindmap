@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "Sdílení nenalezeno",
     "You are not authorized to open this share" : "Nejste oprávněni otevírat toto sdílení",
     "File not found" : "Soubor nenalezen",
+    "The requested resource is not a file." : "Požadovaný prostředek není soubor.",
     "You have no permission to write this file" : "Nemáte oprávnění pro zápis do tohoto souboru",
     "Mind Map" : "Myšlenková mapa",
     "A mind map editor" : "Editor myšlenkových map",
