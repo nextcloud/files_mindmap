@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "Share not found" : "Хуваалцалт олдсонгүй",
     "File not found" : "Файл олдсонгүй",
     "Edit" : "Өөрчлөх",
     "Save" : "Хадгалах",
