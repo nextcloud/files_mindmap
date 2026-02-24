@@ -3,6 +3,7 @@ OC.L10N.register(
     {
     "File not found" : "Ulac afaylu",
     "Edit" : "Ẓreg",
-    "Save" : "Sekles"
+    "Save" : "Sekles",
+    "Export" : "Sifeḍ"
 },
 "nplurals=2; plural=(n != 1);");
