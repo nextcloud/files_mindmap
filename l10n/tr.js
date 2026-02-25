@@ -16,6 +16,7 @@ OC.L10N.register(
     "Share not found" : "Paylaşım bulunamadı",
     "You are not authorized to open this share" : "Bu paylaşımı açma izniniz yok",
     "File not found" : "Dosya bulunamadı",
+    "The requested resource is not a file." : "İstenilen kaynak bir dosya değil.",
     "You have no permission to write this file" : "Bu dosyaya yazma izniniz yok",
     "Mind Map" : "Zihin haritası",
     "A mind map editor" : "Zihin haritası düzenleyici",
