@@ -18,6 +18,6 @@
 	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2-small.png">https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2.png</screenshot>
 	<screenshot small-thumbnail="https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3-small.png">https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3.png</screenshot>
 	<dependencies>
-		<nextcloud min-version="28" max-version="32"/>
+		<nextcloud min-version="32" max-version="33"/>
 	</dependencies>
 </info>
