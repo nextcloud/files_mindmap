@@ -1,9 +1,9 @@
 import { basename, extname } from 'path'
 import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
+import MindMapSvg from '../img/mindmap.svg?raw'
 
 import {
 	DefaultType,
-	FileAction,
 	addNewFileMenuEntry,
 	registerFileAction,
 	File,
@@ -187,7 +187,7 @@ var FilesMindMap = {
 		var mimes = this.getSupportedMimetypes(),
 			_self = this;
 
-		registerFileAction(new FileAction({
+		registerFileAction({
 			id: 'file_mindmap',
 			displayName() {
 				return t('files_mindmap', 'Edit')
@@ -209,14 +209,14 @@ var FilesMindMap = {
 			},
 
 			default: DefaultType.HIDDEN,
-		}))
+		})
 	},
 
 	registerNewFileMenuPlugin: function() {
 		addNewFileMenuEntry({
 			id: 'mindmapfile',
 			displayName: t('files_mindmap', 'New mind map file'),
-			iconClass: 'icon-mindmap',
+			iconSvgInline: MindMapSvg,
 			enabled(context) {
 				// only attach to main file list, public view is not supported yet
 				console.log('addNewFileMenuEntry', context);
