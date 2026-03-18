@@ -1,15 +1,20 @@
 import { basename, extname } from 'path'
 import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
+import MindMapSvg from '../img/mindmap.svg?raw'
 
 import {
 	DefaultType,
-	FileAction,
 	addNewFileMenuEntry,
 	registerFileAction,
 	File,
 	Permission,
 	getUniqueName
 } from '@nextcloud/files'
+import {
+	FileAction,
+	registerFileAction as legacyRegisterFileAction,
+	addNewFileMenuEntry as legacyAddNewFileMenuEntry
+} from '@nextcloud/files-legacy'
 import { emit } from '@nextcloud/event-bus'
 import axios from '@nextcloud/axios'
 import { getCurrentUser } from '@nextcloud/auth'
@@ -21,6 +26,8 @@ import util from './util'
 import km from './plugins/km'
 import freemind from './plugins/freemind'
 import xmind from './plugins/xmind'
+
+const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
 
 var FilesMindMap = {
 	_currentContext: null,
@@ -187,7 +194,7 @@ var FilesMindMap = {
 		var mimes = this.getSupportedMimetypes(),
 			_self = this;
 
-		registerFileAction(new FileAction({
+		const actionConfig = {
 			id: 'file_mindmap',
 			displayName() {
 				return t('files_mindmap', 'Edit')
@@ -209,14 +216,20 @@ var FilesMindMap = {
 			},
 
 			default: DefaultType.HIDDEN,
-		}))
+		}
+
+		if (version >= 33) {
+			registerFileAction(actionConfig)
+		} else {
+			legacyRegisterFileAction(new FileAction(actionConfig))
+		}
 	},
 
 	registerNewFileMenuPlugin: function() {
-		addNewFileMenuEntry({
+		legacyAddNewFileMenuEntry({
 			id: 'mindmapfile',
 			displayName: t('files_mindmap', 'New mind map file'),
-			iconClass: 'icon-mindmap',
+			...(version >= 33 ? { iconSvgInline: MindMapSvg } : { iconClass: 'icon-mindmap' }),
 			enabled(context) {
 				// only attach to main file list, public view is not supported yet
 				console.log('addNewFileMenuEntry', context);
