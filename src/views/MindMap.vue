@@ -47,11 +47,11 @@ export default {
 		})
 	},
 
-	beforeCreate() {
-
+    beforeDestroy() {
+		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
 	},
 
-    beforeDestroy() {
+    beforeUnmount() {
 		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
 	},
 
