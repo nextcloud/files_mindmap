@@ -1,50 +1,34 @@
-# Mind map for Nextcloud
+# Mind Map for Nextcloud
 
-This application enables Nextcloud users to open, save and edit mind map files in the web browser.
-App icon by [Icons8](https://icons8.com) and mind map powered by [KityMinder Editor](https://github.com/nextcloud/kityminder-editor).
+This app allows Nextcloud users to open, save, and edit mind map files directly
+in the web browser. App icon by [Icons8](https://icons8.com); mind map rendering
+powered by [KityMinder Editor](https://github.com/nextcloud/kityminder-editor).
 
-## How to use
-1. Install app
-2. Click New button in Nextcloud file page
-3. Choose "New mind map file"
+## How to Use
 
-You can also click a .km file to edit.
+1. Install the app
+2. Click the **New** button on the Nextcloud Files page
+3. Select **New mind map file**
 
-## Contribute
-translations will be added to https://www.transifex.com/nextcloud/nextcloud/
-~~translate: Go to [https://github.com/nextcloud/kityminder-editor](https://github.com/nextcloud/kityminder-editor), and translate strings in l10n directory.~~
+You can also click any `.km` file to open and edit it directly.
 
-## Support Format
-| Format Name | File Extension | Read | Save |
-|------------|----------------|------|-------|
-| kityminder | *.km          | ✓    | ✓     |
-| xmind      | *.xmind       | ✓(only first page root node)    | ✗     |
-| freemind   | *.mm          | ✓    | ✗     |
+## Supported Formats
 
+| Format     | Extension | Read                              | Save |
+|------------|-----------|-----------------------------------|------|
+| KityMinder | `*.km`    | ✓                                 | ✓    |
+| XMind      | `*.xmind` | ✓ (first page root node only)     | ✗    |
+| FreeMind   | `*.mm`    | ✓                                 | ✗    |
 
----
+## Contributing
 
-# 中文说明
-这是Nextcloud的一个思维导图应用，它可以让用户在浏览器中打开、编辑、保存思维导图文件，应用的图标来自于[Icons8](https://icons8.com)，应用核心显示模块采用[KityMinder Editor](https://github.com/nextcloud/kityminder-editor)。
+Translations are managed on Transifex:
+[https://www.transifex.com/nextcloud/nextcloud/](https://www.transifex.com/nextcloud/nextcloud/)
 
-## 如何使用
-1. 安装应用
-2. 点击 Nextcloud 文件界面的新建按钮
-3. 选择"新建思维导图文件"
+## Screenshots
 
-你也可以直接点击一个.km文件来编辑。
+![Screenshot 1](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/1.png)
 
-## 应用截图
-![截图1](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/1.png)
+![Screenshot 2](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2.png)
 
-![截图2](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2.png)
-
-![截图3](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3.png)
-
-
-## 支持的格式
-| 格式名称 | 文件扩展名 | 读取 | 保存 |
-|------------|----------------|------|-------|
-| kityminder | *.km          | ✓    | ✓     |
-| xmind      | *.xmind       | ✓(仅第一个页面根节点)    | ✗     |
-| freemind   | *.mm          | ✓    | ✗     |
+![Screenshot 3](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3.png)
