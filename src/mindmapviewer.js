@@ -1,5 +1,6 @@
+/* global OCA */
 import MindMap from './views/MindMap.vue'
-import FilesMindMap from './mindmap'
+import FilesMindMap from './mindmap.js'
 
 OCA.FilesMindMap = FilesMindMap
 
