@@ -23,7 +23,10 @@
   "scripts": {
     "build": "vite --mode production build",
     "dev": "vite --mode development build",
-    "watch": "vite --mode development build --watch"
+    "watch": "vite --mode development build --watch",
+    "lint": "eslint --ext .js,.vue,.ts src",
+    "test": "vitest run",
+    "test:watch": "vitest"
   },
   "dependencies": {
     "@mdi/svg": "^7.3.67",
