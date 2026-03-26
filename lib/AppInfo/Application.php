@@ -2,7 +2,6 @@
 
 namespace OCA\Files_MindMap\AppInfo;
 
-use OC\Files\Type\Detection;
 use OCA\Files\Event\LoadAdditionalScriptsEvent;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
@@ -32,7 +31,7 @@ class Application extends App implements IBootstrap {
 		$container = $this->getContainer();
 
 		// Register mimetypes
-		/** @var Detection $detector */
+		/** @var IMimeTypeDetector $detector */
 		$detector = $container->get(IMimeTypeDetector::class);
 		$detector->getAllMappings();
 		$detector->registerType('km','application/km');

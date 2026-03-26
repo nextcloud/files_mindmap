@@ -95,18 +95,16 @@ redirectIfNotDisplayedInFrame();
 				window.parent.OCA.FilesMindMap.hide();
 			}
 			if (this._changed && window.parent.OCA.FilesMindMap._file.supportedWrite) {
-				window.parent.OC.dialogs.confirm(t('The file has not been saved. Is it saved?'),
-					t('Unsaved file'), function(result){
-					if (result) {
-						self.save(function(status){
-							if (status) {
-								doHide();
-							}
-						});
-					} else {
-						doHide();
-					}
-				},true);
+				var result = window.confirm(t('The file has not been saved. Is it saved?'));
+				if (result) {
+					self.save(function(status){
+						if (status) {
+							doHide();
+						}
+					});
+				} else {
+					doHide();
+				}
 			} else {
 				doHide();
 			}

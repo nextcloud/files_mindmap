@@ -1,14 +1,13 @@
 import MindMap from './views/MindMap.vue'
 import FilesMindMap from './mindmap'
 
-OCA.FilesMindMap = FilesMindMap;
+OCA.FilesMindMap = FilesMindMap
 
-FilesMindMap.init();
-FilesMindMap.registerNewFileMenuPlugin();
-FilesMindMap.registerFileActions();
+FilesMindMap.init()
+FilesMindMap.registerNewFileMenuPlugin()
+FilesMindMap.registerFileActions()
 
-
-const supportedMimes = OCA.FilesMindMap.getSupportedMimetypes();
+const supportedMimes = OCA.FilesMindMap.getSupportedMimetypes()
 
 if (OCA.Viewer) {
 	OCA.Viewer.registerHandler({
@@ -18,5 +17,5 @@ if (OCA.Viewer) {
 		component: MindMap,
 		theme: 'default',
 		canCompare: true,
-	});
+	})
 }
