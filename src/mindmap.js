@@ -20,6 +20,9 @@ import axios from '@nextcloud/axios'
 import { getCurrentUser } from '@nextcloud/auth'
 import { dirname } from '@nextcloud/paths'
 import { isPublicShare } from '@nextcloud/sharing/public'
+import { translate as t } from '@nextcloud/l10n'
+import { generateUrl } from '@nextcloud/router'
+import { showMessage as showToast } from '@nextcloud/dialogs'
 
 
 import util from './util'
@@ -62,18 +65,15 @@ var FilesMindMap = {
 		return this.getExtensionByMime(mime) !== null ? true : false;
 	},
 
-	showMessage: function(msg, delay, t) {
-		var self = this;
+	showMessage: function(msg, delay) {
 		delay = delay || 3000;
-		var id = OC.Notification.show(msg, t);
-		setTimeout(function(){
-			self.hideMessage(id);
-		}, delay);
-		return id;
+		return showToast(msg, { timeout: delay });
 	},
 
-	hideMessage: function(id, t) {
-		OC.Notification.hide(id, t);
+	hideMessage: function(toast) {
+		if (toast && typeof toast.hideToast === 'function') {
+			toast.hideToast();
+		}
 	},
 
 	/**
@@ -85,10 +85,11 @@ var FilesMindMap = {
 			return false;
 		}
 
-		return this.isSupportedMime($('#mimetype').val());
+		return this.isSupportedMime(document.getElementById('mimetype')?.value);
     },
 
 	save: function(data, success, fail) {
+		var self = this;
 		var url = '';
 		var path = this._file.dir + '/' + this._file.name;
 		if (this._file.dir === '/') {
@@ -106,35 +107,32 @@ var FilesMindMap = {
 			var putObject = {
 				filecontents: data2,
 				path: path,
-				mtime: OCA.FilesMindMap._file.mtime // send modification time of currently loaded file
+				mtime: self._file.mtime // send modification time of currently loaded file
 			};
 
-			if ($('#isPublic').val()){
-				putObject.token = $('#sharingToken').val();
-				url = OC.generateUrl('/apps/files_mindmap/share/save');
-				if (OCA.FilesMindMap.isSupportedMime($('#mimetype').val())) {
+			if (document.getElementById('isPublic')?.value) {
+				putObject.token = document.getElementById('sharingToken')?.value;
+				url = generateUrl('/apps/files_mindmap/share/save');
+				if (self.isSupportedMime(document.getElementById('mimetype')?.value)) {
 					putObject.path = '';
 				}
 			} else {
-				url = OC.generateUrl('/apps/files_mindmap/ajax/savefile');
+				url = generateUrl('/apps/files_mindmap/ajax/savefile');
 			}
 
-
-			$.ajax({
-				type: 'PUT',
-				url: url,
-				data: putObject
-			}).done(function(data){
+			axios({
+				method: 'PUT',
+				url,
+				data: putObject,
+			}).then(function(response) {
 				// update modification time
 				try {
-					OCA.FilesMindMap._file.mtime = data.mtime;
+					self._file.mtime = response.data.mtime;
 				} catch(e) {}
 				success(t('files_mindmap', 'File Saved'));
-			}).fail(function(jqXHR){
+			}).catch(function(error) {
 				var message = t('files_mindmap', 'Save failed');
-				try{
-					message = JSON.parse(jqXHR.responseText).message;
-				}catch(e){}
+				message = error.response.data.message;
 				fail(message);
 			});
 		});
@@ -146,23 +144,25 @@ var FilesMindMap = {
 		var dir = this._file.dir;
 		var url = '';
 		var sharingToken = '';
-		var mimetype = $('#mimetype').val();
-		if ($('#isPublic').val() && this.isSupportedMime(mimetype)) {
-			sharingToken = $('#sharingToken').val();
-			url = OC.generateUrl('/apps/files_mindmap/public/{token}', {token: sharingToken});
-		} else if ($('#isPublic').val()) {
-			sharingToken = $('#sharingToken').val();
-			url = OC.generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}',
-                { token: sharingToken, filename: filename, dir: dir});
+		var mimetype = document.getElementById('mimetype')?.value;
+		if (document.getElementById('isPublic')?.value && this.isSupportedMime(mimetype)) {
+			sharingToken = document.getElementById('sharingToken')?.value;
+			url = generateUrl('/apps/files_mindmap/public/{token}', {token: sharingToken});
+		} else if (document.getElementById('isPublic')?.value) {
+			sharingToken = document.getElementById('sharingToken')?.value;
+			url = generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}',
+				{ token: sharingToken, filename: filename, dir: dir});
 		} else {
-			url = OC.generateUrl('/apps/files_mindmap/ajax/loadfile?filename={filename}&dir={dir}',
-                {filename: filename, dir: dir});
+			url = generateUrl('/apps/files_mindmap/ajax/loadfile?filename={filename}&dir={dir}',
+				{filename: filename, dir: dir});
 		}
-		$.get(url).done(function(data) {
+		axios.get(url).then(function(response) {
+			var data = response.data;
 			data.filecontents = util.base64Decode(data.filecontents);
 			var plugin = self.getExtensionByMime(data.mime);
 			if (!plugin || plugin.decode === null) {
-				fail(t('files_mindmap', 'Unsupported file type: {mimetype}', {mimetype: data.mime}));
+				failure(t('files_mindmap', 'Unsupported file type: {mimetype}', {mimetype: data.mime}));
+				return;
 			}
 
 			plugin.decode(data.filecontents).then(function(kmdata){
@@ -173,17 +173,17 @@ var FilesMindMap = {
 					data.supportedWrite = false;
 				}
 
-				OCA.FilesMindMap._file.writeable = data.writeable;
-				OCA.FilesMindMap._file.supportedWrite = data.supportedWrite;
-				OCA.FilesMindMap._file.mime = data.mime;
-				OCA.FilesMindMap._file.mtime = data.mtime;
+				self._file.writeable = data.writeable;
+				self._file.supportedWrite = data.supportedWrite;
+				self._file.mime = data.mime;
+				self._file.mtime = data.mtime;
 
 				success(data.filecontents);
 			}, function(e){
 				failure(e);
 			})
-		}).fail(function(jqXHR) {
-			failure(JSON.parse(jqXHR.responseText).message);
+		}).catch(function(error) {
+			failure(error.response?.data?.message || error.message);
 		});
 	},
 
@@ -202,7 +202,7 @@ var FilesMindMap = {
 			iconSvgInline: () => SvgPencil,
 
 			enabled(nodes) {
-				return nodes.length === 1 && mimes.includes(nodes[0].mime) && (nodes[0].permissions & OC.PERMISSION_READ) !== 0
+				return nodes.length === 1 && mimes.includes(nodes[0].mime) && (nodes[0].permissions & Permission.READ) !== 0
 			},
 
 			async exec(node, view) {

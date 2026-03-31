@@ -47,11 +47,7 @@ export default {
 		})
 	},
 
-	beforeCreate() {
-
-	},
-
-    beforeDestroy() {
+    beforeUnmount() {
 		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
 	},
 
