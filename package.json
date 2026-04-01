@@ -24,11 +24,13 @@
     "build": "vite --mode production build",
     "dev": "vite --mode development build",
     "watch": "vite --mode development build --watch",
+    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --ext .js,.vue,.ts src",
     "test": "vitest run",
     "test:watch": "vitest"
   },
   "dependencies": {
     "@mdi/svg": "^7.3.67",
+    "@nextcloud/auth": "^2.5.0",
     "@nextcloud/axios": "^2.4.0",
     "@nextcloud/dialogs": "^5.0.0",
     "@nextcloud/event-bus": "^3.1.0",
@@ -37,6 +39,8 @@
     "@nextcloud/l10n": "^3.0.0",
     "@nextcloud/logger": "^3.0.0",
     "@nextcloud/paths": "^3.0.0",
+    "@nextcloud/router": "^3.1.0",
+    "@nextcloud/sharing": "^0.3.0",
     "jszip": "^3.10.1"
   },
   "devDependencies": {

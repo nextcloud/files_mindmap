@@ -1,45 +1,40 @@
-import FilesMindMap from './mindmap'
-import logger from './logger'
+/* global OCA */
+import FilesMindMap from './mindmap.js'
+import logger from './logger.js'
 
-import { getSharingToken, isPublicShare } from '@nextcloud/sharing/public'
+import { isPublicShare } from '@nextcloud/sharing/public'
 
 if (isPublicShare()) {
-	OCA.FilesMindMap = FilesMindMap;
-	FilesMindMap.init();
+	OCA.FilesMindMap = FilesMindMap
+	FilesMindMap.init()
 
-    if (FilesMindMap.isMindmapPublic()) {
-        window.addEventListener('DOMContentLoaded', function() {
-            var sharingToken = getSharingToken();
-            var downloadUrl = OC.generateUrl('/s/{token}/download', {token: sharingToken});
-            var viewer = OCA.FilesMindMap;
+	if (FilesMindMap.isMindmapPublic()) {
+		window.addEventListener('DOMContentLoaded', function() {
+			const contentElmt = document.getElementById('files-public-content')
+			const footerElmt = document.querySelector('body > footer') || document.querySelector('#app-content > footer')
+			if (contentElmt) {
+				if (OCA.Viewer) {
+					contentElmt.innerHTML = ''
+					OCA.Viewer.setRootElement('#files-public-content')
+				    OCA.Viewer.open({ path: '/' })
 
+					footerElmt.style.display = 'none'
 
-            const contentElmt = document.getElementById('files-public-content');
-            const footerElmt = document.querySelector('body > footer') || document.querySelector('#app-content > footer');
-            if (contentElmt) {
-                if (OCA.Viewer) {
-                    contentElmt.innerHTML = '';
-                    OCA.Viewer.setRootElement('#files-public-content')
-				    OCA.Viewer.open({ path: '/' });
+					// This is an ugly implementation, need to remove the top margin after viewer creates the iframe
+					setTimeout(() => {
+						const frameElmt = document.querySelector('#viewer > iframe')
+						if (frameElmt) {
+							frameElmt.style.marginTop = '0'
+						}
+					}, 1000)
 
-                    footerElmt.style.display = 'none';
+				} else {
+					logger.error('Viewer is not available, cannot preview mindmap')
+				}
+			}
 
-                    // This is an ugly implementation, need to remove the top margin after viewer creates the iframe
-                    setTimeout(() => {
-                        const frameElmt = document.querySelector('#viewer > iframe');
-                        if (frameElmt) {
-                            frameElmt.style.marginTop = '0';
-                        }
-                    }, 1000);
+		})
+	}
 
-                } else {
-                    logger.error('Viewer is not available, cannot preview mindmap');
-                }
-            }
-
-        });
-    }
-    
-    
-    console.log('files_mindmap public.js loaded');
+	console.debug('files_mindmap public.js loaded')
 }
