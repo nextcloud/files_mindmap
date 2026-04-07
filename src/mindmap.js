@@ -1,19 +1,20 @@
-import { basename, extname } from 'path'
+/* global OCA */
+// eslint-disable-next-line import/no-unresolved
 import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
+// eslint-disable-next-line import/no-unresolved
 import MindMapSvg from '../img/mindmap.svg?raw'
 
 import {
 	DefaultType,
-	addNewFileMenuEntry,
 	registerFileAction,
 	File,
 	Permission,
-	getUniqueName
+	getUniqueName,
 } from '@nextcloud/files'
 import {
 	FileAction,
 	registerFileAction as legacyRegisterFileAction,
-	addNewFileMenuEntry as legacyAddNewFileMenuEntry
+	addNewFileMenuEntry as legacyAddNewFileMenuEntry,
 } from '@nextcloud/files-legacy'
 import { emit } from '@nextcloud/event-bus'
 import axios from '@nextcloud/axios'
@@ -24,100 +25,99 @@ import { translate as t } from '@nextcloud/l10n'
 import { generateUrl } from '@nextcloud/router'
 import { showMessage as showToast } from '@nextcloud/dialogs'
 
-
-import util from './util'
-import km from './plugins/km'
-import freemind from './plugins/freemind'
-import xmind from './plugins/xmind'
+import util from './util.js'
+import km from './plugins/km.js'
+import freemind from './plugins/freemind.js'
+import xmind from './plugins/xmind.js'
 
 const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
 
-var FilesMindMap = {
+const FilesMindMap = {
 	_currentContext: null,
 	_file: {},
 	_lastTitle: '',
 	_extensions: [],
-	init: function() {
-		this.registerExtension([km, freemind, xmind]);
+	init() {
+		this.registerExtension([km, freemind, xmind])
 	},
 
-	registerExtension: function(objs) {
-		var self = this;
+	registerExtension(objs) {
+		const self = this
 		if (!Array.isArray(objs)) {
-			objs = [objs];
+			objs = [objs]
 		}
-		objs.forEach(function(obj){
-			self._extensions.push(obj);
-		});
+		objs.forEach(function(obj) {
+			self._extensions.push(obj)
+		})
 	},
 
-	getExtensionByMime: function(mime) {
-		for (var i = 0; i < this._extensions.length; i++) {
-			var obj = this._extensions[i];
+	getExtensionByMime(mime) {
+		for (let i = 0; i < this._extensions.length; i++) {
+			const obj = this._extensions[i]
 			if (obj.mimes.indexOf(mime) >= 0) {
-				return obj;
+				return obj
 			}
 		}
-		return null;
+		return null
 	},
 
-	isSupportedMime: function(mime) {
-		return this.getExtensionByMime(mime) !== null ? true : false;
+	isSupportedMime(mime) {
+		return this.getExtensionByMime(mime) !== null
 	},
 
-	showMessage: function(msg, delay) {
-		delay = delay || 3000;
-		return showToast(msg, { timeout: delay });
+	showMessage(msg, delay) {
+		delay = delay || 3000
+		return showToast(msg, { timeout: delay })
 	},
 
-	hideMessage: function(toast) {
+	hideMessage(toast) {
 		if (toast && typeof toast.hideToast === 'function') {
-			toast.hideToast();
+			toast.hideToast()
 		}
 	},
 
 	/**
 	 * Determine if this page is public mindmap share page
-	 * @returns {boolean}
+	 * @return {boolean}
 	 */
-    isMindmapPublic: function() {
+	isMindmapPublic() {
 		if (!isPublicShare()) {
-			return false;
+			return false
 		}
 
-		return this.isSupportedMime(document.getElementById('mimetype')?.value);
-    },
+		return this.isSupportedMime(document.getElementById('mimetype')?.value)
+	},
 
-	save: function(data, success, fail) {
-		var self = this;
-		var url = '';
-		var path = this._file.dir + '/' + this._file.name;
+	save(data, success, fail) {
+		const self = this
+		let url = ''
+		let path = this._file.dir + '/' + this._file.name
 		if (this._file.dir === '/') {
-			path = '/' + this._file.name;
+			path = '/' + this._file.name
 		}
 
 		/* 当encode方法没实现的时候无法保存 */
-		var plugin = this.getExtensionByMime(this._file.mime);
+		const plugin = this.getExtensionByMime(this._file.mime)
 		if (plugin.encode === null) {
-			fail(t('files_mindmap', 'Does not support saving {extension} files.', {extension: plugin.name}));
-			return;
+			fail(t('files_mindmap', 'Does not support saving {extension} files.', { extension: plugin.name }))
+			return
 		}
 
 		plugin.encode(data).then(function(data2) {
-			var putObject = {
+			const putObject = {
 				filecontents: data2,
-				path: path,
-				mtime: self._file.mtime // send modification time of currently loaded file
-			};
+				path,
+				mtime: self._file.mtime, // send modification time of currently loaded file
+			}
 
 			if (document.getElementById('isPublic')?.value) {
-				putObject.token = document.getElementById('sharingToken')?.value;
-				url = generateUrl('/apps/files_mindmap/share/save');
+				putObject.token = document.getElementById('sharingToken')?.value
+				url = generateUrl('/apps/files_mindmap/share/save')
 				if (self.isSupportedMime(document.getElementById('mimetype')?.value)) {
-					putObject.path = '';
+					putObject.path = ''
 				}
 			} else {
-				url = generateUrl('/apps/files_mindmap/ajax/savefile');
+				url = generateUrl('/apps/files_mindmap/ajax/savefile')
 			}
 
 			axios({
@@ -127,72 +127,71 @@ var FilesMindMap = {
 			}).then(function(response) {
 				// update modification time
 				try {
-					self._file.mtime = response.data.mtime;
-				} catch(e) {}
-				success(t('files_mindmap', 'File Saved'));
+					self._file.mtime = response.data.mtime
+				} catch (e) {}
+				success(t('files_mindmap', 'File Saved'))
 			}).catch(function(error) {
-				var message = t('files_mindmap', 'Save failed');
-				message = error.response.data.message;
-				fail(message);
-			});
-		});
+				const message = error.response?.data?.message || t('files_mindmap', 'Save failed')
+				fail(message)
+			})
+		})
 	},
 
-	load: function(success, failure) {
-		var self = this;
-		var filename = this._file.name;
-		var dir = this._file.dir;
-		var url = '';
-		var sharingToken = '';
-		var mimetype = document.getElementById('mimetype')?.value;
+	load(success, failure) {
+		const self = this
+		const filename = this._file.name
+		const dir = this._file.dir
+		let url = ''
+		let sharingToken = ''
+		const mimetype = document.getElementById('mimetype')?.value
 		if (document.getElementById('isPublic')?.value && this.isSupportedMime(mimetype)) {
-			sharingToken = document.getElementById('sharingToken')?.value;
-			url = generateUrl('/apps/files_mindmap/public/{token}', {token: sharingToken});
+			sharingToken = document.getElementById('sharingToken')?.value
+			url = generateUrl('/apps/files_mindmap/public/{token}', { token: sharingToken })
 		} else if (document.getElementById('isPublic')?.value) {
-			sharingToken = document.getElementById('sharingToken')?.value;
+			sharingToken = document.getElementById('sharingToken')?.value
 			url = generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}',
-				{ token: sharingToken, filename: filename, dir: dir});
+				{ token: sharingToken, filename, dir })
 		} else {
 			url = generateUrl('/apps/files_mindmap/ajax/loadfile?filename={filename}&dir={dir}',
-				{filename: filename, dir: dir});
+				{ filename, dir })
 		}
 		axios.get(url).then(function(response) {
-			var data = response.data;
-			data.filecontents = util.base64Decode(data.filecontents);
-			var plugin = self.getExtensionByMime(data.mime);
+			const data = response.data
+			data.filecontents = util.base64Decode(data.filecontents)
+			const plugin = self.getExtensionByMime(data.mime)
 			if (!plugin || plugin.decode === null) {
-				failure(t('files_mindmap', 'Unsupported file type: {mimetype}', {mimetype: data.mime}));
-				return;
+				failure(t('files_mindmap', 'Unsupported file type: {mimetype}', { mimetype: data.mime }))
+				return
 			}
 
-			plugin.decode(data.filecontents).then(function(kmdata){
-				data.filecontents = typeof kmdata === 'object' ? JSON.stringify(kmdata) : kmdata;
-				data.supportedWrite = true;
+			plugin.decode(data.filecontents).then(function(kmdata) {
+				data.filecontents = typeof kmdata === 'object' ? JSON.stringify(kmdata) : kmdata
+				data.supportedWrite = true
 				if (plugin.encode === null) {
-					data.writeable = false;
-					data.supportedWrite = false;
+					data.writeable = false
+					data.supportedWrite = false
 				}
 
-				self._file.writeable = data.writeable;
-				self._file.supportedWrite = data.supportedWrite;
-				self._file.mime = data.mime;
-				self._file.mtime = data.mtime;
+				self._file.writeable = data.writeable
+				self._file.supportedWrite = data.supportedWrite
+				self._file.mime = data.mime
+				self._file.mtime = data.mtime
 
-				success(data.filecontents);
-			}, function(e){
-				failure(e);
+				success(data.filecontents)
+			}, function(e) {
+				failure(e)
 			})
 		}).catch(function(error) {
-			failure(error.response?.data?.message || error.message);
-		});
+			failure(error.response?.data?.message || error.message)
+		})
 	},
 
 	/**
 	 * @private
 	 */
-	registerFileActions: function () {
-		var mimes = this.getSupportedMimetypes(),
-			_self = this;
+	registerFileActions() {
+		const mimes = this.getSupportedMimetypes()
+		const _self = this
 
 		const actionConfig = {
 			id: 'file_mindmap',
@@ -207,7 +206,7 @@ var FilesMindMap = {
 
 			async exec(node, view) {
 				try {
-					OCA.Viewer.openWith('mindmap', { path: node.path });
+					OCA.Viewer.openWith('mindmap', { path: node.path })
 					return true
 				} catch (error) {
 					_self.showMessage(error)
@@ -225,19 +224,19 @@ var FilesMindMap = {
 		}
 	},
 
-	registerNewFileMenuPlugin: function() {
+	registerNewFileMenuPlugin() {
 		legacyAddNewFileMenuEntry({
 			id: 'mindmapfile',
 			displayName: t('files_mindmap', 'New mind map file'),
 			...(version >= 33 ? { iconSvgInline: MindMapSvg } : { iconClass: 'icon-mindmap' }),
 			enabled(context) {
 				// only attach to main file list, public view is not supported yet
-				console.log('addNewFileMenuEntry', context);
-				return (context.permissions & Permission.CREATE) !== 0;
+				console.debug('addNewFileMenuEntry', context)
+				return (context.permissions & Permission.CREATE) !== 0
 			},
 			async handler(context, content) {
 				const contentNames = content.map((node) => node.basename)
-				const fileName = getUniqueName(t('files_mindmap', "New mind map.km"), contentNames)
+				const fileName = getUniqueName(t('files_mindmap', 'New mind map.km'), contentNames)
 				const source = context.encodedSource + '/' + encodeURIComponent(fileName)
 
 				const response = await axios({
@@ -264,33 +263,33 @@ var FilesMindMap = {
 
 				emit('files:node:created', file)
 
-				OCA.Viewer.openWith('mindmap', { path: file.path });
+				OCA.Viewer.openWith('mindmap', { path: file.path })
 			},
-		});
+		})
 	},
 
-	setFile: function(file) {
-		let filename = file.filename + '';
-		let basename = file.basename + '';
+	setFile(file) {
+		const filename = file.filename + ''
+		const basename = file.basename + ''
 
-		this._file.name = basename;
-		this._file.root = '/files/' + getCurrentUser()?.uid;
-		this._file.dir = dirname(filename);
-		this._file.fullName = filename;
+		this._file.name = basename
+		this._file.root = '/files/' + getCurrentUser()?.uid
+		this._file.dir = dirname(filename)
+		this._file.fullName = filename
 		this._currentContext = {
 			dir: this._file.dir,
-			root: this._file.root
+			root: this._file.root,
 		}
 	},
 
-	getSupportedMimetypes: function() {
-		var result = [];
-		this._extensions.forEach(function(obj){
-			result = result.concat(obj.mimes);
-		});
-		console.debug('Mindmap Mimetypes:', result);
-		return result;
+	getSupportedMimetypes() {
+		let result = []
+		this._extensions.forEach(function(obj) {
+			result = result.concat(obj.mimes)
+		})
+		console.debug('Mindmap Mimetypes:', result)
+		return result
 	},
-};
+}
 
-export default FilesMindMap;
+export default FilesMindMap
