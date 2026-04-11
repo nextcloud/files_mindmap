@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.47 – 2026-04-10
+
+### Fixed
+- **Schließen-Schaltfläche funktionierte nicht**: `OCA.FilesMindMap.hide()` war nie implementiert – der optionale Aufruf `hide?.()` aus dem iframe schlug still fehl. Die Methode klickt jetzt programmatisch auf den versteckten NC-Modal-Close-Button (`.modal-container__close`), der zwar per CSS unsichtbar ist, aber noch im DOM lebt. `element.click()` ignoriert `display:none` und löst den Vue-Handler aus.
+
 ## 0.0.46 – 2026-04-10
 
 ### Fixed

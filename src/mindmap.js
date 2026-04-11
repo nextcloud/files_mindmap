@@ -123,6 +123,19 @@ const FilesMindMap = {
 		return this.getExtensionByMime(mime) !== null
 	},
 
+	hide() {
+		// The NC Viewer close button (.modal-container__close) is hidden via
+		// display:none !important in MindMap.vue, but still lives in the DOM.
+		// Programmatic .click() bypasses CSS visibility and fires the Vue handler.
+		const btn = document.querySelector('.modal-container__close')
+		if (btn) {
+			btn.click()
+			return
+		}
+		// Fallback: NC Viewer API or Escape key
+		window.OCA?.Viewer?.close?.()
+	},
+
 	showMessage(msg, delay) {
 		delay = delay || 3000
 		return showToast(msg, { timeout: delay })
