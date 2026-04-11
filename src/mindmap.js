@@ -111,53 +111,97 @@ const FilesMindMap = {
 				return
 			}
 			const mmName = self._file.name
-			const newName = mmName.replace(/\.[^/.]+$/, '') + '.km'
+			const baseName = mmName.replace(/\.[^/.]+$/, '')
+			const newName = baseName + '.km'
 			const uid = getCurrentUser()?.uid || ''
 			const davBase = generateRemoteUrl('dav') + '/files/' + uid
 			const encodedDir = (self._file.dir || '/').replace(/\/$/, '').split('/').map(encodeURIComponent).join('/')
 			const newSource = davBase + encodedDir + '/' + encodeURIComponent(newName)
 
 			kmPlugin.encode(data).then(function(kmData) {
-				function doPut(overwrite) {
+				// PUT to a given URL; Overwrite:F prevents silent overwrite of existing files.
+				function doPut(url, overwrite) {
 					return axios({
 						method: 'PUT',
-						url: newSource,
+						url,
 						data: kmData,
 						headers: overwrite ? {} : { Overwrite: 'F' },
 					})
 				}
 
-				function onSaved() {
-					self._file.name = newName
+				// Update internal state and notify user after a successful write.
+				function onSaved(savedName) {
+					self._file.name = savedName
 					self._file.mime = 'application/km'
 					self._file.mtime = null
 					self._file.supportedWrite = true
 					self._file.fullName = self._file.dir === '/'
-						? '/' + newName
-						: self._file.dir + '/' + newName
-					// Prominent toast so users know their data moved to a new file
+						? '/' + savedName
+						: self._file.dir + '/' + savedName
 					showToast(
-						t('files_mindmap', '"{name}" was created — your changes are saved there. The original .mm file is unchanged.', { name: newName }),
+						t('files_mindmap', '"{name}" was created — your changes are saved there. The original .mm file is unchanged.', { name: savedName }),
 						{ timeout: 8000 }
 					)
-					success(t('files_mindmap', 'Saved as {name}', { name: newName }))
+					success(t('files_mindmap', 'Saved as {name}', { name: savedName }))
 				}
 
-				doPut(false)
-					.then(onSaved)
+				// HEAD-probe baseName (1).km, (2).km, … until a free slot is found.
+				function findFreeName() {
+					function probe(n) {
+						const candidate = baseName + ' (' + n + ').km'
+						const url = davBase + encodedDir + '/' + encodeURIComponent(candidate)
+						return axios.head(url)
+							.then(() => probe(n + 1))   // 200 → exists, try next
+							.catch(() => candidate)     // 404 / error → free slot
+					}
+					return probe(1)
+				}
+
+				// "No" branch: let the user pick a different name (prompt pre-filled
+				// with the first free auto-numbered candidate).
+				function saveAsAlternative() {
+					findFreeName().then(function(suggested) {
+						const promptedBase = window.prompt(
+							t('files_mindmap', 'Enter a new filename (without extension):'),
+							suggested.replace(/\.km$/i, '')
+						)
+						if (promptedBase === null || promptedBase.trim() === '') {
+							fail(t('files_mindmap', 'Conversion cancelled'))
+							return
+						}
+						const altName = promptedBase.trim().replace(/\.km$/i, '') + '.km'
+						const altSource = davBase + encodedDir + '/' + encodeURIComponent(altName)
+						doPut(altSource, false)
+							.then(function() { onSaved(altName) })
+							.catch(function(e) {
+								if (e.response?.status === 412) {
+									fail(t('files_mindmap',
+										'"{name}" already exists. Please choose a different name.',
+										{ name: altName }))
+								} else {
+									fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+								}
+							})
+					})
+				}
+
+				doPut(newSource, false)
+					.then(function() { onSaved(newName) })
 					.catch(function(error) {
 						if (error.response?.status === 412) {
-							// .km already exists – ask before overwriting
+							// .km already exists – ask: overwrite or save under a new name?
 							const question = t('files_mindmap',
 								'"{name}" already exists. Overwrite it with the content from "{source}"?',
 								{ name: newName, source: mmName })
-							if (!window.confirm(question)) {
-								fail(t('files_mindmap', 'Conversion cancelled'))
-								return
+							if (window.confirm(question)) {
+								doPut(newSource, true)
+									.then(function() { onSaved(newName) })
+									.catch(function(e) {
+										fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+									})
+							} else {
+								saveAsAlternative()
 							}
-							doPut(true).then(onSaved).catch(function(e) {
-								fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
-							})
 							return
 						}
 						fail(error.response?.data?.message || t('files_mindmap', 'Save failed'))
