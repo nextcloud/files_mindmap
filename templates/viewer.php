@@ -76,6 +76,8 @@
 </head>
 <script nonce="<?=$nonce?>">
     var lang = '<?=$lang?>';
+    console.log('[files_mindmap] viewer.php version: <?=$version?>');
+
 </script>
 <body ng-app="mindmap" ng-controller="MainController">
 <div id="menu-header">

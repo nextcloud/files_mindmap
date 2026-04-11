@@ -206,7 +206,8 @@ const FilesMindMap = {
 				data.filecontents = typeof kmdata === 'object' ? JSON.stringify(kmdata) : kmdata
 				data.supportedWrite = true
 				if (plugin.encode === null) {
-					data.writeable = false
+					// Don't override writeable — it reflects actual file permissions.
+					// Only mark format as non-writable; auto-convert to .km will handle saving.
 					data.supportedWrite = false
 				}
 
