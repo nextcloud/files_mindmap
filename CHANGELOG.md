@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.37 – 2026-04-10
+
+### Changed
+- Versionsnummer hochgezählt; keine inhaltlichen Änderungen gegenüber 0.0.36
+
 ## 0.0.36 – 2026-04-10
 
 ### Fixed
