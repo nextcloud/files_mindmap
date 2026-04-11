@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.44 – 2026-04-10
+
+### Changed
+- **Einklappbarer Toolbar deaktiviert**: Der `▲/▼`-Toggle-Button und die zugehörigen CSS-Regeln sowie das localStorage-Initialisierungs-Skript sind auskommentiert (nicht gelöscht). Der Header ist ohnehin bereits schlank (40 px), und der Toggle verursachte Icon-Überlagerungen mit dem Schließen-Button. Der Code bleibt für eine spätere Überarbeitung erhalten.
+
 ## 0.0.43 – 2026-04-10
 
 ### Fixed

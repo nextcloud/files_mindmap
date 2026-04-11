@@ -79,7 +79,7 @@
 			flex-grow: 1;
 			min-width: 240px;
 		}
-		#header-toggle, #close-button {
+		#close-button {
 			cursor: pointer;
 			border: none;
 			background: transparent;
@@ -90,12 +90,20 @@
 			line-height: 40px;
 			flex-shrink: 0;
 		}
-		#header-toggle:hover, #close-button:hover { color: #333; }
+		#close-button:hover { color: #333; }
+		/* Collapsible toolbar — disabled for now (causes icon overlap); re-enable when needed
+		#header-toggle {
+			cursor: pointer; border: none; background: transparent;
+			color: #888; padding: 0 10px; font-size: 16px;
+			height: 40px; line-height: 40px; flex-shrink: 0;
+		}
+		#header-toggle:hover { color: #333; }
 		body.header-collapsed #menu-header { height: 32px; }
 		body.header-collapsed #header-toggle,
 		body.header-collapsed #close-button { height: 32px; line-height: 32px; }
 		body.header-collapsed #header-controls { display: none; }
 		body.header-collapsed div.minder-editor-container { top: 32px; }
+		*/
 	</style>
 </head>
 <script nonce="<?=$nonce?>">
@@ -144,7 +152,9 @@
 		</div>
 	</div>
 	<button id="close-button" title="<?php p($l->t('Close')); ?>">✕</button>
+	<!-- Collapsible toolbar toggle — disabled for now (causes icon overlap); re-enable when needed
 	<button id="header-toggle" title="<?php p($l->t('Toggle toolbar')); ?>">▲</button>
+	-->
 </div>
 <kityminder-editor id="viewer" lang="<?=$lang?>" on-init="initEditor(editor, minder)"></kityminder-editor>
 </body>
@@ -173,6 +183,8 @@
 
 <script nonce="<?=$nonce?>" src="<?php p($urlGenerator->linkTo('files_mindmap', 'js/viewer.js')) ?>?v=<?php p($version) ?>"></script>
 <script nonce="<?=$nonce?>" src="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/jsPDF/dist/jspdf.min.js')) ?>?v=<?php p($version) ?>"></script>
+<!-- Collapsible toolbar — disabled for now (causes icon overlap with close button).
+     Re-enable this script block and the #header-toggle button/CSS above when revisiting.
 <script nonce="<?=$nonce?>">
 (function() {
 	var KEY = 'apps.files_mindmap.headerCollapsed'
@@ -193,5 +205,6 @@
 	if (shouldCollapse) setCollapsed(true)
 })()
 </script>
+-->
 </html>
 
