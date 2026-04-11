@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.41 – 2026-04-10
+
+### Fixed
+- **Neue Datei: Öffnen schlägt fehl bis F5**: Nach dem Erstellen einer neuen `.km`-Datei wurde `OCA.Viewer.openWith()` sofort nach `emit('files:node:created', file)` aufgerufen. Da Vues Reaktivität asynchron ist, hatte die `fileList`-Prop des Viewer-Komponenten die neue Datei noch nicht erhalten; der Viewer montierte sich ohne gültige Datei. Behoben durch 500 ms Verzögerung vor `openWith()`, damit der Reaktivitätszyklus abgeschlossen wird.
+
+### Added
+- **Einklappbarer Toolbar-Header**: Ein ▲/▼-Button am rechten Rand des `#menu-header` blendet die Bedienelemente (AutoSave, Speichern, Export) aus und gibt dem Mindmap-Canvas mehr Platz. Auf Smartphones (Viewport ≤ 600 px) ist der Header beim ersten Besuch standardmäßig eingeklappt. Der Zustand wird in `localStorage` gespeichert und sitzungsübergreifend wiederhergestellt. Sanfte CSS-Überblendung (0,15 s).
+
 ## 0.0.40 – 2026-04-10
 
 ### Fixed

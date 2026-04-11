@@ -25,6 +25,7 @@ redirectIfNotDisplayedInFrame();
 
 	const MindMap = {
 		_changed: false,
+		_saveInProgress: false,
 		_autoSaveTimer: null,
 		_clearStatusMessageTimer: null,
 		_loadStatus: false,
@@ -132,10 +133,15 @@ redirectIfNotDisplayedInFrame();
 		},
 		save(onComplete) {
 			const self = this
+			// Block concurrent saves (autosave timer + manual save racing each other,
+			// or autosave firing after window.confirm/prompt unblocks the event loop).
+			if (self._saveInProgress) return
 			if (self._changed) {
+				self._saveInProgress = true
 				self.updateSaveButtonInfo(t('Saving...'))
 				const data = JSON.stringify(minder.exportJson())
 				window.parent.OCA.FilesMindMap.save(data, function(msg) {
+					self._saveInProgress = false
 					self.updateSaveButtonInfo(msg)
 					self._changed = false
 					self.restoreSaveButtonInfo(3000)
@@ -143,6 +149,7 @@ redirectIfNotDisplayedInFrame();
 						onComplete(true, msg)
 					}
 				}, function(msg) {
+					self._saveInProgress = false
 					self.updateSaveButtonInfo(msg)
 					self.restoreSaveButtonInfo(3000)
 					if (undefined !== onComplete) {
@@ -225,18 +232,14 @@ redirectIfNotDisplayedInFrame();
 				/* When extension cannot write, auto-convert to .km on open */
 				if (!window.parent.OCA.FilesMindMap._file.supportedWrite) {
 					if (window.parent.OCA.FilesMindMap._file.writeable) {
-						// Trigger save which converts to .km via WebDAV PUT
+						// Trigger save which converts to .km via WebDAV PUT.
+						// Do NOT call OCA.Viewer.openWith() after success: that would push a
+						// new entry into the browser history, causing the viewer to reopen on F5,
+						// and would re-trigger auto-convert if NC can't yet resolve the new path.
 						self._changed = true
 						self.save(function(status) {
 							if (status) {
-								// Successfully converted: show save controls
 								$('#save-div').show()
-								// Re-open the Viewer with the new .km file so the title bar updates.
-								// The .km content was just saved; reloading shows the same data.
-								const newPath = window.parent.OCA.FilesMindMap._file.fullName
-								if (newPath && window.parent.OCA?.Viewer?.openWith) {
-									window.parent.OCA.Viewer.openWith('mindmap', { path: newPath })
-								}
 							} else {
 								$('#save-div').hide()
 							}

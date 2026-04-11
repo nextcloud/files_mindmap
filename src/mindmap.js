@@ -388,9 +388,14 @@ const FilesMindMap = {
 
 				emit('files:node:created', file)
 
+				// Delay openWith so the Viewer's fileList prop can update reactively
+				// before the component mounts and calls setFile(). Without this delay,
+				// the Viewer finds no matching file in its list and fails to open.
 				let openPath = file.path
 				try { openPath = decodeURIComponent(openPath) } catch (e) {}
-				OCA.Viewer.openWith('mindmap', { path: openPath })
+				setTimeout(function() {
+					OCA.Viewer.openWith('mindmap', { path: openPath })
+				}, 500)
 			},
 		}
 
