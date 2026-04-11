@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Nepodržana vrsta datoteke: {mimetype}",
     "Edit" : "Uredi",
     "New mind map file" : "Nova datoteka mentalne mape",
-    "New mind map.km" : "Nova mentalna mapa.km",
+    "New mind map" : "Nova mentalna mapa",
     "AutoSave" : "Automatsko spremanje",
     "Save" : "Spremi",
     "Export" : "Izvezi",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "Izvezi u SVG",
     "Export to PDF" : "Izvezi u PDF",
     "Export to Markdown" : "Izvezi u Markdown",
-    "Export to Text" : "Izvezi u tekst"
+    "Export to Text" : "Izvezi u tekst",
+    "Saved as {name}" : "Spremljeno kao {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" je stvoren — vaše promjene su tamo spremljene. Originalna .mm datoteka je nepromijenjena.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" već postoji. Prepisat ga sadržajem iz \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" već postoji. Odaberite drugačije ime.",
+    "Enter a new filename (without extension):" : "Unesite novi naziv datoteke (bez ekstenzije):",
+    "Conversion cancelled" : "Pretvorba otkazana",
+    "Overwrite" : "Prepiši",
+    "Choose different name" : "Odaberi drugi naziv",
+    "Cancel" : "Odustani"
 },
 "nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;");

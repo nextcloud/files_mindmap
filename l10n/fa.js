@@ -16,6 +16,15 @@ OC.L10N.register(
     "File not found" : "فایل یافت نشد",
     "Edit" : "ویرایش",
     "Save" : "ذخیره",
-    "Export" : "دریافت خروجی"
+    "Export" : "دریافت خروجی",
+    "Saved as {name}" : "ذخیره شد به عنوان {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" ایجاد شد — تغییرات شما در آنجا ذخیره شده‌اند. فایل اصلی .mm تغییر نکرده است.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" از قبل وجود دارد. آن را با محتوای \"{source}\" بازنویسی کنید؟",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" از قبل وجود دارد. لطفاً نام دیگری انتخاب کنید.",
+    "Enter a new filename (without extension):" : "یک نام فایل جدید وارد کنید (بدون پسوند):",
+    "Conversion cancelled" : "تبدیل لغو شد",
+    "Overwrite" : "بازنویسی",
+    "Choose different name" : "یک نام دیگر انتخاب کنید",
+    "Cancel" : "لغو"
 },
 "nplurals=2; plural=(n > 1);");

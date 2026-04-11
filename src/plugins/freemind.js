@@ -1,7 +1,9 @@
-/* global FilesMindMap */
+import util from '../util.js'
+
 export default {
 	name: 'freemind',
 	mimes: ['application/x-freemind'],
+	extensions: ['mm'],
 	encode: null,
 	decode(data) {
 		const self = this
@@ -69,7 +71,7 @@ export default {
 		}
 	},
 	toKm(xml) {
-		const json = FilesMindMap.Util.xml2json(xml)
+		const json = util.xml2json(xml)
 		const result = {}
 		this.processTopic(json.node, result)
 		return result

@@ -24,10 +24,16 @@ OC.L10N.register(
     "Does not support saving {extension} files." : "Das Speichern von {extension}-Dateien wird nicht unterstützt.",
     "File Saved" : "Datei gespeichert",
     "Save failed" : "Speichern fehlgeschlagen",
+    "Saved as {name}" : "Gespeichert als {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" wurde erstellt – Ihre Änderungen sind dort gespeichert. Die originale .mm-Datei ist unverändert.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" existiert bereits. Mit dem Inhalt von \"{source}\" überschreiben?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" existiert bereits. Bitte wählen Sie einen anderen Namen.",
+    "Enter a new filename (without extension):" : "Neuen Dateinamen eingeben (ohne Endung):",
+    "Conversion cancelled" : "Konvertierung abgebrochen",
     "Unsupported file type: {mimetype}" : "Nicht unterstützter Dateityp: {mimetype}",
     "Edit" : "Bearbeiten",
     "New mind map file" : "Neue Mindmap-Datei",
-    "New mind map.km" : "Neue Mindmap.km",
+    "New mind map" : "Neue Mindmap",
     "AutoSave" : "Autospeichern",
     "Save" : "Speichern",
     "Export" : "Exportieren",
@@ -35,6 +41,9 @@ OC.L10N.register(
     "Export to SVG" : "Als SVG exportieren",
     "Export to PDF" : "Als PDF exportieren",
     "Export to Markdown" : "Als Markdown exportieren",
-    "Export to Text" : "Als Text exportieren"
+    "Export to Text" : "Als Text exportieren",
+    "Overwrite" : "Überschreiben",
+    "Choose different name" : "Anderen Namen wählen",
+    "Cancel" : "Abbrechen"
 },
 "nplurals=2; plural=(n != 1);");

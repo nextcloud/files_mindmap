@@ -10,6 +10,16 @@
     "File not found" : "ไม่พบไฟล์",
     "Edit" : "แก้ไข",
     "Save" : "บันทึก",
-    "Export" : "ส่งออก"
-},"pluralForm" :"nplurals=1; plural=0;"
+    "Export" : "ส่งออก",
+    "Saved as {name}" : "บันทึกเป็น {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" ถูกสร้างแล้ว — การเปลี่ยนแปลงของคุณถูกบันทึกไว้ที่นั่น ไฟล์ .mm ต้นฉบับไม่ได้เปลี่ยนแปลง",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" มีอยู่แล้ว จะเขียนทับด้วยเนื้อหาจาก \"{source}\" หรือไม่?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" มีอยู่แล้ว กรุณาเลือกชื่ออื่น",
+    "Enter a new filename (without extension):" : "ป้อนชื่อไฟล์ใหม่ (ไม่มีนามสกุล):",
+    "Conversion cancelled" : "การแปลงถูกยกเลิก",
+    "Overwrite" : "เขียนทับ",
+    "Choose different name" : "เลือกชื่ออื่น",
+    "Cancel" : "ยกเลิก"
+},
+"pluralForm": "nplurals=1; plural=0;"
 }

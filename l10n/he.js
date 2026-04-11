@@ -15,6 +15,15 @@ OC.L10N.register(
     "File not found" : "קובץ לא נמצא",
     "Edit" : "עריכה",
     "Save" : "שמירה",
-    "Export" : "ייצוא"
+    "Export" : "ייצוא",
+    "Saved as {name}" : "נשמר בשם {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" נוצר — השינויים שלך נשמרו שם. קובץ ה-.mm המקורי לא השתנה.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" כבר קיים. להחליף אותו עם התוכן מ-\"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" כבר קיים. אנא בחר שם אחר.",
+    "Enter a new filename (without extension):" : "הזן שם קובץ חדש (ללא סיומת):",
+    "Conversion cancelled" : "ההמרה בוטלה",
+    "Overwrite" : "החלפה",
+    "Choose different name" : "בחר שם אחר",
+    "Cancel" : "ביטול"
 },
 "nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;");

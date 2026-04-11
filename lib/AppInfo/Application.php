@@ -34,7 +34,8 @@ class Application extends App implements IBootstrap {
 		/** @var IMimeTypeDetector $detector */
 		$detector = $container->get(IMimeTypeDetector::class);
 		$detector->getAllMappings();
-		$detector->registerType('km','application/km');
+		$detector->registerType('km', 'application/km');
+		$detector->registerType('mm', 'application/x-freemind');
 	}
 
 	public function register(IRegistrationContext $context): void {

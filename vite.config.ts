@@ -12,6 +12,10 @@ export default createAppConfig({
 }, {
 	inlineCSS: { relativeCSSInjection: true },
 	config: {
+		build: {
+			emptyOutDir: false,
+			chunkSizeWarningLimit: 1000,
+		},
 		experimental: {
 			renderBuiltUrl(filename) {
 				return {
@@ -31,7 +35,6 @@ export default createAppConfig({
 			})
 		],
 		resolve: {
-			dedupe: ['vue'],
 		}
 	},
 })

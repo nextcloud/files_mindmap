@@ -22,10 +22,16 @@
     "Does not support saving {extension} files." : "Das Speichern von {extension}-Dateien wird nicht unterstützt.",
     "File Saved" : "Datei gespeichert",
     "Save failed" : "Speichern fehlgeschlagen",
+    "Saved as {name}" : "Gespeichert als {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" wurde erstellt – Deine Änderungen sind dort gespeichert. Die originale .mm-Datei ist unverändert.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" existiert bereits. Mit dem Inhalt von \"{source}\" überschreiben?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" existiert bereits. Bitte wähle einen anderen Namen.",
+    "Enter a new filename (without extension):" : "Neuen Dateinamen eingeben (ohne Endung):",
+    "Conversion cancelled" : "Konvertierung abgebrochen",
     "Unsupported file type: {mimetype}" : "Nicht unterstützter Dateityp: {mimetype}",
     "Edit" : "Bearbeiten",
     "New mind map file" : "Neue Mindmap-Datei",
-    "New mind map.km" : "Neue Mindmap-Datei",
+    "New mind map" : "Neue Mindmap-Datei",
     "AutoSave" : "Automatisches Speichern",
     "Save" : "Speichern",
     "Export" : "Exportieren",
@@ -33,6 +39,9 @@
     "Export to SVG" : "Als SVG exportieren",
     "Export to PDF" : "Als PDF exportieren",
     "Export to Markdown" : "Als Markdown-Datei exportieren",
-    "Export to Text" : "Als Text-Datei exportieren"
+    "Export to Text" : "Als Text-Datei exportieren",
+    "Overwrite" : "Überschreiben",
+    "Choose different name" : "Anderen Namen wählen",
+    "Cancel" : "Abbrechen"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

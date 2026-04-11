@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Aina ya faili isiyotumika: {mimetype}",
     "Edit" : "Hariri",
     "New mind map file" : "Faili mpya ya ramani ya mawazo",
-    "New mind map.km" : "Ramani mpya ya mawazo.km",
+    "New mind map" : "Ramani mpya ya mawazo",
     "AutoSave" : "Hifadhi Kiotomatiki",
     "Save" : "Hifadhi",
     "Export" : "Safirisha",
@@ -34,6 +34,15 @@ OC.L10N.register(
     "Export to SVG" : "Hamisha kwa SVG",
     "Export to PDF" : "Hamisha kwa PDF",
     "Export to Markdown" : "Hamisha kwa Markdown",
-    "Export to Text" : "Hamisha kwa maandishi"
+    "Export to Text" : "Hamisha kwa maandishi",
+    "Saved as {name}" : "Imehifadhiwa kama {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" imeundwa — mabadiliko yako yamehifadhiwa hapo. Faili la asili .mm halijabadilika.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" tayari lipo. Je, liandike upya na maudhui kutoka \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" tayari lipo. Tafadhali chagua jina tofauti.",
+    "Enter a new filename (without extension):" : "Ingiza jina jipya la faili (bila kipande):",
+    "Conversion cancelled" : "Ubadilishaji umeghairiwa",
+    "Overwrite" : "Andika juu",
+    "Choose different name" : "Chagua jina tofauti",
+    "Cancel" : "Ghairi"
 },
 "nplurals=2; plural=(n != 1);");

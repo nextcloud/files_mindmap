@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "قوللىمايدىغان ھۆججەت تىپى: {mimetype}",
     "Edit" : "تەھرىر",
     "New mind map file" : "يېڭى ئويلاش خەرىتىسى ھۆججىتى",
-    "New mind map.km" : "يېڭى ئويلاش خەرىتىسى.km",
+    "New mind map" : "يېڭى ئويلاش خەرىتىسى",
     "AutoSave" : "ئۆزلىكىدىن ساقلا",
     "Save" : "ساقلاش",
     "Export" : "ئېكسپورت",
@@ -34,6 +34,15 @@ OC.L10N.register(
     "Export to SVG" : "SVG قىلىپ چىقىرىش",
     "Export to PDF" : "PDF قىلىپ چىقىرىش",
     "Export to Markdown" : "Markdown قىلىپ چىقىرىش",
-    "Export to Text" : "تىكىست قىلىپ چىقىرىش"
+    "Export to Text" : "تىكىست قىلىپ چىقىرىش",
+    "Saved as {name}" : "{name} دەپ ساقلاندى",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" قۇرۇلدى — ئۆزگەرتىشلىرىڭىز ئۇ يەردە ساقلاندى. ئەسلى .mm ھۆججىتى ئۆزگىرىپ قالمىدى.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" مەۋجۇت. \"{source}\" دىكى مەزمۇن بىلەن ئۈستىنى بەسسەمۇ؟",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" مەۋجۇت. باشقا ئىسىم تاللاڭ.",
+    "Enter a new filename (without extension):" : "يېڭى ھۆججەت نامىنى كىرگۈزۈڭ (كېڭەيتمىسىز):",
+    "Conversion cancelled" : "ئايلاندۇرۇش بىكار قىلىندى",
+    "Overwrite" : "ئۈستىدىن يازما",
+    "Choose different name" : "باشقا ئىسىم تاللاڭ",
+    "Cancel" : "بىكار قىل"
 },
 "nplurals=2; plural=(n != 1);");

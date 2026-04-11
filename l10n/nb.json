@@ -14,6 +14,16 @@
     "File not found" : "Finner ikke filen",
     "Edit" : "Rediger",
     "Save" : "Lagre",
-    "Export" : "Eksporter"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+    "Export" : "Eksporter",
+    "Saved as {name}" : "Lagret som {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" ble opprettet — endringene dine er lagret der. Den opprinnelige .mm-filen er uendret.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" finnes allerede. Vil du overskrive den med innholdet fra \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" finnes allerede. Velg et annet navn.",
+    "Enter a new filename (without extension):" : "Skriv inn et nytt filnavn (uten filtype):",
+    "Conversion cancelled" : "Konvertering avbrutt",
+    "Overwrite" : "Overskriv",
+    "Choose different name" : "Velg et annet navn",
+    "Cancel" : "Avbryt"
+},
+"pluralForm": "nplurals=2; plural=(n != 1);"
 }

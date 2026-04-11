@@ -3,6 +3,15 @@ OC.L10N.register(
     {
     "File not found" : "Cha deach am faidhle a lorg",
     "Edit" : "Deasaich",
-    "Save" : "Sàbhail"
+    "Save" : "Sàbhail",
+    "Saved as {name}" : "Air a shàbhaladh mar {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" chaidh a chruthachadh — tha na h-atharrachaidhean agad air an sàbhaladh an sin. Tha am faidhle .mm tùsail gun atharrachadh.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ann mu thràth. An tèid a thùmhadh le susbaint à \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ann mu thràth. Tagh ainm eile, mas e do thoil e.",
+    "Enter a new filename (without extension):" : "Cuir a-steach ainm faidhle ùr (às aonais leudachain):",
+    "Conversion cancelled" : "Chaidh tionndadh a chur dheth",
+    "Overwrite" : "Sgrìobh thairis",
+    "Choose different name" : "Tagh ainm eile",
+    "Cancel" : "Sguir dheth"
 },
 "nplurals=4; plural=(n==1 || n==11) ? 0 : (n==2 || n==12) ? 1 : (n > 2 && n < 20) ? 2 : 3;");

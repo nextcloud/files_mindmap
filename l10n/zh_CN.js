@@ -16,6 +16,15 @@ OC.L10N.register(
     "File not found" : "文件未找到",
     "Edit" : "编辑",
     "Save" : "保存",
-    "Export" : "导出"
+    "Export" : "导出",
+    "Saved as {name}" : "已另存为 {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" 已创建 — 您的更改已保存在那里。原始 .mm 文件未更改。",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" 已存在。是否用 \"{source}\" 的内容覆盖它？",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" 已存在。请选择其他名称。",
+    "Enter a new filename (without extension):" : "请输入新文件名（不含扩展名）：",
+    "Conversion cancelled" : "转换已取消",
+    "Overwrite" : "覆盖",
+    "Choose different name" : "选择其他名称",
+    "Cancel" : "取消"
 },
 "nplurals=1; plural=0;");
