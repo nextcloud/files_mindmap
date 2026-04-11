@@ -18,6 +18,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" უკვე არსებობს. გადაეწეროს \"{source}\"-ის შინაარსით?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" უკვე არსებობს. გთხოვთ, აირჩიოთ სხვა სახელი.",
     "Enter a new filename (without extension):" : "შეიყვანეთ ახალი ფაილის სახელი (გაფართოების გარეშე):",
-    "Conversion cancelled" : "კონვერტაცია გაუქმდა"
+    "Conversion cancelled" : "კონვერტაცია გაუქმდა",
+    "Overwrite" : "გადაწერა",
+    "Choose different name" : "სხვა სახელის არჩევა",
+    "Cancel" : "გაუქმება"
 },
 "nplurals=2; plural=(n!=1);");

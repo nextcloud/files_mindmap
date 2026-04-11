@@ -9,6 +9,10 @@
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" аль хэдийн байна. \"{source}\"-н агуулгаар дарж бичих үү?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" аль хэдийн байна. Өөр нэр сонгоно уу.",
     "Enter a new filename (without extension):" : "Шинэ файлын нэр оруулна уу (өргөтгөлгүй):",
-    "Conversion cancelled" : "Хөрвүүлэлт цуцлагдлаа"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+    "Conversion cancelled" : "Хөрвүүлэлт цуцлагдлаа",
+    "Overwrite" : "Дарж бичих",
+    "Choose different name" : "Өөр нэр сонгох",
+    "Cancel" : "Цуцлах"
+},
+"pluralForm": "nplurals=2; plural=(n != 1);"
 }

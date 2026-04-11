@@ -17,6 +17,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" արդեն գոյություն ունի: Վերագրե՞լ \"{source}\"-ի բովանդակությամբ:",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" արդեն գոյություն ունի: Ընտրեք այլ անուն, խնդրում ենք:",
     "Enter a new filename (without extension):" : "Մուտքագրեք ֆայլի նոր անուն (առանց ընդլայնման):",
-    "Conversion cancelled" : "Փոխարկումը չեղարկվեց"
+    "Conversion cancelled" : "Փոխարկումը չեղարկվեց",
+    "Overwrite" : "Վերագրել",
+    "Choose different name" : "Ընտրեք այլ անուն",
+    "Cancel" : "Չեղարկել"
 },
 "nplurals=2; plural=(n != 1);");

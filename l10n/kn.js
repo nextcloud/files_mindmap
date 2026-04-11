@@ -10,6 +10,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. \"{source}\" ನ ವಿಷಯದಿಂದ ತಿದ್ದಿ ಬರೆಯುವುದೇ?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. ದಯವಿಟ್ಟು ಬೇರೆ ಹೆಸರು ಆರಿಸಿ.",
     "Enter a new filename (without extension):" : "ಹೊಸ ಫೈಲ್ ಹೆಸರನ್ನು ನಮೂದಿಸಿ (ವಿಸ್ತರಣೆ ಇಲ್ಲದೆ):",
-    "Conversion cancelled" : "ಪರಿವರ್ತನೆ ರದ್ದುಗೊಂಡಿದೆ"
+    "Conversion cancelled" : "ಪರಿವರ್ತನೆ ರದ್ದುಗೊಂಡಿದೆ",
+    "Overwrite" : "ಮೇಲ್ಬರೆಹ",
+    "Choose different name" : "ಬೇರೆ ಹೆಸರು ಆರಿಸಿ",
+    "Cancel" : "ರದ್ದುಮಾಡು"
 },
 "nplurals=2; plural=(n > 1);");

@@ -19,6 +19,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ມີຢູ່ແລ້ວ. ຂຽນທັບດ້ວຍເນື້ອຫາຈາກ \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ມີຢູ່ແລ້ວ. ກະລຸນາເລືອກຊື່ອື່ນ.",
     "Enter a new filename (without extension):" : "ໃສ່ຊື່ໄຟລ໌ໃໝ່ (ບໍ່ມີນາມສະກຸນ):",
-    "Conversion cancelled" : "ການແປງຖືກຍົກເລີກ"
+    "Conversion cancelled" : "ການແປງຖືກຍົກເລີກ",
+    "Overwrite" : "ຂຽນທັບ",
+    "Choose different name" : "ເລືອກຊື່ອື່ນ",
+    "Cancel" : "ຍົກເລີກ"
 },
 "nplurals=1; plural=0;");

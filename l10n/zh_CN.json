@@ -20,6 +20,10 @@
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" 已存在。是否用 \"{source}\" 的内容覆盖它？",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" 已存在。请选择其他名称。",
     "Enter a new filename (without extension):" : "请输入新文件名（不含扩展名）：",
-    "Conversion cancelled" : "转换已取消"
-},"pluralForm" :"nplurals=1; plural=0;"
+    "Conversion cancelled" : "转换已取消",
+    "Overwrite" : "覆盖",
+    "Choose different name" : "选择其他名称",
+    "Cancel" : "取消"
+},
+"pluralForm": "nplurals=1; plural=0;"
 }

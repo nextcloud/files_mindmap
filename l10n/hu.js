@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" már létezik. Felülírja a(z) \"{source}\" tartalmával?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" már létezik. Kérjük, válasszon más nevet.",
     "Enter a new filename (without extension):" : "Adjon meg egy új fájlnevet (kiterjesztés nélkül):",
-    "Conversion cancelled" : "Átalakítás megszakítva"
+    "Conversion cancelled" : "Átalakítás megszakítva",
+    "Overwrite" : "Felülír",
+    "Choose different name" : "Válasszon más nevet",
+    "Cancel" : "Mégsem"
 },
 "nplurals=2; plural=(n != 1);");

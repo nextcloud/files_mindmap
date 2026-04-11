@@ -40,6 +40,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" υπάρχει ήδη. Να αντικατασταθεί με το περιεχόμενο του \"{source}\";",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" υπάρχει ήδη. Επιλέξτε διαφορετικό όνομα.",
     "Enter a new filename (without extension):" : "Εισαγάγετε νέο όνομα αρχείου (χωρίς κατάληξη):",
-    "Conversion cancelled" : "Η μετατροπή ακυρώθηκε"
+    "Conversion cancelled" : "Η μετατροπή ακυρώθηκε",
+    "Overwrite" : "Αντικατάσταση",
+    "Choose different name" : "Επιλέξτε άλλο όνομα",
+    "Cancel" : "Ακύρωση"
 },
 "nplurals=2; plural=(n != 1);");

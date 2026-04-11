@@ -10,6 +10,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" već postoji. Prepisati sa sadržajem iz \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" već postoji. Molimo odaberite drugi naziv.",
     "Enter a new filename (without extension):" : "Unesite novi naziv datoteke (bez ekstenzije):",
-    "Conversion cancelled" : "Pretvorba otkazana"
+    "Conversion cancelled" : "Pretvorba otkazana",
+    "Overwrite" : "Prepiši",
+    "Choose different name" : "Odaberite drugi naziv",
+    "Cancel" : "Odustani"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");

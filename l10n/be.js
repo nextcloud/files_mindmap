@@ -23,6 +23,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ужо існуе. Перазапісаць яго змесцівам \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ужо існуе. Калі ласка, абярыце іншую назву.",
     "Enter a new filename (without extension):" : "Увядзіце новую назву файла (без пашырэння):",
-    "Conversion cancelled" : "Канвертацыя скасавана"
+    "Conversion cancelled" : "Канвертацыя скасавана",
+    "Overwrite" : "Перазапісаць",
+    "Choose different name" : "Выберыце іншае імя",
+    "Cancel" : "Скасаваць"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");

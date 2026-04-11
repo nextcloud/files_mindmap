@@ -40,6 +40,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" sudah ada. Timpa dengan konten dari \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" sudah ada. Silakan pilih nama yang berbeda.",
     "Enter a new filename (without extension):" : "Masukkan nama file baru (tanpa ekstensi):",
-    "Conversion cancelled" : "Konversi dibatalkan"
+    "Conversion cancelled" : "Konversi dibatalkan",
+    "Overwrite" : "Timpa",
+    "Choose different name" : "Pilih nama lain",
+    "Cancel" : "Batal"
 },
 "nplurals=1; plural=0;");

@@ -9,6 +9,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" sudah wujud. Timpa ia dengan kandungan dari \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" sudah wujud. Sila pilih nama yang berbeza.",
     "Enter a new filename (without extension):" : "Masukkan nama fail baru (tanpa sambungan):",
-    "Conversion cancelled" : "Penukaran dibatalkan"
+    "Conversion cancelled" : "Penukaran dibatalkan",
+    "Overwrite" : "Timpa",
+    "Choose different name" : "Pilih nama lain",
+    "Cancel" : "Batal"
 },
 "nplurals=1; plural=0;");

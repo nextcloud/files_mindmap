@@ -8,6 +8,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" دمخه شتون لري. آیا د \"{source}\" له منزل سره یې بدل کړئ؟",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" دمخه شتون لري. مهرباني وکړئ بل نوم وټاکئ.",
     "Enter a new filename (without extension):" : "د فایل نوی نوم ولیکئ (پرته له توسیع):",
-    "Conversion cancelled" : "بدلون لغوه شو"
+    "Conversion cancelled" : "بدلون لغوه شو",
+    "Overwrite" : "پسې ولیکئ",
+    "Choose different name" : "بل نوم وټاکئ",
+    "Cancel" : "لغوه کړه"
 },
 "nplurals=2; plural=(n != 1);");

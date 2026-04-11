@@ -19,6 +19,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" existís ja. Lo remplaçar amb lo contengut de \"{source}\" ?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" existís ja. Causissètz un autre nom.",
     "Enter a new filename (without extension):" : "Senhatz un nom de fichièr nòu (sens extension) :",
-    "Conversion cancelled" : "Conversion anullada"
+    "Conversion cancelled" : "Conversion anullada",
+    "Overwrite" : "Sobreescriure",
+    "Choose different name" : "Causissètz un nom diferent",
+    "Cancel" : "Anullar"
 },
 "nplurals=2; plural=(n > 1);");

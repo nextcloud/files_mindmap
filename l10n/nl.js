@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" bestaat al. Overschrijven met de inhoud van \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" bestaat al. Kies een andere naam.",
     "Enter a new filename (without extension):" : "Voer een nieuwe bestandsnaam in (zonder extensie):",
-    "Conversion cancelled" : "Conversie geannuleerd"
+    "Conversion cancelled" : "Conversie geannuleerd",
+    "Overwrite" : "Overschrijven",
+    "Choose different name" : "Kies een andere naam",
+    "Cancel" : "Annuleren"
 },
 "nplurals=2; plural=(n != 1);");

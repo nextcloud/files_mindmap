@@ -21,6 +21,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" jam ekzistas. Ĉu anstataŭigi ĝin per la enhavo de \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" jam ekzistas. Bonvolu elekti alian nomon.",
     "Enter a new filename (without extension):" : "Enigu novan dosiernomon (sen etendaĵo):",
-    "Conversion cancelled" : "Konverto nuligita"
+    "Conversion cancelled" : "Konverto nuligita",
+    "Overwrite" : "Anstataŭigi",
+    "Choose different name" : "Elektu alian nomon",
+    "Cancel" : "Nuligi"
 },
 "nplurals=2; plural=(n != 1);");

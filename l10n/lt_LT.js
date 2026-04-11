@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" jau egzistuoja. Ar norite jį perrašyti turiniu iš \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" jau egzistuoja. Pasirinkite kitą pavadinimą.",
     "Enter a new filename (without extension):" : "Įveskite naują failo pavadinimą (be plėtinio):",
-    "Conversion cancelled" : "Konvertavimas atšauktas"
+    "Conversion cancelled" : "Konvertavimas atšauktas",
+    "Overwrite" : "Perrašyti",
+    "Choose different name" : "Pasirinkite kitą pavadinimą",
+    "Cancel" : "Atšaukti"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");

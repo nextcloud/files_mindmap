@@ -41,6 +41,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" zaten mevcut. \"{source}\" içeriğiyle üzerine yazılsın mı?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" zaten mevcut. Lütfen farklı bir ad seçin.",
     "Enter a new filename (without extension):" : "Yeni bir dosya adı girin (uzantı olmadan):",
-    "Conversion cancelled" : "Dönüştürme iptal edildi"
+    "Conversion cancelled" : "Dönüştürme iptal edildi",
+    "Overwrite" : "Üzerine Yaz",
+    "Choose different name" : "Farklı isim seç",
+    "Cancel" : "İptal"
 },
 "nplurals=2; plural=(n > 1);");

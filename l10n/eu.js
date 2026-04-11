@@ -40,6 +40,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" dagoeneko existitzen da. \"{source}\"-eko edukiarekin gainidatzi?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" dagoeneko existitzen da. Mesedez aukeratu izen ezberdin bat.",
     "Enter a new filename (without extension):" : "Sartu fitxategi-izen berri bat (luzapenik gabe):",
-    "Conversion cancelled" : "Konbertsioa bertan behera utzi da"
+    "Conversion cancelled" : "Konbertsioa bertan behera utzi da",
+    "Overwrite" : "Gainidatzi",
+    "Choose different name" : "Aukeratu beste izen bat",
+    "Cancel" : "Utzi"
 },
 "nplurals=2; plural=(n != 1);");

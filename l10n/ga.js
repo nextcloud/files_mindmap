@@ -41,6 +41,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ann cheana féin. An bhfuil tú ag iarraidh é a fhorscríobh le hábhar \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ann cheana féin. Roghnaigh ainm difriúil le do thoil.",
     "Enter a new filename (without extension):" : "Iontráil ainm comhaid nua (gan síneadh):",
-    "Conversion cancelled" : "Tiontú curtha ar ceal"
+    "Conversion cancelled" : "Tiontú curtha ar ceal",
+    "Overwrite" : "Forscríobh",
+    "Choose different name" : "Roghnaigh ainm eile",
+    "Cancel" : "Cealaigh"
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");

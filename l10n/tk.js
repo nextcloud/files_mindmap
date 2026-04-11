@@ -9,6 +9,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" eýýäm bar. \"{source}\"-dan mazmun bilen üstüni ýazmaly?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" eýýäm bar. Başga ady saýlaň.",
     "Enter a new filename (without extension):" : "Täze faýl adyny giriziň (giňeltmesiz):",
-    "Conversion cancelled" : "Öwrülişik ýatyryldy"
+    "Conversion cancelled" : "Öwrülişik ýatyryldy",
+    "Overwrite" : "Üstüne ýaz",
+    "Choose different name" : "Başga at saýla",
+    "Cancel" : "Ýatyr"
 },
 "nplurals=2; plural=(n != 1);");

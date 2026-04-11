@@ -18,6 +18,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" tashmë ekziston. Të mbishkruhet me përmbajtjen e \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" tashmë ekziston. Ju lutemi zgjidhni një emër tjetër.",
     "Enter a new filename (without extension):" : "Shkruani një emër të ri skedari (pa shtesë):",
-    "Conversion cancelled" : "Konvertimi u anulua"
+    "Conversion cancelled" : "Konvertimi u anulua",
+    "Overwrite" : "Mbishkruaj",
+    "Choose different name" : "Zgjidhni emër tjetër",
+    "Cancel" : "Anulo"
 },
 "nplurals=2; plural=(n != 1);");

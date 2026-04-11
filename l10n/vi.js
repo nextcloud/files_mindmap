@@ -20,6 +20,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" đã tồn tại. Ghi đè bằng nội dung từ \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" đã tồn tại. Vui lòng chọn tên khác.",
     "Enter a new filename (without extension):" : "Nhập tên tệp mới (không có phần mở rộng):",
-    "Conversion cancelled" : "Đã hủy chuyển đổi"
+    "Conversion cancelled" : "Đã hủy chuyển đổi",
+    "Overwrite" : "Ghi đè",
+    "Choose different name" : "Chọn tên khác",
+    "Cancel" : "Hủy"
 },
 "nplurals=1; plural=0;");

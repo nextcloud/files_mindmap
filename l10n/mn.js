@@ -11,6 +11,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" аль хэдийн байна. \"{source}\"-н агуулгаар дарж бичих үү?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" аль хэдийн байна. Өөр нэр сонгоно уу.",
     "Enter a new filename (without extension):" : "Шинэ файлын нэр оруулна уу (өргөтгөлгүй):",
-    "Conversion cancelled" : "Хөрвүүлэлт цуцлагдлаа"
+    "Conversion cancelled" : "Хөрвүүлэлт цуцлагдлаа",
+    "Overwrite" : "Дарж бичих",
+    "Choose different name" : "Өөр нэр сонгох",
+    "Cancel" : "Цуцлах"
 },
 "nplurals=2; plural=(n != 1);");

@@ -18,6 +18,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" มีอยู่แล้ว จะเขียนทับด้วยเนื้อหาจาก \"{source}\" หรือไม่?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" มีอยู่แล้ว กรุณาเลือกชื่ออื่น",
     "Enter a new filename (without extension):" : "ป้อนชื่อไฟล์ใหม่ (ไม่มีนามสกุล):",
-    "Conversion cancelled" : "การแปลงถูกยกเลิก"
+    "Conversion cancelled" : "การแปลงถูกยกเลิก",
+    "Overwrite" : "เขียนทับ",
+    "Choose different name" : "เลือกชื่ออื่น",
+    "Cancel" : "ยกเลิก"
 },
 "nplurals=1; plural=0;");

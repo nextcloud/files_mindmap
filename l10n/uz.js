@@ -12,6 +12,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" allaqachon mavjud. Uni \"{source}\" tarkibi bilan yozib chiqilsinmi?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" allaqachon mavjud. Iltimos, boshqa nom tanlang.",
     "Enter a new filename (without extension):" : "Yangi fayl nomini kiriting (kengaytmasiz):",
-    "Conversion cancelled" : "Konvertatsiya bekor qilindi"
+    "Conversion cancelled" : "Konvertatsiya bekor qilindi",
+    "Overwrite" : "Qayta yozish",
+    "Choose different name" : "Boshqa nom tanlang",
+    "Cancel" : "Bekor qilish"
 },
 "nplurals=1; plural=0;");

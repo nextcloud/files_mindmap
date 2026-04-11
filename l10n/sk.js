@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" už existuje. Prepísať ho obsahom súboru \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" už existuje. Zvoľte iný názov.",
     "Enter a new filename (without extension):" : "Zadajte nový názov súboru (bez prípony):",
-    "Conversion cancelled" : "Konverzia zrušená"
+    "Conversion cancelled" : "Konverzia zrušená",
+    "Overwrite" : "Prepísať",
+    "Choose different name" : "Vyberte iný názov",
+    "Cancel" : "Zrušiť"
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");

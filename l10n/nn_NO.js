@@ -15,6 +15,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" finst allereie. Vil du skriva over han med innhaldet frå \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" finst allereie. Vel eit anna namn.",
     "Enter a new filename (without extension):" : "Skriv inn eit nytt filnamn (utan filtype):",
-    "Conversion cancelled" : "Konvertering avbroten"
+    "Conversion cancelled" : "Konvertering avbroten",
+    "Overwrite" : "Overskriv",
+    "Choose different name" : "Vel eit anna namn",
+    "Cancel" : "Avbryt"
 },
 "nplurals=2; plural=(n != 1);");

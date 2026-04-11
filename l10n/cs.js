@@ -41,6 +41,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" již existuje. Přepsat jej obsahem souboru \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" již existuje. Vyberte prosím jiný název.",
     "Enter a new filename (without extension):" : "Zadejte nový název souboru (bez přípony):",
-    "Conversion cancelled" : "Konverze zrušena"
+    "Conversion cancelled" : "Konverze zrušena",
+    "Overwrite" : "Přepsat",
+    "Choose different name" : "Zvolte jiný název",
+    "Cancel" : "Zrušit"
 },
 "nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;");

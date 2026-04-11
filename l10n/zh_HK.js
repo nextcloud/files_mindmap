@@ -41,6 +41,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" 已存在。是否以 \"{source}\" 的內容覆寫它？",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" 已存在。請選擇其他名稱。",
     "Enter a new filename (without extension):" : "請輸入新檔案名稱（不含副檔名）：",
-    "Conversion cancelled" : "轉換已取消"
+    "Conversion cancelled" : "轉換已取消",
+    "Overwrite" : "覆寫",
+    "Choose different name" : "選擇其他名稱",
+    "Cancel" : "取消"
 },
 "nplurals=1; plural=0;");

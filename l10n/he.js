@@ -21,6 +21,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" כבר קיים. להחליף אותו עם התוכן מ-\"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" כבר קיים. אנא בחר שם אחר.",
     "Enter a new filename (without extension):" : "הזן שם קובץ חדש (ללא סיומת):",
-    "Conversion cancelled" : "ההמרה בוטלה"
+    "Conversion cancelled" : "ההמרה בוטלה",
+    "Overwrite" : "החלפה",
+    "Choose different name" : "בחר שם אחר",
+    "Cancel" : "ביטול"
 },
 "nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;");

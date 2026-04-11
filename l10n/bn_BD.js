@@ -10,6 +10,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ইতিমধ্যে বিদ্যমান। \"{source}\" এর বিষয়বস্তু দিয়ে ওভাররাইট করবেন?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ইতিমধ্যে বিদ্যমান। অনুগ্রহ করে একটি ভিন্ন নাম বেছে নিন।",
     "Enter a new filename (without extension):" : "একটি নতুন ফাইলের নাম লিখুন (এক্সটেনশন ছাড়া):",
-    "Conversion cancelled" : "রূপান্তর বাতিল করা হয়েছে"
+    "Conversion cancelled" : "রূপান্তর বাতিল করা হয়েছে",
+    "Overwrite" : "ওভাররাইট",
+    "Choose different name" : "ভিন্ন নাম বেছে নিন",
+    "Cancel" : "বাতিল"
 },
 "nplurals=2; plural=(n != 1);");

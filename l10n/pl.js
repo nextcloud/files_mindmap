@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" już istnieje. Czy nadpisać go zawartością z \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" już istnieje. Wybierz inną nazwę.",
     "Enter a new filename (without extension):" : "Wpisz nową nazwę pliku (bez rozszerzenia):",
-    "Conversion cancelled" : "Konwersja anulowana"
+    "Conversion cancelled" : "Konwersja anulowana",
+    "Overwrite" : "Nadpisz",
+    "Choose different name" : "Wybierz inną nazwę",
+    "Cancel" : "Anuluj"
 },
 "nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);");

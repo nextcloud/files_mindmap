@@ -40,6 +40,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" tayari lipo. Je, liandike upya na maudhui kutoka \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" tayari lipo. Tafadhali chagua jina tofauti.",
     "Enter a new filename (without extension):" : "Ingiza jina jipya la faili (bila kipande):",
-    "Conversion cancelled" : "Ubadilishaji umeghairiwa"
+    "Conversion cancelled" : "Ubadilishaji umeghairiwa",
+    "Overwrite" : "Andika juu",
+    "Choose different name" : "Chagua jina tofauti",
+    "Cancel" : "Ghairi"
 },
 "nplurals=2; plural=(n != 1);");

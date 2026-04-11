@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" вече съществува. Да се презапише ли със съдържанието от \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" вече съществува. Моля изберете различно име.",
     "Enter a new filename (without extension):" : "Въведете ново ime на файл (без разширение):",
-    "Conversion cancelled" : "Конвертирането е отменено"
+    "Conversion cancelled" : "Конвертирането е отменено",
+    "Overwrite" : "Презапиши",
+    "Choose different name" : "Изберете друго иМЕ",
+    "Cancel" : "Отказ"
 },
 "nplurals=2; plural=(n != 1);");

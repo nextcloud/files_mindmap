@@ -7,6 +7,10 @@
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ஏற்கனவே உள்ளது. \"{source}\" இலிருந்து உள்ளடக்கத்துடன் மேலெழுதவா?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ஏற்கனவே உள்ளது. வேறு பெயரைத் தேர்ந்தெடுக்கவும்.",
     "Enter a new filename (without extension):" : "புதிய கோப்பு பெயரை உள்ளிடவும் (நீட்டிப்பு இல்லாமல்):",
-    "Conversion cancelled" : "மாற்றம் ரத்து செய்யப்பட்டது"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+    "Conversion cancelled" : "மாற்றம் ரத்து செய்யப்பட்டது",
+    "Overwrite" : "மேல்மாற்றம்",
+    "Choose different name" : "வேறு பெயர் தேர்வுசெய்",
+    "Cancel" : "ரத்து செய்"
+},
+"pluralForm": "nplurals=2; plural=(n != 1);"
 }

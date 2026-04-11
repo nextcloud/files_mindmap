@@ -41,6 +41,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" esiste già. Sovrascriverlo con il contenuto di \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" esiste già. Scegli un nome diverso.",
     "Enter a new filename (without extension):" : "Inserisci un nuovo nome file (senza estensione):",
-    "Conversion cancelled" : "Conversione annullata"
+    "Conversion cancelled" : "Conversione annullata",
+    "Overwrite" : "Sovrascrivi",
+    "Choose different name" : "Scegli un nome diverso",
+    "Cancel" : "Annulla"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

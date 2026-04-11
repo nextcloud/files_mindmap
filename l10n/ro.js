@@ -18,6 +18,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" există deja. Suprascrie-l cu conținutul din \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" există deja. Alegeți un alt nume.",
     "Enter a new filename (without extension):" : "Introduceți un nume de fișier nou (fără extensie):",
-    "Conversion cancelled" : "Conversie anulată"
+    "Conversion cancelled" : "Conversie anulată",
+    "Overwrite" : "Suprascriere",
+    "Choose different name" : "Alegeți un alt nume",
+    "Cancel" : "Anulare"
 },
 "nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));");

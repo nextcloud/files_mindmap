@@ -36,6 +36,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\"이(가) 이미 존재합니다. \"{source}\"의 내용으로 덮어쓰시겠습니까?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\"이(가) 이미 존재합니다. 다른 이름을 선택해 주세요.",
     "Enter a new filename (without extension):" : "새 파일 이름을 입력하세요(확장자 없이):",
-    "Conversion cancelled" : "변환이 취소되었습니다"
+    "Conversion cancelled" : "변환이 취소되었습니다",
+    "Overwrite" : "덮어쓰기",
+    "Choose different name" : "다른 이름 선택",
+    "Cancel" : "취소"
 },
 "nplurals=1; plural=0;");

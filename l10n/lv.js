@@ -33,6 +33,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" jau eksistē. Pārrakstīt to ar satura failu \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" jau eksistē. Lūdzu, izvēlieties citu nosaukumu.",
     "Enter a new filename (without extension):" : "Ievadiet jaunu faila nosaukumu (bez paplašinājuma):",
-    "Conversion cancelled" : "Konvertēšana atcelta"
+    "Conversion cancelled" : "Konvertēšana atcelta",
+    "Overwrite" : "Pārrakstīt",
+    "Choose different name" : "Izvēlieties citu nosaukumu",
+    "Cancel" : "Atcelt"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);");

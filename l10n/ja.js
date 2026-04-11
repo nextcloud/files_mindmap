@@ -22,6 +22,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" はすでに存在します。\"{source}\" の内容で上書きしますか？",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" はすでに存在します。別の名前を選択してください。",
     "Enter a new filename (without extension):" : "新しいファイル名を入力してください（拡張子なし）：",
-    "Conversion cancelled" : "変換がキャンセルされました"
+    "Conversion cancelled" : "変換がキャンセルされました",
+    "Overwrite" : "上書き",
+    "Choose different name" : "別の名前を選択",
+    "Cancel" : "キャンセル"
 },
 "nplurals=1; plural=0;");

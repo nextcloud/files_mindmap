@@ -19,6 +19,10 @@
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" er þegar til. Skrifa yfir hana með efni frá \"{source}\"?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" er þegar til. Vinsamlegast veldu annað nafn.",
     "Enter a new filename (without extension):" : "Sláðu inn nýtt skráarheiti (án endingar):",
-    "Conversion cancelled" : "Umbreytingu hætt við"
-},"pluralForm" :"nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
+    "Conversion cancelled" : "Umbreytingu hætt við",
+    "Overwrite" : "Yfirskrifa",
+    "Choose different name" : "Veldu annað nafn",
+    "Cancel" : "Hætta við"
+},
+"pluralForm": "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);"
 }

@@ -36,6 +36,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" موجود بالفعل. هل تريد استبداله بمحتوى \"{source}\"؟",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" موجود بالفعل. يرجى اختيار اسم آخر.",
     "Enter a new filename (without extension):" : "أدخل اسم ملف جديدًا (بدون امتداد):",
-    "Conversion cancelled" : "تم إلغاء التحويل"
+    "Conversion cancelled" : "تم إلغاء التحويل",
+    "Overwrite" : "استبدال",
+    "Choose different name" : "اختر اسماً مختلفاً",
+    "Cancel" : "إلغاء"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");

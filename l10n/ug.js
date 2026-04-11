@@ -40,6 +40,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" مەۋجۇت. \"{source}\" دىكى مەزمۇن بىلەن ئۈستىنى بەسسەمۇ؟",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" مەۋجۇت. باشقا ئىسىم تاللاڭ.",
     "Enter a new filename (without extension):" : "يېڭى ھۆججەت نامىنى كىرگۈزۈڭ (كېڭەيتمىسىز):",
-    "Conversion cancelled" : "ئايلاندۇرۇش بىكار قىلىندى"
+    "Conversion cancelled" : "ئايلاندۇرۇش بىكار قىلىندى",
+    "Overwrite" : "ئۈستىدىن يازما",
+    "Choose different name" : "باشقا ئىسىم تاللاڭ",
+    "Cancel" : "بىكار قىل"
 },
 "nplurals=2; plural=(n != 1);");

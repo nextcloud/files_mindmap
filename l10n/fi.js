@@ -36,6 +36,9 @@ OC.L10N.register(
     "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" on jo olemassa. Korvataanko se tiedoston \"{source}\" sisällöllä?",
     "\"{name}\" already exists. Please choose a different name." : "\"{name}\" on jo olemassa. Valitse eri nimi.",
     "Enter a new filename (without extension):" : "Anna uusi tiedostonimi (ilman tunnistetta):",
-    "Conversion cancelled" : "Muuntaminen peruutettu"
+    "Conversion cancelled" : "Muuntaminen peruutettu",
+    "Overwrite" : "Korvaa",
+    "Choose different name" : "Valitse eri nimi",
+    "Cancel" : "Peruuta"
 },
 "nplurals=2; plural=(n != 1);");
