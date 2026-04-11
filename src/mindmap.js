@@ -99,6 +99,10 @@ const FilesMindMap = {
 
 		/* 当encode方法没实现的时候无法保存 */
 		const plugin = this.getExtensionByMime(this._file.mime)
+		if (!plugin) {
+			fail(t('files_mindmap', 'Unsupported file type: {mimetype}', { mimetype: this._file.mime }))
+			return
+		}
 		if (plugin.encode === null) {
 			fail(t('files_mindmap', 'Does not support saving {extension} files.', { extension: plugin.name }))
 			return
@@ -162,7 +166,10 @@ const FilesMindMap = {
 			// Fall back to extension-based mime detection for generic types (e.g. new empty files)
 			if (!self.isSupportedMime(data.mime)) {
 				const ext = self._file.name.split('.').pop().toLowerCase()
-				const byExt = self._extensions.find(p => p.mimes.some(m => m.endsWith('/' + ext) || m.endsWith('.' + ext)))
+				const byExt = self._extensions.find(p =>
+					p.mimes.some(m => m.endsWith('/' + ext) || m.endsWith('.' + ext))
+					|| (p.extensions || []).includes(ext)
+				)
 				if (byExt) data.mime = byExt.mimes[0]
 			}
 			const plugin = self.getExtensionByMime(data.mime)
@@ -242,7 +249,7 @@ const FilesMindMap = {
 			},
 			async handler(context, content) {
 				const contentNames = content.map((node) => node.basename)
-				const fileName = getUniqueName(t('files_mindmap', 'New mind map.km'), contentNames)
+				const fileName = getUniqueName(t('files_mindmap', 'New mind map') + '.km', contentNames)
 				const source = context.encodedSource + '/' + encodeURIComponent(fileName)
 
 				const response = await axios({

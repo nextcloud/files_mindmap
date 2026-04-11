@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Type de fichier non supporté : {mimetype}",
     "Edit" : "Modifier",
     "New mind map file" : "Nouveau fichier de carte mentale",
-    "New mind map.km" : "Nouvelle carte mentale.km",
+    "New mind map" : "Nouvelle carte mentale",
     "AutoSave" : "Enregistrement automatique",
     "Save" : "Enregistrer",
     "Export" : "Exporter",

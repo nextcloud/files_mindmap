@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "不支援的檔案類型：{mimetype}",
     "Edit" : "編輯",
     "New mind map file" : "新增心智圖檔案",
-    "New mind map.km" : "新心智圖.km",
+    "New mind map" : "新心智圖",
     "AutoSave" : "自動儲存",
     "Save" : "儲存",
     "Export" : "匯出",

@@ -3,6 +3,7 @@ import util from '../util.js'
 export default {
 	name: 'freemind',
 	mimes: ['application/x-freemind'],
+	extensions: ['mm'],
 	encode: null,
 	decode(data) {
 		const self = this

@@ -25,7 +25,7 @@
     "Unsupported file type: {mimetype}" : "Tipo de ficheiro non admitido: {mimetype}",
     "Edit" : "Editar",
     "New mind map file" : "Novo ficheiro de mapa mental",
-    "New mind map.km" : "Novo ficheiro de mapa mental map.km",
+    "New mind map" : "Novo ficheiro de mapa mental map",
     "AutoSave" : "Gardado automático",
     "Save" : "Gardar",
     "Export" : "Exportar",

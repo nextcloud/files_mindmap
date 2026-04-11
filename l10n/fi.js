@@ -22,7 +22,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",
     "Edit" : "Muokkaa",
     "New mind map file" : "Uusi ajatuskarttatiedosto",
-    "New mind map.km" : "Uusi ajatuskartta.km",
+    "New mind map" : "Uusi ajatuskartta",
     "AutoSave" : "Automaattinen tallennus",
     "Save" : "Tallenna",
     "Export" : "Vie",

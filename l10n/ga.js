@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Cineál comhaid nach dtacaítear leis:{mimetype}",
     "Edit" : "Cuir in eagar",
     "New mind map file" : "Comhad léarscáil aigne nua",
-    "New mind map.km" : "Léarscáil aigne nua.km",
+    "New mind map" : "Léarscáil aigne nua",
     "AutoSave" : "Uathshábháil",
     "Save" : "Sábháil",
     "Export" : "Easpórtáil",

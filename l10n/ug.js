@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "قوللىمايدىغان ھۆججەت تىپى: {mimetype}",
     "Edit" : "تەھرىر",
     "New mind map file" : "يېڭى ئويلاش خەرىتىسى ھۆججىتى",
-    "New mind map.km" : "يېڭى ئويلاش خەرىتىسى.km",
+    "New mind map" : "يېڭى ئويلاش خەرىتىسى",
     "AutoSave" : "ئۆزلىكىدىن ساقلا",
     "Save" : "ساقلاش",
     "Export" : "ئېكسپورت",

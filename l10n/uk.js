@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Непідтримуваний тип файлу: {mimetype}",
     "Edit" : "Редагувати",
     "New mind map file" : "Новий файл ментальної карти",
-    "New mind map.km" : "Нова ментальна карта.km",
+    "New mind map" : "Нова ментальна карта",
     "AutoSave" : "Автозбереження",
     "Save" : "Зберегти",
     "Export" : "Експортувати",

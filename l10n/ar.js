@@ -22,7 +22,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "نوع الملف غير مدعوم: {mimetype}",
     "Edit" : "تحرير",
     "New mind map file" : "ملف خريطة ذهنية جديدة",
-    "New mind map.km" : "خريطة ذهنية جديدة .km",
+    "New mind map" : "خريطة ذهنية جديدة ",
     "AutoSave" : "حفظ تلقائي",
     "Save" : "حفظ",
     "Export" : "تصدير",
