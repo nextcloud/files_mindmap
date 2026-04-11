@@ -11,6 +11,7 @@
 - **Ctrl+S öffnet Chrome-Speicherdialog**: Hotkey-Listener im iframe nutzt Capture-Phase (`addEventListener(..., true)`) und feuert vor KityMinder und Chrome
 - **Speichern schlägt fehl (mtime-Check)**: `!empty($mtime)`-Prüfung verhindert false positives wenn mtime nicht übermittelt wird
 - **MIME-Erkennung `application/octet-stream`**: Erweiterungsbasiertes Fallback für MIME-Typ; `extensions: ['km']` in km-Plugin ergänzt
+- **Autosave-Checkbox und Speichern-Button bei `.mm`-Dateien nicht sichtbar**: `data.writeable = false` wurde fälschlicherweise in `load()` gesetzt, wenn das Format kein Speichern unterstützt (`encode === null`). Dies versteckte die Autosave-Checkbox und verhinderte die Auto-Konvertierung zu `.km`. Behoben: `writeable` spiegelt jetzt korrekt die tatsächlichen Dateiberechtigungen wider; nur `supportedWrite` wird auf `false` gesetzt
 - **Vue 2/3-Buildfehler**: `dedupe: ['vue']` aus vite.config.ts entfernt; `@nextcloud/vue` nutzt intern Vue 3 für `@vueuse/core`
 - **Fehlermeldung beim Speichern überschrieben**: Debug-Zeile entfernt, die Datei-Pfad statt Fehlermeldung anzeigte
 
