@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.0.45 – 2026-04-10
+
+### Fixed
+- **NC-Toolbar überlagert iframe-Menü / Klicks nicht erreichbar**: `.modal-header` und `.modal-container__close` werden jetzt mit drei unabhängigen Schichten ausgeblendet:
+  1. CSS-`<style>`-Tag mit `!important` (schneller erster Durchlauf, inkl. `pointer-events:none`)
+  2. `el.style.setProperty('display','none','important')` — Inline-`!important` übersteuert jede Stylesheet-Regel, auch Vue-scoped-Selektoren wie `.modal-header[data-v-xxxxx]`, die durch die Attribut-Spezifität (0,2,0) höher sind als unser (0,1,0)-Regel
+  3. `MutationObserver` auf `style`/`class`-Attributänderungen: Wenn NC's Vue die Elemente neu rendert und dabei `style` zurücksetzt, wird Schicht 2 sofort erneut angewendet
+
 ## 0.0.44 – 2026-04-10
 
 ### Changed
