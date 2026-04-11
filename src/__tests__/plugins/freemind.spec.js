@@ -1,11 +1,5 @@
-import { describe, it, expect, beforeAll } from 'vitest'
-import util from '../../util.js'
+import { describe, it, expect } from 'vitest'
 import freemind from '../../plugins/freemind.js'
-
-// freemind.toKm references the legacy global FilesMindMap.Util
-beforeAll(() => {
-	global.FilesMindMap = { Util: util }
-})
 
 describe('freemind plugin', () => {
 	it('has the correct name', () => {
