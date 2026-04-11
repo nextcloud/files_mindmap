@@ -273,7 +273,8 @@ const FilesMindMap = {
 	},
 
 	setFile(file) {
-		const filename = file.filename + ''
+		// NC 28+ Viewer passes Node objects (file.path) instead of old FileInfo (file.filename)
+		const filename = (file.path ?? file.filename) + ''
 		const basename = file.basename + ''
 
 		this._file.name = basename
