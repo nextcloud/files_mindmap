@@ -3,19 +3,21 @@
 ## 0.0.36 – 2026-04-10
 
 ### Fixed
-- **Neue Datei ohne Endung**: WebDAV-URL wird jetzt explizit über `generateRemoteUrl('dav')` + Benutzerpfad aufgebaut statt auf `context.encodedSource` zu vertrauen – `.km`-Endung bleibt zuverlässig erhalten
+- **Dateiname mit `%20` statt Leerzeichen → Datei nicht gefunden**: `@nextcloud/files` liefert URL-kodierte Pfade (`file.path`, `file.basename`); `setFile()` wendet jetzt `decodeURIComponent()` an, damit `generateUrl()` die Zeichen nur einmal kodiert
+- **Neue Datei ohne Endung**: WebDAV-URL wird explizit über `generateRemoteUrl('dav')` + Benutzerpfad aufgebaut statt auf `context.encodedSource` zu vertrauen – `.km`-Endung bleibt zuverlässig erhalten
 - **App startet nicht nach Neu-Datei**: Doppelter Schrägstrich (`//`) im PHP-Pfad durch `rtrim($dir, '/')` behoben; NC-Dateisystem fand die Datei nicht
-- **Save/Autosave-Checkbox verdeckt**: KityMinder-Editor beginnt jetzt bei `top: 40px` statt `top: 0`, sodass die Menüleiste mit Speichern/Autospeichern sichtbar bleibt
-- **Ctrl+S öffnet Chrome-Speicherdialog**: Hotkey-Listener im iframe nutzt jetzt Capture-Phase (`addEventListener(..., true)`) und feuert vor KityMinder und Chrome
-- **`.mm`-Dateien nicht speicherbar**: Beim Speichern einer `.mm`-Datei wird automatisch eine neue `.km`-Datei mit gleichem Basisnamen via WebDAV-PUT angelegt
+- **Menüleiste (Save/Autosave) verdeckt oder verschwunden**: `#menu-header` erhält `z-index: 1000`, weißen Hintergrund und explizite Höhe; KityMinder-Editor beginnt bei `top: 40px`
+- **`.mm`-Dateien werden beim Öffnen automatisch als `.km` gespeichert**: Unmittelbar nach dem Laden wird eine neue `.km`-Datei via WebDAV-PUT angelegt, wenn das Format kein Speichern unterstützt
+- **Ctrl+S öffnet Chrome-Speicherdialog**: Hotkey-Listener im iframe nutzt Capture-Phase (`addEventListener(..., true)`) und feuert vor KityMinder und Chrome
 - **Speichern schlägt fehl (mtime-Check)**: `!empty($mtime)`-Prüfung verhindert false positives wenn mtime nicht übermittelt wird
 - **MIME-Erkennung `application/octet-stream`**: Erweiterungsbasiertes Fallback für MIME-Typ; `extensions: ['km']` in km-Plugin ergänzt
 - **Vue 2/3-Buildfehler**: `dedupe: ['vue']` aus vite.config.ts entfernt; `@nextcloud/vue` nutzt intern Vue 3 für `@vueuse/core`
 - **Fehlermeldung beim Speichern überschrieben**: Debug-Zeile entfernt, die Datei-Pfad statt Fehlermeldung anzeigte
 
 ### Changed
-- `src/mindmap.js`: `setFile()` setzt `_file.mime` sofort aus dem Viewer-Node-Objekt
+- `src/mindmap.js`: `setFile()` dekodiert URL-kodierte Pfade und setzt `_file.mime` sofort aus dem Viewer-Node-Objekt
 - `src/mindmap.js`: Neue-Datei-Handler nutzt `context.path` für URL-Konstruktion
+- `src/viewer.js`: `.mm`-Dateien werden beim Öffnen automatisch zu `.km` konvertiert
 - `src/views/MindMap.vue`: Ctrl+S-Listener im Parent-Frame als Fallback
 - `appinfo/mimetypemapping.json`: MIME-Typ `km → application/km` ergänzt
 - `js/`-Verzeichnis wird jetzt per git getrackt (aus `.gitignore` entfernt)
