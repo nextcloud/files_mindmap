@@ -127,7 +127,10 @@ class FileHandlingController extends Controller{
 				}
 			
 				if($file->isUpdateable()) {
-					if (!empty($mtime) && $mtime != $file->getMTime()) {
+					if (empty($mtime)) {
+						return new DataResponse(['message' => $this->l->t('File mtime not supplied')], Http::STATUS_BAD_REQUEST);
+					}
+					if ($mtime != $file->getMTime()) {
 						$this->logger->error("User cannot save shared mind map (someone updated it in the meantime): {$mtime} vs. {$file->getMTime()} {$file->getPath()}", ['app' => 'files_mindmap']);
 						return new DataResponse([ 'message' => $this->l->t('The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page.')],Http::STATUS_BAD_REQUEST);
 					}
