@@ -383,6 +383,7 @@ const FilesMindMap = {
 					owner: uid || null,
 					permissions: Permission.ALL,
 					root: '/files/' + uid,
+					displayname: fileName, // decoded human-readable name for the file list
 				})
 
 				emit('files:node:created', file)

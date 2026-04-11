@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.40 – 2026-04-10
+
+### Fixed
+- **`.mm`→`.km`: Doppelte Konvertierung / doppelte Bestätigungsdialoge**: `save()` in `viewer.js` erhält jetzt ein `_saveInProgress`-Flag. Solange ein Speichervorgang läuft (inkl. `window.confirm/prompt`-Dialoge), werden weitere `save()`-Aufrufe (z. B. vom Autosave-Timer) blockiert. Verhindert simultane WebDAV-PUTs und doppelte Dialoge.
+- **App öffnet nach Schließen + F5 erneut**: Der `OCA.Viewer.openWith()`-Aufruf nach erfolgreicher `.mm`→`.km`-Konvertierung schrieb einen neuen Eintrag in die Browser-History; beim nächsten F5 stellte NC diesen Zustand wieder her. Der Aufruf wurde entfernt. Der Viewer bleibt nach der Konvertierung geöffnet, Speichern-Schaltfläche wird sichtbar – der Titelbalken zeigt noch `.mm`, was beim nächsten manuellen Öffnen korrigiert wird.
+- **Neue Datei zeigt `%20` in der Dateiliste bis F5**: `File`-Objekt erhält jetzt `displayname: fileName` (dekodierter Name) als explizite Eigenschaft. `@nextcloud/files` leitet `basename` aus der URL-kodierten `source` ab; `displayname` übersteuert die Anzeige im Dateiverzeichnis ohne dass der interne WebDAV-Pfad geändert werden muss.
+
 ## 0.0.39 – 2026-04-10
 
 ### Fixed
