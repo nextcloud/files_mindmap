@@ -35,7 +35,6 @@ export default createAppConfig({
 			})
 		],
 		resolve: {
-			dedupe: ['vue'],
 		}
 	},
 })

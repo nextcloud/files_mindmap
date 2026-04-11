@@ -64,6 +64,18 @@ license: GPL-3.0-or-later
 version: 8.37.0
 license: AGPL-3.0-or-later
 
+@vue/reactivity
+version: 3.5.32
+license: MIT
+
+@vue/runtime-core
+version: 3.5.32
+license: MIT
+
+@vue/shared
+version: 3.5.32
+license: MIT
+
 @vueuse/core
 version: 11.3.0
 license: MIT

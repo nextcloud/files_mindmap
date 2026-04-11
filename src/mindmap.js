@@ -263,7 +263,7 @@ const FilesMindMap = {
 
 				const fileid = parseInt(response.headers['oc-fileid'])
 				const file = new File({
-					source: context.source + '/' + fileName,
+					source: context.encodedSource + '/' + encodeURIComponent(fileName),
 					id: fileid,
 					mtime: new Date(),
 					mime: 'application/km',
@@ -294,6 +294,7 @@ const FilesMindMap = {
 		this._file.root = '/files/' + getCurrentUser()?.uid
 		this._file.dir = dirname(filename)
 		this._file.fullName = filename
+		this._file.mime = file.mime ?? file.mimetype ?? ''
 		this._currentContext = {
 			dir: this._file.dir,
 			root: this._file.root,
