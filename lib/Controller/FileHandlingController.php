@@ -167,7 +167,6 @@ class FileHandlingController extends Controller{
 			return new DataResponse(['message' => $message], Http::STATUS_BAD_REQUEST);
 		} catch (\Exception $e) {
 			$message = (string)$this->l->t('An internal server error occurred.');
-			$message = $path;
 			return new DataResponse(['message' => $message], Http::STATUS_BAD_REQUEST);
 		}
 	}
