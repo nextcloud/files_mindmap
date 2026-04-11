@@ -202,9 +202,21 @@ describe('FilesMindMap', () => {
 			expect(FilesMindMap._file.fullName).toBe('/documents/test.km')
 		})
 
-		it('prefers path over filename when both are present', () => {
+		it('prefers filename over path when both are present (legacy NC compat)', () => {
 			FilesMindMap.setFile({ path: '/new/test.km', filename: '/old/test.km', basename: 'test.km' })
-			expect(FilesMindMap._file.dir).toBe('/new')
+			expect(FilesMindMap._file.dir).toBe('/old')
+		})
+
+		it('decodes URL-encoded path when only path is present', () => {
+			FilesMindMap.setFile({ path: '/My%20Files/test%20map.km', basename: 'test%20map.km' })
+			expect(FilesMindMap._file.name).toBe('test map.km')
+			expect(FilesMindMap._file.dir).toBe('/My Files')
+			expect(FilesMindMap._file.fullName).toBe('/My Files/test map.km')
+		})
+
+		it('decodes URL-encoded basename', () => {
+			FilesMindMap.setFile({ path: '/docs/test%20map.km', basename: 'test%20map.km' })
+			expect(FilesMindMap._file.name).toBe('test map.km')
 		})
 	})
 

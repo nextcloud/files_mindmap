@@ -231,6 +231,12 @@ redirectIfNotDisplayedInFrame();
 							if (status) {
 								// Successfully converted: show save controls
 								$('#save-div').show()
+								// Re-open the Viewer with the new .km file so the title bar updates.
+								// The .km content was just saved; reloading shows the same data.
+								const newPath = window.parent.OCA.FilesMindMap._file.fullName
+								if (newPath && window.parent.OCA?.Viewer?.openWith) {
+									window.parent.OCA.Viewer.openWith('mindmap', { path: newPath })
+								}
 							} else {
 								$('#save-div').hide()
 							}

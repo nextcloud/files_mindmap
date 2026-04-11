@@ -122,6 +122,10 @@ const FilesMindMap = {
 						self._file.mime = 'application/km'
 						self._file.mtime = null
 						self._file.supportedWrite = true
+						// Update fullName so the new .km path is consistent
+						self._file.fullName = self._file.dir === '/'
+							? '/' + newName
+							: self._file.dir + '/' + newName
 						// show save button if previously hidden
 						success(t('files_mindmap', 'File Saved'))
 					})
@@ -318,11 +322,19 @@ const FilesMindMap = {
 	},
 
 	setFile(file) {
-		// NC 28+ Viewer passes Node objects (file.path) instead of old FileInfo (file.filename)
-		// @nextcloud/files Node.path/basename return URL-encoded strings (e.g. %20 for spaces).
-		// Decode them so that generateUrl() encodes them exactly once when building API URLs.
-		const filename = decodeURIComponent((file.path ?? file.filename) + '')
-		const basename = decodeURIComponent(file.basename + '')
+		// NC 33+ Viewer provides backwards-compat file.filename (human-readable, NOT URL-encoded).
+		// NC 28+ Node objects expose file.path which IS URL-encoded by @nextcloud/files.
+		// Prefer file.filename when available (as in the original working implementation).
+		// Fall back to file.path and decode it to avoid %20 double-encoding via generateUrl().
+		// Wrap decodeURIComponent in try-catch so a malformed URI never crashes setFile().
+		let filename
+		const rawPath = (file.filename != null && file.filename !== '' && file.filename !== 'undefined')
+			? file.filename + ''
+			: (file.path ?? '') + ''
+		try { filename = decodeURIComponent(rawPath) } catch (e) { filename = rawPath }
+
+		let basename
+		try { basename = decodeURIComponent(file.basename + '') } catch (e) { basename = file.basename + '' }
 
 		this._file.name = basename
 		this._file.root = '/files/' + getCurrentUser()?.uid
