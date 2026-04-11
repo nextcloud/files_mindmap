@@ -7,6 +7,7 @@ import MindMapSvg from '../img/mindmap.svg?raw'
 import {
 	DefaultType,
 	registerFileAction,
+	addNewFileMenuEntry,
 	File,
 	Permission,
 	getUniqueName,
@@ -214,7 +215,7 @@ const FilesMindMap = {
 				}
 			},
 
-			default: DefaultType.HIDDEN,
+			default: DefaultType.DEFAULT,
 		}
 
 		if (version >= 33) {
@@ -225,13 +226,12 @@ const FilesMindMap = {
 	},
 
 	registerNewFileMenuPlugin() {
-		legacyAddNewFileMenuEntry({
+		const menuEntry = {
 			id: 'mindmapfile',
 			displayName: t('files_mindmap', 'New mind map file'),
 			...(version >= 33 ? { iconSvgInline: MindMapSvg } : { iconClass: 'icon-mindmap' }),
 			enabled(context) {
 				// only attach to main file list, public view is not supported yet
-				console.debug('addNewFileMenuEntry', context)
 				return (context.permissions & Permission.CREATE) !== 0
 			},
 			async handler(context, content) {
@@ -259,13 +259,17 @@ const FilesMindMap = {
 					root: context?.root || '/files/' + getCurrentUser()?.uid,
 				})
 
-				// FilesMindMap.showMessage(t('files_mindmap', 'Created "{name}"', { name: fileName }))
-
 				emit('files:node:created', file)
 
 				OCA.Viewer.openWith('mindmap', { path: file.path })
 			},
-		})
+		}
+
+		if (version >= 33) {
+			addNewFileMenuEntry(menuEntry)
+		} else {
+			legacyAddNewFileMenuEntry(menuEntry)
+		}
 	},
 
 	setFile(file) {
