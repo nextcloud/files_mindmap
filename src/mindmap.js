@@ -23,7 +23,7 @@ import { getCurrentUser } from '@nextcloud/auth'
 import { dirname } from '@nextcloud/paths'
 import { isPublicShare } from '@nextcloud/sharing/public'
 import { translate as t } from '@nextcloud/l10n'
-import { generateUrl } from '@nextcloud/router'
+import { generateUrl, generateRemoteUrl } from '@nextcloud/router'
 import { showMessage as showToast } from '@nextcloud/dialogs'
 
 import util from './util.js'
@@ -250,7 +250,14 @@ const FilesMindMap = {
 			async handler(context, content) {
 				const contentNames = content.map((node) => node.basename)
 				const fileName = getUniqueName(t('files_mindmap', 'New mind map') + '.km', contentNames)
-				const source = context.encodedSource + '/' + encodeURIComponent(fileName)
+
+				// Build WebDAV URL from first principles to avoid issues with context.encodedSource
+				const uid = getCurrentUser()?.uid || ''
+				const davBase = generateRemoteUrl('dav') + '/files/' + uid
+				const encodedFolderPath = (context.path || '/').replace(/\/$/, '').split('/').map(encodeURIComponent).join('/')
+				const source = davBase + encodedFolderPath + '/' + encodeURIComponent(fileName)
+
+				console.debug('[files_mindmap] Creating new file:', source)
 
 				const response = await axios({
 					method: 'PUT',
@@ -263,13 +270,13 @@ const FilesMindMap = {
 
 				const fileid = parseInt(response.headers['oc-fileid'])
 				const file = new File({
-					source: context.encodedSource + '/' + encodeURIComponent(fileName),
+					source,
 					id: fileid,
 					mtime: new Date(),
 					mime: 'application/km',
-					owner: getCurrentUser()?.uid || null,
+					owner: uid || null,
 					permissions: Permission.ALL,
-					root: context?.root || '/files/' + getCurrentUser()?.uid,
+					root: '/files/' + uid,
 				})
 
 				emit('files:node:created', file)

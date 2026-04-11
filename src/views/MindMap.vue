@@ -35,6 +35,7 @@ export default {
 
 	async mounted() {
 		document.addEventListener('webviewerloaded', this.handleWebviewerloaded)
+		document.addEventListener('keydown', this.handleKeydown)
 		console.debug('mounted file: ', this.file)
 		OCA.FilesMindMap.setFile(this.file)
 
@@ -46,9 +47,21 @@ export default {
 
 	beforeDestroy() {
 		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
+		document.removeEventListener('keydown', this.handleKeydown)
 	},
 
 	methods: {
+		handleKeydown(e) {
+			if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+				e.preventDefault()
+				try {
+					this.$refs.iframe?.contentWindow?.MindMap?.save()
+				} catch (err) {
+					console.debug('MindMap save via Ctrl+S failed:', err)
+				}
+			}
+		},
+
 		onIFrameLoaded() {
 			console.debug('File:', this.file)
 
