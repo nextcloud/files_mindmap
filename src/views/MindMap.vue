@@ -37,13 +37,16 @@ export default {
 		document.addEventListener('webviewerloaded', this.handleWebviewerloaded)
 		document.addEventListener('keydown', this.handleKeydown)
 
-		// Hide the NC Viewer modal header (filename + close button strip above the iframe)
-		// so the mind-map canvas can use the full viewport. We add our own close button
-		// inside the iframe toolbar instead. Store the reference so we can restore it.
-		this._modalHeader = document.querySelector('.modal-header')
-		if (this._modalHeader) {
-			this._modalHeader.style.display = 'none'
-		}
+		// Inject a <style> tag to hide the NC Viewer's own header bar and its
+		// separate close button so the iframe fills the full viewport.
+		// Using CSS (with !important) is more reliable than direct .style.display:
+		// it survives Vue re-renders, works in Firefox mobile, and also hides
+		// .modal-container__close which is positioned outside .modal-header.
+		const style = document.createElement('style')
+		style.id = 'files-mindmap-hide-modal-chrome'
+		style.textContent = '.modal-header{display:none!important}.modal-container__close{display:none!important}'
+		document.head.appendChild(style)
+		this._injectedStyle = style
 
 		console.debug('mounted file: ', this.file)
 		OCA.FilesMindMap.setFile(this.file)
@@ -57,9 +60,9 @@ export default {
 	beforeDestroy() {
 		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
 		document.removeEventListener('keydown', this.handleKeydown)
-		if (this._modalHeader) {
-			this._modalHeader.style.display = ''
-			this._modalHeader = null
+		if (this._injectedStyle) {
+			document.head.removeChild(this._injectedStyle)
+			this._injectedStyle = null
 		}
 	},
 

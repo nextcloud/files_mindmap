@@ -41,6 +41,9 @@ OC.L10N.register(
     "Export to SVG" : "Als SVG exportieren",
     "Export to PDF" : "Als PDF exportieren",
     "Export to Markdown" : "Als Markdown exportieren",
-    "Export to Text" : "Als Text exportieren"
+    "Export to Text" : "Als Text exportieren",
+    "Overwrite" : "Überschreiben",
+    "Choose different name" : "Anderen Namen wählen",
+    "Cancel" : "Abbrechen"
 },
 "nplurals=2; plural=(n != 1);");

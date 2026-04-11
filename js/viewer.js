@@ -1,5 +1,20 @@
 /* global $, minder, Base64, jsPDF, angular */
 /* eslint-disable @nextcloud/no-deprecations */
+
+// Firefox fix: kity computes the `dy` attribute for SVG text vertical centering
+// via getBBox(), but Firefox returns logical (line-height) bounds while Chrome
+// returns ink bounds. The resulting dy value is wrong in Firefox and shifts all
+// node labels upward. With dy=0 Firefox positions SVG text correctly on its own.
+// Intercept setAttribute on SVGTextElement and drop any `dy` write in Firefox.
+;(function() {
+	if (!CSS.supports('-moz-appearance', 'none')) return
+	const _orig = Element.prototype.setAttribute
+	SVGTextElement.prototype.setAttribute = function(name, value) {
+		if (name === 'dy') return
+		_orig.call(this, name, value)
+	}
+})()
+
 /**
  * Checks if the page is displayed in an iframe. If not redirect to /.
  */

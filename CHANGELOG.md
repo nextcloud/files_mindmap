@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.43 – 2026-04-10
+
+### Fixed
+- **Doppeltes ✕ / NC-Header auf Desktop**: `MindMap.vue` injiziert nun einen `<style>`-Tag mit `!important` anstelle von direktem `element.style.display`. Das versteckt sowohl `.modal-header` als auch `.modal-container__close` (das absolut positionierte NC-Viewer-✕ außerhalb der Titelzeile) zuverlässig. Behebt auch das Nicht-Verstecken in Firefox Mobile, wo Vue das Element nach `mounted()` neu rendern konnte.
+- **Dialog-Schaltflächen bei vorhandener `.km`-Datei**: `window.confirm()` (nur OK / Abbrechen) durch einen eigenen `<dialog>` mit drei Schaltflächen ersetzt: **Überschreiben**, **Anderen Namen wählen**, **Abbrechen**. Die Bedeutung der Schaltflächen ist jetzt eindeutig; echter Abbruch (ohne Aktion) ist jetzt ebenfalls möglich.
+- **Firefox: SVG-Text nach Klick nach oben verschoben**: KityMinder setzt das `dy`-Attribut auf `<text>`-Elementen anhand von `getBBox()`, das in Firefox andere Metrik-Werte als in Chrome liefert. In Firefox ist `dy=0` korrekt (Browser positioniert den Text selbst richtig). Fix: `SVGTextElement.prototype.setAttribute` wird in Firefox überschrieben, sodass `dy`-Schreibzugriffe ignoriert werden.
+
 ## 0.0.42 – 2026-04-10
 
 ### Fixed

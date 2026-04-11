@@ -33,6 +33,63 @@ import xmind from './plugins/xmind.js'
 
 const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
 
+/**
+ * Custom three-button confirmation dialog for the .mm → .km overwrite question.
+ * window.confirm() only offers OK/Cancel whose labels cannot be translated.
+ */
+function confirmConvertDialog(question) {
+	return new Promise(function(resolve) {
+		const dlg = document.createElement('dialog')
+		Object.assign(dlg.style, {
+			padding: '1.5rem',
+			borderRadius: '8px',
+			border: '1px solid #ccc',
+			maxWidth: '420px',
+			boxShadow: '0 4px 24px rgba(0,0,0,.25)',
+			fontFamily: 'inherit',
+			lineHeight: '1.5',
+		})
+
+		const p = document.createElement('p')
+		p.textContent = question
+		p.style.margin = '0 0 1.2rem 0'
+
+		function makeBtn(label, primary) {
+			const b = document.createElement('button')
+			b.textContent = label
+			b.type = 'button'
+			Object.assign(b.style, {
+				padding: '6px 14px',
+				borderRadius: '4px',
+				border: '1px solid ' + (primary ? '#0082c9' : '#ccc'),
+				cursor: 'pointer',
+				fontFamily: 'inherit',
+				background: primary ? '#0082c9' : '#fff',
+				color: primary ? '#fff' : '#333',
+				fontWeight: primary ? 'bold' : 'normal',
+			})
+			return b
+		}
+
+		const btnOverwrite = makeBtn(t('files_mindmap', 'Overwrite'), true)
+		const btnAlt = makeBtn(t('files_mindmap', 'Choose different name'), false)
+		const btnCancel = makeBtn(t('files_mindmap', 'Cancel'), false)
+
+		const row = document.createElement('div')
+		Object.assign(row.style, { display: 'flex', justifyContent: 'flex-end', gap: '8px', flexWrap: 'wrap' })
+		row.append(btnCancel, btnAlt, btnOverwrite)
+		dlg.append(p, row)
+		document.body.appendChild(dlg)
+		dlg.showModal()
+
+		function done(result) { dlg.close(); document.body.removeChild(dlg); resolve(result) }
+		btnOverwrite.addEventListener('click', function() { done('overwrite') })
+		btnAlt.addEventListener('click', function() { done('alternative') })
+		btnCancel.addEventListener('click', function() { done('cancel') })
+		dlg.addEventListener('cancel', function() { done('cancel') }) // Escape key
+	})
+}
+
 const FilesMindMap = {
 	_currentContext: null,
 	_file: {},
@@ -185,19 +242,23 @@ const FilesMindMap = {
 				// HEAD-check before PUT: never silently overwrite an existing .km file.
 				axios.head(newSource)
 					.then(function() {
-						// File already exists — ask: overwrite or save under a new name?
+						// File already exists — ask: overwrite, pick another name, or cancel?
 						const question = t('files_mindmap',
 							'"{name}" already exists. Overwrite it with the content from "{source}"?',
 							{ name: newName, source: mmName })
-						if (window.confirm(question)) {
-							doPut(newSource)
-								.then(function() { onSaved(newName) })
-								.catch(function(e) {
-									fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
-								})
-						} else {
-							saveAsAlternative()
-						}
+						confirmConvertDialog(question).then(function(result) {
+							if (result === 'overwrite') {
+								doPut(newSource)
+									.then(function() { onSaved(newName) })
+									.catch(function(e) {
+										fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+									})
+							} else if (result === 'alternative') {
+								saveAsAlternative()
+							} else {
+								fail(t('files_mindmap', 'Conversion cancelled'))
+							}
+						})
 					})
 					.catch(function() {
 						// File does not exist — PUT directly.
