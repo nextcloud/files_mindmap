@@ -11,17 +11,23 @@
 - **Speichern schlägt fehl (mtime-Check)**: `!empty($mtime)`-Prüfung verhindert false positives wenn mtime nicht übermittelt wird
 - **MIME-Erkennung `application/octet-stream`**: Erweiterungsbasiertes Fallback für MIME-Typ; `extensions: ['km']` in km-Plugin ergänzt
 - **Vue 2/3-Buildfehler**: `dedupe: ['vue']` aus vite.config.ts entfernt; `@nextcloud/vue` nutzt intern Vue 3 für `@vueuse/core`
+- **Fehlermeldung beim Speichern überschrieben**: Debug-Zeile entfernt, die Datei-Pfad statt Fehlermeldung anzeigte
 
 ### Changed
 - `src/mindmap.js`: `setFile()` setzt `_file.mime` sofort aus dem Viewer-Node-Objekt
 - `src/mindmap.js`: Neue-Datei-Handler nutzt `context.path` für URL-Konstruktion
 - `src/views/MindMap.vue`: Ctrl+S-Listener im Parent-Frame als Fallback
 - `appinfo/mimetypemapping.json`: MIME-Typ `km → application/km` ergänzt
+- `js/`-Verzeichnis wird jetzt per git getrackt (aus `.gitignore` entfernt)
 
-## 0.0.35 – vorherige Version
+### Compatibility
+- Nextcloud 33: `addNewFileMenuEntry`- und `registerFileAction`-API auf NC-33-Varianten umgestellt
+- Nextcloud 33: `FileAction`-Klasse und neues `DefaultType`-System verwendet
+- Nextcloud 28+: `setFile()` unterstützt Node-Objekte mit `file.path` statt `file.filename`
+- `hide()`-Aufruf abgesichert gegen fehlende Methode (optionales Chaining)
+- Tests überarbeitet und erweitert für `FilesMindMap`-Klasse
 
-- Kompatibilität für Nextcloud 33 hergestellt
-- `addNewFileMenuEntry`-API für NC 33+ verwendet
-- `FileAction`/`registerFileAction` auf neue NC-33-API umgestellt
-- `setFile()` unterstützt NC 28+ Node.path
-- `hide()`-Aufruf abgesichert gegen fehlende Methode
+## 0.0.35 – 2025
+
+- Tests für `FilesMindMap`-Klasse überarbeitet
+- Vorbereitung der NC-33-Kompatibilität
