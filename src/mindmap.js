@@ -159,6 +159,12 @@ const FilesMindMap = {
 		axios.get(url).then(function(response) {
 			const data = response.data
 			data.filecontents = util.base64Decode(data.filecontents)
+			// Fall back to extension-based mime detection for generic types (e.g. new empty files)
+			if (!self.isSupportedMime(data.mime)) {
+				const ext = self._file.name.split('.').pop().toLowerCase()
+				const byExt = self._extensions.find(p => p.mimes.some(m => m.endsWith('/' + ext) || m.endsWith('.' + ext)))
+				if (byExt) data.mime = byExt.mimes[0]
+			}
 			const plugin = self.getExtensionByMime(data.mime)
 			if (!plugin || plugin.decode === null) {
 				failure(t('files_mindmap', 'Unsupported file type: {mimetype}', { mimetype: data.mime }))
