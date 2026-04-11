@@ -4,6 +4,12 @@ OC.L10N.register(
     "File not found" : "ফাইল খুঁজে পাওয়া গেল না",
     "Edit" : "সম্পাদনা",
     "Save" : "সংরক্ষণ",
-    "Export" : "রপ্তানি"
+    "Export" : "রপ্তানি",
+    "Saved as {name}" : "{name} হিসেবে সংরক্ষিত",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" তৈরি হয়েছে — আপনার পরিবর্তনগুলি সেখানে সংরক্ষিত হয়েছে। মূল .mm ফাইল অপরিবর্তিত।",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ইতিমধ্যে বিদ্যমান। \"{source}\" এর বিষয়বস্তু দিয়ে ওভাররাইট করবেন?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ইতিমধ্যে বিদ্যমান। অনুগ্রহ করে একটি ভিন্ন নাম বেছে নিন।",
+    "Enter a new filename (without extension):" : "একটি নতুন ফাইলের নাম লিখুন (এক্সটেনশন ছাড়া):",
+    "Conversion cancelled" : "রূপান্তর বাতিল করা হয়েছে"
 },
 "nplurals=2; plural=(n != 1);");

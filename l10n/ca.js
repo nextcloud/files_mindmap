@@ -16,6 +16,12 @@ OC.L10N.register(
     "File not found" : "No s'ha trobat el fitxer",
     "Edit" : "Edició",
     "Save" : "Desar",
-    "Export" : "Exporta"
+    "Export" : "Exporta",
+    "Saved as {name}" : "Desat com a {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" s'ha creat — els vostres canvis s'han desat allà. El fitxer .mm original no ha canviat.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ja existeix. Voleu sobreescriure'l amb el contingut de \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ja existeix. Trieu un nom diferent, si us plau.",
+    "Enter a new filename (without extension):" : "Introduïu un nom de fitxer nou (sense extensió):",
+    "Conversion cancelled" : "Conversió cancel·lada"
 },
 "nplurals=2; plural=(n != 1);");

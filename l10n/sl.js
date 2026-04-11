@@ -16,6 +16,12 @@ OC.L10N.register(
     "File not found" : "Datoteke ni mogoče najti",
     "Edit" : "Uredi",
     "Save" : "Shrani",
-    "Export" : "Izvozi"
+    "Export" : "Izvozi",
+    "Saved as {name}" : "Shranjeno kot {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" je bil ustvarjen — vaše spremembe so tam shranjene. Izvirna datoteka .mm je nespremenjena.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" že obstaja. Ali ga prepisati z vsebino datoteke \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" že obstaja. Prosimo, izberite drugo ime.",
+    "Enter a new filename (without extension):" : "Vnesite novo ime datoteke (brez pripone):",
+    "Conversion cancelled" : "Pretvorba preklicana"
 },
 "nplurals=4; plural=(n%100==1 ? 0 : n%100==2 ? 1 : n%100==3 || n%100==4 ? 2 : 3);");

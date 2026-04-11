@@ -12,6 +12,12 @@ OC.L10N.register(
     "File not found" : "S’u gjet kartelë",
     "Edit" : "Përpuno",
     "Save" : "Ruaje",
-    "Export" : "Eksport"
+    "Export" : "Eksport",
+    "Saved as {name}" : "Ruajtur si {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" u krijua — ndryshimet tuaja janë ruajtur aty. Skedari origjinal .mm nuk ka ndryshuar.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" tashmë ekziston. Të mbishkruhet me përmbajtjen e \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" tashmë ekziston. Ju lutemi zgjidhni një emër tjetër.",
+    "Enter a new filename (without extension):" : "Shkruani një emër të ri skedari (pa shtesë):",
+    "Conversion cancelled" : "Konvertimi u anulua"
 },
 "nplurals=2; plural=(n != 1);");

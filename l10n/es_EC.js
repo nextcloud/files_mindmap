@@ -15,6 +15,12 @@ OC.L10N.register(
     "You are not authorized to open this share" : "No estas autorizado para abrir este elemento compartido",
     "Edit" : "Editar",
     "Save" : "Guardar",
-    "Export" : "Exportar"
+    "Export" : "Exportar",
+    "Saved as {name}" : "Guardado como {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" ha sido creado — sus cambios están guardados allí. El archivo .mm original no ha cambiado.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ya existe. ¿Sobreescribirlo con el contenido de \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ya existe. Por favor elija un nombre diferente.",
+    "Enter a new filename (without extension):" : "Introduzca un nombre de archivo nuevo (sin extensión):",
+    "Conversion cancelled" : "Conversión cancelada"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

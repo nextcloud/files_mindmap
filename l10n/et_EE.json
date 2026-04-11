@@ -33,6 +33,12 @@
     "Export to SVG" : "Ekspordi svg-failina",
     "Export to PDF" : "Ekspordi pdf-failina",
     "Export to Markdown" : "Ekspordi Markdown-vormingus",
-    "Export to Text" : "Ekspordi tekstifailina"
+    "Export to Text" : "Ekspordi tekstifailina",
+    "Saved as {name}" : "Salvestatud nimega {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" loodi — teie muudatused on seal salvestatud. Algne .mm-fail on muutmata.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" on juba olemas. Kirjuta see üle failist \"{source}\" pärit sisuga?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" on juba olemas. Palun valige erinev nimi.",
+    "Enter a new filename (without extension):" : "Sisesta uus failinimi (ilma laiendita):",
+    "Conversion cancelled" : "Teisendamine tühistati"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

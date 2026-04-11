@@ -35,6 +35,12 @@ OC.L10N.register(
     "Export to SVG" : "匯出為 SVG",
     "Export to PDF" : "匯出為 PDF",
     "Export to Markdown" : "匯出為 Markdown",
-    "Export to Text" : "匯出為文字"
+    "Export to Text" : "匯出為文字",
+    "Saved as {name}" : "另存為 {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" 已建立 — 您的變更已儲存在那裡。原始 .mm 檔案未變更。",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" 已存在。是否以 \"{source}\" 的內容覆寫它？",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" 已存在。請選擇其他名稱。",
+    "Enter a new filename (without extension):" : "請輸入新檔案名稱（不含副檔名）：",
+    "Conversion cancelled" : "轉換已取消"
 },
 "nplurals=1; plural=0;");

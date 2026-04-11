@@ -16,6 +16,12 @@ OC.L10N.register(
     "File not found" : "Archìviu no agatadu",
     "Edit" : "Modìfica",
     "Save" : "Sarva",
-    "Export" : "Esporta"
+    "Export" : "Esporta",
+    "Saved as {name}" : "Salvadu comente {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" est istadu creadu — is cambios tuos sunt salvados inoghe. Su archìviu .mm originale non est cambiadu.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" esìstit già. Imbolire cun su cuntenutu de \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" esìstit già. Scegle un nùmene diversu.",
+    "Enter a new filename (without extension):" : "Inserta un nùmene nòvu de archìviu (senza estensione):",
+    "Conversion cancelled" : "Cunversione annullada"
 },
 "nplurals=2; plural=(n != 1);");

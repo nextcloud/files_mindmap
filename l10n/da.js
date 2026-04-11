@@ -16,6 +16,12 @@ OC.L10N.register(
     "File not found" : "Filen blev ikke fundet",
     "Edit" : "Redigér",
     "Save" : "Gem",
-    "Export" : "Eksportér"
+    "Export" : "Eksportér",
+    "Saved as {name}" : "Gemt som {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" er oprettet — dine ændringer er gemt der. Den oprindelige .mm-fil er uændret.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" findes allerede. Vil du overskrive den med indholdet fra \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" findes allerede. Vælg venligst et andet navn.",
+    "Enter a new filename (without extension):" : "Indtast et nyt filnavn (uden filendelse):",
+    "Conversion cancelled" : "Konvertering annulleret"
 },
 "nplurals=2; plural=(n != 1);");

@@ -19,6 +19,12 @@ OC.L10N.register(
     "You have no permission to write this file" : "Du har inte behörighet att skriva till denna fil",
     "Edit" : "Redigera",
     "Save" : "Spara",
-    "Export" : "Exportera"
+    "Export" : "Exportera",
+    "Saved as {name}" : "Sparat som {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" skapades — dina ändringar sparades där. Den ursprungliga .mm-filen är oförändrad.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" finns redan. Skriv över den med innehållet från \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" finns redan. Välj ett annat namn.",
+    "Enter a new filename (without extension):" : "Ange ett nytt filnamn (utan filändelse):",
+    "Conversion cancelled" : "Konverteringen avbröts"
 },
 "nplurals=2; plural=(n != 1);");

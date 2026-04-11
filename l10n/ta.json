@@ -1,6 +1,12 @@
 { "translations": {
     "Edit" : "தொகுக்க",
     "Save" : "சேமிக்க ",
-    "Export" : "ஏற்றுமதி"
+    "Export" : "ஏற்றுமதி",
+    "Saved as {name}" : "{name} என சேமிக்கப்பட்டது",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" உருவாக்கப்பட்டது — உங்கள் மாற்றங்கள் அங்கே சேமிக்கப்பட்டுள்ளன. அசல் .mm கோப்பு மாறாமல் உள்ளது.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ஏற்கனவே உள்ளது. \"{source}\" இலிருந்து உள்ளடக்கத்துடன் மேலெழுதவா?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ஏற்கனவே உள்ளது. வேறு பெயரைத் தேர்ந்தெடுக்கவும்.",
+    "Enter a new filename (without extension):" : "புதிய கோப்பு பெயரை உள்ளிடவும் (நீட்டிப்பு இல்லாமல்):",
+    "Conversion cancelled" : "மாற்றம் ரத்து செய்யப்பட்டது"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

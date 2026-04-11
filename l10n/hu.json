@@ -14,6 +14,12 @@
     "File not found" : "A fájl nem található",
     "Edit" : "Szerkesztés",
     "Save" : "Mentés",
-    "Export" : "Exportálás"
+    "Export" : "Exportálás",
+    "Saved as {name}" : "Mentve mint: {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" létrejött — módosításai ott kerültek mentésre. Az eredeti .mm fájl változatlan.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" már létezik. Felülírja a(z) \"{source}\" tartalmával?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" már létezik. Kérjük, válasszon más nevet.",
+    "Enter a new filename (without extension):" : "Adjon meg egy új fájlnevet (kiterjesztés nélkül):",
+    "Conversion cancelled" : "Átalakítás megszakítva"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

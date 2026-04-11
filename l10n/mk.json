@@ -10,6 +10,12 @@
     "File not found" : "Датотеката не е пронајдена",
     "Edit" : "Уреди",
     "Save" : "Сними",
-    "Export" : "Извези"
+    "Export" : "Извези",
+    "Saved as {name}" : "Зачувано како {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" е создаден — вашите промени се зачувани таму. Оригиналниот .mm фајл е непроменет.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" веќе постои. Да се препишe со содржината од \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" веќе постои. Изберете различно ime, ве молиме.",
+    "Enter a new filename (without extension):" : "Внесете ново ime на датотека (без наставка):",
+    "Conversion cancelled" : "Конверзијата е откажана"
 },"pluralForm" :"nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;"
 }

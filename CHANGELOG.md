@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.0.39 – 2026-04-10
+
+### Fixed
+- **`%20`-Fehler bei Dateien mit Leerzeichen im Namen**: `exec()` dekodiert `node.path` vor der Übergabe an `OCA.Viewer.openWith()`. `@nextcloud/files` v4 liefert URL-kodierte Pfade (`test%20map.km`); der Viewer findet die Datei nicht, wenn der Pfad kodiert bleibt. Gleiches Fix für `registerNewFileMenuPlugin()` nach Anlegen einer neuen Datei.
+- **`.mm`→`.km`-Konvertierung überschreibt bestehende Datei still**: `Overwrite: F`-Header auf PUT wird von Nextcloud nicht zuverlässig als HTTP 412 beantwortet. Ersetzt durch HEAD-Anfrage vor dem PUT: existiert die Datei, erscheint zuerst ein Bestätigungsdialog; erst danach wird (bei Zustimmung) gespeichert. Gleiches Vorgehen für den alternativen Dateinamen in `saveAsAlternative()`.
+- **Meldungen erscheinen immer auf Englisch**: Alle neuen Strings aus 0.0.38 (`"{name}" was created …`, `Saved as {name}`, `Enter a new filename …`, `Conversion cancelled`, `… already exists …`) wurden in `l10n/de_DE.json` (formell) und `l10n/de.json` (informell) übersetzt.
+
 ## 0.0.38 – 2026-04-10
 
 ### Fixed

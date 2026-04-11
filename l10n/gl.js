@@ -35,6 +35,12 @@ OC.L10N.register(
     "Export to SVG" : "Exportar a SVG",
     "Export to PDF" : "Exportar a PDF",
     "Export to Markdown" : "Exportar a Markdown",
-    "Export to Text" : "Exportar a texto"
+    "Export to Text" : "Exportar a texto",
+    "Saved as {name}" : "Gardado como {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" foi creado — os seus cambios gardáronse alí. O ficheiro .mm orixinal non cambiou.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" xa existe. Sobreescribilo co contido de \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" xa existe. Por favor elixa un nome diferente.",
+    "Enter a new filename (without extension):" : "Introduza un nome de ficheiro novo (sen extensión):",
+    "Conversion cancelled" : "Conversión cancelada"
 },
 "nplurals=2; plural=(n != 1);");

@@ -3,6 +3,12 @@ OC.L10N.register(
     {
     "File not found" : "Lêer nie gevind nie",
     "Save" : "Stoor",
-    "Export" : "Voer uit"
+    "Export" : "Voer uit",
+    "Saved as {name}" : "Gestoor as {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" is geskep — jou veranderinge is daar gestoor. Die oorspronklike .mm-lêer is onveranderd.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" bestaan reeds. Oorskryf dit met die inhoud van \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" bestaan reeds. Kies asseblief 'n ander naam.",
+    "Enter a new filename (without extension):" : "Voer 'n nuwe lêernaam in (sonder uitbreiding):",
+    "Conversion cancelled" : "Omskakeling gekanselleer"
 },
 "nplurals=2; plural=(n != 1);");

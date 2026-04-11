@@ -33,6 +33,12 @@
     "Export to SVG" : "Esporta in SVG",
     "Export to PDF" : "Esporta in PDF",
     "Export to Markdown" : "Esporta in Markdown",
-    "Export to Text" : "Esporta in testo"
+    "Export to Text" : "Esporta in testo",
+    "Saved as {name}" : "Salvato come {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" è stato creato — le tue modifiche sono salvate lì. Il file .mm originale è rimasto invariato.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" esiste già. Sovrascriverlo con il contenuto di \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" esiste già. Scegli un nome diverso.",
+    "Enter a new filename (without extension):" : "Inserisci un nuovo nome file (senza estensione):",
+    "Conversion cancelled" : "Conversione annullata"
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

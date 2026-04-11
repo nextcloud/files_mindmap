@@ -34,6 +34,12 @@ OC.L10N.register(
     "Export to SVG" : "Εξαγωγή σε SVG",
     "Export to PDF" : "Εξαγωγή σε PDF",
     "Export to Markdown" : "Εξαγωγή σε Markdown",
-    "Export to Text" : "Εξαγωγή σε Κείμενο"
+    "Export to Text" : "Εξαγωγή σε Κείμενο",
+    "Saved as {name}" : "Αποθηκεύτηκε ως {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" δημιουργήθηκε — οι αλλαγές σας αποθηκεύτηκαν εκεί. Το αρχικό αρχείο .mm παρέμεινε αναλλοίωτο.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" υπάρχει ήδη. Να αντικατασταθεί με το περιεχόμενο του \"{source}\";",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" υπάρχει ήδη. Επιλέξτε διαφορετικό όνομα.",
+    "Enter a new filename (without extension):" : "Εισαγάγετε νέο όνομα αρχείου (χωρίς κατάληξη):",
+    "Conversion cancelled" : "Η μετατροπή ακυρώθηκε"
 },
 "nplurals=2; plural=(n != 1);");

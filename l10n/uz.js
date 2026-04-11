@@ -6,6 +6,12 @@ OC.L10N.register(
     "File not found" : "Fayl topilmadi",
     "Edit" : "Tahrirlash",
     "Save" : "Saqlash",
-    "Export" : "Eksport"
+    "Export" : "Eksport",
+    "Saved as {name}" : "{name} sifatida saqlandi",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" yaratildi — o'zgartirishlaringiz u yerda saqlangan. Asl .mm fayl o'zgarishsiz qoldi.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" allaqachon mavjud. Uni \"{source}\" tarkibi bilan yozib chiqilsinmi?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" allaqachon mavjud. Iltimos, boshqa nom tanlang.",
+    "Enter a new filename (without extension):" : "Yangi fayl nomini kiriting (kengaytmasiz):",
+    "Conversion cancelled" : "Konvertatsiya bekor qilindi"
 },
 "nplurals=1; plural=0;");

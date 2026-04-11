@@ -11,6 +11,12 @@
     "File not found" : "Fichièr pas trobat",
     "Edit" : "Modificar",
     "Save" : "Enregistrar",
-    "Export" : "Exportar"
+    "Export" : "Exportar",
+    "Saved as {name}" : "Enregistrat coma {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" a estat creat — vòstres modificacions son enregistradas aquí. Lo fichièr .mm original es inchangeat.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" existís ja. Lo remplaçar amb lo contengut de \"{source}\" ?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" existís ja. Causissètz un autre nom.",
+    "Enter a new filename (without extension):" : "Senhatz un nom de fichièr nòu (sens extension) :",
+    "Conversion cancelled" : "Conversion anullada"
 },"pluralForm" :"nplurals=2; plural=(n > 1);"
 }

@@ -119,14 +119,8 @@ const FilesMindMap = {
 			const newSource = davBase + encodedDir + '/' + encodeURIComponent(newName)
 
 			kmPlugin.encode(data).then(function(kmData) {
-				// PUT to a given URL; Overwrite:F prevents silent overwrite of existing files.
-				function doPut(url, overwrite) {
-					return axios({
-						method: 'PUT',
-						url,
-						data: kmData,
-						headers: overwrite ? {} : { Overwrite: 'F' },
-					})
+				function doPut(url) {
+					return axios({ method: 'PUT', url, data: kmData })
 				}
 
 				// Update internal state and notify user after a successful write.
@@ -171,40 +165,47 @@ const FilesMindMap = {
 						}
 						const altName = promptedBase.trim().replace(/\.km$/i, '') + '.km'
 						const altSource = davBase + encodedDir + '/' + encodeURIComponent(altName)
-						doPut(altSource, false)
-							.then(function() { onSaved(altName) })
-							.catch(function(e) {
-								if (e.response?.status === 412) {
-									fail(t('files_mindmap',
-										'"{name}" already exists. Please choose a different name.',
-										{ name: altName }))
-								} else {
-									fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
-								}
+						// HEAD-check: refuse to silently overwrite the alternative name too.
+						axios.head(altSource)
+							.then(function() {
+								fail(t('files_mindmap',
+									'"{name}" already exists. Please choose a different name.',
+									{ name: altName }))
+							})
+							.catch(function() {
+								doPut(altSource)
+									.then(function() { onSaved(altName) })
+									.catch(function(e) {
+										fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+									})
 							})
 					})
 				}
 
-				doPut(newSource, false)
-					.then(function() { onSaved(newName) })
-					.catch(function(error) {
-						if (error.response?.status === 412) {
-							// .km already exists – ask: overwrite or save under a new name?
-							const question = t('files_mindmap',
-								'"{name}" already exists. Overwrite it with the content from "{source}"?',
-								{ name: newName, source: mmName })
-							if (window.confirm(question)) {
-								doPut(newSource, true)
-									.then(function() { onSaved(newName) })
-									.catch(function(e) {
-										fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
-									})
-							} else {
-								saveAsAlternative()
-							}
-							return
+				// HEAD-check before PUT: never silently overwrite an existing .km file.
+				axios.head(newSource)
+					.then(function() {
+						// File already exists — ask: overwrite or save under a new name?
+						const question = t('files_mindmap',
+							'"{name}" already exists. Overwrite it with the content from "{source}"?',
+							{ name: newName, source: mmName })
+						if (window.confirm(question)) {
+							doPut(newSource)
+								.then(function() { onSaved(newName) })
+								.catch(function(e) {
+									fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+								})
+						} else {
+							saveAsAlternative()
 						}
-						fail(error.response?.data?.message || t('files_mindmap', 'Save failed'))
+					})
+					.catch(function() {
+						// File does not exist — PUT directly.
+						doPut(newSource)
+							.then(function() { onSaved(newName) })
+							.catch(function(e) {
+								fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+							})
 					})
 			})
 			return
@@ -323,7 +324,9 @@ const FilesMindMap = {
 
 			async exec(node, view) {
 				try {
-					OCA.Viewer.openWith('mindmap', { path: node.path })
+					let path = node.path
+					try { path = decodeURIComponent(path) } catch (e) {}
+					OCA.Viewer.openWith('mindmap', { path })
 					return true
 				} catch (error) {
 					_self.showMessage(error)
@@ -384,7 +387,9 @@ const FilesMindMap = {
 
 				emit('files:node:created', file)
 
-				OCA.Viewer.openWith('mindmap', { path: file.path })
+				let openPath = file.path
+				try { openPath = decodeURIComponent(openPath) } catch (e) {}
+				OCA.Viewer.openWith('mindmap', { path: openPath })
 			},
 		}
 

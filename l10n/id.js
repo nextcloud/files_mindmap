@@ -34,6 +34,12 @@ OC.L10N.register(
     "Export to SVG" : "Ekspor ke SVG",
     "Export to PDF" : "Ekspor ke PDF",
     "Export to Markdown" : "Ekspor ke Markdown",
-    "Export to Text" : "Ekspor ke Teks"
+    "Export to Text" : "Ekspor ke Teks",
+    "Saved as {name}" : "Disimpan sebagai {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" telah dibuat — perubahan Anda tersimpan di sana. File .mm asli tidak berubah.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" sudah ada. Timpa dengan konten dari \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" sudah ada. Silakan pilih nama yang berbeda.",
+    "Enter a new filename (without extension):" : "Masukkan nama file baru (tanpa ekstensi):",
+    "Conversion cancelled" : "Konversi dibatalkan"
 },
 "nplurals=1; plural=0;");
