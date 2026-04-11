@@ -318,8 +318,10 @@ const FilesMindMap = {
 
 	setFile(file) {
 		// NC 28+ Viewer passes Node objects (file.path) instead of old FileInfo (file.filename)
-		const filename = (file.path ?? file.filename) + ''
-		const basename = file.basename + ''
+		// @nextcloud/files Node.path/basename return URL-encoded strings (e.g. %20 for spaces).
+		// Decode them so that generateUrl() encodes them exactly once when building API URLs.
+		const filename = decodeURIComponent((file.path ?? file.filename) + '')
+		const basename = decodeURIComponent(file.basename + '')
 
 		this._file.name = basename
 		this._file.root = '/files/' + getCurrentUser()?.uid

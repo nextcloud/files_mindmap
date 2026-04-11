@@ -61,6 +61,12 @@
 		}
 		#menu-header {
 			display: flex;
+			position: relative;
+			z-index: 1000;
+			background: #fff;
+			height: 40px;
+			align-items: center;
+			box-sizing: border-box;
 		}
 		#menu-header .header-left-spacer {
 			flex-grow: 1;

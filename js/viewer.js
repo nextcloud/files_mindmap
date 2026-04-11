@@ -222,9 +222,22 @@ redirectIfNotDisplayedInFrame();
 				if (!window.parent.OCA.FilesMindMap._file.writeable) {
 					$('#autosave-div').hide()
 				}
-				/* When extension cannot write, hide save checkbox */
+				/* When extension cannot write, auto-convert to .km on open */
 				if (!window.parent.OCA.FilesMindMap._file.supportedWrite) {
-					$('#save-div').hide()
+					if (window.parent.OCA.FilesMindMap._file.writeable) {
+						// Trigger save which converts to .km via WebDAV PUT
+						self._changed = true
+						self.save(function(status) {
+							if (status) {
+								// Successfully converted: show save controls
+								$('#save-div').show()
+							} else {
+								$('#save-div').hide()
+							}
+						})
+					} else {
+						$('#save-div').hide()
+					}
 				}
 			}, function(msg) {
 				self._loadStatus = false
