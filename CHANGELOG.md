@@ -1,5 +1,10 @@
 # Changelog
 
+## 0.0.46 – 2026-04-10
+
+### Fixed
+- **„Exportieren"-Dropdown öffnet im Hintergrund**: `#header-controls` hatte `overflow: hidden`, das den nach unten aufklappenden Dropdown-Inhalt beschnitt. Geändert auf `overflow: visible`. Zusätzlich `z-index: 2000` auf `.dropdown-menu`, damit es über dem KityMinder-Canvas erscheint.
+
 ## 0.0.45 – 2026-04-10
 
 ### Fixed

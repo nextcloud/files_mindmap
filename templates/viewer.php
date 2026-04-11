@@ -73,7 +73,10 @@
 			display: flex;
 			align-items: center;
 			flex: 1;
-			overflow: hidden;
+			overflow: visible;
+		}
+		#export-button .dropdown-menu {
+			z-index: 2000;
 		}
 		#header-controls .header-left-spacer {
 			flex-grow: 1;
