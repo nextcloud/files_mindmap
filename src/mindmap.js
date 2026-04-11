@@ -110,26 +110,56 @@ const FilesMindMap = {
 				fail(t('files_mindmap', 'Does not support saving {extension} files.', { extension: plugin.name }))
 				return
 			}
-			const newName = self._file.name.replace(/\.[^/.]+$/, '') + '.km'
+			const mmName = self._file.name
+			const newName = mmName.replace(/\.[^/.]+$/, '') + '.km'
 			const uid = getCurrentUser()?.uid || ''
 			const davBase = generateRemoteUrl('dav') + '/files/' + uid
 			const encodedDir = (self._file.dir || '/').replace(/\/$/, '').split('/').map(encodeURIComponent).join('/')
 			const newSource = davBase + encodedDir + '/' + encodeURIComponent(newName)
+
 			kmPlugin.encode(data).then(function(kmData) {
-				axios({ method: 'PUT', url: newSource, data: kmData })
-					.then(function() {
-						self._file.name = newName
-						self._file.mime = 'application/km'
-						self._file.mtime = null
-						self._file.supportedWrite = true
-						// Update fullName so the new .km path is consistent
-						self._file.fullName = self._file.dir === '/'
-							? '/' + newName
-							: self._file.dir + '/' + newName
-						// show save button if previously hidden
-						success(t('files_mindmap', 'File Saved'))
+				function doPut(overwrite) {
+					return axios({
+						method: 'PUT',
+						url: newSource,
+						data: kmData,
+						headers: overwrite ? {} : { Overwrite: 'F' },
 					})
+				}
+
+				function onSaved() {
+					self._file.name = newName
+					self._file.mime = 'application/km'
+					self._file.mtime = null
+					self._file.supportedWrite = true
+					self._file.fullName = self._file.dir === '/'
+						? '/' + newName
+						: self._file.dir + '/' + newName
+					// Prominent toast so users know their data moved to a new file
+					showToast(
+						t('files_mindmap', '"{name}" was created — your changes are saved there. The original .mm file is unchanged.', { name: newName }),
+						{ timeout: 8000 }
+					)
+					success(t('files_mindmap', 'Saved as {name}', { name: newName }))
+				}
+
+				doPut(false)
+					.then(onSaved)
 					.catch(function(error) {
+						if (error.response?.status === 412) {
+							// .km already exists – ask before overwriting
+							const question = t('files_mindmap',
+								'"{name}" already exists. Overwrite it with the content from "{source}"?',
+								{ name: newName, source: mmName })
+							if (!window.confirm(question)) {
+								fail(t('files_mindmap', 'Conversion cancelled'))
+								return
+							}
+							doPut(true).then(onSaved).catch(function(e) {
+								fail(e.response?.data?.message || t('files_mindmap', 'Save failed'))
+							})
+							return
+						}
 						fail(error.response?.data?.message || t('files_mindmap', 'Save failed'))
 					})
 			})
