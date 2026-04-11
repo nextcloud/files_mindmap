@@ -407,6 +407,12 @@ const FilesMindMap = {
 	},
 
 	setFile(file) {
+		// Guard: if file is undefined (e.g. Viewer could not match the file in its list by fileid),
+		// keep the existing _file state so load() can still use the data from the previous setFile call.
+		if (!file) {
+			console.warn('[files_mindmap] setFile called with undefined/null — retaining previous _file state')
+			return
+		}
 		// NC 33+ Viewer provides backwards-compat file.filename (human-readable, NOT URL-encoded).
 		// NC 28+ Node objects expose file.path which IS URL-encoded by @nextcloud/files.
 		// Prefer file.filename when available (as in the original working implementation).

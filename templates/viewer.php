@@ -79,7 +79,7 @@
 			flex-grow: 1;
 			min-width: 240px;
 		}
-		#header-toggle {
+		#header-toggle, #close-button {
 			cursor: pointer;
 			border: none;
 			background: transparent;
@@ -89,13 +89,13 @@
 			height: 40px;
 			line-height: 40px;
 			flex-shrink: 0;
-			transition: height 0.15s, line-height 0.15s;
 		}
-		#header-toggle:hover { color: #333; }
-		body.header-collapsed #menu-header { height: 28px; }
-		body.header-collapsed #header-toggle { height: 28px; line-height: 28px; }
+		#header-toggle:hover, #close-button:hover { color: #333; }
+		body.header-collapsed #menu-header { height: 32px; }
+		body.header-collapsed #header-toggle,
+		body.header-collapsed #close-button { height: 32px; line-height: 32px; }
 		body.header-collapsed #header-controls { display: none; }
-		body.header-collapsed div.minder-editor-container { top: 28px; }
+		body.header-collapsed div.minder-editor-container { top: 32px; }
 	</style>
 </head>
 <script nonce="<?=$nonce?>">
@@ -143,6 +143,7 @@
 			</ul>
 		</div>
 	</div>
+	<button id="close-button" title="<?php p($l->t('Close')); ?>">✕</button>
 	<button id="header-toggle" title="<?php p($l->t('Toggle toolbar')); ?>">▲</button>
 </div>
 <kityminder-editor id="viewer" lang="<?=$lang?>" on-init="initEditor(editor, minder)"></kityminder-editor>

@@ -1,5 +1,19 @@
 # Changelog
 
+## 0.0.42 – 2026-04-10
+
+### Fixed
+- **Neue Datei: zweites Öffnen schlägt fehl / `setFile(undefined)`-Absturz**: `setFile()` gibt jetzt sofort mit einem Warnhinweis zurück, wenn der `file`-Parameter `null`/`undefined` ist. Der vorherige `_file`-Zustand (aus dem ersten Öffnen) bleibt erhalten und wird für `load()` verwendet. Verhindert den TypeError-Absturz, der dazu führte, dass die neu erstellte Datei nach dem ersten Schließen des Viewers nicht mehr geöffnet werden konnte.
+- **Toggle-Icon durch NC-Viewer-Titelzeile verdeckt (Smartphone)**: Der NC-Viewer zeigt einen eigenen Titelbalken (Dateiname + ✕ + Navigation) über dem iframe. Dieser Balken wurde bisher überlappt. Behoben durch Ausblenden von `.modal-header` in `MindMap.vue` beim Einbinden des Viewers (`mounted()`); beim Schließen wird er wiederhergestellt. Der iframe erhält nun den gesamten Viewport.
+
+### Changed
+- **Eigene Schließen-Schaltfläche im Toolbar**: Da `.modal-header` ausgeblendet wird, ist das NC-eigene ✕ nicht mehr sichtbar. Ein neuer `✕`-Button im iframe-Toolbar ruft `MindMap.close()` auf (inkl. „Nicht gespeichert"-Dialog). Bleibt auch bei zugeklapptem Toolbar sichtbar.
+- **Toolbar-Collapse auf 32 px statt 28 px**: Collapsed-Zustand zeigt ✕ und ▲/▼ in einem 32-px-Streifen.
+- **Iframe füllt vollen Viewport**: `MindMap.vue` iframe-CSS von `height: calc(100vh - var(--header-height)); margin-top: var(--header-height)` auf `height: 100vh; margin-top: 0` geändert, da der NC-Viewer-Header manuell ausgeblendet wird.
+
+### Not fixed
+- **Firefox: Schrift in SVG-Nodes ~1 Zeile zu hoch**: Das ist ein bekanntes Rendering-Unterschied zwischen Firefox und Chrome bei `SVGTextElement.getBBox()`. KityMinder/Kity berechnet den vertikalen `dy`-Offset für Textzentrierungen zur Laufzeit via `getBBox()`. Firefox liefert andere Bounding-Box-Werte als Chrome, weshalb `dy` falsch berechnet wird. Der Fix würde eine Änderung der minifizierten Vendor-Library (`vendor/kity/dist/kity.min.js`) erfordern – das ist zu invasiv für dieses Release.
+
 ## 0.0.41 – 2026-04-10
 
 ### Fixed

@@ -36,6 +36,15 @@ export default {
 	async mounted() {
 		document.addEventListener('webviewerloaded', this.handleWebviewerloaded)
 		document.addEventListener('keydown', this.handleKeydown)
+
+		// Hide the NC Viewer modal header (filename + close button strip above the iframe)
+		// so the mind-map canvas can use the full viewport. We add our own close button
+		// inside the iframe toolbar instead. Store the reference so we can restore it.
+		this._modalHeader = document.querySelector('.modal-header')
+		if (this._modalHeader) {
+			this._modalHeader.style.display = 'none'
+		}
+
 		console.debug('mounted file: ', this.file)
 		OCA.FilesMindMap.setFile(this.file)
 
@@ -48,6 +57,10 @@ export default {
 	beforeDestroy() {
 		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
 		document.removeEventListener('keydown', this.handleKeydown)
+		if (this._modalHeader) {
+			this._modalHeader.style.display = ''
+			this._modalHeader = null
+		}
 	},
 
 	methods: {
@@ -85,8 +98,9 @@ export default {
 <style lang="scss" scoped>
 iframe {
 	width: 100%;
-	height: calc(100vh - var(--header-height));
-	margin-top: var(--header-height);
+	/* The NC Viewer modal header is hidden by mounted(); fill the full modal overlay. */
+	height: 100vh;
+	margin-top: 0;
 	position: absolute;
 }
 </style>
