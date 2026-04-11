@@ -1,5 +1,21 @@
 # Changelog
 
+## 0.0.38 – 2026-04-10
+
+### Fixed
+- **Leerzeichen in Datei-/Ordnernamen → App öffnet nicht (`%20`-Fehler)**: `setFile()` bevorzugt nun wieder `file.filename` (vom NC-33-Viewer rückwärtskompatibel als dekodierter Pfad geliefert) gegenüber `file.path` (URL-kodiert aus `@nextcloud/files`). Fallback auf `decodeURIComponent(file.path)` für NC-28+-Node-Objekte ohne `filename`. `decodeURIComponent` ist mit try-catch abgesichert, sodass ein ungültiges URI-Escape `setFile()` nie zum Absturz bringt.
+- **`.mm`-Titelbalken zeigt nach Konvertierung weiterhin `.mm`**: Nach erfolgreichem `.mm`→`.km`-Konvertieren öffnet `viewer.js` den NC-Viewer mit dem neuen `.km`-Pfad neu, sodass Titelbalken und Viewer-State auf die `.km`-Datei zeigen.
+- **`.mm`→`.km`: vorhandene `.km`-Datei wurde still überschrieben**: Der erste WebDAV-PUT verwendet jetzt `Overwrite: F`. Bei HTTP 412 (Datei existiert) erscheint ein Bestätigungsdialog.
+- **`fullName` nach `.mm`→`.km`-Konvertierung nicht aktualisiert**: `save()` setzt `_file.fullName` jetzt ebenfalls auf den neuen `.km`-Pfad.
+
+### Changed
+- **`.mm`→`.km`: Benutzer-Feedback verbessert**: Statt des generischen „File Saved" erscheint ein 8-Sekunden-Toast `„dateiname.km" wurde erstellt – Ihre Änderungen sind dort gespeichert. Die originale .mm-Datei ist unverändert.` sowie ein entsprechender Label im Speichern-Button.
+- **`.mm`→`.km`: Speichern unter anderem Namen**: Antwortet der Benutzer „Nein" auf den Überschreiben-Dialog, ermittelt die App via HEAD-Probing die erste freie Nummerierung (`dateiname (1).km`, `(2)`, …) und öffnet ein `prompt()`-Fenster, vorausgefüllt mit diesem Vorschlag. Der Benutzer kann den Namen anpassen oder übernehmen. Ein erneutes 412 beim alternativen Namen zeigt eine Fehlermeldung; es wird nie still überschrieben.
+
+### Tests
+- Neue Unit-Tests: URL-kodierter Pfad (`%20`) wird korrekt dekodiert; URL-kodierter Basename wird korrekt dekodiert.
+- Priority-Test aktualisiert: `file.filename` hat Vorrang vor `file.path`.
+
 ## 0.0.37 – 2026-04-10
 
 ### Changed
