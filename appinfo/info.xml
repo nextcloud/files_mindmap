@@ -5,7 +5,7 @@
 	<name>Mind Map</name>
 	<summary>A mind map editor</summary>
 	<description><![CDATA[This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the "New" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder.]]></description>
-	<version>0.0.34</version>
+	<version>0.0.35</version>
 	<licence>agpl</licence>
 	<author>Jingtao Yan</author>
 	<namespace>Files_MindMap</namespace>
