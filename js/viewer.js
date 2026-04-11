@@ -58,13 +58,14 @@ redirectIfNotDisplayedInFrame();
 		},
 		initHotkey() {
 			const self = this
-			$(document).keydown(function(e) {
-				if ((e.ctrlKey || e.metaKey) && e.which === 83) {
-					self.save()
+			// Use capture phase so this fires before KityMinder's handlers and before Chrome's Ctrl+S
+			document.addEventListener('keydown', function(e) {
+				if ((e.ctrlKey || e.metaKey) && e.key === 's') {
 					e.preventDefault()
-					return false
+					e.stopPropagation()
+					self.save()
 				}
-			})
+			}, true)
 		},
 		bindEvent() {
 			const self = this

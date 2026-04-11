@@ -104,7 +104,31 @@ const FilesMindMap = {
 			return
 		}
 		if (plugin.encode === null) {
-			fail(t('files_mindmap', 'Does not support saving {extension} files.', { extension: plugin.name }))
+			// Fall back: save as .km via direct WebDAV PUT
+			const kmPlugin = self.getExtensionByMime('application/km')
+			if (!kmPlugin || !kmPlugin.encode) {
+				fail(t('files_mindmap', 'Does not support saving {extension} files.', { extension: plugin.name }))
+				return
+			}
+			const newName = self._file.name.replace(/\.[^/.]+$/, '') + '.km'
+			const uid = getCurrentUser()?.uid || ''
+			const davBase = generateRemoteUrl('dav') + '/files/' + uid
+			const encodedDir = (self._file.dir || '/').replace(/\/$/, '').split('/').map(encodeURIComponent).join('/')
+			const newSource = davBase + encodedDir + '/' + encodeURIComponent(newName)
+			kmPlugin.encode(data).then(function(kmData) {
+				axios({ method: 'PUT', url: newSource, data: kmData })
+					.then(function() {
+						self._file.name = newName
+						self._file.mime = 'application/km'
+						self._file.mtime = null
+						self._file.supportedWrite = true
+						// show save button if previously hidden
+						success(t('files_mindmap', 'File Saved'))
+					})
+					.catch(function(error) {
+						fail(error.response?.data?.message || t('files_mindmap', 'Save failed'))
+					})
+			})
 			return
 		}
 

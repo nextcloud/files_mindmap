@@ -57,7 +57,7 @@ class FileHandlingController extends Controller{
 	public function load($dir, $filename) {
 		try {
 			if (!empty($filename)) {
-				$path = $dir . '/' . $filename;
+				$path = rtrim($dir, '/') . '/' . $filename;
 
 				/** @var File $file */
 				$file = $this->userFolder->get($path);
