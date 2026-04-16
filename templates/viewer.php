@@ -5,11 +5,7 @@
     $urlGenerator = \OC::$server->get(IURLGenerator::class);
     $version = \OC::$server[IAppManager::class]->getAppVersion('files_mindmap');
     $lang = $_['lang'];
-    if (method_exists(\OC::$server, 'getContentSecurityPolicyNonceManager')) {
-        $nonce = \OC::$server->getContentSecurityPolicyNonceManager()->getNonce();
-    } else {
-        $nonce = '';
-    }
+    $nonce = $_['cspNonce'] ?? '';
 ?>
 <!DOCTYPE html>
 <html>
