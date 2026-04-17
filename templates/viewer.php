@@ -44,7 +44,7 @@
 		}
 		div.minder-editor-container {
 			position: absolute;
-			top: 0;
+			top: 40px;
 			bottom: 0;
 			left: 0;
 			right: 0;
@@ -57,54 +57,103 @@
 		}
 		#menu-header {
 			display: flex;
+			position: relative;
+			z-index: 1000;
+			background: #fff;
+			height: 40px;
+			align-items: center;
+			box-sizing: border-box;
+			transition: height 0.15s;
 		}
-		#menu-header .header-left-spacer {
+		#header-controls {
+			display: flex;
+			align-items: center;
+			flex: 1;
+			overflow: visible;
+		}
+		#export-button .dropdown-menu {
+			z-index: 2000;
+		}
+		#header-controls .header-left-spacer {
 			flex-grow: 1;
 			min-width: 240px;
 		}
+		#close-button {
+			cursor: pointer;
+			border: none;
+			background: transparent;
+			color: #888;
+			padding: 0 10px;
+			font-size: 16px;
+			height: 40px;
+			line-height: 40px;
+			flex-shrink: 0;
+		}
+		#close-button:hover { color: #333; }
+		/* Collapsible toolbar — disabled for now (causes icon overlap); re-enable when needed
+		#header-toggle {
+			cursor: pointer; border: none; background: transparent;
+			color: #888; padding: 0 10px; font-size: 16px;
+			height: 40px; line-height: 40px; flex-shrink: 0;
+		}
+		#header-toggle:hover { color: #333; }
+		body.header-collapsed #menu-header { height: 32px; }
+		body.header-collapsed #header-toggle,
+		body.header-collapsed #close-button { height: 32px; line-height: 32px; }
+		body.header-collapsed #header-controls { display: none; }
+		body.header-collapsed div.minder-editor-container { top: 32px; }
+		*/
 	</style>
 </head>
 <script nonce="<?=$nonce?>">
     var lang = '<?=$lang?>';
+    console.log('[files_mindmap] viewer.php version: <?=$version?>');
+
 </script>
 <body ng-app="mindmap" ng-controller="MainController">
 <div id="menu-header">
-	<div class="header-left-spacer"></div>
-    <div id="autosave-div" class="checkbox btn-group-vertical">
-        <label>
-            <input type="checkbox" id="autosave-checkbox" checked="checked" title="<?php p($l->t('AutoSave')); ?>"><?php p($l->t('AutoSave')); ?>
-        </label>
-    </div>
-    <div id="save-div" class="btn-group-vertical" >
-        <button id="save-button" type="button" class="btn btn-default export-caption dropdown-toggle" title="<?php p($l->t('Save')); ?>"><?php p($l->t('Save')); ?></button>
-    </div>
-    <div id="export-button" class="btn-group-vertical" dropdown is-open="isopen">
-        <button type="button"
-            class="btn btn-default export-caption dropdown-toggle"
-            title="<?php p($l->t('Export')); ?>"
-            dropdown-toggle>
-            <span class="caption"><?php p($l->t('Export')); ?></span>
-            <span class="caret"></span>
-            <span class="sr-only"><?php p($l->t('Export')); ?></span>
-        </button>
-        <ul class="dropdown-menu" role="menu">
-            <li>
-                <a id="export-png" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PNG')); ?></a>
-            </li>
-            <li>
-                <a id="export-svg" href="javascript:void(0)" target="_self"><?php p($l->t('Export to SVG')); ?></a>
-            </li>
-            <li>
-                <a id="export-pdf" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PDF')); ?></a>
-            </li>
-            <li>
-                <a id="export-markdown" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Markdown')); ?></a>
-            </li>
-            <li>
-                <a id="export-text" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Text')); ?></a>
-            </li>
-        </ul>
-    </div>
+	<div id="header-controls">
+		<div class="header-left-spacer"></div>
+		<div id="autosave-div" class="checkbox btn-group-vertical">
+			<label>
+				<input type="checkbox" id="autosave-checkbox" checked="checked" title="<?php p($l->t('AutoSave')); ?>"><?php p($l->t('AutoSave')); ?>
+			</label>
+		</div>
+		<div id="save-div" class="btn-group-vertical" >
+			<button id="save-button" type="button" class="btn btn-default export-caption dropdown-toggle" title="<?php p($l->t('Save')); ?>"><?php p($l->t('Save')); ?></button>
+		</div>
+		<div id="export-button" class="btn-group-vertical" dropdown is-open="isopen">
+			<button type="button"
+				class="btn btn-default export-caption dropdown-toggle"
+				title="<?php p($l->t('Export')); ?>"
+				dropdown-toggle>
+				<span class="caption"><?php p($l->t('Export')); ?></span>
+				<span class="caret"></span>
+				<span class="sr-only"><?php p($l->t('Export')); ?></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li>
+					<a id="export-png" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PNG')); ?></a>
+				</li>
+				<li>
+					<a id="export-svg" href="javascript:void(0)" target="_self"><?php p($l->t('Export to SVG')); ?></a>
+				</li>
+				<li>
+					<a id="export-pdf" href="javascript:void(0)" target="_self"><?php p($l->t('Export to PDF')); ?></a>
+				</li>
+				<li>
+					<a id="export-markdown" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Markdown')); ?></a>
+				</li>
+				<li>
+					<a id="export-text" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Text')); ?></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<button id="close-button" title="<?php p($l->t('Close')); ?>">✕</button>
+	<!-- Collapsible toolbar toggle — disabled for now (causes icon overlap); re-enable when needed
+	<button id="header-toggle" title="<?php p($l->t('Toggle toolbar')); ?>">▲</button>
+	-->
 </div>
 <kityminder-editor id="viewer" lang="<?=$lang?>" on-init="initEditor(editor, minder)"></kityminder-editor>
 </body>
@@ -133,5 +182,28 @@
 
 <script nonce="<?=$nonce?>" src="<?php p($urlGenerator->linkTo('files_mindmap', 'js/viewer.js')) ?>?v=<?php p($version) ?>"></script>
 <script nonce="<?=$nonce?>" src="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/jsPDF/dist/jspdf.min.js')) ?>?v=<?php p($version) ?>"></script>
+<!-- Collapsible toolbar — disabled for now (causes icon overlap with close button).
+     Re-enable this script block and the #header-toggle button/CSS above when revisiting.
+<script nonce="<?=$nonce?>">
+(function() {
+	var KEY = 'apps.files_mindmap.headerCollapsed'
+	var btn = document.getElementById('header-toggle')
+	function setCollapsed(v) {
+		document.body.classList.toggle('header-collapsed', v)
+		btn.textContent = v ? '▼' : '▲'
+		btn.title = v ? '<?php p($l->t('Show toolbar')); ?>' : '<?php p($l->t('Hide toolbar')); ?>'
+		try { localStorage.setItem(KEY, v) } catch (e) {}
+	}
+	btn.addEventListener('click', function() {
+		setCollapsed(!document.body.classList.contains('header-collapsed'))
+	})
+	// Default: collapsed on narrow screens; otherwise restore saved state
+	var stored = null
+	try { stored = localStorage.getItem(KEY) } catch (e) {}
+	var shouldCollapse = stored !== null ? stored === 'true' : window.innerWidth <= 600
+	if (shouldCollapse) setCollapsed(true)
+})()
+</script>
+-->
 </html>
 

@@ -12,6 +12,16 @@
     "File not found" : "Không tìm thấy tập tin",
     "Edit" : "Chỉnh sửa",
     "Save" : "Lưu",
-    "Export" : "Xuất ra"
-},"pluralForm" :"nplurals=1; plural=0;"
+    "Export" : "Xuất ra",
+    "Saved as {name}" : "Đã lưu dưới tên {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" đã được tạo — các thay đổi của bạn được lưu ở đó. Tệp .mm gốc không thay đổi.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" đã tồn tại. Ghi đè bằng nội dung từ \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" đã tồn tại. Vui lòng chọn tên khác.",
+    "Enter a new filename (without extension):" : "Nhập tên tệp mới (không có phần mở rộng):",
+    "Conversion cancelled" : "Đã hủy chuyển đổi",
+    "Overwrite" : "Ghi đè",
+    "Choose different name" : "Chọn tên khác",
+    "Cancel" : "Hủy"
+},
+"pluralForm": "nplurals=1; plural=0;"
 }

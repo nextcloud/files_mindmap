@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Onartu gabeko fitxategi mota: {mimetype}",
     "Edit" : "Editatu",
     "New mind map file" : "Mapa mental fitxategi berria",
-    "New mind map.km" : "map.km mapa berria",
+    "New mind map" : "map.km mapa berria",
     "AutoSave" : "Gordetze automatikoa",
     "Save" : "Gorde",
     "Export" : "Esportatu",
@@ -34,6 +34,15 @@ OC.L10N.register(
     "Export to SVG" : "Esportatu SVG gisa",
     "Export to PDF" : "Esportatu PDF gisa",
     "Export to Markdown" : "Esportatu Markdown gisa",
-    "Export to Text" : "Esportatu testu gisa"
+    "Export to Text" : "Esportatu testu gisa",
+    "Saved as {name}" : "Gorde da {name} izenarekin",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" sortu da — zure aldaketak han gorde dira. Jatorrizko .mm fitxategia aldatu gabe dago.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" dagoeneko existitzen da. \"{source}\"-eko edukiarekin gainidatzi?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" dagoeneko existitzen da. Mesedez aukeratu izen ezberdin bat.",
+    "Enter a new filename (without extension):" : "Sartu fitxategi-izen berri bat (luzapenik gabe):",
+    "Conversion cancelled" : "Konbertsioa bertan behera utzi da",
+    "Overwrite" : "Gainidatzi",
+    "Choose different name" : "Aukeratu beste izen bat",
+    "Cancel" : "Utzi"
 },
 "nplurals=2; plural=(n != 1);");

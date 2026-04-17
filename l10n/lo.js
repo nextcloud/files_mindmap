@@ -13,6 +13,15 @@ OC.L10N.register(
     "File not found" : "File not found",
     "Edit" : "ແກ້ໄຂ",
     "Save" : "ບັນທຶກ",
-    "Export" : "Export"
+    "Export" : "Export",
+    "Saved as {name}" : "ບັນທຶກເປັນ {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" ໄດ້ຖືກສ້າງ — ການປ່ຽນແປງຂອງທ່ານຖືກບັນທຶກໄວ້ທີ່ນັ້ນ. ໄຟລ໌ .mm ຕົ້ນສະບັບຍັງບໍ່ປ່ຽນແປງ.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ມີຢູ່ແລ້ວ. ຂຽນທັບດ້ວຍເນື້ອຫາຈາກ \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ມີຢູ່ແລ້ວ. ກະລຸນາເລືອກຊື່ອື່ນ.",
+    "Enter a new filename (without extension):" : "ໃສ່ຊື່ໄຟລ໌ໃໝ່ (ບໍ່ມີນາມສະກຸນ):",
+    "Conversion cancelled" : "ການແປງຖືກຍົກເລີກ",
+    "Overwrite" : "ຂຽນທັບ",
+    "Choose different name" : "ເລືອກຊື່ອື່ນ",
+    "Cancel" : "ຍົກເລີກ"
 },
 "nplurals=1; plural=0;");

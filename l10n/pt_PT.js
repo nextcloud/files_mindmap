@@ -16,6 +16,15 @@ OC.L10N.register(
     "Does not support saving {extension} files." : "Não é compatível com a gravação de ficheiros {extension}.",
     "Edit" : "Editar",
     "Save" : "Guardar",
-    "Export" : "Exportar"
+    "Export" : "Exportar",
+    "Saved as {name}" : "Guardado como {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" foi criado — as suas alterações estão guardadas aí. O ficheiro .mm original permanece inalterado.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" já existe. Sobrepor com o conteúdo de \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" já existe. Por favor escolha um nome diferente.",
+    "Enter a new filename (without extension):" : "Introduza um novo nome de ficheiro (sem extensão):",
+    "Conversion cancelled" : "Conversão cancelada",
+    "Overwrite" : "Substituir",
+    "Choose different name" : "Escolher nome diferente",
+    "Cancel" : "Cancelar"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

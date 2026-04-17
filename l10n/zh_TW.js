@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "不支援的檔案類型：{mimetype}",
     "Edit" : "編輯",
     "New mind map file" : "新增心智圖檔案",
-    "New mind map.km" : "新心智圖.km",
+    "New mind map" : "新心智圖",
     "AutoSave" : "自動儲存",
     "Save" : "儲存",
     "Export" : "匯出",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "匯出為 SVG",
     "Export to PDF" : "匯出為 PDF",
     "Export to Markdown" : "匯出為 Markdown",
-    "Export to Text" : "匯出為文字"
+    "Export to Text" : "匯出為文字",
+    "Saved as {name}" : "另存為 {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" 已建立 — 您的變更已儲存在那裡。原始 .mm 檔案未變更。",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" 已存在。是否以 \"{source}\" 的內容覆寫它？",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" 已存在。請選擇其他名稱。",
+    "Enter a new filename (without extension):" : "請輸入新檔案名稱（不含副檔名）：",
+    "Conversion cancelled" : "轉換已取消",
+    "Overwrite" : "覆寫",
+    "Choose different name" : "選擇其他名稱",
+    "Cancel" : "取消"
 },
 "nplurals=1; plural=0;");

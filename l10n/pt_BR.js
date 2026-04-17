@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Tipo de arquivo não suportado: {mimetype}",
     "Edit" : "Editar",
     "New mind map file" : "Novo arquivo de mapa mental",
-    "New mind map.km" : "Novo mapa mental.km",
+    "New mind map" : "Novo mapa mental",
     "AutoSave" : "Autossalvar",
     "Save" : "Salvar",
     "Export" : "Exportar",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "Exportar para SVG",
     "Export to PDF" : "Exportar para PDF",
     "Export to Markdown" : "Exportar para Markdown",
-    "Export to Text" : "Exportar para Texto"
+    "Export to Text" : "Exportar para Texto",
+    "Saved as {name}" : "Salvo como {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" foi criado — suas alterações estão salvas lá. O arquivo .mm original permanece inalterado.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" já existe. Sobrescrevê-lo com o conteúdo de \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" já existe. Escolha um nome diferente.",
+    "Enter a new filename (without extension):" : "Digite um novo nome de arquivo (sem extensão):",
+    "Conversion cancelled" : "Conversão cancelada",
+    "Overwrite" : "Substituir",
+    "Choose different name" : "Escolher nome diferente",
+    "Cancel" : "Cancelar"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

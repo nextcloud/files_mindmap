@@ -15,6 +15,16 @@
     "You have no permission to write this file" : "У вас нет разрешения на запись этого файла",
     "Edit" : "Редактирование",
     "Save" : "Сохранить",
-    "Export" : "Экспорт"
-},"pluralForm" :"nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);"
+    "Export" : "Экспорт",
+    "Saved as {name}" : "Сохранено как {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" создан — ваши изменения сохранены там. Исходный файл .mm остался без изменений.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" уже существует. Перезаписать его содержимым из \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" уже существует. Выберите другое имя.",
+    "Enter a new filename (without extension):" : "Введите новое имя файла (без расширения):",
+    "Conversion cancelled" : "Преобразование отменено",
+    "Overwrite" : "Перезаписать",
+    "Choose different name" : "Выберите другое имя",
+    "Cancel" : "Отмена"
+},
+"pluralForm": "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);"
 }

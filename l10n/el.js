@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Μη υποστηριζόμενος τύπος αρχείου: {mimetype}",
     "Edit" : "Επεξεργασία",
     "New mind map file" : "Νέο αρχείο χάρτη σκέψης",
-    "New mind map.km" : "Νέος χάρτης σκέψης.km",
+    "New mind map" : "Νέος χάρτης σκέψης",
     "AutoSave" : "Αυτόματη αποθήκευση",
     "Save" : "Αποθήκευση",
     "Export" : "Εξαγωγή",
@@ -34,6 +34,15 @@ OC.L10N.register(
     "Export to SVG" : "Εξαγωγή σε SVG",
     "Export to PDF" : "Εξαγωγή σε PDF",
     "Export to Markdown" : "Εξαγωγή σε Markdown",
-    "Export to Text" : "Εξαγωγή σε Κείμενο"
+    "Export to Text" : "Εξαγωγή σε Κείμενο",
+    "Saved as {name}" : "Αποθηκεύτηκε ως {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" δημιουργήθηκε — οι αλλαγές σας αποθηκεύτηκαν εκεί. Το αρχικό αρχείο .mm παρέμεινε αναλλοίωτο.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" υπάρχει ήδη. Να αντικατασταθεί με το περιεχόμενο του \"{source}\";",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" υπάρχει ήδη. Επιλέξτε διαφορετικό όνομα.",
+    "Enter a new filename (without extension):" : "Εισαγάγετε νέο όνομα αρχείου (χωρίς κατάληξη):",
+    "Conversion cancelled" : "Η μετατροπή ακυρώθηκε",
+    "Overwrite" : "Αντικατάσταση",
+    "Choose different name" : "Επιλέξτε άλλο όνομα",
+    "Cancel" : "Ακύρωση"
 },
 "nplurals=2; plural=(n != 1);");

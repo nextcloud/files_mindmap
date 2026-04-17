@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Cineál comhaid nach dtacaítear leis:{mimetype}",
     "Edit" : "Cuir in eagar",
     "New mind map file" : "Comhad léarscáil aigne nua",
-    "New mind map.km" : "Léarscáil aigne nua.km",
+    "New mind map" : "Léarscáil aigne nua",
     "AutoSave" : "Uathshábháil",
     "Save" : "Sábháil",
     "Export" : "Easpórtáil",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "Easpórtáil go SVG",
     "Export to PDF" : "Onnmhairiú go PDF",
     "Export to Markdown" : "Easpórtáil go Markdown",
-    "Export to Text" : "Easpórtáil go Téacs"
+    "Export to Text" : "Easpórtáil go Téacs",
+    "Saved as {name}" : "Sábháilte mar {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" cruthaíodh — tá do chuid athruithe sábháilte ansin. Tá an comhad .mm bunaidh gan athrú.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ann cheana féin. An bhfuil tú ag iarraidh é a fhorscríobh le hábhar \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ann cheana féin. Roghnaigh ainm difriúil le do thoil.",
+    "Enter a new filename (without extension):" : "Iontráil ainm comhaid nua (gan síneadh):",
+    "Conversion cancelled" : "Tiontú curtha ar ceal",
+    "Overwrite" : "Forscríobh",
+    "Choose different name" : "Roghnaigh ainm eile",
+    "Cancel" : "Cealaigh"
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");

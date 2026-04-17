@@ -26,7 +26,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Непідтримуваний тип файлу: {mimetype}",
     "Edit" : "Редагувати",
     "New mind map file" : "Новий файл ментальної карти",
-    "New mind map.km" : "Нова ментальна карта.km",
+    "New mind map" : "Нова ментальна карта",
     "AutoSave" : "Автозбереження",
     "Save" : "Зберегти",
     "Export" : "Експортувати",
@@ -34,6 +34,15 @@ OC.L10N.register(
     "Export to SVG" : "Експорт у SVG",
     "Export to PDF" : "Експорт до PDF",
     "Export to Markdown" : "Експорт на уцінку",
-    "Export to Text" : "Експорт в текст"
+    "Export to Text" : "Експорт в текст",
+    "Saved as {name}" : "Збережено як {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" створено — ваші зміни збережені там. Оригінальний файл .mm залишився без змін.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" вже існує. Перезаписати його вмістом з \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" вже існує. Виберіть інше ім'я.",
+    "Enter a new filename (without extension):" : "Введіть нове ім'я файлу (без розширення):",
+    "Conversion cancelled" : "Конвертацію скасовано",
+    "Overwrite" : "Перезаписати",
+    "Choose different name" : "Виберіть інше ім'я",
+    "Cancel" : "Скасувати"
 },
 "nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);");

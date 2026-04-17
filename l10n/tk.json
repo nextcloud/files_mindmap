@@ -1,6 +1,16 @@
 { "translations": {
     "File not found" : "Faýl tapylmady",
     "Edit" : "Redaktirläň",
-    "Save" : "Saklamak"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+    "Save" : "Saklamak",
+    "Saved as {name}" : "{name} hökmünde saklanan",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" döredildi — üýtgeşmeleriňiz şol ýerde saklandy. Asyl .mm faýly üýtgemedi.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" eýýäm bar. \"{source}\"-dan mazmun bilen üstüni ýazmaly?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" eýýäm bar. Başga ady saýlaň.",
+    "Enter a new filename (without extension):" : "Täze faýl adyny giriziň (giňeltmesiz):",
+    "Conversion cancelled" : "Öwrülişik ýatyryldy",
+    "Overwrite" : "Üstüne ýaz",
+    "Choose different name" : "Başga at saýla",
+    "Cancel" : "Ýatyr"
+},
+"pluralForm": "nplurals=2; plural=(n != 1);"
 }

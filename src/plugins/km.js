@@ -1,6 +1,7 @@
 export default {
 	name: 'km',
 	mimes: ['application/km'],
+	extensions: ['km'],
 	encode(data) {
 		return new Promise(function(resolve, reject) {
 			resolve(data)

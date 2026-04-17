@@ -194,6 +194,30 @@ describe('FilesMindMap', () => {
 			FilesMindMap.setFile({ filename: '/docs/sub/test.km', basename: 'test.km' })
 			expect(FilesMindMap._currentContext).toEqual(expect.objectContaining({ dir: '/docs/sub' }))
 		})
+
+		it('accepts NC 28+ Node objects that use path instead of filename', () => {
+			FilesMindMap.setFile({ path: '/documents/test.km', basename: 'test.km' })
+			expect(FilesMindMap._file.name).toBe('test.km')
+			expect(FilesMindMap._file.dir).toBe('/documents')
+			expect(FilesMindMap._file.fullName).toBe('/documents/test.km')
+		})
+
+		it('prefers filename over path when both are present (legacy NC compat)', () => {
+			FilesMindMap.setFile({ path: '/new/test.km', filename: '/old/test.km', basename: 'test.km' })
+			expect(FilesMindMap._file.dir).toBe('/old')
+		})
+
+		it('decodes URL-encoded path when only path is present', () => {
+			FilesMindMap.setFile({ path: '/My%20Files/test%20map.km', basename: 'test%20map.km' })
+			expect(FilesMindMap._file.name).toBe('test map.km')
+			expect(FilesMindMap._file.dir).toBe('/My Files')
+			expect(FilesMindMap._file.fullName).toBe('/My Files/test map.km')
+		})
+
+		it('decodes URL-encoded basename', () => {
+			FilesMindMap.setFile({ path: '/docs/test%20map.km', basename: 'test%20map.km' })
+			expect(FilesMindMap._file.name).toBe('test map.km')
+		})
 	})
 
 	// ─── Public share detection ────────────────────────────────────────────────
@@ -418,6 +442,33 @@ describe('FilesMindMap', () => {
 			await flushPromises()
 
 			expect(failure).toHaveBeenCalledWith(expect.stringContaining('Unsupported file type'))
+		})
+
+		it('falls back to extension-based mime when server returns octet-stream', async () => {
+			const ext = {
+				name: 'km',
+				mimes: ['application/km'],
+				encode: vi.fn(),
+				decode: vi.fn().mockResolvedValue({}),
+			}
+			FilesMindMap._extensions = [ext]
+			FilesMindMap._file = { dir: '/docs', name: 'test.km' }
+
+			axios.get.mockResolvedValue({
+				data: {
+					filecontents: btoa('content'),
+					mime: 'application/octet-stream',
+					writeable: true,
+					mtime: 1,
+				},
+			})
+
+			const success = vi.fn()
+			FilesMindMap.load(success, vi.fn())
+			await flushPromises()
+
+			expect(success).toHaveBeenCalled()
+			expect(FilesMindMap._file.mime).toBe('application/km')
 		})
 
 		it('marks supportedWrite as false for read-only extensions', async () => {

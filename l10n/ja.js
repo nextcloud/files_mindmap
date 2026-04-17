@@ -16,6 +16,15 @@ OC.L10N.register(
     "File not found" : "ファイルが見つかりません",
     "Edit" : "編集",
     "Save" : "保存する",
-    "Export" : "エクスポート"
+    "Export" : "エクスポート",
+    "Saved as {name}" : "{name} として保存しました",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" が作成されました — 変更内容はそこに保存されています。元の .mm ファイルは変更されていません。",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" はすでに存在します。\"{source}\" の内容で上書きしますか？",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" はすでに存在します。別の名前を選択してください。",
+    "Enter a new filename (without extension):" : "新しいファイル名を入力してください（拡張子なし）：",
+    "Conversion cancelled" : "変換がキャンセルされました",
+    "Overwrite" : "上書き",
+    "Choose different name" : "別の名前を選択",
+    "Cancel" : "キャンセル"
 },
 "nplurals=1; plural=0;");

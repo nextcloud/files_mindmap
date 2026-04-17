@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Dosya türü desteklenmiyor: {mimetype}",
     "Edit" : "Düzenle",
     "New mind map file" : "Yeni zihin haritası dosyası",
-    "New mind map.km" : "Yeni zihin haritası.km",
+    "New mind map" : "Yeni zihin haritası",
     "AutoSave" : "Otomatik kaydedilsin",
     "Save" : "Kaydet",
     "Export" : "Dışa aktar",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "SVG olarak dışa aktar",
     "Export to PDF" : "PDF olarak dışa aktar",
     "Export to Markdown" : "Markdown olarak dışa aktar",
-    "Export to Text" : "Yazı olarak dışa aktar"
+    "Export to Text" : "Yazı olarak dışa aktar",
+    "Saved as {name}" : "{name} olarak kaydedildi",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" oluşturuldu — değişiklikleriniz orada kaydedildi. Orijinal .mm dosyası değişmedi.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" zaten mevcut. \"{source}\" içeriğiyle üzerine yazılsın mı?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" zaten mevcut. Lütfen farklı bir ad seçin.",
+    "Enter a new filename (without extension):" : "Yeni bir dosya adı girin (uzantı olmadan):",
+    "Conversion cancelled" : "Dönüştürme iptal edildi",
+    "Overwrite" : "Üzerine Yaz",
+    "Choose different name" : "Farklı isim seç",
+    "Cancel" : "İptal"
 },
 "nplurals=2; plural=(n > 1);");

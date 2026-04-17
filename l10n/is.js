@@ -15,6 +15,15 @@ OC.L10N.register(
     "File not found" : "Skrá finnst ekki",
     "Edit" : "Breyta",
     "Save" : "Vista",
-    "Export" : "Flytja út"
+    "Export" : "Flytja út",
+    "Saved as {name}" : "Vistað sem {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" var búið til — breytingarnar þínar eru vistaðar þar. Upprunalega .mm skráin er óbreytt.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" er þegar til. Skrifa yfir hana með efni frá \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" er þegar til. Vinsamlegast veldu annað nafn.",
+    "Enter a new filename (without extension):" : "Sláðu inn nýtt skráarheiti (án endingar):",
+    "Conversion cancelled" : "Umbreytingu hætt við",
+    "Overwrite" : "Yfirskrifa",
+    "Choose different name" : "Veldu annað nafn",
+    "Cancel" : "Hætta við"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

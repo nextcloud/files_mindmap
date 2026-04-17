@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Unsupported file type: {mimetype}",
     "Edit" : "Edit",
     "New mind map file" : "New mind map file",
-    "New mind map.km" : "New mind map.km",
+    "New mind map" : "New mind map",
     "AutoSave" : "AutoSave",
     "Save" : "Save",
     "Export" : "Export",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "Export to SVG",
     "Export to PDF" : "Export to PDF",
     "Export to Markdown" : "Export to Markdown",
-    "Export to Text" : "Export to Text"
+    "Export to Text" : "Export to Text",
+    "Saved as {name}" : "Saved as {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" already exists. Please choose a different name.",
+    "Enter a new filename (without extension):" : "Enter a new filename (without extension):",
+    "Conversion cancelled" : "Conversion cancelled",
+    "Overwrite" : "Overwrite",
+    "Choose different name" : "Choose different name",
+    "Cancel" : "Cancel"
 },
 "nplurals=2; plural=(n != 1);");

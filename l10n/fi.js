@@ -22,7 +22,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",
     "Edit" : "Muokkaa",
     "New mind map file" : "Uusi ajatuskarttatiedosto",
-    "New mind map.km" : "Uusi ajatuskartta.km",
+    "New mind map" : "Uusi ajatuskartta",
     "AutoSave" : "Automaattinen tallennus",
     "Save" : "Tallenna",
     "Export" : "Vie",
@@ -30,6 +30,15 @@ OC.L10N.register(
     "Export to SVG" : "Vie SVG-muotoon",
     "Export to PDF" : "Vie PDF-muotoon",
     "Export to Markdown" : "Vie Markdown-muotoon",
-    "Export to Text" : "Vie tekstinä"
+    "Export to Text" : "Vie tekstinä",
+    "Saved as {name}" : "Tallennettu nimellä {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" luotiin — muutoksesi on tallennettu sinne. Alkuperäinen .mm-tiedosto on muuttumaton.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" on jo olemassa. Korvataanko se tiedoston \"{source}\" sisällöllä?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" on jo olemassa. Valitse eri nimi.",
+    "Enter a new filename (without extension):" : "Anna uusi tiedostonimi (ilman tunnistetta):",
+    "Conversion cancelled" : "Muuntaminen peruutettu",
+    "Overwrite" : "Korvaa",
+    "Choose different name" : "Valitse eri nimi",
+    "Cancel" : "Peruuta"
 },
 "nplurals=2; plural=(n != 1);");

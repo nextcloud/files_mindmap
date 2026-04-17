@@ -27,7 +27,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "Faili tüüp pole toetatud: {mimetype}",
     "Edit" : "Muuda",
     "New mind map file" : "Uus mõttekaardi fail",
-    "New mind map.km" : "Uus mõttekaardi fail.km",
+    "New mind map" : "Uus mõttekaardi fail",
     "AutoSave" : "Salvesta automaatselt",
     "Save" : "Salvesta",
     "Export" : "Ekspordi",
@@ -35,6 +35,15 @@ OC.L10N.register(
     "Export to SVG" : "Ekspordi svg-failina",
     "Export to PDF" : "Ekspordi pdf-failina",
     "Export to Markdown" : "Ekspordi Markdown-vormingus",
-    "Export to Text" : "Ekspordi tekstifailina"
+    "Export to Text" : "Ekspordi tekstifailina",
+    "Saved as {name}" : "Salvestatud nimega {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" loodi — teie muudatused on seal salvestatud. Algne .mm-fail on muutmata.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" on juba olemas. Kirjuta see üle failist \"{source}\" pärit sisuga?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" on juba olemas. Palun valige erinev nimi.",
+    "Enter a new filename (without extension):" : "Sisesta uus failinimi (ilma laiendita):",
+    "Conversion cancelled" : "Teisendamine tühistati",
+    "Overwrite" : "Kirjuta üle",
+    "Choose different name" : "Vali erinev nimi",
+    "Cancel" : "Tühista"
 },
 "nplurals=2; plural=(n != 1);");

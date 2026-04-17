@@ -1,6 +1,16 @@
 { "translations": {
     "Edit" : "Änneren",
     "Save" : "Späicheren",
-    "Export" : "Exportéieren"
-},"pluralForm" :"nplurals=2; plural=(n != 1);"
+    "Export" : "Exportéieren",
+    "Saved as {name}" : "Gespäichert als {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" gouf erstallt — Är Ännerunge sinn do gespäichert. Déi original .mm-Datei ass onverännert.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" existéiert scho. Et mat dem Inhalt vun \"{source}\" iwwerschreiwen?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" existéiert scho. Wielt w.e.g. en aneren Numm.",
+    "Enter a new filename (without extension):" : "Gitt en neien Dateinumm an (ouni Extensioun):",
+    "Conversion cancelled" : "Konversioun ofgebrach",
+    "Overwrite" : "Iwwerschreiwen",
+    "Choose different name" : "Anere Numm wielen",
+    "Cancel" : "Ofbriechen"
+},
+"pluralForm": "nplurals=2; plural=(n != 1);"
 }

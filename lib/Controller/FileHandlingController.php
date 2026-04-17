@@ -57,7 +57,7 @@ class FileHandlingController extends Controller{
 	public function load($dir, $filename) {
 		try {
 			if (!empty($filename)) {
-				$path = $dir . '/' . $filename;
+				$path = rtrim($dir, '/') . '/' . $filename;
 
 				/** @var File $file */
 				$file = $this->userFolder->get($path);
@@ -127,6 +127,9 @@ class FileHandlingController extends Controller{
 				}
 			
 				if($file->isUpdateable()) {
+					if (empty($mtime)) {
+						return new DataResponse(['message' => $this->l->t('File mtime not supplied')], Http::STATUS_BAD_REQUEST);
+					}
 					if ($mtime != $file->getMTime()) {
 						$this->logger->error("User cannot save shared mind map (someone updated it in the meantime): {$mtime} vs. {$file->getMTime()} {$file->getPath()}", ['app' => 'files_mindmap']);
 						return new DataResponse([ 'message' => $this->l->t('The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page.')],Http::STATUS_BAD_REQUEST);
@@ -167,7 +170,6 @@ class FileHandlingController extends Controller{
 			return new DataResponse(['message' => $message], Http::STATUS_BAD_REQUEST);
 		} catch (\Exception $e) {
 			$message = (string)$this->l->t('An internal server error occurred.');
-			$message = $path;
 			return new DataResponse(['message' => $message], Http::STATUS_BAD_REQUEST);
 		}
 	}

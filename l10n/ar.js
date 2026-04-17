@@ -22,7 +22,7 @@ OC.L10N.register(
     "Unsupported file type: {mimetype}" : "نوع الملف غير مدعوم: {mimetype}",
     "Edit" : "تحرير",
     "New mind map file" : "ملف خريطة ذهنية جديدة",
-    "New mind map.km" : "خريطة ذهنية جديدة .km",
+    "New mind map" : "خريطة ذهنية جديدة ",
     "AutoSave" : "حفظ تلقائي",
     "Save" : "حفظ",
     "Export" : "تصدير",
@@ -30,6 +30,15 @@ OC.L10N.register(
     "Export to SVG" : "تصدير إلى SVG",
     "Export to PDF" : "تصدير إلى PDF",
     "Export to Markdown" : "تصدير إلى Markdown",
-    "Export to Text" : "تصدير إلى نص text"
+    "Export to Text" : "تصدير إلى نص text",
+    "Saved as {name}" : "تم الحفظ باسم {name}",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" تم إنشاؤه — تغييراتك محفوظة هناك. ملف .mm الأصلي لم يتغيّر.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" موجود بالفعل. هل تريد استبداله بمحتوى \"{source}\"؟",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" موجود بالفعل. يرجى اختيار اسم آخر.",
+    "Enter a new filename (without extension):" : "أدخل اسم ملف جديدًا (بدون امتداد):",
+    "Conversion cancelled" : "تم إلغاء التحويل",
+    "Overwrite" : "استبدال",
+    "Choose different name" : "اختر اسماً مختلفاً",
+    "Cancel" : "إلغاء"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");

@@ -2,6 +2,16 @@
     "File not found" : "ಕಡತ ಕಂಡುಬಂದಿಲ್ಲ",
     "Edit" : "ಸಂಪಾದಿಸು",
     "Save" : "﻿ಉಳಿಸಿ",
-    "Export" : "ರಫ್ತು"
-},"pluralForm" :"nplurals=2; plural=(n > 1);"
+    "Export" : "ರಫ್ತು",
+    "Saved as {name}" : "{name} ಆಗಿ ಉಳಿಸಲಾಗಿದೆ",
+    "\"{name}\" was created — your changes are saved there. The original .mm file is unchanged." : "\"{name}\" ರಚಿಸಲಾಗಿದೆ — ನಿಮ್ಮ ಬದಲಾವಣೆಗಳನ್ನು ಅಲ್ಲಿ ಉಳಿಸಲಾಗಿದೆ. ಮೂಲ .mm ಫೈಲ್ ಬದಲಾಗಿಲ್ಲ.",
+    "\"{name}\" already exists. Overwrite it with the content from \"{source}\"?" : "\"{name}\" ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. \"{source}\" ನ ವಿಷಯದಿಂದ ತಿದ್ದಿ ಬರೆಯುವುದೇ?",
+    "\"{name}\" already exists. Please choose a different name." : "\"{name}\" ಈಗಾಗಲೇ ಅಸ್ತಿತ್ವದಲ್ಲಿದೆ. ದಯವಿಟ್ಟು ಬೇರೆ ಹೆಸರು ಆರಿಸಿ.",
+    "Enter a new filename (without extension):" : "ಹೊಸ ಫೈಲ್ ಹೆಸರನ್ನು ನಮೂದಿಸಿ (ವಿಸ್ತರಣೆ ಇಲ್ಲದೆ):",
+    "Conversion cancelled" : "ಪರಿವರ್ತನೆ ರದ್ದುಗೊಂಡಿದೆ",
+    "Overwrite" : "ಮೇಲ್ಬರೆಹ",
+    "Choose different name" : "ಬೇರೆ ಹೆಸರು ಆರಿಸಿ",
+    "Cancel" : "ರದ್ದುಮಾಡು"
+},
+"pluralForm": "nplurals=2; plural=(n > 1);"
 }
