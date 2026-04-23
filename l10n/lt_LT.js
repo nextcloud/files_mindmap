@@ -22,8 +22,19 @@ OC.L10N.register(
     "A mind map editor" : "Idėjų žemėlapio redaktorius",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Ši programa leidžia „Nextcloud“ vartotojams atidaryti, išsaugoti ir redaguoti Idėjų žemėlapių failus interneto naršyklėje. Jei ši funkcija įjungta, interneto naršyklės viršuje esančiame meniu „Naujas“ atsiranda Idėjų žemėlapio failo parinktis. Paspaudus ją, naršyklėje atsidaro naujas Idėjų žemėlapio failas, kurį galima išsaugoti esamame „Nextcloud“ aplanke.",
     "Does not support saving {extension} files." : "Nepalaiko {extension} failų išsaugojimo.",
+    "File Saved" : "Filtras įrašytas",
+    "Save failed" : "Įrašyti nepavyko",
+    "Unsupported file type: {mimetype}" : "Nepalaikomas failo tipas: {mimetype}",
     "Edit" : "Redaguoti",
+    "New mind map file" : "Naujas idėjų žemėlapio failas",
+    "New mind map.km" : "Naujas idėjų žemėlapis.km",
+    "AutoSave" : "Automatinis išsaugojimas",
     "Save" : "Įrašyti",
-    "Export" : "Eksportuoti"
+    "Export" : "Eksportuoti",
+    "Export to PNG" : "Eksportuoti į PNG",
+    "Export to SVG" : "Eksportuoti į SVG",
+    "Export to PDF" : "Eksportuoti į PDF",
+    "Export to Markdown" : "Eksportuoti į Markdown",
+    "Export to Text" : "Eksportuoti į Teksto formatą"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");
