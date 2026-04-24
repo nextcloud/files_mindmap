@@ -1,13 +1,13 @@
 app_name=files_mindmap
 
 project_dir=$(CURDIR)/../$(app_name)
-build_dir=$(CURDIR)/build
+build_dir=$(CURDIR)/build/artifacts
 appstore_dir=$(build_dir)/appstore
 source_dir=$(build_dir)/source
 sign_dir=$(build_dir)/sign
 package_name=$(app_name)
-cert_dir=$(CURDIR)/../../key
-version+=0.0.33
+cert_dir=$(HOME)/.nextcloud/certificates
+version+=0.0.33.1
 
 all: build-front appstore
 
@@ -50,10 +50,10 @@ appstore: clean
 			--certificate $(cert_dir)/$(app_name).crt; \
 	fi
 
-	tar -czf $(build_dir)/$(app_name)-$(version).tar.gz \
+	tar -czf $(build_dir)/$(app_name).tar.gz \
 		-C $(sign_dir) $(app_name)
 
 	@if [ -f $(cert_dir)/$(app_name).key ]; then \
 		echo "Signing package…"; \
-		openssl dgst -sha512 -sign $(cert_dir)/$(app_name).key $(build_dir)/$(app_name)-$(version).tar.gz | openssl base64; \
+		openssl dgst -sha512 -sign $(cert_dir)/$(app_name).key $(build_dir)/$(app_name).tar.gz | openssl base64; \
 	fi
