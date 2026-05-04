@@ -11,7 +11,7 @@ App icon by [Icons8](https://icons8.com) and mind map powered by [KityMinder Edi
 You can also click a .km file to edit.
 
 ## Contribute
-translate: Go to [https://github.com/ACTom/kityminder-editor](https://github.com/ACTom/kityminder-editor), and translate strings in l10n directory.
+translate: Go to [https://github.com/nextcloud/kityminder-editor](https://github.com/nextcloud/kityminder-editor), and translate strings in l10n directory.
 
 ## Support Format
 | Format Name | File Extension | Read | Save |
@@ -34,11 +34,11 @@ translate: Go to [https://github.com/ACTom/kityminder-editor](https://github.com
 你也可以直接点击一个.km文件来编辑。
 
 ## 应用截图
-![截图1](https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/1.png)
+![截图1](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/1.png)
 
-![截图2](https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/2.png)
+![截图2](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/2.png)
 
-![截图3](https://raw.githubusercontent.com/ACTom/files_mindmap/master/screenshots/3.png)
+![截图3](https://raw.githubusercontent.com/nextcloud/files_mindmap/master/screenshots/3.png)
 
 
 ## 支持的格式
