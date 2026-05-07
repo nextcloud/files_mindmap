@@ -44,7 +44,7 @@ export default {
 		})
 	},
 
-	beforeDestroy() {
+	beforeUnmount() {
 		document.removeEventListener('webviewerloaded', this.handleWebviewerloaded)
 	},
 
