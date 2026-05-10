@@ -1,0 +1,38 @@
+<!--
+  - SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+  - SPDX-License-Identifier: AGPL-3.0-or-later
+-->
+# Authors
+
+- ACTom <i@actom.me>
+- albanobattistella <34811668+albanobattistella@users.noreply.github.com>
+- Alexandre <adc@biltzar.eu>
+- Andy Scherzinger <info@andy-scherzinger.de>
+- Anna Larch <anna@nextcloud.com>
+- ArnaudTa <33383276+ArnaudTa@users.noreply.github.com>
+- bedaes <bedaes@users.noreply.github.com>
+- cloud2018 <34692335+cloud2018@users.noreply.github.com>
+- DennisNikolay <dennisnikolay@posteo.de>
+- Deutscher Bundesjugendring <digital@dbjr.de>
+- Eduardo Broering <eduardo@platon.com.br>
+- fxmw11 <felix.nz@hotmail.de>
+- Git'Fellow <12234510+solracsf@users.noreply.github.com>
+- Irillit <silvansee@gmail.com>
+- Jason Cheng <30381035+jasoncheng7115@users.noreply.github.com>
+- Joas Schilling <coding@schilljs.com>
+- Jonas Heinrich <onny@project-insanity.org>
+- Louis Chemineau <louis@chmn.me>
+- Mateusz Bryl <60017069+brylos1@users.noreply.github.com>
+- Matthieu Le Corre <matthieu.lecorre@univ-nantes.fr>
+- mayswind <i@mayswind.net>
+- Michal Zila <holden42@gmail.com>
+- Nextcloud bot <bot@nextcloud.com>
+- p-bo <pavel.borecki@gmail.com>
+- raffaelone <73063127+raffaelone@users.noreply.github.com>
+- rakekniven <2069590+rakekniven@users.noreply.github.com>
+- Ravinou <39600829+Ravinou@users.noreply.github.com>
+- Rindula <Rindula@users.noreply.github.com>
+- root <root@coding.ide>
+- Sébastien Marinier <seb@smarinier.net>
+- Tom <Tom@localhost.localdomain>
+- Vyacheslav N. Boyko <mail4bvn@gmail.com>
