@@ -9,7 +9,7 @@
 [![REUSE status](https://api.reuse.software/badge/github.com/nextcloud/files_mindmap)](https://api.reuse.software/info/github.com/nextcloud/files_mindmap)
 
 This app allows Nextcloud users to open, save, and edit mind map files directly
-in the web browser. App icon by [Icons8](https://icons8.com); mind map rendering
+in the web browser. Mind map rendering
 powered by [KityMinder Editor](https://github.com/nextcloud/kityminder-editor).
 
 ## How to Use
