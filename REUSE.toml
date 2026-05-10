@@ -1,0 +1,120 @@
+# SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+# SPDX-License-Identifier: AGPL-3.0-or-later
+version = 1
+SPDX-PackageName = "files_mindmap"
+SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
+SPDX-PackageDownloadLocation = "https://github.com/nextcloud/files_mindmap"
+
+[[annotations]]
+path = ["l10n/**.js", "l10n/**.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2018-2023 Jingtao Yan and files_mindmap contributors, 2025 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["package.json", "package-lock.json"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2023 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = [".tx/config"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2025 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["screenshots/1-small.png", "screenshots/1.png", "screenshots/2-small.png", "screenshots/2.png", "screenshots/3-small.png", "screenshots/3.png"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = ["img/app.svg", "img/mindmap.svg"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2018-2026 Google LLC"
+SPDX-License-Identifier = "Apache-2.0"
+
+[[annotations]]
+path = ["vendor/angular/**", "vendor/angular-bootstrap/**", "vendor/angular-ui-codemirror/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2016 Angular"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/bootstrap/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2011-2016 Twitter, Inc."
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/codemirror/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017 by Marijn Haverbeke <marijnh@gmail.com> and others"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/color-picker/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2015 Bo Zhang"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/hotbox/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2017 Baidu FEX"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["vendor/jquery/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "JS Foundation and other contributors, <https://js.foundation/>"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/js-base64/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014 Dan Kogai"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["vendor/jsPDF/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2010-2016 James Hall <james@parall.ax> <https://github.com/MrRio/jsPDF>, 2010 Aaron Spike, <https://github.com/acspike>, 2012 Willow Systems Corporation, <willow-systems.com>, 2012 Pablo Hess, <https://github.com/pablohess>, 2012 Florian Jenett, <https://github.com/fjenett>, 2013 Warren Weckesser, <https://github.com/warrenweckesser>, 2013 Youssef Beddad, <https://github.com/lifof>, 2013 Lee Driscoll, <https://github.com/lsdriscoll>, 2013 Stefan Slonevskiy, <https://github.com/stefslon>, 2013 Jeremy Morel, <https://github.com/jmorel>, 2013 Christoph Hartmann, <https://github.com/chris-rock>, 2014 Juan Pablo Gaviria, <https://github.com/juanpgaviria>, 2014 James Makes, <https://github.com/dollaruw>, 2014 Diego Casorran, <https://github.com/diegocr>, 2014 Steven Spungin, <https://github.com/Flamenco>, 2014 Kenneth Glassey, <https://github.com/Gavvers>"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/kity/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014 FEX @ Baidu Inc. <fex@baidu.com>"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["vendor/kityminder-core/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014, FEX, Baidu. <fex@baidu.com>"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["vendor/kityminder-core/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014, FEX, Baidu. <fex@baidu.com>"
+SPDX-License-Identifier = "BSD-3-Clause"
+
+[[annotations]]
+path = ["vendor/kityminder-editor/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2014, FEX, Baidu. <fex@baidu.com>"
+SPDX-License-Identifier = "GPL-2.0-or-later"
+
+[[annotations]]
+path = ["vendor/marked/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2011-2018 Christopher Jeffrey <https://github.com/chjj>"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = ["vendor/seajs/**"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2009-2099 Frank Wang http://seajs.org/"
+SPDX-License-Identifier = "MIT"

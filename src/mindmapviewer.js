@@ -1,3 +1,9 @@
+/**
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2024-2025 Jingtao Yan <i@actom.me>
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 /* global OCA */
 import MindMap from './views/MindMap.vue'
 import FilesMindMap from './mindmap.js'

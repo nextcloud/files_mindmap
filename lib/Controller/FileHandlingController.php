@@ -1,4 +1,10 @@
 <?php
+
+/**
+ * SPDX-FileCopyrightText: 2018-2025 Jingtao Yan and files_mindmap contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 namespace OCA\Files_MindMap\Controller;
 
 use OCP\HintException;

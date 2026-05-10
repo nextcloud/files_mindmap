@@ -1,3 +1,9 @@
+/**
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2018-2024 Jingtao Yan and files_mindmap contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 /* global $, minder, Base64, jsPDF, angular */
 /* eslint-disable @nextcloud/no-deprecations */
 /**

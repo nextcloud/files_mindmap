@@ -1,3 +1,9 @@
+/**
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-FileCopyrightText: 2024 Jingtao Yan <i@actom.me>
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 export default {
 	base64Encode(string) {
 		return btoa(encodeURIComponent(string).replace(/%([0-9A-F]{2})/g, function(match, p1) {
