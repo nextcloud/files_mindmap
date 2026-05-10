@@ -1,3 +1,8 @@
+/**
+ * SPDX-FileCopyrightText: 2026 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 import { describe, it, expect, beforeAll } from 'vitest'
 import util from '../../util.js'
 import freemind from '../../plugins/freemind.js'

@@ -1,3 +1,8 @@
+/**
+ * SPDX-FileCopyrightText: 2023 Nextcloud GmbH and Nextcloud contributors
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 import { join } from 'path'
 import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { createAppConfig } from '@nextcloud/vite-config'

@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+/**
+ * SPDX-FileCopyrightText: 2024 Jingtao Yan <i@actom.me>
+ * SPDX-License-Identifier: AGPL-3.0-or-later
+ */
+
 namespace OCA\Files_MindMap\Listener;
 
 use OCA\Viewer\Event\LoadViewer;
