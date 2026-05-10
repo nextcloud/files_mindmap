@@ -33,14 +33,16 @@ const viewerMixin = {
 
 function mountMindMap(dataOverrides = {}) {
 	return shallowMount(MindMap, {
-		mixins: [
-			{
-				...viewerMixin,
-				data() {
-					return { ...viewerMixin.data(), ...dataOverrides }
+		global: {
+			mixins: [
+				{
+					...viewerMixin,
+					data() {
+						return { ...viewerMixin.data(), ...dataOverrides }
+					},
 				},
-			},
-		],
+			],
+		},
 	})
 }
 
@@ -79,7 +81,7 @@ describe('MindMap.vue', () => {
 		it('returns the file whose fileid matches the current fileid', () => {
 			const file = { fileid: 7, name: 'test.km' }
 			const wrapper = mountMindMap({ fileList: [file], fileid: 7 })
-			expect(wrapper.vm.file).toBe(file)
+			expect(wrapper.vm.file).toStrictEqual(file)
 		})
 
 		it('returns undefined when no file matches', () => {
@@ -103,7 +105,7 @@ describe('MindMap.vue', () => {
 		it('removes the webviewerloaded event listener on destroy', () => {
 			const spy = vi.spyOn(document, 'removeEventListener')
 			const wrapper = mountMindMap()
-			wrapper.destroy()
+			wrapper.unmount()
 			expect(spy).toHaveBeenCalledWith('webviewerloaded', expect.anything())
 			spy.mockRestore()
 		})
