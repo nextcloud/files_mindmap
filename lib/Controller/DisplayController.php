@@ -47,6 +47,7 @@ class DisplayController extends Controller {
             'lang' => $this->l10nFactory->findLanguage()
 		];
 		$response = new TemplateResponse($this->appName, 'viewer', $params, 'blank');
+		$response->addHeader('Cache-Control', 'no-cache');
 		
         $policy = new ContentSecurityPolicy();
         $policy->addAllowedFrameDomain('\'self\'');
