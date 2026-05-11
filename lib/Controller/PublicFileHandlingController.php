@@ -121,6 +121,9 @@ class PublicFileHandlingController extends Controller{
 
         $fileContents = $fileNode->getContent();
         if ($fileContents !== false) {
+            if ($fileContents === '') {
+                $fileContents = '{"root":{"data":{"id":"root","text":"New mind map"},"children":[]}}';
+            }
             $writeable = $this->checkPermissions($share, \OCP\Constants::PERMISSION_UPDATE);
             return new DataResponse(
                 [

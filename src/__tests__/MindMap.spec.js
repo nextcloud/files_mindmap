@@ -5,7 +5,7 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
-import MindMap from '../views/MindMap.vue'
+import MindMap from '../views/MindMap.js'
 
 vi.mock('@nextcloud/l10n', () => ({ getLanguage: () => 'en' }))
 vi.mock('@nextcloud/router', () => ({
@@ -32,7 +32,6 @@ const viewerMixin = {
 	},
 	methods: {
 		doneLoading() {},
-		handleWebviewerloaded() {},
 	},
 }
 
@@ -51,7 +50,7 @@ function mountMindMap(dataOverrides = {}) {
 	})
 }
 
-describe('MindMap.vue', () => {
+describe('MindMap', () => {
 	beforeEach(() => {
 		window.OCA = { FilesMindMap: { setFile: vi.fn() } }
 	})
@@ -105,14 +104,6 @@ describe('MindMap.vue', () => {
 				fileid: 3,
 			})
 			expect(window.OCA.FilesMindMap.setFile).toHaveBeenCalled()
-		})
-
-		it('removes the webviewerloaded event listener on destroy', () => {
-			const spy = vi.spyOn(document, 'removeEventListener')
-			const wrapper = mountMindMap()
-			wrapper.unmount()
-			expect(spy).toHaveBeenCalledWith('webviewerloaded', expect.anything())
-			spy.mockRestore()
 		})
 	})
 })
