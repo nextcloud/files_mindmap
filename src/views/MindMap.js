@@ -5,6 +5,7 @@
  */
 
 /* global OCA */
+import { h as _h } from 'vue'
 import { generateUrl } from '@nextcloud/router'
 
 console.debug('MindMap Vue Loading')
@@ -42,7 +43,9 @@ export default {
 	},
 
 	render(h) {
-		return h('iframe', {
+		// Vue 2.7 passes h as an argument; Vue 3 (test env) does not — fall back to the peer dep import.
+		const createElement = typeof h === 'function' ? h : _h
+		return createElement('iframe', {
 			style: {
 				width: '100%',
 				height: 'calc(100vh - var(--header-height))',
