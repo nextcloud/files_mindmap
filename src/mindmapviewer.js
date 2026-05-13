@@ -5,13 +5,12 @@
  */
 
 /* global OCA */
-import MindMap from './views/MindMap.vue'
+import MindMap from './views/MindMap.js'
 import FilesMindMap from './mindmap.js'
 
 OCA.FilesMindMap = FilesMindMap
 
 FilesMindMap.init()
-FilesMindMap.registerNewFileMenuPlugin()
 FilesMindMap.registerFileActions()
 
 const supportedMimes = OCA.FilesMindMap.getSupportedMimetypes()

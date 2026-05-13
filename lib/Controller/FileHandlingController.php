@@ -79,6 +79,9 @@ class FileHandlingController extends Controller{
 				}
 				$fileContents = $file->getContent();
 				if ($fileContents !== false) {
+					if ($fileContents === '') {
+						$fileContents = '{"root":{"data":{"id":"root","text":"New mind map"},"children":[]}}';
+					}
 					$writable = $file->isUpdateable();
 					$mime = $file->getMimeType();
 					$mTime = $file->getMTime();

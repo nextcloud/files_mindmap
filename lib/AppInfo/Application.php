@@ -22,6 +22,8 @@ use OCA\Viewer\Event\LoadViewer;
 use OCA\Files_MindMap\Listener\LoadAdditionalListener;
 use OCA\Files_MindMap\Listener\LoadViewerListener;
 use OCA\Files_MindMap\Listener\LoadPublicViewerListener;
+use OCA\Files_MindMap\Listener\RegisterTemplateCreatorListener;
+use OCP\Files\Template\RegisterTemplateCreatorEvent;
 
 
 
@@ -47,6 +49,7 @@ class Application extends App implements IBootstrap {
 		$context->registerEventListener(LoadAdditionalScriptsEvent::class, LoadAdditionalListener::class);
 		$context->registerEventListener(BeforeTemplateRenderedEvent::class, LoadPublicViewerListener::class);
 		$context->registerEventListener(LoadViewer::class, LoadViewerListener::class);
+		$context->registerEventListener(RegisterTemplateCreatorEvent::class, RegisterTemplateCreatorListener::class);
 	}
 
 	public function boot(IBootContext $context): void {

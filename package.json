@@ -43,6 +43,9 @@
     "@nextcloud/sharing": "^0.3.0",
     "jszip": "^3.10.1"
   },
+  "peerDependencies": {
+    "vue": ">=2.7.0"
+  },
   "devDependencies": {
     "@nextcloud/browserslist-config": "^3.0.0",
     "@nextcloud/eslint-config": "^v8.3.0",

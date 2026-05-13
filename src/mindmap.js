@@ -7,22 +7,16 @@
 /* global OCA */
 // eslint-disable-next-line import/no-unresolved
 import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
-// eslint-disable-next-line import/no-unresolved
-import MindMapSvg from '../img/mindmap.svg?raw'
 
 import {
 	DefaultType,
 	registerFileAction,
-	File,
 	Permission,
-	getUniqueName,
 } from '@nextcloud/files'
 import {
 	FileAction,
 	registerFileAction as legacyRegisterFileAction,
-	addNewFileMenuEntry as legacyAddNewFileMenuEntry,
 } from '@nextcloud/files-legacy'
-import { emit } from '@nextcloud/event-bus'
 import axios from '@nextcloud/axios'
 import { getCurrentUser } from '@nextcloud/auth'
 import { dirname } from '@nextcloud/paths'
@@ -228,50 +222,6 @@ const FilesMindMap = {
 		} else {
 			legacyRegisterFileAction(new FileAction(actionConfig))
 		}
-	},
-
-	registerNewFileMenuPlugin() {
-		legacyAddNewFileMenuEntry({
-			id: 'mindmapfile',
-			displayName: t('files_mindmap', 'New mind map file'),
-			...(version >= 33 ? { iconSvgInline: MindMapSvg } : { iconClass: 'icon-mindmap' }),
-			enabled(context) {
-				// only attach to main file list, public view is not supported yet
-				console.debug('addNewFileMenuEntry', context)
-				return (context.permissions & Permission.CREATE) !== 0
-			},
-			async handler(context, content) {
-				const contentNames = content.map((node) => node.basename)
-				const fileName = getUniqueName(t('files_mindmap', 'New mind map.km'), contentNames)
-				const source = context.encodedSource + '/' + encodeURIComponent(fileName)
-
-				const response = await axios({
-					method: 'PUT',
-					url: source,
-					headers: {
-						Overwrite: 'F',
-					},
-					data: ' ',
-				})
-
-				const fileid = parseInt(response.headers['oc-fileid'])
-				const file = new File({
-					source: context.source + '/' + fileName,
-					id: fileid,
-					mtime: new Date(),
-					mime: 'application/km',
-					owner: getCurrentUser()?.uid || null,
-					permissions: Permission.ALL,
-					root: context?.root || '/files/' + getCurrentUser()?.uid,
-				})
-
-				// FilesMindMap.showMessage(t('files_mindmap', 'Created "{name}"', { name: fileName }))
-
-				emit('files:node:created', file)
-
-				OCA.Viewer.openWith('mindmap', { path: file.path })
-			},
-		})
 	},
 
 	setFile(file) {
