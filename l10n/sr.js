@@ -25,8 +25,6 @@ OC.L10N.register(
     "Save failed" : "Снимање није успело",
     "Unsupported file type: {mimetype}" : "Тип фајла који није подржан: {mimetype}",
     "Edit" : "Измени",
-    "New mind map file" : "Нови фајл мапе ума",
-    "New mind map.km" : "Нови map.km",
     "AutoSave" : "Ауто-чување",
     "Save" : "Сачувај",
     "Export" : "Извези",

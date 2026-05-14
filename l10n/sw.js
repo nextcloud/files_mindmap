@@ -25,8 +25,6 @@ OC.L10N.register(
     "Save failed" : "Uhifadhi umeshindikana",
     "Unsupported file type: {mimetype}" : "Aina ya faili isiyotumika: {mimetype}",
     "Edit" : "Hariri",
-    "New mind map file" : "Faili mpya ya ramani ya mawazo",
-    "New mind map.km" : "Ramani mpya ya mawazo.km",
     "AutoSave" : "Hifadhi Kiotomatiki",
     "Save" : "Hifadhi",
     "Export" : "Safirisha",

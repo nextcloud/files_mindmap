@@ -25,8 +25,6 @@ OC.L10N.register(
     "Save failed" : "Huts egin du gordetzean",
     "Unsupported file type: {mimetype}" : "Onartu gabeko fitxategi mota: {mimetype}",
     "Edit" : "Editatu",
-    "New mind map file" : "Mapa mental fitxategi berria",
-    "New mind map.km" : "map.km mapa berria",
     "AutoSave" : "Gordetze automatikoa",
     "Save" : "Gorde",
     "Export" : "Esportatu",

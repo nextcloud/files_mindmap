@@ -25,8 +25,6 @@ OC.L10N.register(
     "Save failed" : "Gagal menyimpan",
     "Unsupported file type: {mimetype}" : "Jenis file tidak didukung: {mimetype}",
     "Edit" : "Edit",
-    "New mind map file" : "File peta pikiran baru",
-    "New mind map.km" : "Peta pikiran baru.km",
     "AutoSave" : "Simpan Otomatis",
     "Save" : "Simpan",
     "Export" : "Ekspor",

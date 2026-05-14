@@ -26,8 +26,6 @@ OC.L10N.register(
     "Save failed" : "Salvestamine ei õnnestunud",
     "Unsupported file type: {mimetype}" : "Faili tüüp pole toetatud: {mimetype}",
     "Edit" : "Muuda",
-    "New mind map file" : "Uus mõttekaardi fail",
-    "New mind map.km" : "Uus mõttekaardi fail.km",
     "AutoSave" : "Salvesta automaatselt",
     "Save" : "Salvesta",
     "Export" : "Ekspordi",

@@ -26,8 +26,6 @@ OC.L10N.register(
     "Save failed" : "Kaydedilemedi",
     "Unsupported file type: {mimetype}" : "Dosya türü desteklenmiyor: {mimetype}",
     "Edit" : "Düzenle",
-    "New mind map file" : "Yeni zihin haritası dosyası",
-    "New mind map.km" : "Yeni zihin haritası.km",
     "AutoSave" : "Otomatik kaydedilsin",
     "Save" : "Kaydet",
     "Export" : "Dışa aktar",

@@ -26,8 +26,6 @@ OC.L10N.register(
     "Save failed" : "Įrašyti nepavyko",
     "Unsupported file type: {mimetype}" : "Nepalaikomas failo tipas: {mimetype}",
     "Edit" : "Redaguoti",
-    "New mind map file" : "Naujas idėjų žemėlapio failas",
-    "New mind map.km" : "Naujas idėjų žemėlapis.km",
     "AutoSave" : "Automatinis išsaugojimas",
     "Save" : "Įrašyti",
     "Export" : "Eksportuoti",

@@ -21,8 +21,6 @@ OC.L10N.register(
     "Save failed" : "저장 실패",
     "Unsupported file type: {mimetype}" : "지원되지 않는 파일 형식: {mimetype}",
     "Edit" : "편집",
-    "New mind map file" : "새 마인드 맵 파일",
-    "New mind map.km" : "새 마인드 맵.km",
     "AutoSave" : "자동 저장",
     "Save" : "저장",
     "Export" : "내보내기",

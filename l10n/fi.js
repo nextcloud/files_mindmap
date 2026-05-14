@@ -21,8 +21,6 @@ OC.L10N.register(
     "Save failed" : "Tallentaminen epäonnistui",
     "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",
     "Edit" : "Muokkaa",
-    "New mind map file" : "Uusi ajatuskarttatiedosto",
-    "New mind map.km" : "Uusi ajatuskartta.km",
     "AutoSave" : "Automaattinen tallennus",
     "Save" : "Tallenna",
     "Export" : "Vie",

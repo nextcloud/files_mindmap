@@ -21,8 +21,6 @@ OC.L10N.register(
     "Save failed" : "فشلت عملية الحفظ",
     "Unsupported file type: {mimetype}" : "نوع الملف غير مدعوم: {mimetype}",
     "Edit" : "تحرير",
-    "New mind map file" : "ملف خريطة ذهنية جديدة",
-    "New mind map.km" : "خريطة ذهنية جديدة .km",
     "AutoSave" : "حفظ تلقائي",
     "Save" : "حفظ",
     "Export" : "تصدير",

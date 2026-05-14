@@ -26,8 +26,6 @@ OC.L10N.register(
     "Save failed" : "Spremanje nije uspjelo",
     "Unsupported file type: {mimetype}" : "Nepodržana vrsta datoteke: {mimetype}",
     "Edit" : "Uredi",
-    "New mind map file" : "Nova datoteka mentalne mape",
-    "New mind map.km" : "Nova mentalna mapa.km",
     "AutoSave" : "Automatsko spremanje",
     "Save" : "Spremi",
     "Export" : "Izvezi",

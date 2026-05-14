@@ -25,8 +25,6 @@ OC.L10N.register(
     "Save failed" : "Αποτυχία αποθήκευσης",
     "Unsupported file type: {mimetype}" : "Μη υποστηριζόμενος τύπος αρχείου: {mimetype}",
     "Edit" : "Επεξεργασία",
-    "New mind map file" : "Νέο αρχείο χάρτη σκέψης",
-    "New mind map.km" : "Νέος χάρτης σκέψης.km",
     "AutoSave" : "Αυτόματη αποθήκευση",
     "Save" : "Αποθήκευση",
     "Export" : "Εξαγωγή",

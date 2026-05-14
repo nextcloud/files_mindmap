@@ -26,8 +26,6 @@ OC.L10N.register(
     "Save failed" : "Ukládání se nezdařilo",
     "Unsupported file type: {mimetype}" : "Nepodporovaný typ souboru: {mimetype}",
     "Edit" : "Upravit",
-    "New mind map file" : "Nový soubor s myšlenkovou mapou",
-    "New mind map.km" : "Nova_myslenkova_mapa.km",
     "AutoSave" : "Automatické ukládání",
     "Save" : "Uložit",
     "Export" : "Exportovat",

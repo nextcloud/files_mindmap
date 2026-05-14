@@ -26,8 +26,6 @@ OC.L10N.register(
     "Save failed" : "Falha ao salvar",
     "Unsupported file type: {mimetype}" : "Tipo de arquivo não suportado: {mimetype}",
     "Edit" : "Editar",
-    "New mind map file" : "Novo arquivo de mapa mental",
-    "New mind map.km" : "Novo mapa mental.km",
     "AutoSave" : "Autossalvar",
     "Save" : "Salvar",
     "Export" : "Exportar",
