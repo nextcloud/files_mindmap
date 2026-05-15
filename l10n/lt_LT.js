@@ -18,6 +18,8 @@ OC.L10N.register(
     "File not found" : "Failas nerastas",
     "The requested resource is not a file." : "Prašomas išteklius nėra failas.",
     "You have no permission to write this file" : "Jūs neturite leidimo rašyti šio failo",
+    "New mind map" : "Naujas idėjų žemėlapis",
+    "Create new mind map" : "Sukurti naują idėjų žemėlapį",
     "Mind Map" : "Idėjų žemėlapis",
     "A mind map editor" : "Idėjų žemėlapio redaktorius",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Ši programa leidžia „Nextcloud“ vartotojams atidaryti, išsaugoti ir redaguoti Idėjų žemėlapių failus interneto naršyklėje. Jei ši funkcija įjungta, interneto naršyklės viršuje esančiame meniu „Naujas“ atsiranda Idėjų žemėlapio failo parinktis. Paspaudus ją, naršyklėje atsidaro naujas Idėjų žemėlapio failas, kurį galima išsaugoti esamame „Nextcloud“ aplanke.",

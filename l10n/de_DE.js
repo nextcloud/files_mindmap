@@ -18,6 +18,8 @@ OC.L10N.register(
     "File not found" : "Datei nicht gefunden",
     "The requested resource is not a file." : "Die angeforderte Ressource ist keine Datei.",
     "You have no permission to write this file" : "Sie haben keine Berechtigung, diese Datei zu schreiben",
+    "New mind map" : "Neue Mindmap",
+    "Create new mind map" : "Neue Mindmap erstellen",
     "Mind Map" : "Mindmap",
     "A mind map editor" : "Ein Mindmap-Editor",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Diese Anwendung ermöglicht es Nextcloud-Nutzern, Mindmap-Dateien im Webbrowser zu öffnen, zu speichern und zu bearbeiten. Ist die Anwendung aktiviert, erscheint oben im Webbrowser über die Schaltfläche \"Neu\" ein Eintrag für die Mindmap-Datei. Durch Anklicken öffnet sich eine neue Mindmap-Datei im Browser und kann im aktuellen Nextcloud-Ordner gespeichert werden.",
