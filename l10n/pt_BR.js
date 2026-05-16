@@ -18,6 +18,8 @@ OC.L10N.register(
     "File not found" : "Arquivo não encontrado",
     "The requested resource is not a file." : "O recurso solicitado não é um arquivo.",
     "You have no permission to write this file" : "Você não tem permissão para gravar este arquivo",
+    "New mind map" : "Novo mapa mental",
+    "Create new mind map" : "Criar um novo mapa mental",
     "Mind Map" : "Mapa Mental",
     "A mind map editor" : "Um editor de mapas mentais",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Esse aplicativo permite que os usuários do Nextcloud abram, salvem e editem arquivos de mapas mentais no navegador da web. Se estiver ativado, aparecerá uma entrada no botão \"Novo\" na parte superior do navegador da web para a entrada do arquivo de mapa mental. Quando clicado, um novo arquivo de mapa mental é aberto no navegador e o arquivo pode ser salvo na pasta atual do Nextcloud.",

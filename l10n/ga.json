@@ -16,6 +16,8 @@
     "File not found" : "Comhad gan aimsiú",
     "The requested resource is not a file." : "Ní comhad é an acmhainn iarrtha.",
     "You have no permission to write this file" : "Níl aon chead agat an comhad seo a scríobh",
+    "New mind map" : "Léarscáil intinne nua",
+    "Create new mind map" : "Cruthaigh léarscáil intinne nua",
     "Mind Map" : "Léarscáil aigne",
     "A mind map editor" : "Eagarthóir léarscáil aigne",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Cuireann an feidhmchlár seo ar chumas úsáideoirí Nextcloud comhaid mheabhairmhapa a oscailt, a shábháil agus a chur in eagar sa bhrabhsálaí gréasáin. Má tá sé cumasaithe, feictear iontráil sa chnaipe “Nua” ag barr an bhrabhsálaí gréasáin agus iontráil an chomhaid mheabhairmhapa. Nuair a chliceáiltear é, osclaíonn comhad mapa aigne nua sa bhrabhsálaí agus is féidir an comhad a shábháil san fhillteán Nextcloud reatha.",
