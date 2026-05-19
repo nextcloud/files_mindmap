@@ -18,6 +18,8 @@ OC.L10N.register(
     "File not found" : "Dosya bulunamadı",
     "The requested resource is not a file." : "İstenilen kaynak bir dosya değil.",
     "You have no permission to write this file" : "Bu dosyaya yazma izniniz yok",
+    "New mind map" : "Yeni zihin haritası",
+    "Create new mind map" : "Yeni zihin haritası oluştur",
     "Mind Map" : "Zihin haritası",
     "A mind map editor" : "Zihin haritası düzenleyici",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Bu uygulama, Nextcloud kullanıcılarının tarayıcılarında zihin haritası dosyalarını açmasını, kaydetmesini ve düzenlemesini sağlar. Kullanıma alındığında, tarayıcının üst kısmındaki \"Yeni\" düğmesinde bir zihin haritası dosyası kaydı görüntülenir. Buna tıklandığında, tarayıcıda yeni bir zihin haritası dosyası açılır ve dosya geçerli Nextcloud klasörüne kaydedilebilir.",
