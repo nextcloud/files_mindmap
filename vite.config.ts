@@ -30,7 +30,8 @@ export default createAppConfig({
 				targets: [
 					{
 						src: 'src/viewer.js',
-						dest: 'js'
+						dest: 'js',
+						rename: { stripBase: true },
 					}
 				]
 			})
