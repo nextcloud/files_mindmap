@@ -6,6 +6,12 @@ SPDX-PackageSupplier = "Nextcloud <info@nextcloud.com>"
 SPDX-PackageDownloadLocation = "https://github.com/nextcloud/files_mindmap"
 
 [[annotations]]
+path = ["CLAUDE.md"]
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2026 Nextcloud GmbH and Nextcloud contributors"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
 path = ["l10n/**.js", "l10n/**.json"]
 precedence = "aggregate"
 SPDX-FileCopyrightText = "2018-2023 Jingtao Yan and files_mindmap contributors, 2025 Nextcloud GmbH and Nextcloud contributors"
