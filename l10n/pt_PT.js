@@ -6,16 +6,20 @@ OC.L10N.register(
     "Invalid file path supplied." : "O Caminho do ficheiro indicado é inválido.",
     "The file is locked." : "O ficheiro está bloqueado.",
     "An internal server error occurred." : "Ocorreu um erro interno no servidor.",
+    "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "O arquivo em que você está trabalhando foi atualizado nesse meio tempo. Não é possível salvar seu progresso, pois o salvamento substituiria essas alterações. Por favor, recarregue a página.",
     "Could not write to file." : "Não foi possível escrever no ficheiro.",
     "Insufficient permissions" : "Permissões insuficientes",
     "File path not supplied" : "Caminho do ficheiro não indicado",
     "File mtime not supplied" : "O Ficheiro mtime não foi indicado",
     "Share not found" : "Partilha não encontrada",
     "File not found" : "Ficheiro não encontrado",
+    "Create new mind map" : "Criar um novo mapa mental",
     "Mind Map" : "Mind Map",
     "Does not support saving {extension} files." : "Não é compatível com a gravação de ficheiros {extension}.",
+    "Save failed" : "Falha ao salvar",
     "Edit" : "Editar",
     "Save" : "Guardar",
-    "Export" : "Exportar"
+    "Export" : "Exportar",
+    "Export to PDF" : "Exportar para PDF"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
