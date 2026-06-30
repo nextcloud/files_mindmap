@@ -15,11 +15,14 @@ OC.L10N.register(
     "File not found" : "Ficheiro não encontrado",
     "Create new mind map" : "Criar um novo mapa mental",
     "Mind Map" : "Mind Map",
+    "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Esse aplicativo permite que os usuários do Nextcloud abram, salvem e editem arquivos de mapas mentais no navegador da web. Se estiver ativado, aparecerá uma entrada no botão \"Novo\" na parte superior do navegador da web para a entrada do arquivo de mapa mental. Quando clicado, um novo arquivo de mapa mental é aberto no navegador e o arquivo pode ser salvo na pasta atual do Nextcloud.",
     "Does not support saving {extension} files." : "Não é compatível com a gravação de ficheiros {extension}.",
     "Save failed" : "Falha ao salvar",
+    "Unsupported file type: {mimetype}" : "Tipo de arquivo não suportado: {mimetype}",
     "Edit" : "Editar",
     "Save" : "Guardar",
     "Export" : "Exportar",
-    "Export to PDF" : "Exportar para PDF"
+    "Export to PDF" : "Exportar para PDF",
+    "Export to Markdown" : "Exportar para Markdown"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");
