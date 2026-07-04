@@ -4,11 +4,11 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-/* global OCA */
-import { h as _h } from 'vue'
 import { generateUrl } from '@nextcloud/router'
+import { h as _h } from 'vue'
+import logger from '../logger.js'
 
-console.debug('MindMap Vue Loading')
+logger.debug('MindMap Vue Loading')
 
 // Plain Options API component — intentionally NOT a Vue SFC.
 // The viewer app (Vue 2.7) renders this component; using a compiled SFC would
@@ -35,7 +35,7 @@ export default {
 	},
 
 	mounted() {
-		console.debug('mounted file: ', this.file)
+		logger.debug('mounted file: ', this.file)
 		if (OCA.FilesMindMap) {
 			OCA.FilesMindMap.setFile(this.file)
 		}
@@ -53,7 +53,7 @@ export default {
 				position: 'absolute',
 			},
 			attrs: { src: this.iframeSrc },
-			on: { load: () => { console.debug('File:', this.file) } },
+			on: { load: () => { logger.debug('File:', this.file) } },
 		})
 	},
 }

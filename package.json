@@ -24,7 +24,7 @@
     "build": "vite --mode production build",
     "dev": "vite --mode development build",
     "watch": "vite --mode development build --watch",
-    "lint": "ESLINT_USE_FLAT_CONFIG=false eslint --ext .js,.vue,.ts src",
+    "lint": "eslint src",
     "test": "vitest run",
     "test:watch": "vitest"
   },

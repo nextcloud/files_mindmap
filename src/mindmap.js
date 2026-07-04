@@ -4,31 +4,28 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-/* global OCA */
-// eslint-disable-next-line import/no-unresolved
 import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
-
+import { getCurrentUser } from '@nextcloud/auth'
+import axios from '@nextcloud/axios'
+import { showMessage as showToast } from '@nextcloud/dialogs'
 import {
 	DefaultType,
-	registerFileAction,
 	Permission,
+	registerFileAction,
 } from '@nextcloud/files'
 import {
 	FileAction,
 	registerFileAction as legacyRegisterFileAction,
 } from '@nextcloud/files-legacy'
-import axios from '@nextcloud/axios'
-import { getCurrentUser } from '@nextcloud/auth'
-import { dirname } from '@nextcloud/paths'
-import { isPublicShare } from '@nextcloud/sharing/public'
 import { translate as t } from '@nextcloud/l10n'
+import { dirname } from '@nextcloud/paths'
 import { generateUrl } from '@nextcloud/router'
-import { showMessage as showToast } from '@nextcloud/dialogs'
-
-import util from './util.js'
-import km from './plugins/km.js'
+import { isPublicShare } from '@nextcloud/sharing/public'
+import logger from './logger.js'
 import freemind from './plugins/freemind.js'
+import km from './plugins/km.js'
 import xmind from './plugins/xmind.js'
+import util from './util.js'
 
 const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
 
@@ -78,6 +75,7 @@ const FilesMindMap = {
 
 	/**
 	 * Determine if this page is public mindmap share page
+	 *
 	 * @return {boolean}
 	 */
 	isMindmapPublic() {
@@ -128,7 +126,8 @@ const FilesMindMap = {
 				// update modification time
 				try {
 					self._file.mtime = response.data.mtime
-				} catch (e) {}
+				} catch { // response did not contain a modification time
+				}
 				success(t('files_mindmap', 'File Saved'))
 			}).catch(function(error) {
 				const message = error.response?.data?.message || t('files_mindmap', 'Save failed')
@@ -141,19 +140,17 @@ const FilesMindMap = {
 		const self = this
 		const filename = this._file.name
 		const dir = this._file.dir
-		let url = ''
-		let sharingToken = ''
+		let url
+		let sharingToken
 		const mimetype = document.getElementById('mimetype')?.value
 		if (document.getElementById('isPublic')?.value && this.isSupportedMime(mimetype)) {
 			sharingToken = document.getElementById('sharingToken')?.value
 			url = generateUrl('/apps/files_mindmap/public/{token}', { token: sharingToken })
 		} else if (document.getElementById('isPublic')?.value) {
 			sharingToken = document.getElementById('sharingToken')?.value
-			url = generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}',
-				{ token: sharingToken, filename, dir })
+			url = generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}', { token: sharingToken, filename, dir })
 		} else {
-			url = generateUrl('/apps/files_mindmap/ajax/loadfile?filename={filename}&dir={dir}',
-				{ filename, dir })
+			url = generateUrl('/apps/files_mindmap/ajax/loadfile?filename={filename}&dir={dir}', { filename, dir })
 		}
 		axios.get(url).then(function(response) {
 			const data = response.data
@@ -204,7 +201,7 @@ const FilesMindMap = {
 				return nodes.length === 1 && mimes.includes(nodes[0].mime) && (nodes[0].permissions & Permission.READ) !== 0
 			},
 
-			async exec(node, view) {
+			async exec(node) {
 				try {
 					OCA.Viewer.openWith('mindmap', { path: node.path })
 					return true
@@ -243,7 +240,7 @@ const FilesMindMap = {
 		this._extensions.forEach(function(obj) {
 			result = result.concat(obj.mimes)
 		})
-		console.debug('Mindmap Mimetypes:', result)
+		logger.debug('Mindmap Mimetypes: ' + result.join(', '))
 		return result
 	},
 }

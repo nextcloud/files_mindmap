@@ -4,11 +4,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-/* global OCA */
-import FilesMindMap from './mindmap.js'
-import logger from './logger.js'
-
 import { isPublicShare } from '@nextcloud/sharing/public'
+import logger from './logger.js'
+import FilesMindMap from './mindmap.js'
 
 if (isPublicShare()) {
 	OCA.FilesMindMap = FilesMindMap
@@ -22,7 +20,7 @@ if (isPublicShare()) {
 				if (OCA.Viewer) {
 					contentElmt.innerHTML = ''
 					OCA.Viewer.setRootElement('#files-public-content')
-				    OCA.Viewer.open({ path: '/' })
+					OCA.Viewer.open({ path: '/' })
 
 					footerElmt.style.display = 'none'
 
@@ -33,14 +31,12 @@ if (isPublicShare()) {
 							frameElmt.style.marginTop = '0'
 						}
 					}, 1000)
-
 				} else {
 					logger.error('Viewer is not available, cannot preview mindmap')
 				}
 			}
-
 		})
 	}
 
-	console.debug('files_mindmap public.js loaded')
+	logger.debug('files_mindmap public.js loaded')
 }

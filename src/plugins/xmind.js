@@ -35,7 +35,6 @@ export default {
 		'task-done': ['progress', 9],
 	},
 	processTopic(topic, obj) {
-
 		// 处理文本
 		obj.data = {
 			text: topic.title,
@@ -48,11 +47,15 @@ export default {
 			if (markers.length && markers.length > 0) {
 				for (const i in markers) {
 					type = this.markerMap[markers[i].marker_id]
-					if (type) obj.data[type[0]] = type[1]
+					if (type) {
+						obj.data[type[0]] = type[1]
+					}
 				}
 			} else {
 				type = this.markerMap[markers.marker_id]
-				if (type) obj.data[type[0]] = type[1]
+				if (type) {
+					obj.data[type[0]] = type[1]
+				}
 			}
 		}
 
@@ -72,7 +75,6 @@ export default {
 					obj.children.push({})
 					this.processTopic(tmp[ii], obj.children[ii])
 				}
-
 			} else { // 一个子节点
 				obj.children = [{}]
 				this.processTopic(tmp, obj.children[0])
@@ -92,7 +94,7 @@ export default {
 		return new Promise(function(resolve, reject) {
 			JSZip.loadAsync(file).then(function(zip) {
 				const contentFile = zip.file('content.xml')
-				if (contentFile != null) {
+				if (contentFile !== null) {
 					contentFile.async('text').then(function(text) {
 						try {
 							const json = self.toKm(text)

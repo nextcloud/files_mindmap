@@ -44,11 +44,15 @@ export default {
 			if (icons.length && icons.length > 0) {
 				for (i in icons) {
 					type = this.markerMap[icons[i].BUILTIN]
-					if (type) obj.data[type[0]] = type[1]
+					if (type) {
+						obj.data[type[0]] = type[1]
+					}
 				}
 			} else {
 				type = this.markerMap[icons.BUILTIN]
-				if (type) obj.data[type[0]] = type[1]
+				if (type) {
+					obj.data[type[0]] = type[1]
+				}
 			}
 		}
 
@@ -67,7 +71,6 @@ export default {
 					obj.children.push({})
 					this.processTopic(tmp[i], obj.children[i])
 				}
-
 			} else { // 一个子节点
 				obj.children = [{}]
 				this.processTopic(tmp, obj.children[0])
