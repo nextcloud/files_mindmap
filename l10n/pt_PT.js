@@ -1,6 +1,7 @@
 OC.L10N.register(
     "files_mindmap",
     {
+    "You cannot open a folder" : "Você não pode abrir uma pasta.",
     "This file is too big to be opened. Please download the file instead." : "Este ficheiro é demasiado grande para ser aberto. Em vez disso, por favor, transfira o ficheiro.",
     "Cannot read the file." : "Não é possível ler o ficheiro.",
     "Invalid file path supplied." : "O Caminho do ficheiro indicado é inválido.",
