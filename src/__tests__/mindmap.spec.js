@@ -3,13 +3,12 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { describe, it, expect, vi, beforeEach } from 'vitest'
-
-import FilesMindMap from '../mindmap.js'
-import { showMessage as showToast } from '@nextcloud/dialogs'
 import axios from '@nextcloud/axios'
+import { showMessage as showToast } from '@nextcloud/dialogs'
+import { beforeEach, describe, expect, it, vi } from 'vitest'
+import FilesMindMap from '../mindmap.js'
 
-const flushPromises = () => new Promise(resolve => setTimeout(resolve, 0))
+const flushPromises = () => new Promise((resolve) => setTimeout(resolve, 0))
 
 vi.mock('@nextcloud/l10n', () => ({
 	translate: (_app, text) => text,
@@ -38,19 +37,19 @@ vi.mock('@nextcloud/event-bus', () => ({
 vi.mock('@mdi/svg/svg/pencil.svg?raw', () => ({ default: '<svg/>' }))
 
 vi.mock('@nextcloud/files-legacy', () => ({
-	FileAction: vi.fn().mockImplementation(opts => opts),
+	FileAction: vi.fn().mockImplementation((opts) => opts),
 	registerFileAction: vi.fn(),
 	addNewFileMenuEntry: vi.fn(),
 }))
 
 vi.mock('@nextcloud/files', () => ({
 	DefaultType: { HIDDEN: 'hidden' },
-	FileAction: vi.fn().mockImplementation(opts => opts),
+	FileAction: vi.fn().mockImplementation((opts) => opts),
 	addNewFileMenuEntry: vi.fn(),
 	registerFileAction: vi.fn(),
 	File: vi.fn(),
 	Permission: { READ: 1, CREATE: 4, UPDATE: 2, DELETE: 8, SHARE: 16, ALL: 31 },
-	getUniqueName: vi.fn(name => name),
+	getUniqueName: vi.fn((name) => name),
 }))
 
 vi.mock('@nextcloud/axios', () => {
@@ -60,7 +59,7 @@ vi.mock('@nextcloud/axios', () => {
 })
 
 vi.mock('../plugins/km', () => ({
-	default: { name: 'km', mimes: ['application/km'], encode: vi.fn(d => Promise.resolve(d)), decode: vi.fn() },
+	default: { name: 'km', mimes: ['application/km'], encode: vi.fn((d) => Promise.resolve(d)), decode: vi.fn() },
 }))
 vi.mock('../plugins/freemind', () => ({
 	default: { name: 'freemind', mimes: ['application/x-freemind'], encode: null, decode: vi.fn() },

@@ -3,17 +3,16 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { shallowMount } from '@vue/test-utils'
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
 import MindMap from '../views/MindMap.js'
 
 vi.mock('@nextcloud/l10n', () => ({ getLanguage: () => 'en' }))
 vi.mock('@nextcloud/router', () => ({
-	generateUrl: (path, params = {}) =>
-		Object.entries(params).reduce(
-			(acc, [k, v]) => acc.replace(`{${k}}`, v ?? ''),
-			path,
-		),
+	generateUrl: (path, params = {}) => Object.entries(params).reduce(
+		(acc, [k, v]) => acc.replace(`{${k}}`, v ?? ''),
+		path,
+	),
 }))
 vi.mock('@nextcloud/sharing/public', () => ({
 	isPublicShare: vi.fn(() => false),

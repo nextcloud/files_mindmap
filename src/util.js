@@ -15,7 +15,7 @@ export default {
 			return decodeURIComponent(Array.prototype.map.call(atob(base64), function(c) {
 				return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2)
 			}).join(''))
-		} catch (e) {
+		} catch {
 			const binary = atob(base64)
 			const array = new Uint8Array(binary.length)
 			for (let i = 0; i < binary.length; i++) {
@@ -34,14 +34,19 @@ export default {
 		return obj
 	},
 	parseNode(node) {
-		if (!node) return null
+		if (!node) {
+			return null
+		}
 		const self = this
-		let txt = ''; let obj = null; let att = null
+		let txt = ''
+		let obj = null
+		let att = null
 
 		if (node.childNodes) {
 			if (node.childNodes.length > 0) {
 				node.childNodes.forEach(function(cn) {
-					const cnt = cn.nodeType; const cnn = self.jsVar(cn.localName || cn.nodeName)
+					const cnt = cn.nodeType
+					const cnn = self.jsVar(cn.localName || cn.nodeName)
 					const cnv = cn.text || cn.nodeValue || ''
 
 					if (cnt === 8) {
@@ -70,10 +75,12 @@ export default {
 		}
 		if (node.attributes && node.tagName !== 'title') {
 			if (node.attributes.length > 0) {
-				att = {}; obj = obj || {}
+				att = {}
+				obj = obj || {}
 				node.attributes.forEach = [].forEach.bind(node.attributes)
 				node.attributes.forEach(function(at) {
-					const atn = self.jsVar(at.name); const atv = at.value
+					const atn = self.jsVar(at.name)
+					const atv = at.value
 					att[atn] = atv
 					if (obj[atn]) {
 						obj[atn] = self.toArray(obj[atn])
@@ -85,9 +92,11 @@ export default {
 			}
 		}
 		if (obj) {
-			obj = Object.assign({}, (txt !== '' ? String(txt) : {}), obj || {})
+			obj = { ...(txt !== '' ? String(txt) : {}), ...obj || {} }
 			txt = (obj.text) ? ([obj.text || '']).concat([txt]) : txt
-			if (txt) obj.text = txt
+			if (txt) {
+				obj.text = txt
+			}
 			txt = ''
 		}
 		const out = obj || txt

@@ -8,15 +8,15 @@ export default {
 	name: 'km',
 	mimes: ['application/km'],
 	encode(data) {
-		return new Promise(function(resolve, reject) {
+		return new Promise(function(resolve) {
 			resolve(data)
 		})
 	},
 	decode(data) {
-		return new Promise(function(resolve, reject) {
+		return new Promise(function(resolve) {
 			try {
 				resolve(JSON.parse(data))
-			} catch (e) {
+			} catch {
 				resolve(data)
 			}
 		})

@@ -5,7 +5,7 @@
  */
 
 /* global $, minder, Base64, jsPDF, angular */
-/* eslint-disable @nextcloud/no-deprecations */
+/* eslint-disable no-console */
 /**
  * Checks if the page is displayed in an iframe. If not redirect to /.
  */
@@ -14,7 +14,8 @@ function redirectIfNotDisplayedInFrame() {
 		if (window.frameElement) {
 			return
 		}
-	} catch (e) {}
+	} catch { // cross-origin frame access denied — redirect below
+	}
 
 	window.location.href = '/'
 }
@@ -26,8 +27,8 @@ redirectIfNotDisplayedInFrame();
 	}
 
 	const lang = window.lang
-				 || (document.getElementById('viewer') && document.getElementById('viewer').getAttribute('lang'))
-				 || 'en'
+		|| (document.getElementById('viewer') && document.getElementById('viewer').getAttribute('lang'))
+		|| 'en'
 
 	const MindMap = {
 		_changed: false,
@@ -60,7 +61,6 @@ redirectIfNotDisplayedInFrame();
 				.config(function(localizeProvider) {
 					localizeProvider.setDefaultLang('en-us')
 				})
-
 		},
 		initHotkey() {
 			const self = this
@@ -137,7 +137,7 @@ redirectIfNotDisplayedInFrame();
 		save(onComplete) {
 			const self = this
 			if (self._changed) {
-				self.updateSaveButtonInfo(t('Saving...'))
+				self.updateSaveButtonInfo(t('Saving…'))
 				const data = JSON.stringify(minder.exportJson())
 				window.parent.OCA.FilesMindMap.save(data, function(msg) {
 					self.updateSaveButtonInfo(msg)
@@ -158,7 +158,7 @@ redirectIfNotDisplayedInFrame();
 		},
 		startAutoSaveTimer() {
 			const self = this
-			if (self._autoSaveTimer != null) {
+			if (self._autoSaveTimer !== null) {
 				clearInterval(self._autoSaveTimer)
 				self._autoSaveTimer = null
 			}
@@ -209,7 +209,7 @@ redirectIfNotDisplayedInFrame();
 				if (data !== ' ') {
 					try {
 						obj = JSON.parse(data)
-					} catch (e) {
+					} catch {
 						window.alert(t('This file is not a valid mind map file and may cause file '
 							+ 'corruption if you continue editing.'))
 					}
@@ -297,7 +297,6 @@ redirectIfNotDisplayedInFrame();
 		exportPDF() {
 			const self = this
 			minder.exportData('png').then(function(data) {
-				// eslint-disable-next-line new-cap
 				const pdf = new jsPDF('p', 'mm', 'a4', false)
 				// pdf.addImage(data, 'png', 100, 200, 280, 210, undefined, 'none');
 				pdf.addImage(data, 'PNG', 5, 10, 200, 0, undefined, 'SLOW')
