@@ -27,7 +27,7 @@ OC.L10N.register(
     "Edit" : "Редагувати",
     "AutoSave" : "Автозбереження",
     "Save" : "Зберегти",
-    "Export" : "Експортувати",
+    "Export" : "Експорт",
     "Export to PNG" : "Експорт до PNG",
     "Export to SVG" : "Експорт у SVG",
     "Export to PDF" : "Експорт до PDF",
