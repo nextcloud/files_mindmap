@@ -30,11 +30,11 @@ OC.L10N.register(
     "Edit" : "編輯",
     "AutoSave" : "自動保存",
     "Save" : "保存",
-    "Export" : "導出",
-    "Export to PNG" : "導出為 PNG",
-    "Export to SVG" : "導出為 SVG",
-    "Export to PDF" : "導出為 PDF",
-    "Export to Markdown" : "導出為 Markdown",
-    "Export to Text" : "導出為文字"
+    "Export" : "匯出",
+    "Export to PNG" : "匯出為 PNG",
+    "Export to SVG" : "匯出為 SVG",
+    "Export to PDF" : "匯出為 PDF",
+    "Export to Markdown" : "匯出為 Markdown",
+    "Export to Text" : "匯出為文字"
 },
 "nplurals=1; plural=0;");
