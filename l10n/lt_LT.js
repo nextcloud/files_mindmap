@@ -35,6 +35,6 @@ OC.L10N.register(
     "Export to SVG" : "Eksportuoti į SVG",
     "Export to PDF" : "Eksportuoti į PDF",
     "Export to Markdown" : "Eksportuoti į Markdown",
-    "Export to Text" : "Eksportuoti į Teksto formatą"
+    "Export to Text" : "Eksportuoti į „Tekstas“"
 },
 "nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);");
