@@ -9,6 +9,7 @@ OC.L10N.register(
     "File not found" : "Fann ikkje fila",
     "Edit" : "Rediger",
     "Save" : "Lagre",
-    "Export" : "Eksporter"
+    "Export" : "Eksporter",
+    "Export to Markdown" : "Eksporter til markdown"
 },
 "nplurals=2; plural=(n != 1);");
