@@ -74,10 +74,48 @@
 			height: 40px;
 			box-sizing: border-box;
 			padding: 0 5px;
+			font-size: 14px;
+			/* own stacking context, so the export dropdown opens above the
+			   absolutely positioned editor container instead of behind it */
+			position: relative;
+			z-index: 10;
 		}
 		#menu-header .header-left-spacer {
 			flex-grow: 1;
 			min-width: 240px;
+		}
+		#menu-header .btn-group-vertical {
+			margin: 0;
+		}
+		/* the editor stylesheet strips border, radius, padding and size from
+		   .export-caption; restore them so the controls read as buttons */
+		#menu-header .btn {
+			width: auto;
+			height: 30px;
+			padding: 0 10px;
+			font-size: 14px;
+			line-height: 28px;
+			background-color: #fff;
+			border: 1px solid #ccc !important;
+			border-radius: 4px !important;
+		}
+		#menu-header .btn .caption {
+			font-size: 14px;
+		}
+		#menu-header .btn:focus,
+		#menu-header .btn:hover {
+			background-color: #eff3fa;
+			border-color: #adadad !important;
+		}
+		#menu-header .btn:active,
+		#menu-header .open > .dropdown-toggle.btn-default {
+			background-color: #c4d0ee;
+			border-color: #adadad !important;
+		}
+		/* the export group sits at the right edge, so open the menu leftwards */
+		#menu-header .dropdown-menu {
+			right: 0;
+			left: auto;
 		}
 	</style>
 </head>
