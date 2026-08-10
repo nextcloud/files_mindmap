@@ -11,7 +11,7 @@ source_dir=$(build_dir)/source
 sign_dir=$(build_dir)/sign
 package_name=$(app_name)
 cert_dir=$(HOME)/.nextcloud/certificates
-version+=0.1.0-beta.5
+version+=0.1.0
 
 all: build-front appstore
 
