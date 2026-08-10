@@ -51,7 +51,9 @@
 		}
 		div.minder-editor-container {
 			position: absolute;
-			top: 0;
+			/* leave room for #menu-header, which is not positioned and would
+			   otherwise be painted over by this absolutely positioned container */
+			top: 40px;
 			bottom: 0;
 			left: 0;
 			right: 0;
@@ -59,11 +61,19 @@
 		#autosave-div label {
 			text-wrap-mode: nowrap;
 		}
+		#autosave-div.checkbox {
+			margin: 0;
+		}
 		#autosave-checkbox {
 			bottom: 3px;
 		}
 		#menu-header {
 			display: flex;
+			align-items: center;
+			gap: 8px;
+			height: 40px;
+			box-sizing: border-box;
+			padding: 0 5px;
 		}
 		#menu-header .header-left-spacer {
 			flex-grow: 1;
