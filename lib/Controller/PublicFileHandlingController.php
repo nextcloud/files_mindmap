@@ -89,6 +89,10 @@ class PublicFileHandlingController extends Controller{
             return new DataResponse(['message' => $this->l->t('You are not authorized to open this share')], Http::STATUS_BAD_REQUEST);
         }
 
+        if (!$this->checkPermissions($share, \OCP\Constants::PERMISSION_READ)) {
+            return new DataResponse(['message' => $this->l->t('You are not authorized to open this share')], Http::STATUS_FORBIDDEN);
+        }
+
         try {
             $node = $share->getNode();
         } catch (NotFoundException $e) {
