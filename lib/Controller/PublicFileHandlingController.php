@@ -64,6 +64,20 @@ class PublicFileHandlingController extends Controller{
     }
 
     /**
+     * A password-protected share is authenticated once its ID is in the
+     * 'public_link_authenticated' session array, the same key
+     * files_sharing's ShareController fills on successful password entry.
+     */
+    protected function isShareAuthenticated($share): bool {
+        if ($share->getPassword() === null) {
+            return true;
+        }
+
+        $allowedShareIds = $this->session->get('public_link_authenticated');
+        return is_array($allowedShareIds) && in_array($share->getId(), $allowedShareIds);
+    }
+
+    /**
      * load share mindmap file by path
      *
      * @NoAdminRequired
@@ -83,9 +97,7 @@ class PublicFileHandlingController extends Controller{
             return new DataResponse(['message' => $this->l->t('Share not found')], Http::STATUS_NOT_FOUND);
         }
 
-        if ($share->getPassword() !== null &&
-            (!$this->session->exists('public_link_authenticated')
-                || $this->session->get('public_link_authenticated') !== (string)$share->getId())) {
+        if (!$this->isShareAuthenticated($share)) {
             return new DataResponse(['message' => $this->l->t('You are not authorized to open this share')], Http::STATUS_BAD_REQUEST);
         }
 
@@ -165,9 +177,7 @@ class PublicFileHandlingController extends Controller{
             return new DataResponse(['message' => $this->l->t('Share not found')], Http::STATUS_NOT_FOUND);
         }
 
-        if ($share->getPassword() !== null &&
-            (!$this->session->exists('public_link_authenticated')
-                || $this->session->get('public_link_authenticated') !== (string)$share->getId())) {
+        if (!$this->isShareAuthenticated($share)) {
             return new DataResponse(['message' => $this->l->t('You are not authorized to open this share')], Http::STATUS_BAD_REQUEST);
         }
 

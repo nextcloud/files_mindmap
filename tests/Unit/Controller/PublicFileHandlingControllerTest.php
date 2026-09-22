@@ -25,6 +25,7 @@ use Test\TestCase;
 
 class PublicFileHandlingControllerTest extends TestCase {
 	private IManager&MockObject $shareManager;
+	private ISession&MockObject $session;
 	private PublicFileHandlingController $controller;
 
 	protected function setUp(): void {
@@ -36,6 +37,7 @@ class PublicFileHandlingControllerTest extends TestCase {
 			['filename', null, 'secret.km'],
 		]);
 		$this->shareManager = $this->createMock(IManager::class);
+		$this->session = $this->createMock(ISession::class);
 		$l10n = $this->createMock(IL10N::class);
 		$l10n->method('t')->willReturnArgument(0);
 
@@ -45,7 +47,7 @@ class PublicFileHandlingControllerTest extends TestCase {
 			$l10n,
 			$this->createMock(LoggerInterface::class),
 			$this->shareManager,
-			$this->createMock(ISession::class),
+			$this->session,
 		);
 	}
 
@@ -70,10 +72,42 @@ class PublicFileHandlingControllerTest extends TestCase {
 		$this->assertSame(base64_encode('{"root":{}}'), $response->getData()['filecontents']);
 	}
 
-	private function mockShare(int $permissions, Folder $node): void {
+	public function testLoadFromPasswordProtectedShareWithoutSessionAuthIsRefused(): void {
+		$this->mockShare(password: 'secret', id: '42');
+		$this->session->method('get')->with('public_link_authenticated')->willReturn(['1', '2']);
+
+		$this->assertSame(Http::STATUS_BAD_REQUEST, $this->controller->load('token')->getStatus());
+	}
+
+	public function testLoadFromPasswordProtectedShareWithSessionAuthSucceeds(): void {
+		$file = $this->createMock(File::class);
+		$file->method('getContent')->willReturn('{"root":{}}');
+		$folder = $this->createMock(Folder::class);
+		$folder->method('get')->with('/secret.km')->willReturn($file);
+		$this->mockShare(Constants::PERMISSION_READ, $folder, password: 'secret', id: '42');
+		$this->session->method('get')->with('public_link_authenticated')->willReturn(['1', '42']);
+
+		$this->assertSame(Http::STATUS_OK, $this->controller->load('token')->getStatus());
+	}
+
+	public function testSaveFromPasswordProtectedShareWithoutSessionAuthIsRefused(): void {
+		$this->mockShare(password: 'secret', id: '42')->expects($this->never())->method('getNode');
+		$this->session->method('get')->with('public_link_authenticated')->willReturn(null);
+
+		$response = $this->controller->save('token', 'data', '/secret.km', 123);
+
+		$this->assertSame(Http::STATUS_BAD_REQUEST, $response->getStatus());
+	}
+
+	private function mockShare(int $permissions = 0, ?Folder $node = null, ?string $password = null, string $id = '1'): IShare&MockObject {
 		$share = $this->createMock(IShare::class);
+		$share->method('getPassword')->willReturn($password);
+		$share->method('getId')->willReturn($id);
 		$share->method('getPermissions')->willReturn($permissions);
-		$share->method('getNode')->willReturn($node);
+		if ($node !== null) {
+			$share->method('getNode')->willReturn($node);
+		}
 		$this->shareManager->method('getShareByToken')->willReturn($share);
+		return $share;
 	}
 }

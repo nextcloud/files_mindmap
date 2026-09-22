@@ -20,7 +20,7 @@ import {
 import { translate as t } from '@nextcloud/l10n'
 import { dirname } from '@nextcloud/paths'
 import { generateUrl } from '@nextcloud/router'
-import { isPublicShare } from '@nextcloud/sharing/public'
+import { getSharingToken, isPublicShare } from '@nextcloud/sharing/public'
 import logger from './logger.js'
 import freemind from './plugins/freemind.js'
 import km from './plugins/km.js'
@@ -88,7 +88,6 @@ const FilesMindMap = {
 
 	save(data, success, fail) {
 		const self = this
-		let url = ''
 		let path = this._file.dir + '/' + this._file.name
 		if (this._file.dir === '/') {
 			path = '/' + this._file.name
@@ -108,12 +107,10 @@ const FilesMindMap = {
 				mtime: self._file.mtime, // send modification time of currently loaded file
 			}
 
-			if (document.getElementById('isPublic')?.value) {
-				putObject.token = document.getElementById('sharingToken')?.value
+			let url
+			if (isPublicShare()) {
+				putObject.token = getSharingToken()
 				url = generateUrl('/apps/files_mindmap/share/save')
-				if (self.isSupportedMime(document.getElementById('mimetype')?.value)) {
-					putObject.path = ''
-				}
 			} else {
 				url = generateUrl('/apps/files_mindmap/ajax/savefile')
 			}
@@ -141,14 +138,8 @@ const FilesMindMap = {
 		const filename = this._file.name
 		const dir = this._file.dir
 		let url
-		let sharingToken
-		const mimetype = document.getElementById('mimetype')?.value
-		if (document.getElementById('isPublic')?.value && this.isSupportedMime(mimetype)) {
-			sharingToken = document.getElementById('sharingToken')?.value
-			url = generateUrl('/apps/files_mindmap/public/{token}', { token: sharingToken })
-		} else if (document.getElementById('isPublic')?.value) {
-			sharingToken = document.getElementById('sharingToken')?.value
-			url = generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}', { token: sharingToken, filename, dir })
+		if (isPublicShare()) {
+			url = generateUrl('/apps/files_mindmap/public/{token}?dir={dir}&filename={filename}', { token: getSharingToken(), filename, dir })
 		} else {
 			url = generateUrl('/apps/files_mindmap/ajax/loadfile?filename={filename}&dir={dir}', { filename, dir })
 		}
