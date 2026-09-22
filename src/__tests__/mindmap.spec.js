@@ -5,6 +5,8 @@
 
 import axios from '@nextcloud/axios'
 import { showMessage as showToast } from '@nextcloud/dialogs'
+import { generateUrl } from '@nextcloud/router'
+import { getSharingToken, isPublicShare } from '@nextcloud/sharing/public'
 import { beforeEach, describe, expect, it, vi } from 'vitest'
 import FilesMindMap from '../mindmap.js'
 
@@ -15,7 +17,7 @@ vi.mock('@nextcloud/l10n', () => ({
 }))
 
 vi.mock('@nextcloud/router', () => ({
-	generateUrl: (path) => `/nc${path}`,
+	generateUrl: vi.fn((path) => `/nc${path}`),
 }))
 
 vi.mock('@nextcloud/dialogs', () => ({
@@ -28,6 +30,7 @@ vi.mock('@nextcloud/auth', () => ({
 
 vi.mock('@nextcloud/sharing/public', () => ({
 	isPublicShare: vi.fn(() => false),
+	getSharingToken: vi.fn(() => null),
 }))
 
 vi.mock('@nextcloud/event-bus', () => ({
@@ -74,6 +77,9 @@ describe('FilesMindMap', () => {
 		FilesMindMap._file = {}
 		FilesMindMap._currentContext = null
 		vi.clearAllMocks()
+		// mockReturnValue survives clearAllMocks(), so restore the defaults explicitly
+		isPublicShare.mockReturnValue(false)
+		getSharingToken.mockReturnValue(null)
 	})
 
 	// ─── Extension management ───────────────────────────────────────────────────
@@ -203,14 +209,12 @@ describe('FilesMindMap', () => {
 	// ─── Public share detection ────────────────────────────────────────────────
 
 	describe('isMindmapPublic', () => {
-		it('returns false when not on a public share page', async () => {
-			const { isPublicShare } = await import('@nextcloud/sharing/public')
+		it('returns false when not on a public share page', () => {
 			isPublicShare.mockReturnValue(false)
 			expect(FilesMindMap.isMindmapPublic()).toBe(false)
 		})
 
-		it('returns true when on a public share page with a supported mime type', async () => {
-			const { isPublicShare } = await import('@nextcloud/sharing/public')
+		it('returns true when on a public share page with a supported mime type', () => {
 			isPublicShare.mockReturnValue(true)
 			FilesMindMap.registerExtension({ name: 'km', mimes: ['application/km'] })
 
@@ -225,8 +229,7 @@ describe('FilesMindMap', () => {
 			}
 		})
 
-		it('returns false when on a public share page but mime type is unsupported', async () => {
-			const { isPublicShare } = await import('@nextcloud/sharing/public')
+		it('returns false when on a public share page but mime type is unsupported', () => {
 			isPublicShare.mockReturnValue(true)
 
 			const input = document.createElement('input')
@@ -331,6 +334,30 @@ describe('FilesMindMap', () => {
 			await flushPromises()
 
 			expect(fail).toHaveBeenCalledWith('Save failed')
+		})
+
+		it('PUTs to the public share endpoint with the sharing token on a public share', async () => {
+			isPublicShare.mockReturnValue(true)
+			getSharingToken.mockReturnValue('the-token')
+
+			const ext = {
+				name: 'km',
+				mimes: ['application/km'],
+				encode: vi.fn().mockResolvedValue('data'),
+				decode: null,
+			}
+			FilesMindMap._extensions = [ext]
+			FilesMindMap._file = { dir: '/docs', name: 'test.km', mime: 'application/km', mtime: 100 }
+			axios.mockResolvedValue({ data: { mtime: 200 } })
+
+			FilesMindMap.save('data', vi.fn(), vi.fn())
+			await flushPromises()
+
+			expect(axios).toHaveBeenCalledWith(expect.objectContaining({
+				method: 'PUT',
+				url: '/nc/apps/files_mindmap/share/save',
+				data: expect.objectContaining({ token: 'the-token' }),
+			}))
 		})
 	})
 
@@ -447,6 +474,37 @@ describe('FilesMindMap', () => {
 			await flushPromises()
 
 			expect(FilesMindMap._file.supportedWrite).toBe(false)
+		})
+
+		it('GETs the public share endpoint with the sharing token on a public share', async () => {
+			isPublicShare.mockReturnValue(true)
+			getSharingToken.mockReturnValue('the-token')
+
+			const ext = {
+				name: 'km',
+				mimes: ['application/km'],
+				encode: vi.fn(),
+				decode: vi.fn().mockResolvedValue({}),
+			}
+			FilesMindMap._extensions = [ext]
+			FilesMindMap._file = { dir: '/docs', name: 'test.km' }
+
+			axios.get.mockResolvedValue({
+				data: {
+					filecontents: btoa('content'),
+					mime: 'application/km',
+					writeable: true,
+					mtime: 1,
+				},
+			})
+
+			FilesMindMap.load(vi.fn(), vi.fn())
+			await flushPromises()
+
+			expect(generateUrl).toHaveBeenCalledWith(
+				expect.stringContaining('/apps/files_mindmap/public/{token}'),
+				expect.objectContaining({ token: 'the-token' }),
+			)
 		})
 	})
 })
