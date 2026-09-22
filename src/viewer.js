@@ -4,7 +4,13 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-/* global $, minder, Base64, jsPDF, angular */
+/* global minder, Base64, jsPDF, angular */
+/*
+ * $ here is this app's own vendored jQuery (vendor/jquery), loaded by this
+ * app's own iframe template — not Nextcloud core's deprecated $/jQuery
+ * global. Referenced via window.$ so eslint's @nextcloud/no-deprecated-globals
+ * (which only knows about core's global) doesn't flag it.
+ */
 /* eslint-disable no-console */
 /**
  * Checks if the page is displayed in an iframe. If not redirect to /.
@@ -64,7 +70,7 @@ redirectIfNotDisplayedInFrame();
 		},
 		initHotkey() {
 			const self = this
-			$(document).keydown(function(e) {
+			window.$(document).keydown(function(e) {
 				if ((e.ctrlKey || e.metaKey) && e.which === 83) {
 					self.save()
 					e.preventDefault()
@@ -74,22 +80,22 @@ redirectIfNotDisplayedInFrame();
 		},
 		bindEvent() {
 			const self = this
-			$('#export-png').click(function() {
+			window.$('#export-png').click(function() {
 				self.exportPNG()
 			})
-			$('#export-svg').click(function() {
+			window.$('#export-svg').click(function() {
 				self.exportSVG()
 			})
-			$('#export-pdf').click(function() {
+			window.$('#export-pdf').click(function() {
 				self.exportPDF()
 			})
-			$('#export-markdown').click(function() {
+			window.$('#export-markdown').click(function() {
 				self.exportMarkdown()
 			})
-			$('#export-text').click(function() {
+			window.$('#export-text').click(function() {
 				self.exportText()
 			})
-			$('#save-button').click(function() {
+			window.$('#save-button').click(function() {
 				self.save()
 			})
 		},
@@ -126,7 +132,7 @@ redirectIfNotDisplayedInFrame();
 			this.showMessage(msg)
 		},
 		updateSaveButtonInfo(msg) {
-			$('#save-button').html(msg)
+			window.$('#save-button').html(msg)
 		},
 		restoreSaveButtonInfo(time) {
 			const self = this
@@ -172,7 +178,7 @@ redirectIfNotDisplayedInFrame();
 			}, 10000)
 		},
 		getAutoSaveStatus() {
-			const status = $('#autosave-checkbox').is(':checked')
+			const status = window.$('#autosave-checkbox').is(':checked')
 			if (window.localStorage) {
 				localStorage.setItem('apps.files_mindmap.autosave', status)
 			}
@@ -185,7 +191,7 @@ redirectIfNotDisplayedInFrame();
 					status = false
 				}
 			}
-			$('#autosave-checkbox').prop('checked', status)
+			window.$('#autosave-checkbox').prop('checked', status)
 		},
 		loadData() {
 			const self = this
@@ -224,11 +230,11 @@ redirectIfNotDisplayedInFrame();
 
 				/* When file is readonly, hide autosave checkbox */
 				if (!window.parent.OCA.FilesMindMap._file.writeable) {
-					$('#autosave-div').hide()
+					window.$('#autosave-div').hide()
 				}
 				/* When extension cannot write, hide save checkbox */
 				if (!window.parent.OCA.FilesMindMap._file.supportedWrite) {
-					$('#save-div').hide()
+					window.$('#save-div').hide()
 				}
 			}, function(msg) {
 				self._loadStatus = false

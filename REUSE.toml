@@ -74,7 +74,7 @@ SPDX-License-Identifier = "BSD-3-Clause"
 [[annotations]]
 path = ["vendor/jquery/**"]
 precedence = "aggregate"
-SPDX-FileCopyrightText = "JS Foundation and other contributors, <https://js.foundation/>"
+SPDX-FileCopyrightText = "OpenJS Foundation and other contributors, <https://openjsf.org/>"
 SPDX-License-Identifier = "MIT"
 
 [[annotations]]
