@@ -9,19 +9,27 @@ declare(strict_types=1);
 
 namespace OCA\Files_MindMap\Listener;
 
-use OCA\Viewer\Event\LoadViewer;
+use OCA\Files_MindMap\AppInfo\Application;
+use OCP\AppFramework\Http\Events\BeforeTemplateRenderedEvent;
+use OCP\AppFramework\Http\TemplateResponse;
 use OCP\EventDispatcher\Event;
 use OCP\EventDispatcher\IEventListener;
 use OCP\Util;
 
-/** @template-implements IEventListener<Event|LoadViewer> */
+/** @template-implements IEventListener<Event|BeforeTemplateRenderedEvent> */
 class LoadViewerListener implements IEventListener {
 
 	public function handle(Event $event): void {
-		if (!$event instanceof LoadViewer) {
+		if (!$event instanceof BeforeTemplateRenderedEvent) {
 			return;
 		}
-		
-		Util::addScript('files_mindmap', 'files_mindmap-mindmapviewer', 'viewer');
+
+		if ($event->getResponse()->getRenderAs() === TemplateResponse::RENDER_AS_ERROR) {
+			return;
+		}
+
+		// The viewer reads its handlers when the first file is opened, so the
+		// handler has to be registered from an init script
+		Util::addInitScript(Application::APPNAME, 'files_mindmap-mindmapviewer');
 	}
 }

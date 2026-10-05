@@ -55,6 +55,10 @@ vi.mock('@nextcloud/files', () => ({
 	getUniqueName: vi.fn((name) => name),
 }))
 
+vi.mock('@nextcloud/viewer', () => ({
+	getViewer: vi.fn(() => ({ open: vi.fn(), close: vi.fn() })),
+}))
+
 vi.mock('@nextcloud/axios', () => {
 	const fn = vi.fn()
 	fn.get = vi.fn()
@@ -189,19 +193,19 @@ describe('FilesMindMap', () => {
 
 	describe('setFile', () => {
 		it('sets name, dir, and fullName from file object', () => {
-			FilesMindMap.setFile({ filename: '/documents/test.km', basename: 'test.km' })
+			FilesMindMap.setFile({ path: '/documents/test.km', basename: 'test.km' })
 			expect(FilesMindMap._file.name).toBe('test.km')
 			expect(FilesMindMap._file.dir).toBe('/documents')
 			expect(FilesMindMap._file.fullName).toBe('/documents/test.km')
 		})
 
 		it('sets dir to "/" for top-level files', () => {
-			FilesMindMap.setFile({ filename: '/test.km', basename: 'test.km' })
+			FilesMindMap.setFile({ path: '/test.km', basename: 'test.km' })
 			expect(FilesMindMap._file.dir).toBe('/')
 		})
 
 		it('sets _currentContext from the resolved dir', () => {
-			FilesMindMap.setFile({ filename: '/docs/sub/test.km', basename: 'test.km' })
+			FilesMindMap.setFile({ path: '/docs/sub/test.km', basename: 'test.km' })
 			expect(FilesMindMap._currentContext).toEqual(expect.objectContaining({ dir: '/docs/sub' }))
 		})
 	})

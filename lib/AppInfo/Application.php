@@ -18,7 +18,6 @@ use OCP\AppFramework\Http\Events\BeforeTemplateRenderedEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\IMimeTypeDetector;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
-use OCA\Viewer\Event\LoadViewer;
 use OCA\Files_MindMap\Listener\LoadAdditionalListener;
 use OCA\Files_MindMap\Listener\LoadViewerListener;
 use OCA\Files_MindMap\Listener\LoadPublicViewerListener;
@@ -48,7 +47,7 @@ class Application extends App implements IBootstrap {
 	public function register(IRegistrationContext $context): void {
 		$context->registerEventListener(LoadAdditionalScriptsEvent::class, LoadAdditionalListener::class);
 		$context->registerEventListener(BeforeTemplateRenderedEvent::class, LoadPublicViewerListener::class);
-		$context->registerEventListener(LoadViewer::class, LoadViewerListener::class);
+		$context->registerEventListener(BeforeTemplateRenderedEvent::class, LoadViewerListener::class);
 		$context->registerEventListener(RegisterTemplateCreatorEvent::class, RegisterTemplateCreatorListener::class);
 	}
 

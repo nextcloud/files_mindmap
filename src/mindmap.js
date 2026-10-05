@@ -8,11 +8,7 @@ import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
 import { getCurrentUser } from '@nextcloud/auth'
 import axios from '@nextcloud/axios'
 import { showMessage as showToast } from '@nextcloud/dialogs'
-import {
-	DefaultType,
-	Permission,
-	registerFileAction,
-} from '@nextcloud/files'
+import { DefaultType, Permission } from '@nextcloud/files'
 import {
 	FileAction,
 	registerFileAction as legacyRegisterFileAction,
@@ -21,6 +17,7 @@ import { translate as t } from '@nextcloud/l10n'
 import { dirname } from '@nextcloud/paths'
 import { generateUrl } from '@nextcloud/router'
 import { getSharingToken, isPublicShare } from '@nextcloud/sharing/public'
+import { getViewer } from '@nextcloud/viewer'
 import logger from './logger.js'
 import freemind from './plugins/freemind.js'
 import km from './plugins/km.js'
@@ -28,6 +25,9 @@ import xmind from './plugins/xmind.js'
 import util from './util.js'
 
 const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
+
+export const HANDLER_ID = 'files_mindmap'
+export const TAG_NAME = 'files-mindmap-viewer'
 
 const FilesMindMap = {
 	_currentContext: null,
@@ -175,9 +175,16 @@ const FilesMindMap = {
 	},
 
 	/**
+	 * Register the edit action on Nextcloud 32 and older. From 33 on the
+	 * viewer registers the actions for its handlers itself.
+	 *
 	 * @private
 	 */
 	registerFileActions() {
+		if (version >= 33) {
+			return
+		}
+
 		const mimes = this.getSupportedMimetypes()
 		const _self = this
 
@@ -194,7 +201,7 @@ const FilesMindMap = {
 
 			async exec(node) {
 				try {
-					OCA.Viewer.openWith('mindmap', { path: node.path })
+					await getViewer().open([node], node, {}, HANDLER_ID)
 					return true
 				} catch (error) {
 					_self.showMessage(error)
@@ -205,21 +212,18 @@ const FilesMindMap = {
 			default: DefaultType.HIDDEN,
 		}
 
-		if (version >= 33) {
-			registerFileAction(actionConfig)
-		} else {
-			legacyRegisterFileAction(new FileAction(actionConfig))
-		}
+		legacyRegisterFileAction(new FileAction(actionConfig))
 	},
 
-	setFile(file) {
-		const filename = file.filename + ''
-		const basename = file.basename + ''
+	close() {
+		getViewer().close()
+	},
 
-		this._file.name = basename
+	setFile(node) {
+		this._file.name = node.basename
 		this._file.root = '/files/' + getCurrentUser()?.uid
-		this._file.dir = dirname(filename)
-		this._file.fullName = filename
+		this._file.dir = dirname(node.path)
+		this._file.fullName = node.path
 		this._currentContext = {
 			dir: this._file.dir,
 			root: this._file.root,
