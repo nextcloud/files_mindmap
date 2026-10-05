@@ -4,15 +4,9 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
 import { getCurrentUser } from '@nextcloud/auth'
 import axios from '@nextcloud/axios'
 import { showMessage as showToast } from '@nextcloud/dialogs'
-import { DefaultType, Permission } from '@nextcloud/files'
-import {
-	FileAction,
-	registerFileAction as legacyRegisterFileAction,
-} from '@nextcloud/files-legacy'
 import { translate as t } from '@nextcloud/l10n'
 import { dirname } from '@nextcloud/paths'
 import { generateUrl } from '@nextcloud/router'
@@ -23,11 +17,6 @@ import freemind from './plugins/freemind.js'
 import km from './plugins/km.js'
 import xmind from './plugins/xmind.js'
 import util from './util.js'
-
-const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
-
-export const HANDLER_ID = 'files_mindmap'
-export const TAG_NAME = 'files-mindmap-viewer'
 
 const FilesMindMap = {
 	_currentContext: null,
@@ -159,48 +148,6 @@ const FilesMindMap = {
 		}).catch(function(error) {
 			failure(error.response?.data?.message || error.message)
 		})
-	},
-
-	/**
-	 * Register the edit action on Nextcloud 32 and older. From 33 on the
-	 * viewer registers the actions for its handlers itself.
-	 *
-	 * @private
-	 */
-	registerFileActions() {
-		if (version >= 33) {
-			return
-		}
-
-		const mimes = this.getSupportedMimetypes()
-		const _self = this
-
-		const actionConfig = {
-			id: 'file_mindmap',
-			displayName() {
-				return t('files_mindmap', 'Edit')
-			},
-			iconSvgInline: () => SvgPencil,
-
-			enabled(nodes) {
-				return nodes.length === 1 && mimes.includes(nodes[0].mime) && (nodes[0].permissions & Permission.READ) !== 0
-			},
-
-			async exec(node) {
-				try {
-					await getViewer().open([node], node, {}, HANDLER_ID)
-					return true
-				} catch (error) {
-					logger.error('Could not open the mind map', { error })
-					_self.showMessage(error.message)
-					return false
-				}
-			},
-
-			default: DefaultType.HIDDEN,
-		}
-
-		legacyRegisterFileAction(new FileAction(actionConfig))
 	},
 
 	close() {

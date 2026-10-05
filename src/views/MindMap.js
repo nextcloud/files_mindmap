@@ -6,6 +6,21 @@
 
 import { generateUrl } from '@nextcloud/router'
 
+let loading
+
+/**
+ * Load the editor logic the iframe talks to through `OCA.FilesMindMap`.
+ * Kept out of the init script, which runs on every page.
+ */
+function loadFilesMindMap() {
+	loading ??= import('../mindmap.js').then(({ default: FilesMindMap }) => {
+		FilesMindMap.init()
+		window.OCA.FilesMindMap = FilesMindMap
+		return FilesMindMap
+	})
+	return loading
+}
+
 /**
  * Viewer handler element rendering the mind map editor iframe.
  *
@@ -23,8 +38,14 @@ export default class MindMap extends HTMLElement {
 		this._file = file
 	}
 
-	connectedCallback() {
-		OCA.FilesMindMap.setFile(this.file)
+	async connectedCallback() {
+		try {
+			const FilesMindMap = await loadFilesMindMap()
+			FilesMindMap.setFile(this.file)
+		} catch (error) {
+			this.dispatchEvent(new CustomEvent('errored', { detail: [error] }))
+			return
+		}
 
 		const iframe = document.createElement('iframe')
 		iframe.src = generateUrl('/apps/files_mindmap/?file={file}', { file: this.file.path })

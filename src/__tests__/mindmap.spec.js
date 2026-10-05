@@ -37,24 +37,6 @@ vi.mock('@nextcloud/event-bus', () => ({
 	emit: vi.fn(),
 }))
 
-vi.mock('@mdi/svg/svg/pencil.svg?raw', () => ({ default: '<svg/>' }))
-
-vi.mock('@nextcloud/files-legacy', () => ({
-	FileAction: vi.fn().mockImplementation((opts) => opts),
-	registerFileAction: vi.fn(),
-	addNewFileMenuEntry: vi.fn(),
-}))
-
-vi.mock('@nextcloud/files', () => ({
-	DefaultType: { HIDDEN: 'hidden' },
-	FileAction: vi.fn().mockImplementation((opts) => opts),
-	addNewFileMenuEntry: vi.fn(),
-	registerFileAction: vi.fn(),
-	File: vi.fn(),
-	Permission: { READ: 1, CREATE: 4, UPDATE: 2, DELETE: 8, SHARE: 16, ALL: 31 },
-	getUniqueName: vi.fn((name) => name),
-}))
-
 vi.mock('@nextcloud/viewer', () => ({
 	getViewer: vi.fn(() => ({ open: vi.fn(), close: vi.fn() })),
 }))
