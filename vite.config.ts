@@ -12,7 +12,6 @@ declare const __dirname: string
 
 export default createAppConfig({
 	mindmap: join(__dirname, 'src', 'mindmap.js'),
-	public: join(__dirname, 'src', 'public.js'),
 	mindmapviewer: join(__dirname, 'src', 'mindmapviewer.js'),
 }, {
 	inlineCSS: { relativeCSSInjection: true },

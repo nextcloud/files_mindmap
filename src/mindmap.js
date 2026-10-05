@@ -73,19 +73,6 @@ const FilesMindMap = {
 		}
 	},
 
-	/**
-	 * Determine if this page is public mindmap share page
-	 *
-	 * @return {boolean}
-	 */
-	isMindmapPublic() {
-		if (!isPublicShare()) {
-			return false
-		}
-
-		return this.isSupportedMime(document.getElementById('mimetype')?.value)
-	},
-
 	save(data, success, fail) {
 		const self = this
 		let path = this._file.dir + '/' + this._file.name
