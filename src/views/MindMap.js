@@ -5,55 +5,44 @@
  */
 
 import { generateUrl } from '@nextcloud/router'
-import { h as _h } from 'vue'
-import logger from '../logger.js'
 
-logger.debug('MindMap Vue Loading')
+/**
+ * Viewer handler element rendering the mind map editor iframe.
+ *
+ * The viewer sets `file` as a property and the sizes as `max-height` and
+ * `max-width` attributes, and waits for a `loaded` event.
+ */
+export default class MindMap extends HTMLElement {
+	static observedAttributes = ['max-height', 'max-width']
 
-// Plain Options API component — intentionally NOT a Vue SFC.
-// The viewer app (Vue 2.7) renders this component; using a compiled SFC would
-// bundle Vue 3 render helpers (createElementBlock, openBlock) that are
-// incompatible with the Vue 2.7 runtime. The render(h) signature receives
-// Vue 2.7's h function directly from the runtime, keeping VNodes compatible.
-// The viewer also injects its Mime mixin (providing doneLoading, source,
-// davPath, fileList, fileid etc.) via component.mixins — that merge only
-// works for plain Options API objects, not <script setup> components.
-export default {
-	name: 'MindMap',
-	inheritAttrs: false,
+	get file() {
+		return this._file
+	}
 
-	computed: {
-		iframeSrc() {
-			return generateUrl('/apps/files_mindmap/?file={file}', {
-				file: this.source ?? this.davPath,
-			})
-		},
+	set file(file) {
+		this._file = file
+	}
 
-		file() {
-			return this.fileList.find((f) => f.fileid === this.fileid)
-		},
-	},
+	connectedCallback() {
+		OCA.FilesMindMap.setFile(this.file)
 
-	mounted() {
-		logger.debug('mounted file: ', this.file)
-		if (OCA.FilesMindMap) {
-			OCA.FilesMindMap.setFile(this.file)
+		const iframe = document.createElement('iframe')
+		iframe.src = generateUrl('/apps/files_mindmap/?file={file}', { file: this.file.path })
+		iframe.style.border = '0'
+		iframe.addEventListener('load', () => this.dispatchEvent(new CustomEvent('loaded')))
+		this.replaceChildren(iframe)
+		this.resize()
+	}
+
+	attributeChangedCallback() {
+		this.resize()
+	}
+
+	resize() {
+		const iframe = this.querySelector('iframe')
+		if (iframe) {
+			iframe.style.width = this.getAttribute('max-width') ? `${this.getAttribute('max-width')}px` : '100%'
+			iframe.style.height = this.getAttribute('max-height') ? `${this.getAttribute('max-height')}px` : 'calc(100vh - var(--header-height))'
 		}
-		this.doneLoading()
-	},
-
-	render(h) {
-		// Vue 2.7 passes h as an argument; Vue 3 (test env) does not — fall back to the peer dep import.
-		const createElement = typeof h === 'function' ? h : _h
-		return createElement('iframe', {
-			style: {
-				width: '100%',
-				height: 'calc(100vh - var(--header-height))',
-				marginTop: 'var(--header-height)',
-				position: 'absolute',
-			},
-			attrs: { src: this.iframeSrc },
-			on: { load: () => { logger.debug('File:', this.file) } },
-		})
-	},
+	}
 }

@@ -6,37 +6,23 @@
 
 import { isPublicShare } from '@nextcloud/sharing/public'
 import logger from './logger.js'
-import FilesMindMap from './mindmap.js'
+import FilesMindMap, { TAG_NAME } from './mindmap.js'
 
-if (isPublicShare()) {
-	OCA.FilesMindMap = FilesMindMap
-	FilesMindMap.init()
+if (isPublicShare() && FilesMindMap.isMindmapPublic()) {
+	window.addEventListener('DOMContentLoaded', function() {
+		const contentElmt = document.getElementById('files-public-content')
+		const footerElmt = document.querySelector('body > footer') || document.querySelector('#app-content > footer')
+		if (contentElmt) {
+			const name = document.getElementById('filename')?.value ?? ''
+			const element = document.createElement(TAG_NAME)
+			element.file = { basename: name, path: '/' + name }
+			contentElmt.replaceChildren(element)
 
-	if (FilesMindMap.isMindmapPublic()) {
-		window.addEventListener('DOMContentLoaded', function() {
-			const contentElmt = document.getElementById('files-public-content')
-			const footerElmt = document.querySelector('body > footer') || document.querySelector('#app-content > footer')
-			if (contentElmt) {
-				if (OCA.Viewer) {
-					contentElmt.innerHTML = ''
-					OCA.Viewer.setRootElement('#files-public-content')
-					OCA.Viewer.open({ path: '/' })
-
-					footerElmt.style.display = 'none'
-
-					// This is an ugly implementation, need to remove the top margin after viewer creates the iframe
-					setTimeout(() => {
-						const frameElmt = document.querySelector('#viewer > iframe')
-						if (frameElmt) {
-							frameElmt.style.marginTop = '0'
-						}
-					}, 1000)
-				} else {
-					logger.error('Viewer is not available, cannot preview mindmap')
-				}
+			if (footerElmt) {
+				footerElmt.style.display = 'none'
 			}
-		})
-	}
+		}
+	})
 
 	logger.debug('files_mindmap public.js loaded')
 }
