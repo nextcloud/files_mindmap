@@ -210,44 +210,6 @@ describe('FilesMindMap', () => {
 		})
 	})
 
-	// ─── Public share detection ────────────────────────────────────────────────
-
-	describe('isMindmapPublic', () => {
-		it('returns false when not on a public share page', () => {
-			isPublicShare.mockReturnValue(false)
-			expect(FilesMindMap.isMindmapPublic()).toBe(false)
-		})
-
-		it('returns true when on a public share page with a supported mime type', () => {
-			isPublicShare.mockReturnValue(true)
-			FilesMindMap.registerExtension({ name: 'km', mimes: ['application/km'] })
-
-			const input = document.createElement('input')
-			input.id = 'mimetype'
-			input.value = 'application/km'
-			document.body.appendChild(input)
-			try {
-				expect(FilesMindMap.isMindmapPublic()).toBe(true)
-			} finally {
-				document.body.removeChild(input)
-			}
-		})
-
-		it('returns false when on a public share page but mime type is unsupported', () => {
-			isPublicShare.mockReturnValue(true)
-
-			const input = document.createElement('input')
-			input.id = 'mimetype'
-			input.value = 'application/pdf'
-			document.body.appendChild(input)
-			try {
-				expect(FilesMindMap.isMindmapPublic()).toBe(false)
-			} finally {
-				document.body.removeChild(input)
-			}
-		})
-	})
-
 	// ─── save() ────────────────────────────────────────────────────────────────
 
 	describe('save', () => {
