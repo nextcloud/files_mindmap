@@ -9,8 +9,9 @@
     /** @var array $_ */
     use OCP\App\IAppManager;
     use OCP\IURLGenerator;
-    $urlGenerator = \OC::$server->get(IURLGenerator::class);
-    $version = \OC::$server[IAppManager::class]->getAppVersion('files_mindmap');
+    use OCP\Server;
+    $urlGenerator = Server::get(IURLGenerator::class);
+    $version = Server::get(IAppManager::class)->getAppVersion('files_mindmap');
     $lang = $_['lang'];
     $nonce = $_['cspNonce'] ?? '';
 ?>
