@@ -17,14 +17,6 @@ export default createAppConfig({
 }, {
 	inlineCSS: { relativeCSSInjection: true },
 	config: {
-		experimental: {
-			renderBuiltUrl(filename) {
-				return {
-					// already contains the "js/" prefix as it is our output file configuration
-					runtime: `OC.filePath('files_mindmap', '', '${filename}')`,
-				}
-			},
-		},
 		plugins: [
 			viteStaticCopy({
 				targets: [
