@@ -6,15 +6,10 @@
 
 import { translate as t } from '@nextcloud/l10n'
 import { registerHandler } from '@nextcloud/viewer'
-import FilesMindMap, { HANDLER_ID, TAG_NAME } from './mindmap.js'
+import { HANDLER_ID, MIMES, TAG_NAME } from './constants.js'
 import MindMap from './views/MindMap.js'
 
-OCA.FilesMindMap = FilesMindMap
-
-FilesMindMap.init()
-FilesMindMap.registerFileActions()
-
-const supportedMimes = FilesMindMap.getSupportedMimetypes()
+const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
 
 if (!window.customElements.get(TAG_NAME)) {
 	window.customElements.define(TAG_NAME, MindMap)
@@ -24,6 +19,11 @@ registerHandler({
 	id: HANDLER_ID,
 	displayName: t('files_mindmap', 'Mind map'),
 	tagName: TAG_NAME,
-	enabled: (nodes) => nodes.every((node) => supportedMimes.includes(node.mime)),
+	enabled: (nodes) => nodes.every((node) => MIMES.includes(node.mime)),
 	theme: 'default',
 })
+
+// From 33 on the viewer registers the actions for its handlers itself
+if (version < 33) {
+	import('./legacyFileAction.js')
+}
