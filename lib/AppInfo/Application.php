@@ -8,7 +8,6 @@
 
 namespace OCA\Files_MindMap\AppInfo;
 
-use OCA\Files\Event\LoadAdditionalScriptsEvent;
 use OCP\AppFramework\App;
 use OCP\AppFramework\Bootstrap\IBootContext;
 use OCP\AppFramework\Bootstrap\IBootstrap;
@@ -18,14 +17,9 @@ use OCP\AppFramework\Http\Events\BeforeTemplateRenderedEvent;
 use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Files\IMimeTypeDetector;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
-use OCA\Viewer\Event\LoadViewer;
-use OCA\Files_MindMap\Listener\LoadAdditionalListener;
 use OCA\Files_MindMap\Listener\LoadViewerListener;
-use OCA\Files_MindMap\Listener\LoadPublicViewerListener;
 use OCA\Files_MindMap\Listener\RegisterTemplateCreatorListener;
 use OCP\Files\Template\RegisterTemplateCreatorEvent;
-
-
 
 class Application extends App implements IBootstrap {
     const APPNAME = 'files_mindmap';
@@ -33,7 +27,6 @@ class Application extends App implements IBootstrap {
 	public function __construct(array $urlParams = array()) {
 		parent::__construct(self::APPNAME, $urlParams);
     }
-
 
 	public function registerProvider() {
 		$container = $this->getContainer();
@@ -46,9 +39,7 @@ class Application extends App implements IBootstrap {
 	}
 
 	public function register(IRegistrationContext $context): void {
-		$context->registerEventListener(LoadAdditionalScriptsEvent::class, LoadAdditionalListener::class);
-		$context->registerEventListener(BeforeTemplateRenderedEvent::class, LoadPublicViewerListener::class);
-		$context->registerEventListener(LoadViewer::class, LoadViewerListener::class);
+		$context->registerEventListener(BeforeTemplateRenderedEvent::class, LoadViewerListener::class);
 		$context->registerEventListener(RegisterTemplateCreatorEvent::class, RegisterTemplateCreatorListener::class);
 	}
 

@@ -33,11 +33,7 @@ final class RegisterTemplateCreatorListener implements IEventListener {
 
 			$iconContent = file_get_contents(__DIR__ . '/../../img/mindmap.svg');
 			if ($iconContent !== false) {
-				if (method_exists($creator, 'setIconSvgInline')) {
-					$creator->setIconSvgInline($iconContent);
-				} else {
-					$creator->setIconClass('icon-mindmap');
-				}
+				$creator->setIconSvgInline($iconContent);
 			} else {
 				$creator->setIconClass('icon-template-add');
 			}

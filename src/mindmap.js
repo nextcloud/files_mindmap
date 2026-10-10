@@ -4,30 +4,19 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import SvgPencil from '@mdi/svg/svg/pencil.svg?raw'
 import { getCurrentUser } from '@nextcloud/auth'
 import axios from '@nextcloud/axios'
 import { showMessage as showToast } from '@nextcloud/dialogs'
-import {
-	DefaultType,
-	Permission,
-	registerFileAction,
-} from '@nextcloud/files'
-import {
-	FileAction,
-	registerFileAction as legacyRegisterFileAction,
-} from '@nextcloud/files-legacy'
 import { translate as t } from '@nextcloud/l10n'
 import { dirname } from '@nextcloud/paths'
 import { generateUrl } from '@nextcloud/router'
 import { getSharingToken, isPublicShare } from '@nextcloud/sharing/public'
+import { getViewer } from '@nextcloud/viewer'
 import logger from './logger.js'
 import freemind from './plugins/freemind.js'
 import km from './plugins/km.js'
 import xmind from './plugins/xmind.js'
 import util from './util.js'
-
-const version = Number.parseInt((window.OC?.config?.version ?? '0').split('.')[0])
 
 const FilesMindMap = {
 	_currentContext: null,
@@ -71,19 +60,6 @@ const FilesMindMap = {
 		if (toast && typeof toast.hideToast === 'function') {
 			toast.hideToast()
 		}
-	},
-
-	/**
-	 * Determine if this page is public mindmap share page
-	 *
-	 * @return {boolean}
-	 */
-	isMindmapPublic() {
-		if (!isPublicShare()) {
-			return false
-		}
-
-		return this.isSupportedMime(document.getElementById('mimetype')?.value)
 	},
 
 	save(data, success, fail) {
@@ -174,52 +150,15 @@ const FilesMindMap = {
 		})
 	},
 
-	/**
-	 * @private
-	 */
-	registerFileActions() {
-		const mimes = this.getSupportedMimetypes()
-		const _self = this
-
-		const actionConfig = {
-			id: 'file_mindmap',
-			displayName() {
-				return t('files_mindmap', 'Edit')
-			},
-			iconSvgInline: () => SvgPencil,
-
-			enabled(nodes) {
-				return nodes.length === 1 && mimes.includes(nodes[0].mime) && (nodes[0].permissions & Permission.READ) !== 0
-			},
-
-			async exec(node) {
-				try {
-					OCA.Viewer.openWith('mindmap', { path: node.path })
-					return true
-				} catch (error) {
-					_self.showMessage(error)
-					return false
-				}
-			},
-
-			default: DefaultType.HIDDEN,
-		}
-
-		if (version >= 33) {
-			registerFileAction(actionConfig)
-		} else {
-			legacyRegisterFileAction(new FileAction(actionConfig))
-		}
+	close() {
+		getViewer().close()
 	},
 
-	setFile(file) {
-		const filename = file.filename + ''
-		const basename = file.basename + ''
-
-		this._file.name = basename
+	setFile(node) {
+		this._file.name = node.basename
 		this._file.root = '/files/' + getCurrentUser()?.uid
-		this._file.dir = dirname(filename)
-		this._file.fullName = filename
+		this._file.dir = dirname(node.path)
+		this._file.fullName = node.path
 		this._currentContext = {
 			dir: this._file.dir,
 			root: this._file.root,
