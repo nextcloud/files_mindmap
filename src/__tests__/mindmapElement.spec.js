@@ -71,13 +71,15 @@ describe('MindMap element', () => {
 		expect(iframe.style.height).toBe('400px')
 	})
 
-	it('emits loaded once the iframe has loaded', async () => {
-		const element = await mount()
-		const loaded = vi.fn()
+	it('emits loaded as soon as the iframe is inserted, so the editor does not boot hidden', async () => {
+		const element = document.createElement('test-mindmap-viewer')
+		element.file = file
+		const loaded = vi.fn(() => expect(element.querySelector('iframe')).not.toBeNull())
 		element.addEventListener('loaded', loaded)
+		document.body.appendChild(element)
 
-		element.querySelector('iframe').dispatchEvent(new Event('load'))
-		expect(loaded).toHaveBeenCalledOnce()
+		await vi.waitFor(() => expect(loaded).toHaveBeenCalledOnce())
+		expect(loaded).toHaveReturned()
 	})
 })
 

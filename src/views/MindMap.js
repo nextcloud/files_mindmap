@@ -50,9 +50,11 @@ export default class MindMap extends HTMLElement {
 		const iframe = document.createElement('iframe')
 		iframe.src = generateUrl('/apps/files_mindmap/?file={file}', { file: this.file.path })
 		iframe.style.border = '0'
-		iframe.addEventListener('load', () => this.dispatchEvent(new CustomEvent('loaded')))
 		this.replaceChildren(iframe)
 		this.resize()
+		// The viewer hides the element until `loaded`, and the editor lays out
+		// its toolbar and nodes once on startup, so it must not boot hidden.
+		this.dispatchEvent(new CustomEvent('loaded'))
 	}
 
 	attributeChangedCallback() {
