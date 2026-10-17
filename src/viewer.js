@@ -105,7 +105,7 @@ redirectIfNotDisplayedInFrame();
 				if (self._autoSaveTimer !== null) {
 					clearInterval(self._autoSaveTimer)
 				}
-				window.parent.OCA.Viewer.close()
+				window.parent.OCA.FilesMindMap.close()
 			}
 			if (this._changed && window.parent.OCA.FilesMindMap._file.supportedWrite) {
 				const result = window.confirm(t('The file has not been saved. Is it saved?'))
@@ -239,7 +239,7 @@ redirectIfNotDisplayedInFrame();
 			}, function(msg) {
 				self._loadStatus = false
 				window.alert(t('Load file fail!') + msg)
-				window.parent.OCA.Viewer.close()
+				window.parent.OCA.FilesMindMap.close()
 			})
 		},
 		isDataSchema(url) {

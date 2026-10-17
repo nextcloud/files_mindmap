@@ -9,8 +9,9 @@
     /** @var array $_ */
     use OCP\App\IAppManager;
     use OCP\IURLGenerator;
-    $urlGenerator = \OC::$server->get(IURLGenerator::class);
-    $version = \OC::$server[IAppManager::class]->getAppVersion('files_mindmap');
+    use OCP\Server;
+    $urlGenerator = Server::get(IURLGenerator::class);
+    $version = Server::get(IAppManager::class)->getAppVersion('files_mindmap');
     $lang = $_['lang'];
     $nonce = $_['cspNonce'] ?? '';
 ?>
@@ -21,15 +22,12 @@
 	<title>Mind Map</title>
     <base target="_blank" />
 
-
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/bootstrap/dist/css/bootstrap.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/codemirror/lib/codemirror.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/hotbox/hotbox.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/kityminder-core/dist/kityminder.core.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/color-picker/dist/color-picker.min.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/kityminder-editor/kityminder.editor.min.css')) ?>?v=<?php p($version) ?>">
-	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'css/style.css')) /* add custom css to iframe */ ?>?v=<?php p($version) ?>" />
-
 
 	<style>
 		html, body {
