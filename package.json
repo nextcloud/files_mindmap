@@ -29,7 +29,6 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@mdi/svg": "^7.3.67",
     "@nextcloud/auth": "^2.5.0",
     "@nextcloud/axios": "^2.4.0",
     "@nextcloud/dialogs": "^7.5.0",
