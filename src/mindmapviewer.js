@@ -20,7 +20,7 @@ registerHandler({
 	displayName: t('files_mindmap', 'Mind map'),
 	tagName: TAG_NAME,
 	enabled: (nodes) => nodes.every((node) => MIMES.includes(node.mime)),
-	theme: 'default',
+	theme: 'dark',
 })
 
 // From 33 on the viewer registers the actions for its handlers itself
