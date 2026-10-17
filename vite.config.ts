@@ -3,12 +3,14 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import { readFileSync } from 'fs'
 import { join } from 'path'
-import { viteStaticCopy } from 'vite-plugin-static-copy'
 import { createAppConfig } from '@nextcloud/vite-config'
 
 // replaced by vite
 declare const __dirname: string
+
+const iframeScript = join(__dirname, 'src', 'viewer.js')
 
 export default createAppConfig({
 	mindmap: join(__dirname, 'src', 'mindmap.js'),
@@ -17,15 +19,16 @@ export default createAppConfig({
 	inlineCSS: { relativeCSSInjection: true },
 	config: {
 		plugins: [
-			viteStaticCopy({
-				targets: [
-					{
-						src: 'src/viewer.js',
-						dest: 'js',
-						rename: { stripBase: true },
-					}
-				]
-			})
+			{
+				// The editor iframe loads this script as is, outside the bundle
+				name: 'copy-iframe-script',
+				buildStart() {
+					this.addWatchFile(iframeScript)
+				},
+				generateBundle() {
+					this.emitFile({ type: 'asset', fileName: 'js/viewer.js', source: readFileSync(iframeScript, 'utf8') })
+				},
+			},
 		],
 		resolve: {
 			dedupe: ['vue'],
