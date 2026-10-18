@@ -66,6 +66,7 @@ describe('MindMap element', () => {
 		const iframe = element.querySelector('iframe')
 		expect(iframe.style.width).toBe('800px')
 		expect(iframe.style.height).toBe('600px')
+		expect(iframe.style.display).toBe('block')
 
 		element.setAttribute('max-height', '400')
 		expect(iframe.style.height).toBe('400px')
