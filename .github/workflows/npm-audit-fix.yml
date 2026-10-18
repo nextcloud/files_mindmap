@@ -26,6 +26,7 @@ jobs:
       matrix:
         branches:
           - ${{ github.event.repository.default_branch }}
+          - stable-0.1
 
     name: npm-audit-fix-${{ matrix.branches }}
 
