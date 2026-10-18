@@ -32,9 +32,13 @@ redirectIfNotDisplayedInFrame();
 		return window.parent.t('files_mindmap', msg)
 	}
 
-	const lang = window.lang
+	// The languages the editor ships translations for; it shows English for any other
+	const editorLanguages = ['en', 'de', 'es', 'fr', 'it', 'zh_CN', 'zh_TW']
+	const userLanguage = window.lang
 		|| (document.getElementById('viewer') && document.getElementById('viewer').getAttribute('lang'))
 		|| 'en'
+	// Fall back from a regional or formal variant, like de_DE or es_MX, to its base language
+	const lang = [userLanguage, userLanguage.split('_')[0]].find((code) => editorLanguages.includes(code)) || 'en'
 
 	const MindMap = {
 		_changed: false,
