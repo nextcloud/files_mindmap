@@ -197,7 +197,8 @@ const FilesMindMap = {
 					OCA.Viewer.openWith('mindmap', { path: node.path })
 					return true
 				} catch (error) {
-					_self.showMessage(error)
+					logger.error('Could not open the mind map', { error })
+					_self.showMessage(error.message)
 					return false
 				}
 			},
