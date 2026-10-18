@@ -13,7 +13,6 @@ declare const __dirname: string
 const iframeScript = join(__dirname, 'src', 'viewer.js')
 
 export default createAppConfig({
-	mindmap: join(__dirname, 'src', 'mindmap.js'),
 	mindmapviewer: join(__dirname, 'src', 'mindmapviewer.js'),
 }, {
 	inlineCSS: { relativeCSSInjection: true },
