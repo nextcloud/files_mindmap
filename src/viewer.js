@@ -257,7 +257,7 @@ redirectIfNotDisplayedInFrame();
 
 		download(url, extension) {
 			// Name the export after the mind map, e.g. notes.km becomes notes.png
-			const base = (window.parent.OCA.FilesMindMap._file.name || '').replace(/\.[^.]+$/, '') || 'export'
+			const base = (window.parent.OCA.FilesMindMap._file.displayName || '').replace(/\.[^.]+$/, '') || 'export'
 			const obj = document.createElement('a')
 			obj.href = url
 			obj.download = base + '.' + extension
