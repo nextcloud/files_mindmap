@@ -255,10 +255,12 @@ redirectIfNotDisplayedInFrame();
 			return url.substr(i, 5).toLowerCase() === 'data:'
 		},
 
-		download(url, filename) {
+		download(url, extension) {
+			// Name the export after the mind map, e.g. notes.km becomes notes.png
+			const base = (window.parent.OCA.FilesMindMap._file.name || '').replace(/\.[^.]+$/, '') || 'export'
 			const obj = document.createElement('a')
 			obj.href = url
-			obj.download = filename
+			obj.download = base + '.' + extension
 			obj.dataset.downloadurl = url
 			document.body.appendChild(obj)
 			obj.click()
@@ -268,7 +270,7 @@ redirectIfNotDisplayedInFrame();
 		exportPNG() {
 			const self = this
 			minder.exportData('png').then(function(data) {
-				self.download(data, 'export.png')
+				self.download(data, 'png')
 			}, function(data) {
 				console.error('export png fail', data)
 			})
@@ -278,7 +280,7 @@ redirectIfNotDisplayedInFrame();
 			const self = this
 			minder.exportData('svg').then(function(data) {
 				const url = 'data:image/svg+xml;base64,' + Base64.encode(data)
-				self.download(url, 'export.svg')
+				self.download(url, 'svg')
 			}, function(data) {
 				console.error('export svg fail', data)
 			})
@@ -288,7 +290,7 @@ redirectIfNotDisplayedInFrame();
 			const self = this
 			minder.exportData('markdown').then(function(data) {
 				const url = 'data:text/markdown;base64,' + Base64.encode(data)
-				self.download(url, 'export.md')
+				self.download(url, 'md')
 			}, function(data) {
 				console.error('export markdown fail', data)
 			})
@@ -298,7 +300,7 @@ redirectIfNotDisplayedInFrame();
 			const self = this
 			minder.exportData('text').then(function(data) {
 				const url = 'data:text/plain;base64,' + Base64.encode(data)
-				self.download(url, 'export.txt')
+				self.download(url, 'txt')
 			}, function(data) {
 				console.error('export text fail', data)
 			})
@@ -310,7 +312,7 @@ redirectIfNotDisplayedInFrame();
 				const pdf = new jsPDF('p', 'mm', 'a4', false)
 				// pdf.addImage(data, 'png', 100, 200, 280, 210, undefined, 'none');
 				pdf.addImage(data, 'PNG', 5, 10, 200, 0, undefined, 'SLOW')
-				self.download(pdf.output('datauristring'), 'export.pdf')
+				self.download(pdf.output('datauristring'), 'pdf')
 			}, function(data) {
 				console.error('export png fail', data)
 			})
