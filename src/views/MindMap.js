@@ -50,6 +50,8 @@ export default class MindMap extends HTMLElement {
 		const iframe = document.createElement('iframe')
 		iframe.src = generateUrl('/apps/files_mindmap/?file={file}', { file: this.file.path })
 		iframe.style.border = '0'
+		// Inline, it would leave room for a text baseline and overflow the viewer
+		iframe.style.display = 'block'
 		this.replaceChildren(iframe)
 		this.resize()
 		// The viewer hides the element until `loaded`, and the editor lays out
