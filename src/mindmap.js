@@ -218,6 +218,8 @@ const FilesMindMap = {
 		const basename = file.basename + ''
 
 		this._file.name = basename
+		// On a public file share the viewer app passes no name, but the share page has it
+		this._file.displayName = basename || (isPublicShare() ? window.OCP.InitialState.loadState('files_sharing', 'filename', '') : '')
 		this._file.root = '/files/' + getCurrentUser()?.uid
 		this._file.dir = dirname(filename)
 		this._file.fullName = filename

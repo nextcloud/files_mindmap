@@ -195,6 +195,16 @@ describe('FilesMindMap', () => {
 			expect(FilesMindMap._file.fullName).toBe('/documents/test.km')
 		})
 
+		it('takes the display name of a public file share from the share page', () => {
+			isPublicShare.mockReturnValueOnce(true)
+			window.OCP = { InitialState: { loadState: vi.fn(() => 'notes.km') } }
+			FilesMindMap.setFile({ filename: '/', basename: '' })
+			expect(FilesMindMap._file.name).toBe('')
+			expect(FilesMindMap._file.displayName).toBe('notes.km')
+			expect(window.OCP.InitialState.loadState).toHaveBeenCalledWith('files_sharing', 'filename', '')
+			delete window.OCP
+		})
+
 		it('sets dir to "/" for top-level files', () => {
 			FilesMindMap.setFile({ filename: '/test.km', basename: 'test.km' })
 			expect(FilesMindMap._file.dir).toBe('/')
