@@ -5,29 +5,36 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-Releases for Nextcloud 32–35 come from the `stable-0.1` branch, whose changelog lists the 0.1.x releases after 0.1.3.
+The 0.2 releases are for Nextcloud 36 and later. The 0.1 releases for Nextcloud 32–35 come from the `stable-0.1` branch; changes listed for a 0.1 release are also part of the following 0.2 release.
 
 ## 0.2.0-beta.1
 
 ### Changed
 - Require Nextcloud 36 and open mind maps with the `@nextcloud/viewer` library, as the viewer app was removed from the server @AndyScherzinger [#375](https://github.com/nextcloud/files_mindmap/pull/375) [#390](https://github.com/nextcloud/files_mindmap/pull/390)
 
-### Added
-- feat(editor): name exported files after the mind map @AndyScherzinger [#397](https://github.com/nextcloud/files_mindmap/pull/397)
-- Scroll the mind map horizontally with Shift+wheel @AndyScherzinger [#402](https://github.com/nextcloud/files_mindmap/pull/402)
-
 ### Fixed
-- fix(editor): wheel scrolling and Ctrl+wheel zoom in Firefox, and zoom on touchpad pinches and small steps @AndyScherzinger [#402](https://github.com/nextcloud/files_mindmap/pull/402)
-- fix(sharing): load mind maps from subfolders of public shares @AndyScherzinger [#400](https://github.com/nextcloud/files_mindmap/pull/400)
-- fix(editor): show the editor in regional and formal language variants @AndyScherzinger [#395](https://github.com/nextcloud/files_mindmap/pull/395)
 - fix(viewer): keep the editor iframe from overflowing the viewer @AndyScherzinger [#394](https://github.com/nextcloud/files_mindmap/pull/394)
-- fix(build): load the editor logic from a hashed chunk, so updates don't run stale cached code @AndyScherzinger [#392](https://github.com/nextcloud/files_mindmap/pull/392)
-- fix(deps): lift vue to 3.5.44 (GHSA-g2v6-rqmx-r4w6) and drop unused Vue dependencies @AndyScherzinger [#387](https://github.com/nextcloud/files_mindmap/pull/387)
 
 ### Other
-- build: drop vite-plugin-static-copy @AndyScherzinger [#388](https://github.com/nextcloud/files_mindmap/pull/388)
+- Drop the Vue dependencies that are unused since the viewer migration @AndyScherzinger [#387](https://github.com/nextcloud/files_mindmap/pull/387)
 - ci: keep stable-0.1 dependencies updated @AndyScherzinger [#391](https://github.com/nextcloud/files_mindmap/pull/391)
 
+## 0.1.4-beta.1
+
+### Added
+- feat(editor): name exported files after the mind map @AndyScherzinger [#398](https://github.com/nextcloud/files_mindmap/pull/398)
+- Scroll the mind map horizontally with Shift+wheel @AndyScherzinger [#403](https://github.com/nextcloud/files_mindmap/pull/403)
+
+### Fixed
+- fix(editor): wheel scrolling and Ctrl+wheel zoom in Firefox, and zoom on touchpad pinches and small steps @AndyScherzinger [#403](https://github.com/nextcloud/files_mindmap/pull/403)
+- fix(sharing): load mind maps from subfolders of public shares @AndyScherzinger [#401](https://github.com/nextcloud/files_mindmap/pull/401)
+- fix(editor): show the editor in regional and formal language variants @AndyScherzinger [#396](https://github.com/nextcloud/files_mindmap/pull/396)
+- Load the editor logic from a hashed chunk, so updates don't run stale cached code @AndyScherzinger [#393](https://github.com/nextcloud/files_mindmap/pull/393)
+- Lift vue to 3.5.44 (GHSA-g2v6-rqmx-r4w6) @AndyScherzinger [#393](https://github.com/nextcloud/files_mindmap/pull/393)
+- Show the message when opening a mind map fails, and resolve chunk URLs through window.OC @AndyScherzinger [#393](https://github.com/nextcloud/files_mindmap/pull/393)
+
+### Other
+- Drop vite-plugin-static-copy @AndyScherzinger [#393](https://github.com/nextcloud/files_mindmap/pull/393)
 ## 0.1.3
 
 ### Fixed
