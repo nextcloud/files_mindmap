@@ -25,7 +25,36 @@ function redirectIfNotDisplayedInFrame() {
 
 	window.location.href = '/'
 }
-redirectIfNotDisplayedInFrame();
+redirectIfNotDisplayedInFrame()
+
+/**
+ * The editor pans and zooms on the non-standard mousewheel event, which Firefox
+ * does not fire. Where it is missing, re-dispatch each wheel event as
+ * mousewheel with the deltas Chrome reports: 120 per wheel notch of three lines.
+ */
+function polyfillMouseWheel() {
+	if ('onmousewheel' in window) {
+		return
+	}
+	// kity only listens for an event an element has an on<type> property for
+	Object.defineProperty(Element.prototype, 'onmousewheel', { value: null, writable: true, configurable: true })
+	window.addEventListener('wheel', (event) => {
+		// Read deltaMode first: reading a delta first makes Firefox report pixels
+		const pixelsPerUnit = [1.2, 40, 800][event.deltaMode]
+		const wheelDeltaX = -event.deltaX * pixelsPerUnit
+		const wheelDeltaY = -event.deltaY * pixelsPerUnit
+		const mouseWheel = new WheelEvent('mousewheel', event)
+		Object.defineProperties(mouseWheel, {
+			wheelDelta: { value: wheelDeltaY || wheelDeltaX },
+			wheelDeltaX: { value: wheelDeltaX },
+			wheelDeltaY: { value: wheelDeltaY },
+		})
+		if (!event.target.dispatchEvent(mouseWheel)) {
+			event.preventDefault()
+		}
+	}, { capture: true, passive: false })
+}
+polyfillMouseWheel();
 
 (function() {
 	const t = function(msg) {
