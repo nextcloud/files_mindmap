@@ -181,6 +181,12 @@ describe('FilesMindMap', () => {
 			expect(FilesMindMap._file.fullName).toBe('/documents/test.km')
 		})
 
+		it('keeps the display name apart from the name of a public share root', () => {
+			FilesMindMap.setFile({ path: '/', basename: 'shareToken', displayname: 'notes.km' })
+			expect(FilesMindMap._file.name).toBe('shareToken')
+			expect(FilesMindMap._file.displayName).toBe('notes.km')
+		})
+
 		it('sets dir to "/" for top-level files', () => {
 			FilesMindMap.setFile({ path: '/test.km', basename: 'test.km' })
 			expect(FilesMindMap._file.dir).toBe('/')

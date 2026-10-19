@@ -156,6 +156,8 @@ const FilesMindMap = {
 
 	setFile(node) {
 		this._file.name = node.basename
+		// On a public file share the file is the share root, whose basename is the share token
+		this._file.displayName = node.displayname
 		this._file.root = '/files/' + getCurrentUser()?.uid
 		this._file.dir = dirname(node.path)
 		this._file.fullName = node.path
