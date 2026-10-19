@@ -5,8 +5,6 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-This branch provides the releases for Nextcloud 32–35. Releases for Nextcloud 36 and later come from `main`, starting with 0.2.0.
-
 ## 0.1.4-beta.1
 
 ### Added
@@ -46,8 +44,6 @@ This branch provides the releases for Nextcloud 32–35. Releases for Nextcloud 
 - docs(agents): sync agent rules with nextcloud/.github#774 @AndyScherzinger [#336](https://github.com/nextcloud/files_mindmap/pull/336)
 
 ## 0.1.0
-
-First release from the repository's new home in the Nextcloud organization, for Nextcloud 32–35.
 
 ### Added
 - Support Nextcloud 32 and update old packages like jQuery @smarinier [#233](https://github.com/nextcloud/files_mindmap/pull/233)
