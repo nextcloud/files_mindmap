@@ -72,6 +72,191 @@ All notable changes to this project will be documented in this file.
 - ci: Add release-relay for testing purposes @AndyScherzinger [#309](https://github.com/nextcloud/files_mindmap/pull/309)
 - ci: Add npm job from org @AndyScherzinger [#328](https://github.com/nextcloud/files_mindmap/pull/328)
 
-## 0.0.33 and older
+## 0.0.34
 
-See the [GitHub releases](https://github.com/nextcloud/files_mindmap/releases).
+### Other
+- Update links to the new repository location
+- Build and publish releases with the new release workflow
+
+## 0.0.33
+
+### Added
+- Support Nextcloud 31
+
+## 0.0.32
+
+### Added
+- Sharing support
+
+### Other
+- Optimize the code structure
+
+## 0.0.31
+
+Pre-release.
+
+### Added
+- Compatibility with Nextcloud 28
+
+## 0.0.30
+
+### Fixed
+- Public shared mind maps are no longer openable, only downloadable [#187](https://github.com/nextcloud/files_mindmap/issues/187)
+
+## 0.0.29
+
+### Fixed
+- Move from `app.php` to the Nextcloud 20 `Application.php` [#184](https://github.com/nextcloud/files_mindmap/issues/184) [#186](https://github.com/nextcloud/files_mindmap/issues/186)
+
+## 0.0.28
+
+### Added
+- Support Nextcloud 26 and 27
+- Polish translation
+
+### Fixed
+- Menu overlapping while previewing images [#182](https://github.com/nextcloud/files_mindmap/issues/182)
+
+## 0.0.27
+
+### Added
+- Support Nextcloud 25
+
+## 0.0.26
+
+### Added
+- Support Nextcloud 23 and 24
+- Optimistic file locking [#120](https://github.com/nextcloud/files_mindmap/issues/120)
+
+## 0.0.25
+
+### Changed
+- Support Nextcloud 22 only
+
+## 0.0.24
+
+### Added
+- Support Nextcloud 21
+
+## 0.0.23
+
+### Added
+- Support Nextcloud 20
+
+### Changed
+- Make the "saving file" and "file saved" messages of autosave less prominent [#130](https://github.com/nextcloud/files_mindmap/issues/130)
+
+### Fixed
+- Export does not work at all in Chromium-based browsers [#121](https://github.com/nextcloud/files_mindmap/issues/121)
+
+## 0.0.22
+
+### Fixed
+- Can't save from a shared link: `this.isSupportedMime is not a function` [#109](https://github.com/nextcloud/files_mindmap/issues/109)
+
+## 0.0.21
+
+### Fixed
+- Open a mind map in a shared link folder [#101](https://github.com/nextcloud/files_mindmap/issues/101)
+- XMind files with a modified title width fail to load [#105](https://github.com/nextcloud/files_mindmap/issues/105)
+
+### Other
+- Update the French translation
+
+## 0.0.20
+
+### Fixed
+- A new file cannot be opened after creating it [#94](https://github.com/nextcloud/files_mindmap/issues/94)
+
+## 0.0.19
+
+### Added
+- Read-only support for the FreeMind format (`*.mm`)
+- Read-only support for the XMind format (`*.xmind`)
+
+### Fixed
+- Conflicts caused by Symfony in the News app 18.x
+
+## 0.0.18
+
+### Added
+- Autosave [#85](https://github.com/nextcloud/files_mindmap/issues/85)
+- Icon for the mind map mimetype [#73](https://github.com/nextcloud/files_mindmap/issues/73)
+- Show the file name when opening a mind map file [#80](https://github.com/nextcloud/files_mindmap/issues/80)
+
+## 0.0.17
+
+### Added
+- Traditional Chinese, Italian and French translations, and updates to several others
+
+## 0.0.16
+
+### Added
+- Support Nextcloud 18 and 19
+
+## 0.0.15
+
+### Added
+- Export to PDF, Markdown and text [#50](https://github.com/nextcloud/files_mindmap/issues/50)
+
+## 0.0.14
+
+### Added
+- Collaborative editing through share links [#25](https://github.com/nextcloud/files_mindmap/issues/25)
+- Russian translation
+
+### Fixed
+- Links in notes open in the current window
+- Cannot open mind map files in the browser after upgrading Nextcloud [#46](https://github.com/nextcloud/files_mindmap/issues/46)
+- Cannot open a copy of a mind map file [#48](https://github.com/nextcloud/files_mindmap/issues/48)
+
+## 0.0.13
+
+### Fixed
+- Incomplete display at low resolutions
+
+## 0.0.12
+
+### Added
+- Support Nextcloud 16
+
+### Fixed
+- Several bugs
+
+## 0.0.11
+
+No release notes.
+
+## 0.0.10
+
+No release notes.
+
+## 0.0.9
+
+No release notes.
+
+## 0.0.8
+
+No release notes.
+
+## 0.0.7
+
+No release notes.
+
+## 0.0.6
+
+No release notes.
+
+## 0.0.5
+
+### Added
+- Multi-language support
+- Upload local images
+
+## 0.0.4
+
+No release notes.
+
+## 0.0.3
+
+First release.
