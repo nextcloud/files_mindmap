@@ -201,7 +201,7 @@ class PublicFileHandlingController extends Controller{
             }
             try {
                 $file = $node->get($fullpath);
-            } catch (NotFoundException $e) {
+            } catch (NotFoundException|NotPermittedException $e) {
                 return new DataResponse(['message' => $this->l->t('File not found')], Http::STATUS_NOT_FOUND);
             }
         }

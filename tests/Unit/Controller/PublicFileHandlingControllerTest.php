@@ -124,6 +124,16 @@ class PublicFileHandlingControllerTest extends TestCase {
 		$this->assertSame(Http::STATUS_BAD_REQUEST, $response->getStatus());
 	}
 
+	public function testSaveOutsideOfShareIsNotFound(): void {
+		$folder = $this->createMock(Folder::class);
+		$folder->method('get')->willThrowException(new NotPermittedException());
+		$this->mockShare(Constants::PERMISSION_READ | Constants::PERMISSION_UPDATE, $folder);
+
+		$response = $this->controller->save('token', 'data', '/../notes.km', 123);
+
+		$this->assertSame(Http::STATUS_NOT_FOUND, $response->getStatus());
+	}
+
 	private function mockShare(int $permissions = 0, ?Folder $node = null, ?string $password = null, string $id = '1'): IShare&MockObject {
 		$share = $this->createMock(IShare::class);
 		$share->method('getPassword')->willReturn($password);
