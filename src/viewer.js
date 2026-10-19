@@ -28,33 +28,72 @@ function redirectIfNotDisplayedInFrame() {
 redirectIfNotDisplayedInFrame()
 
 /**
- * The editor pans and zooms on the non-standard mousewheel event, which Firefox
- * does not fire. Where it is missing, re-dispatch each wheel event as
- * mousewheel with the deltas Chrome reports: 120 per wheel notch of three lines.
+ * The editor pans on the non-standard mousewheel event, ignoring it while Shift
+ * is held, and zooms on it with Ctrl or Cmd once it reports more than 100.
+ * Re-dispatch wheel events as mousewheel where needed, with the deltas Chrome
+ * reports for a mouse notch of three lines (120):
+ * - in Firefox, which has no mousewheel at all,
+ * - with Shift, so that it scrolls horizontally,
+ * - with Ctrl or Cmd, at least 120, so that touchpad pinches and small wheel
+ *   steps zoom too; the editor zooms once per gesture, after 100 ms of quiet.
  */
-function polyfillMouseWheel() {
-	if ('onmousewheel' in window) {
-		return
+function normalizeMouseWheel() {
+	const nativeMouseWheel = 'onmousewheel' in window
+	if (!nativeMouseWheel) {
+		// kity only listens for an event an element has an on<type> property for
+		Object.defineProperty(Element.prototype, 'onmousewheel', { value: null, writable: true, configurable: true })
 	}
-	// kity only listens for an event an element has an on<type> property for
-	Object.defineProperty(Element.prototype, 'onmousewheel', { value: null, writable: true, configurable: true })
-	window.addEventListener('wheel', (event) => {
-		// Read deltaMode first: reading a delta first makes Firefox report pixels
-		const pixelsPerUnit = [1.2, 40, 800][event.deltaMode]
-		const wheelDeltaX = -event.deltaX * pixelsPerUnit
-		const wheelDeltaY = -event.deltaY * pixelsPerUnit
-		const mouseWheel = new WheelEvent('mousewheel', event)
-		Object.defineProperties(mouseWheel, {
-			wheelDelta: { value: wheelDeltaY || wheelDeltaX },
-			wheelDeltaX: { value: wheelDeltaX },
-			wheelDeltaY: { value: wheelDeltaY },
+	const redispatched = new WeakSet()
+	window.addEventListener(nativeMouseWheel ? 'mousewheel' : 'wheel', (event) => {
+		if (redispatched.has(event)) {
+			return
+		}
+		const zoom = event.ctrlKey || event.metaKey
+		const horizontal = event.shiftKey && !zoom
+		let deltaX = event.wheelDeltaX
+		let deltaY = event.wheelDeltaY
+		if (!nativeMouseWheel) {
+			// Read deltaMode first: reading a delta first makes Firefox report pixels
+			const pixelsPerUnit = [1.2, 40, 800][event.deltaMode]
+			deltaX = -event.deltaX * pixelsPerUnit
+			deltaY = -event.deltaY * pixelsPerUnit
+		} else if (!horizontal && !(zoom && Math.abs(deltaY || deltaX) < 120)) {
+			return
+		}
+		if (horizontal) {
+			deltaX = deltaX || deltaY
+			deltaY = 0
+		}
+		let delta = deltaY || deltaX
+		if (zoom) {
+			delta = Math.sign(delta) * Math.max(120, Math.abs(delta))
+		}
+		const mouseWheel = new WheelEvent('mousewheel', {
+			bubbles: true,
+			cancelable: true,
+			view: window,
+			screenX: event.screenX,
+			screenY: event.screenY,
+			clientX: event.clientX,
+			clientY: event.clientY,
+			ctrlKey: event.ctrlKey,
+			metaKey: event.metaKey,
+			altKey: event.altKey,
+			shiftKey: event.shiftKey && !horizontal,
 		})
+		Object.defineProperties(mouseWheel, {
+			wheelDelta: { value: delta },
+			wheelDeltaX: { value: deltaX },
+			wheelDeltaY: { value: deltaY },
+		})
+		redispatched.add(mouseWheel)
+		event.stopImmediatePropagation()
 		if (!event.target.dispatchEvent(mouseWheel)) {
 			event.preventDefault()
 		}
 	}, { capture: true, passive: false })
 }
-polyfillMouseWheel();
+normalizeMouseWheel();
 
 (function() {
 	const t = function(msg) {
