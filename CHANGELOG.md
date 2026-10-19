@@ -225,37 +225,49 @@ Pre-release.
 
 ## 0.0.11
 
-No release notes.
+### Added
+- Support Nextcloud 15
 
 ## 0.0.10
 
-No release notes.
+### Added
+- Slovak translation [#13](https://github.com/nextcloud/files_mindmap/issues/13)
+- French translation [#8](https://github.com/nextcloud/files_mindmap/issues/8) [#9](https://github.com/nextcloud/files_mindmap/issues/9)
+
+### Fixed
+- Blank page in Safari
 
 ## 0.0.9
 
-No release notes.
+### Fixed
+- Bug fixes
 
 ## 0.0.8
 
-No release notes.
+### Fixed
+- Bug fixes
 
 ## 0.0.7
 
-No release notes.
+### Added
+- Internationalization of the app
 
 ## 0.0.6
 
-No release notes.
+### Added
+- Multi-language support for the app
 
 ## 0.0.5
 
 ### Added
 - Multi-language support
 - Upload local images
+- Export files
 
 ## 0.0.4
 
-No release notes.
+### Fixed
+- Bug fixes
 
 ## 0.0.3
 
