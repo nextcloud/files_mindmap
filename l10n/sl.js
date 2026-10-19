@@ -14,7 +14,6 @@ OC.L10N.register(
     "Share not found" : "Mesta souporabe ni mogoče najti.",
     "You are not authorized to open this share" : "Za dostop do tega mesta souporabe ni ustreznih dovoljenj",
     "File not found" : "Datoteke ni mogoče najti",
-    "Edit" : "Uredi",
     "Save" : "Shrani",
     "Export" : "Izvozi"
 },

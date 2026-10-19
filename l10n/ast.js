@@ -8,7 +8,6 @@ OC.L10N.register(
     "Could not write to file." : "Nun se pudo escribir nel ficheru.",
     "Share not found" : "Nun s'atopó la compartición",
     "File not found" : "Nun s'atopó'l ficheru",
-    "Edit" : "Editar",
     "Save" : "Guardar",
     "Export" : "Esportar"
 },

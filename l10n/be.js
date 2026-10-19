@@ -7,7 +7,6 @@ OC.L10N.register(
     "The file is locked." : "Файл заблакіраваны.",
     "An internal server error occurred." : "Узнікла ўнутраная памылка сервера.",
     "File not found" : "Файл не знойдзены",
-    "Edit" : "Рэдагаваць",
     "File Saved" : "Файл захаваны",
     "Save failed" : "Не ўдалося захаваць",
     "Unsupported file type: {mimetype}" : "Тып файла не падтрымліваецца: {mimetype}",

@@ -9,7 +9,6 @@ OC.L10N.register(
     "File path not supplied" : "Ֆայլի հասցեն տրամադրված չէ",
     "File mtime not supplied" : "Ֆայլի mtimeը տրամադրված չէ",
     "File not found" : "Նիշքը չգտնվեց",
-    "Edit" : "մշակել",
     "Save" : "Պահպանել",
     "Export" : "Արտահանում"
 },

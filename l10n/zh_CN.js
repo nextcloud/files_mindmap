@@ -14,7 +14,6 @@ OC.L10N.register(
     "Share not found" : "未找到共享",
     "You are not authorized to open this share" : "您没有权限访问这个共享",
     "File not found" : "文件未找到",
-    "Edit" : "编辑",
     "Save" : "保存",
     "Export" : "导出"
 },

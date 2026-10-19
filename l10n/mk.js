@@ -10,7 +10,6 @@ OC.L10N.register(
     "Share not found" : "Споделувањето не е пронајдено",
     "You are not authorized to open this share" : "Немате авторизација за да го отворите ова споделување",
     "File not found" : "Датотеката не е пронајдена",
-    "Edit" : "Уреди",
     "Save" : "Сними",
     "Export" : "Извези"
 },

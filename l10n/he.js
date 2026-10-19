@@ -13,7 +13,6 @@ OC.L10N.register(
     "Share not found" : "השיתוף לא נמצא",
     "You are not authorized to open this share" : "אין לך הרשאה לפתוח את השיתוף הזה",
     "File not found" : "קובץ לא נמצא",
-    "Edit" : "עריכה",
     "Save" : "שמירה",
     "Export" : "ייצוא"
 },

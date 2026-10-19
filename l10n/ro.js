@@ -11,7 +11,6 @@ OC.L10N.register(
     "File mtime not supplied" : "Nu s-a furnizat mtime fișier",
     "Share not found" : "Partajarea nu a fost găsită",
     "File not found" : "Fișierul nu a fost găsit",
-    "Edit" : "Editează",
     "Save" : "Salvează",
     "Export" : "Exportă"
 },

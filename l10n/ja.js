@@ -14,7 +14,6 @@ OC.L10N.register(
     "Share not found" : "共有が見つかりません",
     "You are not authorized to open this share" : "この共有を開く権限がありません",
     "File not found" : "ファイルが見つかりません",
-    "Edit" : "編集",
     "Save" : "保存する",
     "Export" : "エクスポート"
 },

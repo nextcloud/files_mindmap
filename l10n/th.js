@@ -10,7 +10,6 @@ OC.L10N.register(
     "File path not supplied" : "ไม่ได้ระบุเส้นทางของไฟล์",
     "File mtime not supplied" : "ไม่ได้ให้ระบุ mtime ของไฟล์",
     "File not found" : "ไม่พบไฟล์",
-    "Edit" : "แก้ไข",
     "Save" : "บันทึก",
     "Export" : "ส่งออก"
 },

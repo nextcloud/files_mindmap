@@ -14,7 +14,6 @@ OC.L10N.register(
     "Share not found" : "Nie znaleziono udostępnienia",
     "You are not authorized to open this share" : "Nie masz uprawnień do otwarcia tego udostępnienia",
     "File not found" : "Nie odnaleziono pliku",
-    "Edit" : "Edycja",
     "Save" : "Zapisz",
     "Export" : "Eksportuj"
 },

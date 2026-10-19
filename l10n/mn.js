@@ -3,7 +3,6 @@ OC.L10N.register(
     {
     "Share not found" : "Хуваалцалт олдсонгүй",
     "File not found" : "Файл олдсонгүй",
-    "Edit" : "Өөрчлөх",
     "Save" : "Хадгалах",
     "Export" : "Экспорт"
 },

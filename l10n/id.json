@@ -18,7 +18,6 @@
     "Mind Map" : "Peta Pikiran",
     "A mind map editor" : "Editor peta pikiran",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Aplikasi ini memungkinkan pengguna Nextcloud untuk membuka, menyimpan, dan mengedit file peta pikiran di peramban web. Jika diaktifkan, entri pada tombol \"Baru\" di bagian atas peramban web akan menampilkan entri file peta pikiran. Saat diklik, file peta pikiran baru akan terbuka di peramban dan file tersebut dapat disimpan ke folder Nextcloud saat ini.",
-    "Edit" : "Edit",
     "Does not support saving {extension} files." : "Tidak mendukung penyimpanan file {extension}.",
     "File Saved" : "File Disimpan",
     "Save failed" : "Gagal menyimpan",

@@ -14,7 +14,6 @@ OC.L10N.register(
     "Share not found" : "Cumpartzidura no agatada",
     "You are not authorized to open this share" : "No tenes su permissu de abèrrere custa cumpartzidura",
     "File not found" : "Archìviu no agatadu",
-    "Edit" : "Modìfica",
     "Save" : "Sarva",
     "Export" : "Esporta"
 },

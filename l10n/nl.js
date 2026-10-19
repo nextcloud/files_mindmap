@@ -14,7 +14,6 @@ OC.L10N.register(
     "Share not found" : "Gedeelde map niet gevonden",
     "You are not authorized to open this share" : "Je bent niet bevoegd om deze gedeelde map te openen",
     "File not found" : "Bestand niet gevonden",
-    "Edit" : "Bewerken",
     "Save" : "Opslaan",
     "Export" : "Exporteren"
 },

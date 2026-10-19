@@ -10,7 +10,6 @@ OC.L10N.register(
     "File path not supplied" : "La ruta del archivo no fue proporcionada",
     "File mtime not supplied" : "El archivo mtime no fue proporcionado",
     "File not found" : "Archivo no encontrado",
-    "Edit" : "Editar",
     "Save" : "Guardar",
     "Export" : "Exportar"
 },

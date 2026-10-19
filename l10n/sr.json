@@ -18,7 +18,6 @@
     "Mind Map" : "Мапа ума",
     "A mind map editor" : "Едитор мапе ума",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Ова апликација омогућава Nextcloud корисницима да отварају, снимају и уређују фајлове мапа ума у веб прегледачу. Када се укључи, појављује се ставка фајл мапе ума у дугмету „Нови” на врху веб стране. Кликом на ову ставку се у веб читачу отвара нови фајл мапе ума који може да се  сачува у тренутном Nextcloud фолдеру.",
-    "Edit" : "Измени",
     "Does not support saving {extension} files." : "Не подржава се чување {extension} фајлова.",
     "File Saved" : "Фајл је сачуван",
     "Save failed" : "Снимање није успело",

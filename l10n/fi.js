@@ -17,7 +17,6 @@ OC.L10N.register(
     "File not found" : "Tiedostoa ei löytynyt",
     "You have no permission to write this file" : "Sinulla ei ole oikeutta kirjoittaa tätä tiedostoa",
     "Mind Map" : "Ajatuskartta",
-    "Edit" : "Muokkaa",
     "File Saved" : "Tiedosto tallennettu",
     "Save failed" : "Tallentaminen epäonnistui",
     "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",

@@ -16,7 +16,6 @@ OC.L10N.register(
     "You are not authorized to open this share" : "غير مصرح لك بفتح هذه المشاركة",
     "File not found" : "تعذر العثور على الملف",
     "Mind Map" : "خريطة ذهنية",
-    "Edit" : "تحرير",
     "Does not support saving {extension} files." : "لاتدعم حفظ الملفات من النوع {extension}.",
     "File Saved" : "تمّ حفظ الملف",
     "Save failed" : "فشلت عملية الحفظ",

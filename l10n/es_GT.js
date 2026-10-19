@@ -11,7 +11,6 @@ OC.L10N.register(
     "File mtime not supplied" : "El archivo mtime no fue proporcionado",
     "Share not found" : "No se encontró el elemento compartido",
     "You are not authorized to open this share" : "No estas autorizado para abrir este elemento compartido",
-    "Edit" : "Editar",
     "Save" : "Guardar",
     "Export" : "Exportar"
 },

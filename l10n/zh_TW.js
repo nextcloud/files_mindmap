@@ -23,7 +23,6 @@ OC.L10N.register(
     "Mind Map" : "心智圖",
     "A mind map editor" : "心智圖編輯器",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "此應用程式可讓 Nextcloud 使用者在網頁瀏覽器中開啟、儲存與編輯心智圖檔案。若啟用，網頁瀏覽器頂部的「新增」按鈕中會出現心智圖檔案條目。點擊後，會在瀏覽器中開啟新的心智圖檔案，該檔案可以儲存到目前的 Nextcloud 資料夾中。",
-    "Edit" : "編輯",
     "Does not support saving {extension} files." : "不支援儲存 {extension} 檔案。",
     "File Saved" : "檔案已儲存",
     "Save failed" : "儲存失敗",

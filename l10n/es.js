@@ -20,7 +20,6 @@ OC.L10N.register(
     "Mind Map" : "Mapa mental",
     "A mind map editor" : "Un editor de mapas mentales",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Esta aplicación le permite a los usuarios Nextcloud abrir, guardar y editar archivos de mapa mental en el navegador web. Si está habilitada, una entrada en el botón \"Nuevo\" en la parte superior del navegador web aparecerá. Cuando se le haga clic, un nuevo archivo de mapa mental se abrirá y el archivo podrá ser guardado en la carpeta actual de Nextcloud.",
-    "Edit" : "Editar",
     "Does not support saving {extension} files." : "No soporta el guardado de archivos {extension}.",
     "File Saved" : "Archivo guardado",
     "Save failed" : "Error al guardar",

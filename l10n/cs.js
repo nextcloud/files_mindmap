@@ -21,7 +21,6 @@ OC.L10N.register(
     "Mind Map" : "Myšlenková mapa",
     "A mind map editor" : "Editor myšlenkových map",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Tato aplikace umožňuje uživatelům Nextcloud otevírat, ukládat a upravovat myšlenkové mapy ve webovém prohlížeči. Když je zapnutá, objeví se nabídce „Nový“ položka Myšlenková mapa. Po kliknutí na ní se v prohlížeči otevře nová myšlenková mapa a je možné ji uložit do stávající složky v Nextcloud.",
-    "Edit" : "Upravit",
     "Does not support saving {extension} files." : "Nepodporuje ukládání souborů {extension}.",
     "File Saved" : "Soubor uložen",
     "Save failed" : "Ukládání se nezdařilo",

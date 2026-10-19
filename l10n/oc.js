@@ -11,7 +11,6 @@ OC.L10N.register(
     "File mtime not supplied" : "mtime del fichièr pas provesit",
     "Share not found" : "Partiment pas trobat",
     "File not found" : "Fichièr pas trobat",
-    "Edit" : "Modificar",
     "Save" : "Enregistrar",
     "Export" : "Exportar"
 },

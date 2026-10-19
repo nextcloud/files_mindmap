@@ -23,7 +23,6 @@ OC.L10N.register(
     "Mind Map" : "Gondolattérkép",
     "A mind map editor" : "Egy gondolattérkép-szerkesztő",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Ez az alkalmazás lehetővé teszi, hogy a Nextcloud-felhasználók gondolattérképfájlokat nyissanak meg, mentsenek és szerkesszenek a webböngészőben. Ha be van kapcsolva, akkor a böngésző tetején, az „Új” gombon megjelenik egy bejegyzés a gondolattérképfájlokhoz. Ha rákattint, egy új gondolattérkép nyílik meg a böngszőben, melyet a jelenlegi Nextcloud-mappába lehet mentetni.",
-    "Edit" : "Szerkesztés",
     "Does not support saving {extension} files." : "Nem támogatja a(z) {extension} fájlok mentését.",
     "File Saved" : "Fájl mentve",
     "Save failed" : "Nem sikerült a mentés",
