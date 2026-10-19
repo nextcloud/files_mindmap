@@ -16,6 +16,7 @@ use OCP\Files\Folder;
 use OCP\Files\ForbiddenException;
 use OCP\Files\GenericFileException;
 use OCP\Files\NotFoundException;
+use OCP\Files\NotPermittedException;
 use OCP\IL10N;
 use OCP\IRequest;
 use OCP\ISession;
@@ -113,15 +114,15 @@ class PublicFileHandlingController extends Controller{
 
         $fileNode = $node;
         if ($node instanceof Folder) {
-            $dir = $this->request->getParam('dir');
-            $filename = $this->request->getParam('filename');
-            $fullpath = trim($dir.$filename);
-            if (!$fullpath) {
+            $dir = (string)$this->request->getParam('dir');
+            $filename = (string)$this->request->getParam('filename');
+            if ($filename === '') {
                 return new DataResponse(['message' => $this->l->t('File not found')], Http::STATUS_NOT_FOUND);
             }
+            $fullpath = trim(rtrim($dir, '/') . '/' . $filename);
             try {
                 $fileNode = $node->get($fullpath);
-            } catch (NotFoundException $e) {
+            } catch (NotFoundException|NotPermittedException $e) {
                 return new DataResponse(['message' => $this->l->t('File not found')], Http::STATUS_NOT_FOUND);
             }
         }
