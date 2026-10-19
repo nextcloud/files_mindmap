@@ -14,6 +14,7 @@ use OCP\AppFramework\Http;
 use OCP\Constants;
 use OCP\Files\File;
 use OCP\Files\Folder;
+use OCP\Files\NotPermittedException;
 use OCP\IL10N;
 use OCP\IRequest;
 use OCP\ISession;
@@ -31,13 +32,17 @@ class PublicFileHandlingControllerTest extends TestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$request = $this->createMock(IRequest::class);
-		$request->method('getParam')->willReturnMap([
-			['dir', null, '/'],
-			['filename', null, 'secret.km'],
-		]);
 		$this->shareManager = $this->createMock(IManager::class);
 		$this->session = $this->createMock(ISession::class);
+		$this->createController('/', 'secret.km');
+	}
+
+	private function createController(string $dir, string $filename): void {
+		$request = $this->createMock(IRequest::class);
+		$request->method('getParam')->willReturnMap([
+			['dir', null, $dir],
+			['filename', null, $filename],
+		]);
 		$l10n = $this->createMock(IL10N::class);
 		$l10n->method('t')->willReturnArgument(0);
 
@@ -72,6 +77,26 @@ class PublicFileHandlingControllerTest extends TestCase {
 		$this->assertSame(base64_encode('{"root":{}}'), $response->getData()['filecontents']);
 	}
 
+	public function testLoadFromSubfolderOfShare(): void {
+		$this->createController('/Sub folder', 'notes.km');
+		$file = $this->createMock(File::class);
+		$file->method('getContent')->willReturn('{"root":{}}');
+		$folder = $this->createMock(Folder::class);
+		$folder->method('get')->with('/Sub folder/notes.km')->willReturn($file);
+		$this->mockShare(Constants::PERMISSION_READ, $folder);
+
+		$this->assertSame(Http::STATUS_OK, $this->controller->load('token')->getStatus());
+	}
+
+	public function testLoadOutsideOfShareIsNotFound(): void {
+		$this->createController('/../', 'notes.km');
+		$folder = $this->createMock(Folder::class);
+		$folder->method('get')->willThrowException(new NotPermittedException());
+		$this->mockShare(Constants::PERMISSION_READ, $folder);
+
+		$this->assertSame(Http::STATUS_NOT_FOUND, $this->controller->load('token')->getStatus());
+	}
+
 	public function testLoadFromPasswordProtectedShareWithoutSessionAuthIsRefused(): void {
 		$this->mockShare(password: 'secret', id: '42');
 		$this->session->method('get')->with('public_link_authenticated')->willReturn(['1', '2']);
@@ -97,6 +122,16 @@ class PublicFileHandlingControllerTest extends TestCase {
 		$response = $this->controller->save('token', 'data', '/secret.km', 123);
 
 		$this->assertSame(Http::STATUS_BAD_REQUEST, $response->getStatus());
+	}
+
+	public function testSaveOutsideOfShareIsNotFound(): void {
+		$folder = $this->createMock(Folder::class);
+		$folder->method('get')->willThrowException(new NotPermittedException());
+		$this->mockShare(Constants::PERMISSION_READ | Constants::PERMISSION_UPDATE, $folder);
+
+		$response = $this->controller->save('token', 'data', '/../notes.km', 123);
+
+		$this->assertSame(Http::STATUS_NOT_FOUND, $response->getStatus());
 	}
 
 	private function mockShare(int $permissions = 0, ?Folder $node = null, ?string $password = null, string $id = '1'): IShare&MockObject {
