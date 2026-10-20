@@ -79,7 +79,17 @@ export default {
 		}
 	},
 	toKm(xml) {
-		const json = util.xml2json(xml)
+		const dom = new DOMParser().parseFromString(xml, 'application/xml')
+		// Formatted node text is kept as HTML in richcontent instead of TEXT
+		for (const node of dom.querySelectorAll('node:not([TEXT])')) {
+			const html = node.querySelector(':scope > richcontent[TYPE="NODE"]')
+			if (html) {
+				const paragraphs = [...html.querySelectorAll('p')]
+				const lines = (paragraphs.length ? paragraphs : [html]).map((element) => element.textContent.replace(/\s+/g, ' ').trim())
+				node.setAttribute('TEXT', lines.filter(Boolean).join('\n'))
+			}
+		}
+		const json = util.parseXML(dom)
 		const result = {}
 		this.processTopic(json.node, result)
 		return result

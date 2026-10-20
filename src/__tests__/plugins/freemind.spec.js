@@ -97,6 +97,16 @@ describe('freemind plugin', () => {
 			expect(result.children[0].data.text).toBe('Child')
 		})
 
+		it('takes the text of a node without TEXT from its rich content', async () => {
+			const xml = '<map version="1.1.0"><node><richcontent TYPE="NODE"><html><body>'
+				+ '<p>FreeMind</p><p>  Template  </p></body></html></richcontent>'
+				+ '<richcontent TYPE="NOTE"><html><body><p>A note</p></body></html></richcontent>'
+				+ '<node TEXT="Child"/></node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.text).toBe('FreeMind\nTemplate')
+			expect(result.children[0].data.text).toBe('Child')
+		})
+
 		it('rejects on malformed input', async () => {
 			await expect(freemind.decode(null)).rejects.toBeDefined()
 		})
