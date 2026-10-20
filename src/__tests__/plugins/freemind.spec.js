@@ -3,14 +3,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { beforeAll, describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import freemind from '../../plugins/freemind.js'
-import util from '../../util.js'
-
-// freemind.toKm references the legacy global FilesMindMap.Util
-beforeAll(() => {
-	global.FilesMindMap = { Util: util }
-})
 
 describe('freemind plugin', () => {
 	it('has the correct name', () => {
@@ -67,6 +61,54 @@ describe('freemind plugin', () => {
 			const obj = {}
 			freemind.processTopic({ TEXT: 'Unknown', icon: { BUILTIN: 'unknown-marker' } }, obj)
 			expect(obj.data.priority).toBeUndefined()
+			expect(obj.data.text).toBe('Unknown')
+		})
+
+		it('shows other icons as emoji before the text, or as the text of an icon-only node', () => {
+			const withText = {}
+			freemind.processTopic({ TEXT: 'Done', icon: [{ BUILTIN: 'button_ok' }, { BUILTIN: 'full-9' }, { BUILTIN: 'hourglass' }] }, withText)
+			expect(withText.data.text).toBe('✅⌛ Done')
+			expect(withText.data.priority).toBe(9)
+
+			const iconOnly = {}
+			freemind.processTopic({ TEXT: '', icon: { BUILTIN: 'ksmiletris' } }, iconOnly)
+			expect(iconOnly.data.text).toBe('😊')
+		})
+
+		it('takes over the font and colours of the node, but not of its line', () => {
+			const obj = {}
+			freemind.processTopic({
+				TEXT: 'RESULT',
+				COLOR: '#ff0000',
+				BACKGROUND_COLOR: '#99ff99',
+				font: { BOLD: 'true', ITALIC: 'true', NAME: 'Monospaced', SIZE: '14' },
+				edge: { COLOR: '#00ff00', STYLE: 'bezier' },
+			}, obj)
+			expect(obj.data).toEqual({
+				text: 'RESULT',
+				color: '#ff0000',
+				background: '#99ff99',
+				'font-weight': 'bold',
+				'font-style': 'italic',
+				'font-size': 14,
+				'font-family': 'monospace',
+			})
+		})
+
+		it('leaves FreeMind\'s default font and unset styles to the editor', () => {
+			const obj = {}
+			freemind.processTopic({ TEXT: 'Plain', font: { NAME: 'SansSerif', SIZE: '12' } }, obj)
+			expect(obj.data).toEqual({ text: 'Plain', 'font-size': 12 })
+
+			const named = {}
+			freemind.processTopic({ TEXT: 'Named', font: { NAME: 'Arial', BOLD: 'false' } }, named)
+			expect(named.data).toEqual({ text: 'Named', 'font-family': 'Arial' })
+		})
+
+		it('uses FreeMind\'s black text on a background without a text colour', () => {
+			const obj = {}
+			freemind.processTopic({ TEXT: 'Root', BACKGROUND_COLOR: '#99ff99' }, obj)
+			expect(obj.data).toMatchObject({ background: '#99ff99', color: '#000000' })
 		})
 
 		it('processes a single child node', () => {
@@ -101,6 +143,70 @@ describe('freemind plugin', () => {
 			expect(result.data.text).toBe('Root')
 			expect(result.children).toHaveLength(1)
 			expect(result.children[0].data.text).toBe('Child')
+		})
+
+		it('takes the text of a node without TEXT from its rich content', async () => {
+			const xml = '<map version="1.1.0"><node><richcontent TYPE="NODE"><html><body>'
+				+ '<p>FreeMind</p><p>  Template  </p></body></html></richcontent>'
+				+ '<richcontent TYPE="NOTE"><html><body><p>A note</p></body></html></richcontent>'
+				+ '<node TEXT="Child"/></node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.text).toBe('FreeMind\nTemplate')
+			expect(result.children[0].data.text).toBe('Child')
+		})
+
+		it('keeps line breaks in rich content but not the wrapping of its HTML', async () => {
+			const xml = '<map version="1.0.1"><node><richcontent TYPE="NODE"><html><body>'
+				+ '<p align="center">\n  FreeMind<br/><small>- free mind\n  mapping software -</small>\n</p>'
+				+ '</body></html></richcontent></node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.text).toBe('FreeMind\n- free mind mapping software -')
+		})
+
+		it('takes the text of FreeMind 0.8 HTML in TEXT, with the chosen value of form fields', async () => {
+			const xml = '<map version="0.8.0"><node TEXT="&lt;html&gt;&lt;img src=&quot;a.gif&quot;&gt;&lt;br&gt;Complete Man">'
+				+ '<node TEXT="&lt;html&gt;Rating &lt;select&gt;&lt;option&gt;--&lt;/option&gt;&lt;option selected&gt;++&lt;/option&gt;&lt;/select&gt;"/>'
+				+ '<node TEXT="&lt;html&gt;&lt;select&gt;&lt;option&gt;--&lt;/option&gt;&lt;/select&gt;"/>'
+				+ '</node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.text).toBe('Complete Man')
+			expect(result.children[0].data.text).toBe('Rating ++')
+			expect(result.children[1].data.text).toBe('')
+		})
+
+		it('names an image-only node after the image and links web images', async () => {
+			const html = (img) => '<richcontent TYPE="NODE"><html><body>' + img + '</body></html></richcontent>'
+			const xml = '<map version="1.0.1"><node TEXT="Root">'
+				+ '<node>' + html('<img src="http://example.com/images/menu/binah.gif"/>') + '</node>'
+				+ '<node>' + html('<img src="https://example.com/a.png" alt="Tree of life"/>') + '</node>'
+				+ '<node>' + html('<img src="file:/C:/Office/Bitmaps/ACBLENDS.GIF"/>') + '</node>'
+				+ '<node LINK="https://nextcloud.com">' + html('<img src="http://example.com/x%20y.gif"/>') + '</node>'
+				+ '<node TEXT="&lt;html&gt;&lt;img src=&quot;http://example.com/flag.gif&quot;&gt;&lt;br&gt;Spirit Form"/>'
+				+ '</node></map>'
+			const [web, alt, local, linked, withText] = (await freemind.decode(xml)).children.map((child) => child.data)
+			expect(web).toMatchObject({ text: 'binah', hyperlink: 'http://example.com/images/menu/binah.gif' })
+			expect(alt).toMatchObject({ text: 'Tree of life', hyperlink: 'https://example.com/a.png' })
+			expect(local.text).toBe('ACBLENDS')
+			expect(local.hyperlink).toBeUndefined()
+			expect(linked).toMatchObject({ text: 'x y', hyperlink: 'https://nextcloud.com' })
+			expect(withText).toMatchObject({ text: 'Spirit Form', hyperlink: 'http://example.com/flag.gif' })
+		})
+
+		it('imports notes and folded branches', async () => {
+			const xml = '<map version="1.0.1"><node TEXT="Root"><node TEXT="Folded" FOLDED="true">'
+				+ '<richcontent TYPE="NOTE"><html><body><p>First</p><p>Second</p></body></html></richcontent>'
+				+ '<node TEXT="Hidden"/></node></node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.expandState).toBeUndefined()
+			expect(result.children[0].data.expandState).toBe('collapse')
+			expect(result.children[0].data.note).toBe('First\nSecond')
+			expect(result.children[0].children[0].data.text).toBe('Hidden')
+		})
+
+		it('rejects a file that is not a FreeMind map with a clear message', async () => {
+			await expect(freemind.decode('<!DOCTYPE html><html><head><title>VIP.mm</title></head><body></body></html>'))
+				.rejects.toThrow('This file is not a valid FreeMind mind map.')
+			await expect(freemind.decode('<map version="1.0.1"></map>')).rejects.toThrow('not a valid FreeMind')
 		})
 
 		it('rejects on malformed input', async () => {

@@ -143,7 +143,7 @@ const FilesMindMap = {
 
 				success(data.filecontents)
 			}, function(e) {
-				failure(e)
+				failure(e?.message ?? e)
 			})
 		}).catch(function(error) {
 			failure(error.response?.data?.message || error.message)
