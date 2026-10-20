@@ -137,6 +137,12 @@ describe('freemind plugin', () => {
 			expect(result.children[0].children[0].data.text).toBe('Hidden')
 		})
 
+		it('rejects a file that is not a FreeMind map with a clear message', async () => {
+			await expect(freemind.decode('<!DOCTYPE html><html><head><title>VIP.mm</title></head><body></body></html>'))
+				.rejects.toThrow('This file is not a valid FreeMind mind map.')
+			await expect(freemind.decode('<map version="1.0.1"></map>')).rejects.toThrow('not a valid FreeMind')
+		})
+
 		it('rejects on malformed input', async () => {
 			await expect(freemind.decode(null)).rejects.toBeDefined()
 		})
