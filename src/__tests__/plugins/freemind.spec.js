@@ -3,14 +3,8 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
-import { beforeAll, describe, expect, it } from 'vitest'
+import { describe, expect, it } from 'vitest'
 import freemind from '../../plugins/freemind.js'
-import util from '../../util.js'
-
-// freemind.toKm references the legacy global FilesMindMap.Util
-beforeAll(() => {
-	global.FilesMindMap = { Util: util }
-})
 
 describe('freemind plugin', () => {
 	it('has the correct name', () => {
