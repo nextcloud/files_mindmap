@@ -10,6 +10,13 @@ import util from '../util.js'
 // A private use character, so it is neither whitespace nor part of node text
 const LINE_BREAK = '\uE000'
 
+// Java's logical font names, which FreeMind uses, as CSS font families
+const FONT_FAMILIES = {
+	DialogInput: 'monospace',
+	Monospaced: 'monospace',
+	Serif: 'serif',
+}
+
 // FreeMind's built-in icons the editor has no marker for, shown as emoji before the node text
 const ICON_EMOJIS = {
 	attach: '📎',
@@ -113,6 +120,32 @@ export default {
 			text: topic.TEXT,
 		}
 		let i
+
+		// Text style and colours of the node; those of its branch line have no counterpart
+		const font = topic.font && util.toArray(topic.font)[0]
+		if (font) {
+			if (font.BOLD === 'true') {
+				obj.data['font-weight'] = 'bold'
+			}
+			if (font.ITALIC === 'true') {
+				obj.data['font-style'] = 'italic'
+			}
+			if (Number(font.SIZE) > 0) {
+				obj.data['font-size'] = Number(font.SIZE)
+			}
+			// FreeMind's default font is left to the editor's own
+			if (font.NAME && !['SansSerif', 'Dialog'].includes(font.NAME)) {
+				obj.data['font-family'] = FONT_FAMILIES[font.NAME] ?? font.NAME
+			}
+		}
+		if (topic.COLOR) {
+			obj.data.color = topic.COLOR
+		}
+		if (topic.BACKGROUND_COLOR) {
+			obj.data.background = topic.BACKGROUND_COLOR
+			// FreeMind's default text colour, as the editor's own may not suit the background
+			obj.data.color ??= '#000000'
+		}
 
 		// 处理标签
 		if (topic.icon) {

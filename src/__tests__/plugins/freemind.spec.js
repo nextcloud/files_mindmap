@@ -75,6 +75,42 @@ describe('freemind plugin', () => {
 			expect(iconOnly.data.text).toBe('😊')
 		})
 
+		it('takes over the font and colours of the node, but not of its line', () => {
+			const obj = {}
+			freemind.processTopic({
+				TEXT: 'RESULT',
+				COLOR: '#ff0000',
+				BACKGROUND_COLOR: '#99ff99',
+				font: { BOLD: 'true', ITALIC: 'true', NAME: 'Monospaced', SIZE: '14' },
+				edge: { COLOR: '#00ff00', STYLE: 'bezier' },
+			}, obj)
+			expect(obj.data).toEqual({
+				text: 'RESULT',
+				color: '#ff0000',
+				background: '#99ff99',
+				'font-weight': 'bold',
+				'font-style': 'italic',
+				'font-size': 14,
+				'font-family': 'monospace',
+			})
+		})
+
+		it('leaves FreeMind\'s default font and unset styles to the editor', () => {
+			const obj = {}
+			freemind.processTopic({ TEXT: 'Plain', font: { NAME: 'SansSerif', SIZE: '12' } }, obj)
+			expect(obj.data).toEqual({ text: 'Plain', 'font-size': 12 })
+
+			const named = {}
+			freemind.processTopic({ TEXT: 'Named', font: { NAME: 'Arial', BOLD: 'false' } }, named)
+			expect(named.data).toEqual({ text: 'Named', 'font-family': 'Arial' })
+		})
+
+		it('uses FreeMind\'s black text on a background without a text colour', () => {
+			const obj = {}
+			freemind.processTopic({ TEXT: 'Root', BACKGROUND_COLOR: '#99ff99' }, obj)
+			expect(obj.data).toMatchObject({ background: '#99ff99', color: '#000000' })
+		})
+
 		it('processes a single child node', () => {
 			const obj = {}
 			freemind.processTopic({ TEXT: 'Parent', node: { TEXT: 'Child' } }, obj)
