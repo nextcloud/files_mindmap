@@ -107,6 +107,14 @@ describe('freemind plugin', () => {
 			expect(result.children[0].data.text).toBe('Child')
 		})
 
+		it('keeps line breaks in rich content but not the wrapping of its HTML', async () => {
+			const xml = '<map version="1.0.1"><node><richcontent TYPE="NODE"><html><body>'
+				+ '<p align="center">\n  FreeMind<br/><small>- free mind\n  mapping software -</small>\n</p>'
+				+ '</body></html></richcontent></node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.text).toBe('FreeMind\n- free mind mapping software -')
+		})
+
 		it('rejects on malformed input', async () => {
 			await expect(freemind.decode(null)).rejects.toBeDefined()
 		})
