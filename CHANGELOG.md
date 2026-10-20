@@ -5,6 +5,19 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.2.0-beta.2
+
+All changes are those of 0.1.4-beta.2.
+
+## 0.1.4-beta.2
+
+### Added
+- FreeMind import: notes, folded branches, text style and colours, icons as emoji, and names and links for image-only nodes @AndyScherzinger [#408](https://github.com/nextcloud/files_mindmap/pull/408)
+
+### Fixed
+- fix(freemind): load FreeMind files again, including formatted text of FreeMind 0.8 and later, and explain when a file is not a FreeMind map @AndyScherzinger [#408](https://github.com/nextcloud/files_mindmap/pull/408)
+- fix(editor): size nodes correctly after expanding a collapsed branch @AndyScherzinger [#410](https://github.com/nextcloud/files_mindmap/pull/410)
+
 ## 0.2.0-beta.1
 
 ### Changed
@@ -33,6 +46,7 @@ All notable changes to this project will be documented in this file.
 
 ### Other
 - Drop vite-plugin-static-copy @AndyScherzinger [#393](https://github.com/nextcloud/files_mindmap/pull/393)
+
 ## 0.1.3
 
 ### Fixed
