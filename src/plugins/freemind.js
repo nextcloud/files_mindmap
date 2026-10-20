@@ -182,6 +182,39 @@ export default {
 			.filter(Boolean)
 			.join('\n')
 	},
+	/**
+	 * Set the TEXT of a node from its formatted text. An image stands in for
+	 * missing text with its alternative text or file name, and its link becomes
+	 * the node's link.
+	 *
+	 * @param {Element} node FreeMind node
+	 * @param {Element} html element holding the HTML of the node text
+	 */
+	importHtml(node, html) {
+		const image = html.querySelector('img')
+		let text = this.htmlToText(html)
+		if (image) {
+			const src = image.getAttribute('src') ?? ''
+			text ||= image.getAttribute('alt')?.trim() || this.fileName(src)
+			if (/^https?:\/\//i.test(src) && !node.hasAttribute('LINK')) {
+				node.setAttribute('LINK', src)
+			}
+		}
+		node.setAttribute('TEXT', text)
+	},
+	/**
+	 * The file name of a path or URL, without its extension
+	 *
+	 * @param {string} src path or URL
+	 */
+	fileName(src) {
+		const name = src.split(/[?#]/)[0].split(/[\\/]/).pop().replace(/\.[^.]*$/, '')
+		try {
+			return decodeURIComponent(name)
+		} catch {
+			return name
+		}
+	},
 	toKm(xml) {
 		const dom = new DOMParser().parseFromString(xml, 'application/xml')
 		if (dom.documentElement.nodeName !== 'map' || !dom.querySelector('map > node')) {
@@ -189,15 +222,13 @@ export default {
 		}
 		for (const node of dom.querySelectorAll('node')) {
 			const text = node.getAttribute('TEXT')
-			if (text === null) {
-				// FreeMind 0.9+ keeps formatted text as HTML in richcontent instead of TEXT
-				const html = node.querySelector(':scope > richcontent[TYPE="NODE"]')
-				if (html) {
-					node.setAttribute('TEXT', this.htmlToText(html))
-				}
-			} else if (/^\s*<html/i.test(text)) {
-				// FreeMind 0.8 kept it as HTML in TEXT
-				node.setAttribute('TEXT', this.htmlToText(new DOMParser().parseFromString(text, 'text/html').body))
+			// FreeMind 0.9+ keeps formatted text as HTML in richcontent instead of TEXT,
+			// FreeMind 0.8 kept it as HTML in TEXT
+			const html = text === null
+				? node.querySelector(':scope > richcontent[TYPE="NODE"]')
+				: (/^\s*<html/i.test(text) ? new DOMParser().parseFromString(text, 'text/html').body : null)
+			if (html) {
+				this.importHtml(node, html)
 			}
 			const note = node.querySelector(':scope > richcontent[TYPE="NOTE"]')
 			if (note) {

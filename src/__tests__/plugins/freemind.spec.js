@@ -138,6 +138,24 @@ describe('freemind plugin', () => {
 			expect(result.children[1].data.text).toBe('')
 		})
 
+		it('names an image-only node after the image and links web images', async () => {
+			const html = (img) => '<richcontent TYPE="NODE"><html><body>' + img + '</body></html></richcontent>'
+			const xml = '<map version="1.0.1"><node TEXT="Root">'
+				+ '<node>' + html('<img src="http://example.com/images/menu/binah.gif"/>') + '</node>'
+				+ '<node>' + html('<img src="https://example.com/a.png" alt="Tree of life"/>') + '</node>'
+				+ '<node>' + html('<img src="file:/C:/Office/Bitmaps/ACBLENDS.GIF"/>') + '</node>'
+				+ '<node LINK="https://nextcloud.com">' + html('<img src="http://example.com/x%20y.gif"/>') + '</node>'
+				+ '<node TEXT="&lt;html&gt;&lt;img src=&quot;http://example.com/flag.gif&quot;&gt;&lt;br&gt;Spirit Form"/>'
+				+ '</node></map>'
+			const [web, alt, local, linked, withText] = (await freemind.decode(xml)).children.map((child) => child.data)
+			expect(web).toMatchObject({ text: 'binah', hyperlink: 'http://example.com/images/menu/binah.gif' })
+			expect(alt).toMatchObject({ text: 'Tree of life', hyperlink: 'https://example.com/a.png' })
+			expect(local.text).toBe('ACBLENDS')
+			expect(local.hyperlink).toBeUndefined()
+			expect(linked).toMatchObject({ text: 'x y', hyperlink: 'https://nextcloud.com' })
+			expect(withText).toMatchObject({ text: 'Spirit Form', hyperlink: 'http://example.com/flag.gif' })
+		})
+
 		it('imports notes and folded branches', async () => {
 			const xml = '<map version="1.0.1"><node TEXT="Root"><node TEXT="Folded" FOLDED="true">'
 				+ '<richcontent TYPE="NOTE"><html><body><p>First</p><p>Second</p></body></html></richcontent>'
