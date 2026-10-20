@@ -41,7 +41,7 @@ All changes are those of 0.1.4-beta.2.
 - fix(sharing): load mind maps from subfolders of public shares [#401](https://github.com/nextcloud/files_mindmap/pull/401)
 - fix(editor): show the editor in regional and formal language variants [#396](https://github.com/nextcloud/files_mindmap/pull/396)
 - Load the editor logic from a hashed chunk, so updates don't run stale cached code [#393](https://github.com/nextcloud/files_mindmap/pull/393)
-- Lift vue to 3.5.44 (GHSA-g2v6-rqmx-r4w6) [#393](https://github.com/nextcloud/files_mindmap/pull/393)
+- Lift vue to 3.5.44 [#393](https://github.com/nextcloud/files_mindmap/pull/393)
 - Show the message when opening a mind map fails, and resolve chunk URLs through window.OC [#393](https://github.com/nextcloud/files_mindmap/pull/393)
 
 ### Other
