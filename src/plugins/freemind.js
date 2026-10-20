@@ -6,6 +6,9 @@
 
 import util from '../util.js'
 
+// A private use character, so it is neither whitespace nor part of node text
+const LINE_BREAK = ''
+
 export default {
 	name: 'freemind',
 	mimes: ['application/x-freemind'],
@@ -84,8 +87,14 @@ export default {
 		for (const node of dom.querySelectorAll('node:not([TEXT])')) {
 			const html = node.querySelector(':scope > richcontent[TYPE="NODE"]')
 			if (html) {
+				// Mark line breaks before collapsing the whitespace the HTML is wrapped with
+				for (const br of html.querySelectorAll('br')) {
+					br.replaceWith(LINE_BREAK)
+				}
 				const paragraphs = [...html.querySelectorAll('p')]
-				const lines = (paragraphs.length ? paragraphs : [html]).map((element) => element.textContent.replace(/\s+/g, ' ').trim())
+				const lines = (paragraphs.length ? paragraphs : [html])
+					.flatMap((element) => element.textContent.split(LINE_BREAK))
+					.map((line) => line.replace(/\s+/g, ' ').trim())
 				node.setAttribute('TEXT', lines.filter(Boolean).join('\n'))
 			}
 		}
