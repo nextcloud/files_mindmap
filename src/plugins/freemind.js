@@ -81,21 +81,43 @@ export default {
 			}
 		}
 	},
+	/**
+	 * The plain text of formatted FreeMind text, one line per paragraph or line break
+	 *
+	 * @param {Element} html element holding the HTML
+	 */
+	htmlToText(html) {
+		for (const hidden of html.querySelectorAll('script, style')) {
+			hidden.remove()
+		}
+		// A form field shows its chosen value, not all its options
+		for (const select of html.querySelectorAll('select')) {
+			select.replaceWith(select.querySelector('option[selected]')?.textContent ?? '')
+		}
+		// Mark line breaks before collapsing the whitespace the HTML is wrapped with
+		for (const br of html.querySelectorAll('br')) {
+			br.replaceWith(LINE_BREAK)
+		}
+		const paragraphs = [...html.querySelectorAll('p')]
+		return (paragraphs.length ? paragraphs : [html])
+			.flatMap((element) => element.textContent.split(LINE_BREAK))
+			.map((line) => line.replace(/\s+/g, ' ').trim())
+			.filter(Boolean)
+			.join('\n')
+	},
 	toKm(xml) {
 		const dom = new DOMParser().parseFromString(xml, 'application/xml')
-		// Formatted node text is kept as HTML in richcontent instead of TEXT
-		for (const node of dom.querySelectorAll('node:not([TEXT])')) {
-			const html = node.querySelector(':scope > richcontent[TYPE="NODE"]')
-			if (html) {
-				// Mark line breaks before collapsing the whitespace the HTML is wrapped with
-				for (const br of html.querySelectorAll('br')) {
-					br.replaceWith(LINE_BREAK)
+		for (const node of dom.querySelectorAll('node')) {
+			const text = node.getAttribute('TEXT')
+			if (text === null) {
+				// FreeMind 0.9+ keeps formatted text as HTML in richcontent instead of TEXT
+				const html = node.querySelector(':scope > richcontent[TYPE="NODE"]')
+				if (html) {
+					node.setAttribute('TEXT', this.htmlToText(html))
 				}
-				const paragraphs = [...html.querySelectorAll('p')]
-				const lines = (paragraphs.length ? paragraphs : [html])
-					.flatMap((element) => element.textContent.split(LINE_BREAK))
-					.map((line) => line.replace(/\s+/g, ' ').trim())
-				node.setAttribute('TEXT', lines.filter(Boolean).join('\n'))
+			} else if (/^\s*<html/i.test(text)) {
+				// FreeMind 0.8 kept it as HTML in TEXT
+				node.setAttribute('TEXT', this.htmlToText(new DOMParser().parseFromString(text, 'text/html').body))
 			}
 		}
 		const json = util.parseXML(dom)

@@ -115,6 +115,17 @@ describe('freemind plugin', () => {
 			expect(result.data.text).toBe('FreeMind\n- free mind mapping software -')
 		})
 
+		it('takes the text of FreeMind 0.8 HTML in TEXT, with the chosen value of form fields', async () => {
+			const xml = '<map version="0.8.0"><node TEXT="&lt;html&gt;&lt;img src=&quot;a.gif&quot;&gt;&lt;br&gt;Complete Man">'
+				+ '<node TEXT="&lt;html&gt;Rating &lt;select&gt;&lt;option&gt;--&lt;/option&gt;&lt;option selected&gt;++&lt;/option&gt;&lt;/select&gt;"/>'
+				+ '<node TEXT="&lt;html&gt;&lt;select&gt;&lt;option&gt;--&lt;/option&gt;&lt;/select&gt;"/>'
+				+ '</node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.text).toBe('Complete Man')
+			expect(result.children[0].data.text).toBe('Rating ++')
+			expect(result.children[1].data.text).toBe('')
+		})
+
 		it('rejects on malformed input', async () => {
 			await expect(freemind.decode(null)).rejects.toBeDefined()
 		})
