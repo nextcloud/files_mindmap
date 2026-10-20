@@ -27,6 +27,7 @@ OC.L10N.register(
     "File Saved" : "檔案已儲存",
     "Save failed" : "儲存失敗",
     "Unsupported file type: {mimetype}" : "不支援的檔案類型：{mimetype}",
+    "Mind map" : "心智圖",
     "AutoSave" : "自動儲存",
     "Save" : "儲存",
     "Export" : "匯出",
