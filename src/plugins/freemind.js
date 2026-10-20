@@ -8,7 +8,78 @@ import { translate as t } from '@nextcloud/l10n'
 import util from '../util.js'
 
 // A private use character, so it is neither whitespace nor part of node text
-const LINE_BREAK = ''
+const LINE_BREAK = '\uE000'
+
+// FreeMind's built-in icons the editor has no marker for, shown as emoji before the node text
+const ICON_EMOJIS = {
+	attach: '\uD83D\uDCCE',
+	back: '\u2B05\uFE0F',
+	bell: '\uD83D\uDD14',
+	bookmark: '\uD83D\uDD16',
+	'broken-line': '\u3030\uFE0F',
+	button_cancel: '\u274C',
+	button_ok: '\u2705',
+	calendar: '\uD83D\uDCC5',
+	clanbomber: '\uD83D\uDCA3',
+	clock: '\uD83D\uDD50',
+	closed: '\u26D4',
+	decrypted: '\uD83D\uDD13',
+	desktop_new: '\uD83D\uDDA5\uFE0F',
+	down: '\u2B07\uFE0F',
+	edit: '\u270F\uFE0F',
+	encrypted: '\uD83D\uDD12',
+	executable: '\u2699\uFE0F',
+	family: '\uD83D\uDC6A',
+	fema: '\uD83D\uDEBB',
+	female1: '\uD83D\uDC69',
+	female2: '\uD83D\uDC69',
+	flag: '\uD83D\uDEA9',
+	'flag-black': '\uD83C\uDFF4',
+	'flag-blue': '\uD83D\uDEA9',
+	'flag-green': '\uD83D\uDEA9',
+	'flag-orange': '\uD83D\uDEA9',
+	'flag-pink': '\uD83D\uDEA9',
+	'flag-yellow': '\uD83D\uDEA9',
+	folder: '\uD83D\uDCC1',
+	forward: '\u27A1\uFE0F',
+	freemind_butterfly: '\uD83E\uDD8B',
+	go: '\uD83D\uDFE2',
+	gohome: '\uD83C\uDFE0',
+	group: '\uD83D\uDC65',
+	help: '\u2753',
+	hourglass: '\u231B',
+	idea: '\uD83D\uDCA1',
+	info: '\u2139\uFE0F',
+	kaddressbook: '\uD83D\uDCC7',
+	kmail: '\uD83D\uDCE7',
+	knotify: '\uD83D\uDD0A',
+	korn: '\uD83D\uDCEF',
+	ksmiletris: '\uD83D\uDE0A',
+	launch: '\uD83D\uDE80',
+	licq: '\uD83C\uDF3C',
+	list: '\uD83D\uDCCB',
+	Mail: '\u2709\uFE0F',
+	male1: '\uD83D\uDC68',
+	male2: '\uD83D\uDC68',
+	messagebox_warning: '\u26A0\uFE0F',
+	music: '\uD83C\uDFB5',
+	password: '\uD83D\uDD11',
+	pencil: '\u270F\uFE0F',
+	penguin: '\uD83D\uDC27',
+	prepare: '\uD83D\uDFE1',
+	smiley_angry: '\uD83D\uDE20',
+	'smiley-angry': '\uD83D\uDE20',
+	'smiley-neutral': '\uD83D\uDE10',
+	'smiley-oh': '\uD83D\uDE2E',
+	smily_bad: '\uD83D\uDE1E',
+	stop: '\uD83D\uDD34',
+	'stop-sign': '\uD83D\uDED1',
+	up: '\u2B06\uFE0F',
+	video: '\uD83C\uDFAC',
+	wizard: '\uD83E\uDDD9',
+	xmag: '\uD83D\uDD0D',
+	yes: '\u2757',
+}
 
 export default {
 	name: 'freemind',
@@ -34,6 +105,7 @@ export default {
 		'full-6': ['priority', 6],
 		'full-7': ['priority', 7],
 		'full-8': ['priority', 8],
+		'full-9': ['priority', 9],
 	},
 	processTopic(topic, obj) {
 		// 处理文本
@@ -44,20 +116,17 @@ export default {
 
 		// 处理标签
 		if (topic.icon) {
-			const icons = topic.icon
-			let type
-			if (icons.length && icons.length > 0) {
-				for (i in icons) {
-					type = this.markerMap[icons[i].BUILTIN]
-					if (type) {
-						obj.data[type[0]] = type[1]
-					}
-				}
-			} else {
-				type = this.markerMap[icons.BUILTIN]
+			const emojis = []
+			for (const icon of util.toArray(topic.icon)) {
+				const type = this.markerMap[icon.BUILTIN]
 				if (type) {
 					obj.data[type[0]] = type[1]
+				} else if (ICON_EMOJIS[icon.BUILTIN]) {
+					emojis.push(ICON_EMOJIS[icon.BUILTIN])
 				}
+			}
+			if (emojis.length) {
+				obj.data.text = [emojis.join(''), obj.data.text].filter(Boolean).join(' ')
 			}
 		}
 
