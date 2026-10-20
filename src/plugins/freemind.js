@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import { translate as t } from '@nextcloud/l10n'
 import util from '../util.js'
 
 // A private use character, so it is neither whitespace nor part of node text
@@ -114,6 +115,9 @@ export default {
 	},
 	toKm(xml) {
 		const dom = new DOMParser().parseFromString(xml, 'application/xml')
+		if (dom.documentElement.nodeName !== 'map' || !dom.querySelector('map > node')) {
+			throw new Error(t('files_mindmap', 'This file is not a valid FreeMind mind map.'))
+		}
 		for (const node of dom.querySelectorAll('node')) {
 			const text = node.getAttribute('TEXT')
 			if (text === null) {
