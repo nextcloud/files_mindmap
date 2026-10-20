@@ -124,6 +124,16 @@ normalizeMouseWheel();
 						window.editor = editor
 						window.minder = minder
 
+						// The editor caches each node's text size, and measures 0 for the
+						// nodes of a collapsed branch, which are hidden. Measure such a node
+						// again once it is shown, or its text overflows the node.
+						minder.on('beforerender', function(e) {
+							const node = e.node
+							if (node._currentTextGroupBox && node._currentTextGroupBox.width <= 1 && node.getText()) {
+								delete node._currentTextHash
+							}
+						})
+
 						self.initHotkey()
 						self.bindEvent()
 						self.loadData()
