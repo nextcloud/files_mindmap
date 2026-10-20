@@ -65,6 +65,13 @@ export default {
 			obj.data.hyperlink = topic.LINK
 		}
 
+		if (topic.NOTE) {
+			obj.data.note = topic.NOTE
+		}
+		if (topic.FOLDED === 'true') {
+			obj.data.expandState = 'collapse'
+		}
+
 		// 处理子节点
 		if (topic.node) {
 			const tmp = topic.node
@@ -118,6 +125,10 @@ export default {
 			} else if (/^\s*<html/i.test(text)) {
 				// FreeMind 0.8 kept it as HTML in TEXT
 				node.setAttribute('TEXT', this.htmlToText(new DOMParser().parseFromString(text, 'text/html').body))
+			}
+			const note = node.querySelector(':scope > richcontent[TYPE="NOTE"]')
+			if (note) {
+				node.setAttribute('NOTE', this.htmlToText(note))
 			}
 		}
 		const json = util.parseXML(dom)

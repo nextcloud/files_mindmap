@@ -126,6 +126,17 @@ describe('freemind plugin', () => {
 			expect(result.children[1].data.text).toBe('')
 		})
 
+		it('imports notes and folded branches', async () => {
+			const xml = '<map version="1.0.1"><node TEXT="Root"><node TEXT="Folded" FOLDED="true">'
+				+ '<richcontent TYPE="NOTE"><html><body><p>First</p><p>Second</p></body></html></richcontent>'
+				+ '<node TEXT="Hidden"/></node></node></map>'
+			const result = await freemind.decode(xml)
+			expect(result.data.expandState).toBeUndefined()
+			expect(result.children[0].data.expandState).toBe('collapse')
+			expect(result.children[0].data.note).toBe('First\nSecond')
+			expect(result.children[0].children[0].data.text).toBe('Hidden')
+		})
+
 		it('rejects on malformed input', async () => {
 			await expect(freemind.decode(null)).rejects.toBeDefined()
 		})
