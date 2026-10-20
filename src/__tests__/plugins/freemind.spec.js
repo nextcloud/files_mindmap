@@ -61,6 +61,18 @@ describe('freemind plugin', () => {
 			const obj = {}
 			freemind.processTopic({ TEXT: 'Unknown', icon: { BUILTIN: 'unknown-marker' } }, obj)
 			expect(obj.data.priority).toBeUndefined()
+			expect(obj.data.text).toBe('Unknown')
+		})
+
+		it('shows other icons as emoji before the text, or as the text of an icon-only node', () => {
+			const withText = {}
+			freemind.processTopic({ TEXT: 'Done', icon: [{ BUILTIN: 'button_ok' }, { BUILTIN: 'full-9' }, { BUILTIN: 'hourglass' }] }, withText)
+			expect(withText.data.text).toBe('✅⌛ Done')
+			expect(withText.data.priority).toBe(9)
+
+			const iconOnly = {}
+			freemind.processTopic({ TEXT: '', icon: { BUILTIN: 'ksmiletris' } }, iconOnly)
+			expect(iconOnly.data.text).toBe('😊')
 		})
 
 		it('processes a single child node', () => {
