@@ -27,6 +27,7 @@ OC.L10N.register(
     "File Saved" : "Súbor uložený",
     "Save failed" : "Uloženie zlyhalo",
     "Unsupported file type: {mimetype}" : "Nepodporovaný typ súboru: {mimetype}",
+    "Mind map" : "Myšlienková mapa",
     "AutoSave" : "Automatické ukladanie",
     "Save" : "Uložiť",
     "Export" : "Export",
