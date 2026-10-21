@@ -428,6 +428,7 @@ describe('FilesMindMap', () => {
 			await flushPromises()
 
 			expect(FilesMindMap._file.supportedWrite).toBe(false)
+			expect(showToast).toHaveBeenCalledWith(expect.stringContaining('are not saved'), expect.anything())
 		})
 
 		it('GETs the public share endpoint with the sharing token on a public share', async () => {
