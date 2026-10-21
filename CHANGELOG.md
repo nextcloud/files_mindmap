@@ -5,22 +5,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## 0.1.4-beta.2
+## 0.1.4
 
 ### Added
 - FreeMind import: notes, folded branches, text style and colours, icons as emoji, and names and links for image-only nodes [#408](https://github.com/nextcloud/files_mindmap/pull/408)
-
-### Fixed
-- fix(freemind): load FreeMind files again, including formatted text of FreeMind 0.8 and later, and explain when a file is not a FreeMind map [#408](https://github.com/nextcloud/files_mindmap/pull/408)
-- fix(editor): size nodes correctly after expanding a collapsed branch [#410](https://github.com/nextcloud/files_mindmap/pull/410)
-
-## 0.1.4-beta.1
-
-### Added
 - feat(editor): name exported files after the mind map [#398](https://github.com/nextcloud/files_mindmap/pull/398)
 - Scroll the mind map horizontally with Shift+wheel [#403](https://github.com/nextcloud/files_mindmap/pull/403)
 
 ### Fixed
+- fix(freemind): load FreeMind files again, including formatted text of FreeMind 0.8 and later, and explain when a file is not a FreeMind map [#408](https://github.com/nextcloud/files_mindmap/pull/408)
+- fix(editor): size nodes correctly after expanding a collapsed branch [#410](https://github.com/nextcloud/files_mindmap/pull/410)
 - fix(editor): wheel scrolling and Ctrl+wheel zoom in Firefox, and zoom on touchpad pinches and small steps [#403](https://github.com/nextcloud/files_mindmap/pull/403)
 - fix(sharing): load mind maps from subfolders of public shares [#401](https://github.com/nextcloud/files_mindmap/pull/401)
 - fix(editor): show the editor in regional and formal language variants [#396](https://github.com/nextcloud/files_mindmap/pull/396)
