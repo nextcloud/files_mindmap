@@ -134,6 +134,7 @@ const FilesMindMap = {
 				if (plugin.encode === null) {
 					data.writeable = false
 					data.supportedWrite = false
+					self.showMessage(t('files_mindmap', 'Changes to {extension} files are not saved.', { extension: plugin.name }), 10000)
 				}
 
 				self._file.writeable = data.writeable
