@@ -186,6 +186,22 @@ describe('xmind plugin', () => {
 		})
 	})
 
+	describe('folded branches', () => {
+		it('collapses folded branches of XMind 8 maps', () => {
+			const obj = {}
+			xmind.processTopic({ title: 'Folded', branch: 'folded', children: { topics: { topic: { title: 'Child' } } } }, obj)
+			expect(obj.data.expandState).toBe('collapse')
+			expect(obj.children[0].data.expandState).toBeUndefined()
+		})
+
+		it('collapses folded branches of XMind 2020 maps', () => {
+			const obj = {}
+			xmind.processJsonTopic({ title: 'Folded', branch: 'folded', children: { attached: [{ title: 'Child' }] } }, obj)
+			expect(obj.data.expandState).toBe('collapse')
+			expect(obj.children[0].data.expandState).toBeUndefined()
+		})
+	})
+
 	describe('contrastColor', () => {
 		it('picks black on light and white on dark fills', () => {
 			expect(xmind.contrastColor('#FBF09C')).toBe('#000000')

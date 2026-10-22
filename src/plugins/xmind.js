@@ -77,6 +77,7 @@ export default {
 			labels: topic.labels?.label,
 			href: topic['xlink:href'],
 			image: topic.img?.['xhtml:src'],
+			branch: topic.branch,
 		}, context)
 
 		// 处理子节点
@@ -123,6 +124,7 @@ export default {
 			labels: topic.labels,
 			href: topic.href,
 			image: topic.image?.src,
+			branch: topic.branch,
 		}, context)
 		const children = topic.children?.attached
 		if (children?.length) {
@@ -172,7 +174,7 @@ export default {
 		}
 		return { styles, themes }
 	},
-	applyFormatting(data, { style, note, labels, href, image }, context) {
+	applyFormatting(data, { style, note, labels, href, image, branch }, context) {
 		if (style['svg:fill'] && style['svg:fill'] !== 'none') {
 			data.background = style['svg:fill']
 		}
@@ -197,6 +199,9 @@ export default {
 		}
 		if (labels) {
 			data.resource = util.toArray(labels)
+		}
+		if (branch === 'folded') {
+			data.expandState = 'collapse'
 		}
 		// Links to files attached to the map cannot be opened, so show attached images instead
 		if (href?.startsWith('xap:')) {
