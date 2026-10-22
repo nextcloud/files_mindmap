@@ -28,6 +28,7 @@ OC.L10N.register(
     "Save failed" : "Falha ao salvar",
     "Unsupported file type: {mimetype}" : "Tipo de arquivo não suportado: {mimetype}",
     "Mind map" : "Mapa mental",
+    "This file is not a valid FreeMind mind map." : "Este arquivo não é um mapa mental FreeMind válido.",
     "AutoSave" : "Autossalvar",
     "Save" : "Salvar",
     "Export" : "Exportar",

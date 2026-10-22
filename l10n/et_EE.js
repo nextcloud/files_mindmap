@@ -28,6 +28,7 @@ OC.L10N.register(
     "Save failed" : "Salvestamine ei õnnestunud",
     "Unsupported file type: {mimetype}" : "Faili tüüp pole toetatud: {mimetype}",
     "Mind map" : "Mõttekaart",
+    "This file is not a valid FreeMind mind map." : "See fail pole korrektne FreeMindi mõttekaart.",
     "AutoSave" : "Salvesta automaatselt",
     "Save" : "Salvesta",
     "Export" : "Ekspordi",

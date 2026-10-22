@@ -28,6 +28,7 @@ OC.L10N.register(
     "Save failed" : "Filen kunne ikke gemmes",
     "Unsupported file type: {mimetype}" : "Filtypen understøttes ikke: {mimetype}",
     "Mind map" : "Mindmap",
+    "This file is not a valid FreeMind mind map." : "Filen er ikke et gyldigt FreeMind-mindmap.",
     "AutoSave" : "Gem automatisk",
     "Save" : "Gem",
     "Export" : "Eksportér",

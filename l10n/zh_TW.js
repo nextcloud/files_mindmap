@@ -28,6 +28,7 @@ OC.L10N.register(
     "Save failed" : "儲存失敗",
     "Unsupported file type: {mimetype}" : "不支援的檔案類型：{mimetype}",
     "Mind map" : "心智圖",
+    "This file is not a valid FreeMind mind map." : "此檔案不是有效的 FreeMind 心智圖。",
     "AutoSave" : "自動儲存",
     "Save" : "儲存",
     "Export" : "匯出",

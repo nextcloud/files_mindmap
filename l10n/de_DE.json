@@ -26,6 +26,7 @@
     "Save failed" : "Speichern fehlgeschlagen",
     "Unsupported file type: {mimetype}" : "Nicht unterstützter Dateityp: {mimetype}",
     "Mind map" : "Mindmap",
+    "This file is not a valid FreeMind mind map." : "Diese Datei ist keine gültige FreeMind-Mindmap.",
     "AutoSave" : "Autospeichern",
     "Save" : "Speichern",
     "Export" : "Exportieren",

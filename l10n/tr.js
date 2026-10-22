@@ -28,6 +28,7 @@ OC.L10N.register(
     "Save failed" : "Kaydedilemedi",
     "Unsupported file type: {mimetype}" : "Dosya türü desteklenmiyor: {mimetype}",
     "Mind map" : "Zihin haritası",
+    "This file is not a valid FreeMind mind map." : "Bu dosya geçerli bir FreeMind zihin haritası değil.",
     "AutoSave" : "Otomatik kaydedilsin",
     "Save" : "Kaydet",
     "Export" : "Dışa aktar",
