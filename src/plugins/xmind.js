@@ -89,15 +89,46 @@ export default {
 		this.processTopic(topic, result)
 		return result
 	},
+	processJsonTopic(topic, obj) {
+		obj.data = {
+			text: topic.title,
+		}
+		for (const marker of topic.markers || []) {
+			const type = this.markerMap[marker.markerId]
+			if (type) {
+				obj.data[type[0]] = type[1]
+			}
+		}
+		if (topic.href) {
+			obj.data.hyperlink = topic.href
+		}
+		const children = topic.children?.attached
+		if (children?.length) {
+			obj.children = children.map((child) => {
+				const childObj = {}
+				this.processJsonTopic(child, childObj)
+				return childObj
+			})
+		}
+	},
+	jsonToKm(text) {
+		const sheets = JSON.parse(text)
+		const result = {}
+		this.processJsonTopic(sheets[0].rootTopic, result)
+		return result
+	},
 	readDocument(file) {
 		const self = this
 		return new Promise(function(resolve, reject) {
 			JSZip.loadAsync(file).then(function(zip) {
-				const contentFile = zip.file('content.xml')
+				// XMind 2020 and later keep the map in content.json and only
+				// write a warning map to content.xml
+				const jsonFile = zip.file('content.json')
+				const contentFile = jsonFile || zip.file('content.xml')
 				if (contentFile !== null) {
 					contentFile.async('text').then(function(text) {
 						try {
-							const json = self.toKm(text)
+							const json = jsonFile ? self.jsonToKm(text) : self.toKm(text)
 							resolve(json)
 						} catch (e) {
 							reject(e)

@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import JSZip from 'jszip'
 import { describe, expect, it } from 'vitest'
 import xmind from '../../plugins/xmind.js'
 
@@ -105,9 +106,42 @@ describe('xmind plugin', () => {
 		})
 	})
 
+	describe('processJsonTopic', () => {
+		it('extracts title, markers, hyperlink and attached children', () => {
+			const obj = {}
+			xmind.processJsonTopic({
+				title: 'Root',
+				href: 'https://example.com',
+				markers: [{ markerId: 'priority-3' }, { markerId: 'task-done' }, { markerId: 'unknown' }],
+				children: {
+					attached: [{ title: 'Child1' }, { title: 'Child2' }],
+					detached: [{ title: 'Floating' }],
+				},
+			}, obj)
+			expect(obj.data).toEqual({ text: 'Root', hyperlink: 'https://example.com', priority: 3, progress: 9 })
+			expect(obj.children.map((child) => child.data.text)).toEqual(['Child1', 'Child2'])
+		})
+
+		it('produces no children property for leaf topics', () => {
+			const obj = {}
+			xmind.processJsonTopic({ title: 'Leaf' }, obj)
+			expect(obj.children).toBeUndefined()
+		})
+	})
+
 	describe('readDocument', () => {
 		it('rejects when content.xml is missing in the zip', async () => {
 			await expect(xmind.readDocument('not a zip')).rejects.toBeDefined()
+		})
+
+		it('reads content.json instead of the warning map in content.xml', async () => {
+			const zip = new JSZip()
+			zip.file('content.json', JSON.stringify([{ rootTopic: { title: 'Zen root' } }]))
+			zip.file('content.xml', '<xmap-content><sheet><topic><title>Warning</title></topic></sheet></xmap-content>')
+			const data = await zip.generateAsync({ type: 'uint8array' })
+
+			const result = await xmind.readDocument(data)
+			expect(result.data.text).toBe('Zen root')
 		})
 	})
 })
