@@ -115,6 +115,14 @@
 			right: 0;
 			left: auto;
 		}
+		/* wrap theme names that are wider than their fixed-size buttons */
+		div a.theme-item {
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			vertical-align: middle;
+			line-height: 1.2;
+		}
 	</style>
 </head>
 <script nonce="<?=$nonce?>">
