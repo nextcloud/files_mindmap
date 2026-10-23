@@ -26,6 +26,8 @@ class DisplayController extends Controller {
 
 	private $l10nFactory;
 
+	private $config;
+
     /**
      * @param string $AppName
      * @param IRequest $request
@@ -36,10 +38,27 @@ class DisplayController extends Controller {
 	public function __construct(string $AppName,
 								IRequest $request,
 								IURLGenerator $urlGenerator,
+								IConfig $config,
                                 L10NFactory $l10nFactory) {
 		parent::__construct($AppName, $request);
 		$this->urlGenerator = $urlGenerator;
+		$this->config = $config;
 		$this->l10nFactory = $l10nFactory;
+	}
+
+	/**
+	 * URL of the stylesheet a legacy theme provides for the editor, with its
+	 * modification time against caching, or null if the theme has none
+	 */
+	private function getThemeStylesheet(): ?string {
+		$theme = $this->config->getSystemValueString('theme', '') ?: 'default';
+		$path = '/themes/' . $theme . '/apps/files_mindmap/css/style.css';
+		// No public API exposes the server root
+		$file = \OC::$SERVERROOT . $path;
+		if (!is_file($file)) {
+			return null;
+		}
+		return $this->urlGenerator->getWebroot() . $path . '?v=' . filemtime($file);
 	}
 
 	/**
@@ -51,7 +70,8 @@ class DisplayController extends Controller {
 	public function showMindmapViewer(): TemplateResponse {
 		$params = [
 			'urlGenerator' => $this->urlGenerator,
-            'lang' => $this->l10nFactory->findLanguage()
+            'lang' => $this->l10nFactory->findLanguage(),
+			'themeStylesheet' => $this->getThemeStylesheet(),
 		];
 		$response = new TemplateResponse($this->appName, 'viewer', $params, 'blank');
 		$response->addHeader('Cache-Control', 'no-cache');
