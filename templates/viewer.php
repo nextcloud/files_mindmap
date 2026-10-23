@@ -28,9 +28,6 @@
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/kityminder-core/dist/kityminder.core.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/color-picker/dist/color-picker.min.css')) ?>?v=<?php p($version) ?>" />
 	<link rel="stylesheet" href="<?php p($urlGenerator->linkTo('files_mindmap', 'vendor/kityminder-editor/kityminder.editor.min.css')) ?>?v=<?php p($version) ?>">
-<?php if ($themeStylesheet !== null): ?>
-	<link rel="stylesheet" href="<?php p($themeStylesheet) /* add custom css to iframe */ ?>" />
-<?php endif; ?>
 
 	<style>
 		html, body {
@@ -127,6 +124,10 @@
 			line-height: 1.2;
 		}
 	</style>
+<?php if ($themeStylesheet !== null): ?>
+	<!-- after the editor's own styles, so the theme's rules take precedence -->
+	<link rel="stylesheet" href="<?php p($themeStylesheet) ?>" />
+<?php endif; ?>
 </head>
 <script nonce="<?=$nonce?>">
     var lang = '<?=$lang?>';
