@@ -126,6 +126,10 @@
 			line-height: 1.2;
 		}
 	</style>
+<?php if ($themeStylesheet !== null): ?>
+	<!-- after the editor's own styles, so the theme's rules take precedence -->
+	<link rel="stylesheet" href="<?php p($themeStylesheet) ?>" />
+<?php endif; ?>
 </head>
 <script nonce="<?=$nonce?>">
     var lang = '<?=$lang?>';
