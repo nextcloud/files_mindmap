@@ -5,6 +5,18 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.1.5
+
+### Added
+- XMind import: formatting, notes, labels as tags, attached images and folded branches [#430](https://github.com/nextcloud/files_mindmap/pull/430)
+
+### Fixed
+- fix(xmind): open maps saved with XMind 2020 and later [#427](https://github.com/nextcloud/files_mindmap/pull/427)
+- fix(viewer): say when changes to a mind map are not saved [#426](https://github.com/nextcloud/files_mindmap/pull/426)
+- fix(editor): accept http(s) addresses for linked images [#425](https://github.com/nextcloud/files_mindmap/pull/425)
+- fix(editor): fit translated labels into the menus [#428](https://github.com/nextcloud/files_mindmap/pull/428)
+- fix(viewer): load the stylesheet of a legacy theme into the editor again, so admins can restyle it [#433](https://github.com/nextcloud/files_mindmap/pull/433)
+
 ## 0.1.4
 
 ### Added
