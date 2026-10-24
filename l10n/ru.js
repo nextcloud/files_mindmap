@@ -27,6 +27,7 @@ OC.L10N.register(
     "File Saved" : "Файл сохранён",
     "Save failed" : "Не удалось сохранить",
     "Unsupported file type: {mimetype}" : "Неподдерживаемый тип файла: {mimetype}",
+    "Changes to {extension} files are not saved." : "Изменения в файлах {extension} не сохраняются.",
     "Mind map" : "Интеллект-карта",
     "This file is not a valid FreeMind mind map." : "Этот файл не является корректной интеллект-картой FreeMind.",
     "AutoSave" : "Автосохранение",

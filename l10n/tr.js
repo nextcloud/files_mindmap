@@ -27,6 +27,7 @@ OC.L10N.register(
     "File Saved" : "Dosya kaydedildi",
     "Save failed" : "Kaydedilemedi",
     "Unsupported file type: {mimetype}" : "Dosya türü desteklenmiyor: {mimetype}",
+    "Changes to {extension} files are not saved." : "{extension} dosyalarındaki değişiklikler kaydedilmedi.",
     "Mind map" : "Zihin haritası",
     "This file is not a valid FreeMind mind map." : "Bu dosya geçerli bir FreeMind zihin haritası değil.",
     "AutoSave" : "Otomatik kaydedilsin",

@@ -25,6 +25,7 @@
     "File Saved" : "Filen er gemt",
     "Save failed" : "Filen kunne ikke gemmes",
     "Unsupported file type: {mimetype}" : "Filtypen understøttes ikke: {mimetype}",
+    "Changes to {extension} files are not saved." : "Ændringer i {extension}-filer gemmes ikke.",
     "Mind map" : "Mindmap",
     "This file is not a valid FreeMind mind map." : "Filen er ikke et gyldigt FreeMind-mindmap.",
     "AutoSave" : "Gem automatisk",
