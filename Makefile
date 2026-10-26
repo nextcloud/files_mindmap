@@ -30,22 +30,7 @@ build-front:
 
 appstore: clean
 	mkdir -p $(sign_dir)
-	rsync -a \
-	--exclude=/build \
-	--exclude=/docs \
-	--exclude=/translationfiles \
-	--exclude=/tests \
-	--exclude=/.git \
-	--exclude=/CONTRIBUTING.md \
-	--exclude=/issue_template.md \
-	--exclude=/README.md \
-	--exclude=/.gitignore \
-	--exclude=/Makefile \
-	--exclude=/node_modules \
-	--exclude=/src \
-	--exclude=/package-lock.json \
-	--exclude=/package.json \
-	--exclude=/vite.config.ts \
+	rsync -a --exclude-from=$(project_dir)/.nextcloudignore \
 	$(project_dir)/ $(sign_dir)/$(app_name)
 
 	@if [[ -f $(cert_dir)/$(app_name).key && -f $(cert_dir)/$(app_name).crt ]]; then \
