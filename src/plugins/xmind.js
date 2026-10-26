@@ -4,6 +4,7 @@
  * SPDX-License-Identifier: AGPL-3.0-or-later
  */
 
+import { translate as t } from '@nextcloud/l10n'
 import JSZip from 'jszip'
 import util from '../util.js'
 
@@ -250,7 +251,7 @@ export default {
 		const jsonFile = zip.file('content.json')
 		const contentFile = jsonFile || zip.file('content.xml')
 		if (contentFile === null) {
-			throw new Error('Content document missing')
+			throw new Error(t('files_mindmap', 'This file is not a valid XMind mind map.'))
 		}
 		const text = await contentFile.async('text')
 		const context = { images: [] }
