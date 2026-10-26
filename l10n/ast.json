@@ -6,8 +6,9 @@
     "Could not write to file." : "Nun se pudo escribir nel ficheru.",
     "Share not found" : "Nun s'atopó la compartición",
     "File not found" : "Nun s'atopó'l ficheru",
-    "Edit" : "Editar",
     "Save" : "Guardar",
-    "Export" : "Esportar"
+    "Saving…" : "Guardando…",
+    "Export" : "Esportar",
+    "Edit" : "Editar"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

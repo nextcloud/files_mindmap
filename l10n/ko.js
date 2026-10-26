@@ -16,18 +16,19 @@ OC.L10N.register(
     "You are not authorized to open this share" : "이 공유를 열도록 허가받지 않았음",
     "File not found" : "파일을 찾을 수 없음",
     "Mind Map" : "마인드 맵",
-    "Edit" : "편집",
     "Does not support saving {extension} files." : "{extension} 파일 저장을 지원하지 않습니다.",
     "File Saved" : "파일 저장됨",
     "Save failed" : "저장 실패",
     "Unsupported file type: {mimetype}" : "지원되지 않는 파일 형식: {mimetype}",
-    "AutoSave" : "자동 저장",
     "Save" : "저장",
+    "Saving…" : "저장 중…",
+    "AutoSave" : "자동 저장",
     "Export" : "내보내기",
     "Export to PNG" : "PNG로 내보내기",
     "Export to SVG" : "SVG로 내보내기",
     "Export to PDF" : "PDF로 내보내기",
     "Export to Markdown" : "마크다운으로 내보내기",
-    "Export to Text" : "텍스트로 내보내기"
+    "Export to Text" : "텍스트로 내보내기",
+    "Edit" : "편집"
 },
 "nplurals=1; plural=0;");

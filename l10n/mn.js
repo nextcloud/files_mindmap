@@ -3,8 +3,9 @@ OC.L10N.register(
     {
     "Share not found" : "Хуваалцалт олдсонгүй",
     "File not found" : "Файл олдсонгүй",
-    "Edit" : "Өөрчлөх",
     "Save" : "Хадгалах",
-    "Export" : "Экспорт"
+    "Saving…" : "хадгалж байна",
+    "Export" : "Экспорт",
+    "Edit" : "Өөрчлөх"
 },
 "nplurals=2; plural=(n != 1);");

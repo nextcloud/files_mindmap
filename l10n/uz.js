@@ -4,8 +4,9 @@ OC.L10N.register(
     "This file is too big to be opened. Please download the file instead." : "Bu faylni ochish uchun juda katta. Buning o'rniga faylni yuklab oling.",
     "Share not found" : "Ulashish topilmadi",
     "File not found" : "Fayl topilmadi",
-    "Edit" : "Tahrirlash",
     "Save" : "Saqlash",
-    "Export" : "Eksport"
+    "Saving…" : "Saqlanmoqda...",
+    "Export" : "Eksport",
+    "Edit" : "Tahrirlash"
 },
 "nplurals=1; plural=0;");

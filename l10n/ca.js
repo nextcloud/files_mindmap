@@ -14,8 +14,10 @@ OC.L10N.register(
     "Share not found" : "No s'ha trobat la compartició",
     "You are not authorized to open this share" : "No teniu autorització per a obrir aquest element compartit",
     "File not found" : "No s'ha trobat el fitxer",
-    "Edit" : "Edició",
     "Save" : "Desar",
-    "Export" : "Exporta"
+    "Saving…" : "S'està desant…",
+    "Export" : "Exporta",
+    "Export to Markdown" : "Exporta a Markdown",
+    "Edit" : "Edició"
 },
 "nplurals=2; plural=(n != 1);");

@@ -14,17 +14,18 @@
     "You have no permission to write this file" : "Nav atļaujas rakstīt šajā datnē",
     "Mind Map" : "Prāta karte",
     "A mind map editor" : "Prāta kartes redaktors",
-    "Edit" : "Labot",
     "Does not support saving {extension} files." : "Neatbalsta {extension} datņu saglabāšanu.",
     "File Saved" : "Datne saglabāta",
     "Save failed" : "Saglabāšana neizdevās",
     "Unsupported file type: {mimetype}" : "Neatbalstīts datnes veids: {mimetype}",
     "Save" : "Saglabāt",
+    "Saving…" : "Saglabā...",
     "Export" : "Izgūt",
     "Export to PNG" : "Izgūt kā PNG",
     "Export to SVG" : "Izgūt kā SVG",
     "Export to PDF" : "Izgūt kā PDF",
     "Export to Markdown" : "Izgūt kā Markdown",
-    "Export to Text" : "Izkūt kā tekstu"
+    "Export to Text" : "Izkūt kā tekstu",
+    "Edit" : "Labot"
 },"pluralForm" :"nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n != 0 ? 1 : 2);"
 }

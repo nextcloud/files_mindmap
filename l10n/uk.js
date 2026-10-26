@@ -20,18 +20,19 @@ OC.L10N.register(
     "Mind Map" : "Карта розуму",
     "A mind map editor" : "Редактор ментальних карт",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Ця програма дозволяє користувачам Nextcloud відкривати, зберігати та редагувати файли інтелектуальних карт у веб-браузері. Якщо ця функція увімкнена, у верхній частині веб-браузера з'являється кнопка «Новий» із записом про файл інтелектуальної карти. При натисканні на цю кнопку у браузері відкривається новий файл інтелектуальної карти, який можна зберегти в поточній папці Nextcloud.",
-    "Edit" : "Редагувати",
     "Does not support saving {extension} files." : "Не підтримує збереження файлів {extension}.",
     "File Saved" : "Файл збережено",
     "Save failed" : "Збереження не вдалося",
     "Unsupported file type: {mimetype}" : "Непідтримуваний тип файлу: {mimetype}",
-    "AutoSave" : "Автозбереження",
     "Save" : "Зберегти",
+    "Saving…" : "Збереження...",
+    "AutoSave" : "Автозбереження",
     "Export" : "Експорт",
     "Export to PNG" : "Експорт до PNG",
     "Export to SVG" : "Експорт у SVG",
     "Export to PDF" : "Експорт до PDF",
     "Export to Markdown" : "Експорт на уцінку",
-    "Export to Text" : "Експорт в текст"
+    "Export to Text" : "Експорт в текст",
+    "Edit" : "Редагувати"
 },
 "nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);");

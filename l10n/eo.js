@@ -13,8 +13,9 @@ OC.L10N.register(
     "Share not found" : "Kunhavigo ne troviĝis",
     "You are not authorized to open this share" : "Vi ne permesatas malfermi ĉi tiun kunhavigon",
     "File not found" : "Netrovita dosiero",
-    "Edit" : "Modifi",
     "Save" : "Konservi",
-    "Export" : "Eksporti"
+    "Saving…" : "Konservado...",
+    "Export" : "Eksporti",
+    "Edit" : "Modifi"
 },
 "nplurals=2; plural=(n != 1);");

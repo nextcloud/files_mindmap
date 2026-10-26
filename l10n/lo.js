@@ -11,8 +11,9 @@ OC.L10N.register(
     "File mtime not supplied" : "ບໍ່ໄດ້ລະບຸເວລາແກ້ໄຂໄຟລ໌",
     "Share not found" : "ບໍ່ພົບການແບ່ງປັນ",
     "File not found" : "File not found",
-    "Edit" : "ແກ້ໄຂ",
     "Save" : "ບັນທຶກ",
-    "Export" : "Export"
+    "Saving…" : "ກຳລັງບັນທຶກ…",
+    "Export" : "Export",
+    "Edit" : "ແກ້ໄຂ"
 },
 "nplurals=1; plural=0;");

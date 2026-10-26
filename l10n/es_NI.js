@@ -9,8 +9,9 @@ OC.L10N.register(
     "Insufficient permissions" : "Permisos insuficientes",
     "File path not supplied" : "La ruta del archivo no fue proporcionada",
     "File mtime not supplied" : "El archivo mtime no fue proporcionado",
-    "Edit" : "Editar",
     "Save" : "Guardar",
-    "Export" : "Exportar"
+    "Saving…" : "Guardando...",
+    "Export" : "Exportar",
+    "Edit" : "Editar"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

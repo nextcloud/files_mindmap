@@ -12,8 +12,9 @@ OC.L10N.register(
     "Share not found" : "Không tìm thấy chia sẻ.",
     "You are not authorized to open this share" : " Bạn không được phép mở chia sẻ này.",
     "File not found" : "Không tìm thấy tập tin",
-    "Edit" : "Chỉnh sửa",
     "Save" : "Lưu",
-    "Export" : "Xuất ra"
+    "Saving…" : "Đang lưu...",
+    "Export" : "Xuất ra",
+    "Edit" : "Chỉnh sửa"
 },
 "nplurals=1; plural=0;");

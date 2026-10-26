@@ -15,17 +15,18 @@
     "File not found" : "Tiedostoa ei löytynyt",
     "You have no permission to write this file" : "Sinulla ei ole oikeutta kirjoittaa tätä tiedostoa",
     "Mind Map" : "Ajatuskartta",
-    "Edit" : "Muokkaa",
     "File Saved" : "Tiedosto tallennettu",
     "Save failed" : "Tallentaminen epäonnistui",
     "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",
-    "AutoSave" : "Automaattinen tallennus",
     "Save" : "Tallenna",
+    "Saving…" : "Tallennetaan…",
+    "AutoSave" : "Automaattinen tallennus",
     "Export" : "Vie",
     "Export to PNG" : "Vie PNG-muotoon",
     "Export to SVG" : "Vie SVG-muotoon",
     "Export to PDF" : "Vie PDF-muotoon",
     "Export to Markdown" : "Vie Markdown-muotoon",
-    "Export to Text" : "Vie tekstinä"
+    "Export to Text" : "Vie tekstinä",
+    "Edit" : "Muokkaa"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

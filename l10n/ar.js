@@ -16,18 +16,19 @@ OC.L10N.register(
     "You are not authorized to open this share" : "غير مصرح لك بفتح هذه المشاركة",
     "File not found" : "تعذر العثور على الملف",
     "Mind Map" : "خريطة ذهنية",
-    "Edit" : "تحرير",
     "Does not support saving {extension} files." : "لاتدعم حفظ الملفات من النوع {extension}.",
     "File Saved" : "تمّ حفظ الملف",
     "Save failed" : "فشلت عملية الحفظ",
     "Unsupported file type: {mimetype}" : "نوع الملف غير مدعوم: {mimetype}",
-    "AutoSave" : "حفظ تلقائي",
     "Save" : "حفظ",
+    "Saving…" : "الحفظ جارٍ …",
+    "AutoSave" : "حفظ تلقائي",
     "Export" : "تصدير",
     "Export to PNG" : "تصدير إلى PNG",
     "Export to SVG" : "تصدير إلى SVG",
     "Export to PDF" : "تصدير إلى PDF",
     "Export to Markdown" : "تصدير إلى Markdown",
-    "Export to Text" : "تصدير إلى نص text"
+    "Export to Text" : "تصدير إلى نص text",
+    "Edit" : "تحرير"
 },
 "nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 && n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;");

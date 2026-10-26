@@ -10,8 +10,9 @@ OC.L10N.register(
     "File path not supplied" : "ფაილის მისამართი არაა მოცემული",
     "File mtime not supplied" : "ფაილი mtime არაა მოცემული",
     "File not found" : "ფაილი ვერ იქნა ნაპოვნი",
-    "Edit" : "შეცვლა",
     "Save" : "შენახვა",
-    "Export" : "ექსპორტი"
+    "Saving…" : "მიმდინარეობს დამახსოვრება...",
+    "Export" : "ექსპორტი",
+    "Edit" : "შეცვლა"
 },
 "nplurals=2; plural=(n!=1);");

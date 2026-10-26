@@ -20,18 +20,19 @@ OC.L10N.register(
     "Mind Map" : "Мапа ума",
     "A mind map editor" : "Едитор мапе ума",
     "This application enables Nextcloud users to open, save and edit mind map files in the web browser. If enabled, an entry in the \"New\" button at the top of the web browser the mind map file entry appears. When clicked, a new mind map file opens in the browser and the file can be saved into the current Nextcloud folder." : "Ова апликација омогућава Nextcloud корисницима да отварају, снимају и уређују фајлове мапа ума у веб прегледачу. Када се укључи, појављује се ставка фајл мапе ума у дугмету „Нови” на врху веб стране. Кликом на ову ставку се у веб читачу отвара нови фајл мапе ума који може да се  сачува у тренутном Nextcloud фолдеру.",
-    "Edit" : "Измени",
     "Does not support saving {extension} files." : "Не подржава се чување {extension} фајлова.",
     "File Saved" : "Фајл је сачуван",
     "Save failed" : "Снимање није успело",
     "Unsupported file type: {mimetype}" : "Тип фајла који није подржан: {mimetype}",
-    "AutoSave" : "Ауто-чување",
     "Save" : "Сачувај",
+    "Saving…" : "Снимам…",
+    "AutoSave" : "Ауто-чување",
     "Export" : "Извези",
     "Export to PNG" : "Извези у PNG",
     "Export to SVG" : "Извези у SVG",
     "Export to PDF" : "Извези у PDF",
     "Export to Markdown" : "Извези у Markdown",
-    "Export to Text" : "Извези у Текст"
+    "Export to Text" : "Извези у Текст",
+    "Edit" : "Измени"
 },
 "nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);");

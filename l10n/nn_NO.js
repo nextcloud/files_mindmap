@@ -7,9 +7,9 @@ OC.L10N.register(
     "The file is locked." : "Fila er låst.",
     "An internal server error occurred." : "Det oppstod ein intern tenarfeil.",
     "File not found" : "Fann ikkje fila",
-    "Edit" : "Rediger",
     "Save" : "Lagre",
     "Export" : "Eksporter",
-    "Export to Markdown" : "Eksporter til markdown"
+    "Export to Markdown" : "Eksporter til markdown",
+    "Edit" : "Rediger"
 },
 "nplurals=2; plural=(n != 1);");

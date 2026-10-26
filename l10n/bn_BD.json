@@ -1,7 +1,7 @@
 { "translations": {
     "File not found" : "ফাইল খুঁজে পাওয়া গেল না",
-    "Edit" : "সম্পাদনা",
     "Save" : "সংরক্ষণ",
-    "Export" : "রপ্তানি"
+    "Export" : "রপ্তানি",
+    "Edit" : "সম্পাদনা"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
