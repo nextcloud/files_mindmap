@@ -96,8 +96,8 @@ function normalizeMouseWheel() {
 normalizeMouseWheel();
 
 (function() {
-	const t = function(msg) {
-		return window.parent.t('files_mindmap', msg)
+	const t = function(app, text, vars) {
+		return window.parent.t(app, text, vars)
 	}
 
 	// The languages the editor ships translations for; it shows English for any other
@@ -190,7 +190,7 @@ normalizeMouseWheel();
 				window.parent.OCA.FilesMindMap.close()
 			}
 			if (this._changed && window.parent.OCA.FilesMindMap._file.supportedWrite) {
-				const result = window.confirm(t('The file has not been saved. Is it saved?'))
+				const result = window.confirm(t('files_mindmap', 'The file has unsaved changes. Save them before closing?'))
 				if (result) {
 					self.save(function(status) {
 						if (status) {
@@ -219,13 +219,13 @@ normalizeMouseWheel();
 		restoreSaveButtonInfo(time) {
 			const self = this
 			setTimeout(function() {
-				self.updateSaveButtonInfo(t('Save'))
+				self.updateSaveButtonInfo(t('files_mindmap', 'Save'))
 			}, time)
 		},
 		save(onComplete) {
 			const self = this
 			if (self._changed) {
-				self.updateSaveButtonInfo(t('Saving…'))
+				self.updateSaveButtonInfo(t('files_mindmap', 'Saving…'))
 				const data = JSON.stringify(minder.exportJson())
 				window.parent.OCA.FilesMindMap.save(data, function(msg) {
 					self.updateSaveButtonInfo(msg)
@@ -285,7 +285,7 @@ normalizeMouseWheel();
 								{
 									id: 'bopmq' + String(Math.floor(Math.random() * 9e15)).substr(0, 7),
 									created: (new Date()).getTime(),
-									text: t('Main Topic'),
+									text: t('files_mindmap', 'Main Topic'),
 								},
 							children: [],
 						},
@@ -298,8 +298,7 @@ normalizeMouseWheel();
 					try {
 						obj = JSON.parse(data)
 					} catch {
-						window.alert(t('This file is not a valid mind map file and may cause file '
-							+ 'corruption if you continue editing.'))
+						window.alert(t('files_mindmap', 'This file is not a valid mind map file and may cause file corruption if you continue editing.'))
 					}
 				}
 				minder.importJson(obj)
@@ -320,7 +319,7 @@ normalizeMouseWheel();
 				}
 			}, function(msg) {
 				self._loadStatus = false
-				window.alert(t('Load file fail!') + msg)
+				window.alert(t('files_mindmap', 'Could not load the file: {error}', { error: msg }))
 				window.parent.OCA.FilesMindMap.close()
 			})
 		},
