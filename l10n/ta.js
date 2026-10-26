@@ -1,7 +1,0 @@
-OC.L10N.register(
-    "files_mindmap",
-    {
-    "Save" : "சேமிக்க ",
-    "Export" : "ஏற்றுமதி"
-},
-"nplurals=2; plural=(n != 1);");

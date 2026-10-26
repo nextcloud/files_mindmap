@@ -26,6 +26,7 @@ OC.L10N.register(
     "Save failed" : "Ukládání se nezdařilo",
     "Unsupported file type: {mimetype}" : "Nepodporovaný typ souboru: {mimetype}",
     "Save" : "Uložit",
+    "Saving…" : "Ukládání…",
     "AutoSave" : "Automatické ukládání",
     "Export" : "Exportovat",
     "Export to PNG" : "Exportovat do PNG",

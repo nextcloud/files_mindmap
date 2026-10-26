@@ -21,6 +21,7 @@ OC.L10N.register(
     "Save failed" : "فشلت عملية الحفظ",
     "Unsupported file type: {mimetype}" : "نوع الملف غير مدعوم: {mimetype}",
     "Save" : "حفظ",
+    "Saving…" : "الحفظ جارٍ …",
     "AutoSave" : "حفظ تلقائي",
     "Export" : "تصدير",
     "Export to PNG" : "تصدير إلى PNG",

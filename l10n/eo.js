@@ -14,6 +14,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Vi ne permesatas malfermi ĉi tiun kunhavigon",
     "File not found" : "Netrovita dosiero",
     "Save" : "Konservi",
+    "Saving…" : "Konservado...",
     "Export" : "Eksporti"
 },
 "nplurals=2; plural=(n != 1);");

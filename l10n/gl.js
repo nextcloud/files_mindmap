@@ -26,6 +26,7 @@ OC.L10N.register(
     "Save failed" : "Produciuse un fallo ao gardar",
     "Unsupported file type: {mimetype}" : "Tipo de ficheiro non admitido: {mimetype}",
     "Save" : "Gardar",
+    "Saving…" : "Gardando…",
     "AutoSave" : "Gardado automático",
     "Export" : "Exportar",
     "Export to PNG" : "Exportar a PNG",

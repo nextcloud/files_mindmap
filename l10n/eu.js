@@ -25,6 +25,7 @@ OC.L10N.register(
     "Save failed" : "Huts egin du gordetzean",
     "Unsupported file type: {mimetype}" : "Onartu gabeko fitxategi mota: {mimetype}",
     "Save" : "Gorde",
+    "Saving…" : "Gordetzen…",
     "AutoSave" : "Gordetze automatikoa",
     "Export" : "Esportatu",
     "Export to PNG" : "Esportatu PNG gisa",

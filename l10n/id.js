@@ -25,6 +25,7 @@ OC.L10N.register(
     "Save failed" : "Gagal menyimpan",
     "Unsupported file type: {mimetype}" : "Jenis file tidak didukung: {mimetype}",
     "Save" : "Simpan",
+    "Saving…" : "Menyimpan…",
     "AutoSave" : "Simpan Otomatis",
     "Export" : "Ekspor",
     "Export to PNG" : "Ekspor ke PNG",

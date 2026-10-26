@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "No teniu autorització per a obrir aquest element compartit",
     "File not found" : "No s'ha trobat el fitxer",
     "Save" : "Desar",
+    "Saving…" : "S'està desant…",
     "Export" : "Exporta",
     "Export to Markdown" : "Exporta a Markdown"
 },

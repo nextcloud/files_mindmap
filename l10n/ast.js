@@ -9,6 +9,7 @@ OC.L10N.register(
     "Share not found" : "Nun s'atopó la compartición",
     "File not found" : "Nun s'atopó'l ficheru",
     "Save" : "Guardar",
+    "Saving…" : "Guardando…",
     "Export" : "Esportar"
 },
 "nplurals=2; plural=(n != 1);");

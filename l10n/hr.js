@@ -26,6 +26,7 @@ OC.L10N.register(
     "Save failed" : "Spremanje nije uspjelo",
     "Unsupported file type: {mimetype}" : "Nepodržana vrsta datoteke: {mimetype}",
     "Save" : "Spremi",
+    "Saving…" : "Spremanje...",
     "AutoSave" : "Automatsko spremanje",
     "Export" : "Izvezi",
     "Export to PNG" : "Izvezi u PNG",

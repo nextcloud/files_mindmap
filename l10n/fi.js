@@ -21,6 +21,7 @@ OC.L10N.register(
     "Save failed" : "Tallentaminen epäonnistui",
     "Unsupported file type: {mimetype}" : "Tiedostotyyppi ei ole tuettu: {mimetype}",
     "Save" : "Tallenna",
+    "Saving…" : "Tallennetaan…",
     "AutoSave" : "Automaattinen tallennus",
     "Export" : "Vie",
     "Export to PNG" : "Vie PNG-muotoon",
