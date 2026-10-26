@@ -261,8 +261,16 @@ describe('xmind plugin', () => {
 			expect(result.data).toEqual({ text: 'Root' })
 		})
 
-		it('rejects when content.xml is missing in the zip', async () => {
+		it('rejects input that is not a zip archive', async () => {
 			await expect(xmind.readDocument('not a zip')).rejects.toBeDefined()
+		})
+
+		it('rejects a zip without a content document with a clear message', async () => {
+			const zip = new JSZip()
+			zip.file('meta.xml', '<meta/>')
+			const data = await zip.generateAsync({ type: 'uint8array' })
+
+			await expect(xmind.readDocument(data)).rejects.toThrow('This file is not a valid XMind mind map.')
 		})
 
 		it('reads content.json instead of the warning map in content.xml', async () => {
