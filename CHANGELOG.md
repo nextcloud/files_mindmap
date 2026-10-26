@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 - fix(editor): accept http(s) addresses for linked images [#425](https://github.com/nextcloud/files_mindmap/pull/425)
 - fix(editor): fit translated labels into the menus [#428](https://github.com/nextcloud/files_mindmap/pull/428)
 - fix(viewer): load the stylesheet of a legacy theme into the editor again, so admins can restyle it [#433](https://github.com/nextcloud/files_mindmap/pull/433)
+- fix(viewer): translate the editor's messages [#447](https://github.com/nextcloud/files_mindmap/pull/447)
 
 ## 0.1.4
 
