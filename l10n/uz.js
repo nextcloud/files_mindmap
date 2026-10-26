@@ -5,6 +5,7 @@ OC.L10N.register(
     "Share not found" : "Ulashish topilmadi",
     "File not found" : "Fayl topilmadi",
     "Save" : "Saqlash",
+    "Saving…" : "Saqlanmoqda...",
     "Export" : "Eksport"
 },
 "nplurals=1; plural=0;");

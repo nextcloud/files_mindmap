@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "您没有权限访问这个共享",
     "File not found" : "文件未找到",
     "Save" : "保存",
+    "Saving…" : "正在保存…",
     "Export" : "导出"
 },
 "nplurals=1; plural=0;");

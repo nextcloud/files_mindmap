@@ -13,6 +13,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : " Bạn không được phép mở chia sẻ này.",
     "File not found" : "Không tìm thấy tập tin",
     "Save" : "Lưu",
+    "Saving…" : "Đang lưu...",
     "Export" : "Xuất ra"
 },
 "nplurals=1; plural=0;");

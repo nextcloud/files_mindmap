@@ -1,6 +1,7 @@
 { "translations": {
     "File not found" : "Ulac afaylu",
     "Save" : "Sekles",
+    "Saving…" : "Asekles…",
     "Export" : "Sifeḍ"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

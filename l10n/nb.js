@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Du har ikke tilgang til å åpne denne delte filen",
     "File not found" : "Finner ikke filen",
     "Save" : "Lagre",
+    "Saving…" : "Lagrer…",
     "Export" : "Eksporter"
 },
 "nplurals=2; plural=(n != 1);");

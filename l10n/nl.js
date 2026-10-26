@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Je bent niet bevoegd om deze gedeelde map te openen",
     "File not found" : "Bestand niet gevonden",
     "Save" : "Opslaan",
+    "Saving…" : "Opslaan...",
     "Export" : "Exporteren"
 },
 "nplurals=2; plural=(n != 1);");

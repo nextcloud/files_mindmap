@@ -12,6 +12,7 @@ OC.L10N.register(
     "Share not found" : "Partiment pas trobat",
     "File not found" : "Fichièr pas trobat",
     "Save" : "Enregistrar",
+    "Saving…" : "Enregistrament…",
     "Export" : "Exportar"
 },
 "nplurals=2; plural=(n > 1);");

@@ -11,6 +11,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Немате авторизација за да го отворите ова споделување",
     "File not found" : "Датотеката не е пронајдена",
     "Save" : "Сними",
+    "Saving…" : "Зачувува ...",
     "Export" : "Извези"
 },
 "nplurals=2; plural=(n % 10 == 1 && n % 100 != 11) ? 0 : 1;");

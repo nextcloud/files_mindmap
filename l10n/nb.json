@@ -13,6 +13,7 @@
     "You are not authorized to open this share" : "Du har ikke tilgang til å åpne denne delte filen",
     "File not found" : "Finner ikke filen",
     "Save" : "Lagre",
+    "Saving…" : "Lagrer…",
     "Export" : "Eksporter"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

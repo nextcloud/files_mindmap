@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "No tenes su permissu de abèrrere custa cumpartzidura",
     "File not found" : "Archìviu no agatadu",
     "Save" : "Sarva",
+    "Saving…" : "Sarvende...",
     "Export" : "Esporta"
 },
 "nplurals=2; plural=(n != 1);");

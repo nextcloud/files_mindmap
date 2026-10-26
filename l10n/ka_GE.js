@@ -11,6 +11,7 @@ OC.L10N.register(
     "File mtime not supplied" : "ფაილი mtime არაა მოცემული",
     "File not found" : "ფაილი ვერ იქნა ნაპოვნი",
     "Save" : "შენახვა",
+    "Saving…" : "მიმდინარეობს დამახსოვრება...",
     "Export" : "ექსპორტი"
 },
 "nplurals=2; plural=(n!=1);");

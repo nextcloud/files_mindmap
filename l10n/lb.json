@@ -1,6 +1,7 @@
 { "translations": {
     "File not found" : "Datei net fonnt",
     "Save" : "Späicheren",
+    "Saving…" : "Späichert …",
     "Export" : "Exportéieren"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

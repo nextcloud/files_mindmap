@@ -21,6 +21,7 @@ OC.L10N.register(
     "Save failed" : "Saglabāšana neizdevās",
     "Unsupported file type: {mimetype}" : "Neatbalstīts datnes veids: {mimetype}",
     "Save" : "Saglabāt",
+    "Saving…" : "Saglabā...",
     "Export" : "Izgūt",
     "Export to PNG" : "Izgūt kā PNG",
     "Export to SVG" : "Izgūt kā SVG",

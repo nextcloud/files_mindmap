@@ -11,6 +11,7 @@ OC.L10N.register(
     "File mtime not supplied" : "S’u dha skedari mtime",
     "File not found" : "S’u gjet kartelë",
     "Save" : "Ruaje",
+    "Saving…" : "Duke u ruajtur...",
     "Export" : "Eksport"
 },
 "nplurals=2; plural=(n != 1);");

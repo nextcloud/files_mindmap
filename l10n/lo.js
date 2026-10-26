@@ -12,6 +12,7 @@ OC.L10N.register(
     "Share not found" : "ບໍ່ພົບການແບ່ງປັນ",
     "File not found" : "File not found",
     "Save" : "ບັນທຶກ",
+    "Saving…" : "ກຳລັງບັນທຶກ…",
     "Export" : "Export"
 },
 "nplurals=1; plural=0;");

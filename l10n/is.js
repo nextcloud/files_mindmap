@@ -14,6 +14,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "Þú hefur ekki heimild til að opna þessa sameign",
     "File not found" : "Skrá finnst ekki",
     "Save" : "Vista",
+    "Saving…" : "Vista…",
     "Export" : "Flytja út"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");

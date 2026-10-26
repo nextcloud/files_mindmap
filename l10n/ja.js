@@ -15,6 +15,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "この共有を開く権限がありません",
     "File not found" : "ファイルが見つかりません",
     "Save" : "保存する",
+    "Saving…" : "保存中...",
     "Export" : "エクスポート"
 },
 "nplurals=1; plural=0;");

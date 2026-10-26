@@ -12,6 +12,7 @@ OC.L10N.register(
     "You are not authorized to open this share" : "You are not authorized to open this share",
     "File not found" : "File not found",
     "Save" : "Save",
+    "Saving…" : "Saving…",
     "Export" : "Export"
 },
 "nplurals=2; plural=(n!=1);");
