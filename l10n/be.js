@@ -7,7 +7,6 @@ OC.L10N.register(
     "The file is locked." : "Файл заблакіраваны.",
     "An internal server error occurred." : "Узнікла ўнутраная памылка сервера.",
     "File not found" : "Файл не знойдзены",
-    "Edit" : "Рэдагаваць",
     "File Saved" : "Файл захаваны",
     "Save failed" : "Не ўдалося захаваць",
     "Unsupported file type: {mimetype}" : "Тып файла не падтрымліваецца: {mimetype}",
@@ -17,6 +16,7 @@ OC.L10N.register(
     "Export to SVG" : "Экспарт у SVG",
     "Export to PDF" : "Экспарт у PDF",
     "Export to Markdown" : "Экспарт у Markdown",
-    "Export to Text" : "Экспарт у тэкставы файл"
+    "Export to Text" : "Экспарт у тэкставы файл",
+    "Edit" : "Рэдагаваць"
 },
 "nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);");

@@ -14,8 +14,9 @@ OC.L10N.register(
     "Share not found" : "Споделянето не е открито",
     "You are not authorized to open this share" : "Не сте упълномощени да отворите това споделяне",
     "File not found" : "Файлът не е намерен",
-    "Edit" : "Редактиране",
     "Save" : "Запиши",
-    "Export" : "Експорт /изнасям/"
+    "Saving…" : "Запазване...",
+    "Export" : "Експорт /изнасям/",
+    "Edit" : "Редактиране"
 },
 "nplurals=2; plural=(n != 1);");

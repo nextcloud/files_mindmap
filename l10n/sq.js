@@ -10,8 +10,9 @@ OC.L10N.register(
     "File path not supplied" : "S’u dha shteg kartele",
     "File mtime not supplied" : "S’u dha skedari mtime",
     "File not found" : "S’u gjet kartelë",
-    "Edit" : "Përpuno",
     "Save" : "Ruaje",
-    "Export" : "Eksport"
+    "Saving…" : "Duke u ruajtur...",
+    "Export" : "Eksport",
+    "Edit" : "Përpuno"
 },
 "nplurals=2; plural=(n != 1);");

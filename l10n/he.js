@@ -13,8 +13,9 @@ OC.L10N.register(
     "Share not found" : "השיתוף לא נמצא",
     "You are not authorized to open this share" : "אין לך הרשאה לפתוח את השיתוף הזה",
     "File not found" : "קובץ לא נמצא",
-    "Edit" : "עריכה",
     "Save" : "שמירה",
-    "Export" : "ייצוא"
+    "Saving…" : "מתבצעת שמירה…",
+    "Export" : "ייצוא",
+    "Edit" : "עריכה"
 },
 "nplurals=3; plural=(n == 1 && n % 1 == 0) ? 0 : (n == 2 && n % 1 == 0) ? 1: 2;");

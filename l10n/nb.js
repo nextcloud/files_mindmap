@@ -14,8 +14,9 @@ OC.L10N.register(
     "Share not found" : "Deling ikke funnet",
     "You are not authorized to open this share" : "Du har ikke tilgang til å åpne denne delte filen",
     "File not found" : "Finner ikke filen",
-    "Edit" : "Rediger",
     "Save" : "Lagre",
-    "Export" : "Eksporter"
+    "Saving…" : "Lagrer…",
+    "Export" : "Eksporter",
+    "Edit" : "Rediger"
 },
 "nplurals=2; plural=(n != 1);");

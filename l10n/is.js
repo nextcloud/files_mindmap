@@ -13,8 +13,9 @@ OC.L10N.register(
     "Share not found" : "Sameign fannst ekki",
     "You are not authorized to open this share" : "Þú hefur ekki heimild til að opna þessa sameign",
     "File not found" : "Skrá finnst ekki",
-    "Edit" : "Breyta",
     "Save" : "Vista",
-    "Export" : "Flytja út"
+    "Saving…" : "Vista…",
+    "Export" : "Flytja út",
+    "Edit" : "Breyta"
 },
 "nplurals=2; plural=(n % 10 != 1 || n % 100 == 11);");
