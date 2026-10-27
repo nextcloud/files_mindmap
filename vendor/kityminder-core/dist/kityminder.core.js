@@ -7367,10 +7367,9 @@ _p[61] = {
                 var yStart = -height / 2;
                 var Browser = kity.Browser;
                 var adjust;
-                if (Browser.chrome || Browser.opera || Browser.bd || Browser.lb === "chrome") {
+                // Current Firefox lays out text-before-edge like Chrome; its own offsets are outdated
+                if (Browser.chrome || Browser.gecko || Browser.opera || Browser.bd || Browser.lb === "chrome") {
                     adjust = FONT_ADJUST["chrome"][Browser.platform][fontFamily];
-                } else if (Browser.gecko) {
-                    adjust = FONT_ADJUST["firefox"][Browser.platform][fontFamily];
                 } else if (Browser.sg) {
                     adjust = FONT_ADJUST["sg"][fontFamily];
                 } else if (Browser.safari) {
