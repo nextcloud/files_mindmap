@@ -39,7 +39,32 @@ export default {
 		if (OCA.FilesMindMap) {
 			OCA.FilesMindMap.setFile(this.file)
 		}
+		document.addEventListener('keydown', this.onKeyDown)
 		this.doneLoading()
+	},
+
+	// Vue 2.7 (viewer app) calls beforeDestroy; Vue 3 (test env) calls beforeUnmount.
+	beforeDestroy() {
+		document.removeEventListener('keydown', this.onKeyDown)
+	},
+
+	beforeUnmount() {
+		document.removeEventListener('keydown', this.onKeyDown)
+	},
+
+	methods: {
+		/**
+		 * Save the mind map on Ctrl+S while the focus is outside the editor iframe,
+		 * instead of the browser saving the page.
+		 *
+		 * @param {KeyboardEvent} event the key event
+		 */
+		onKeyDown(event) {
+			if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+				event.preventDefault()
+				this.$el.contentWindow?.MindMap?.save()
+			}
+		},
 	},
 
 	render(h) {

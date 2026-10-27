@@ -154,13 +154,14 @@ normalizeMouseWheel();
 		},
 		initHotkey() {
 			const self = this
-			window.$(document).keydown(function(e) {
-				if ((e.ctrlKey || e.metaKey) && e.which === 83) {
-					self.save()
+			// Capture phase, so the editor's own key handlers cannot swallow it
+			document.addEventListener('keydown', function(e) {
+				if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
 					e.preventDefault()
-					return false
+					e.stopPropagation()
+					self.save()
 				}
-			})
+			}, true)
 		},
 		bindEvent() {
 			const self = this
