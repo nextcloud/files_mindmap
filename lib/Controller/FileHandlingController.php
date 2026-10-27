@@ -175,8 +175,8 @@ class FileHandlingController extends Controller{
 			$message = (string)$e->getHint();
 			return new DataResponse(['message' => $message], Http::STATUS_BAD_REQUEST);
 		} catch (\Exception $e) {
-			$message = (string)$this->l->t('An internal server error occurred.');
-			$message = $path;
+			$this->logger->error('Could not save mind map: ' . $path, ['app' => 'files_mindmap', 'exception' => $e]);
+			$message = (string)$this->l->t('The mind map could not be saved. Please try again later.');
 			return new DataResponse(['message' => $message], Http::STATUS_BAD_REQUEST);
 		}
 	}
