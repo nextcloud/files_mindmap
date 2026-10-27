@@ -18,6 +18,10 @@ All notable changes to this project will be documented in this file.
 - fix(viewer): load the stylesheet of a legacy theme into the editor again, so admins can restyle it [#433](https://github.com/nextcloud/files_mindmap/pull/433)
 - fix(viewer): translate the editor's messages [#447](https://github.com/nextcloud/files_mindmap/pull/447)
 
+### Other
+- fix(l10n): update translations from main [#450](https://github.com/nextcloud/files_mindmap/pull/450)
+- build(appstore): leave development files out of the app package [#453](https://github.com/nextcloud/files_mindmap/pull/453)
+
 ## 0.1.4
 
 ### Added
