@@ -5,6 +5,35 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.2.0
+
+### Changed
+- Require Nextcloud 36 and open mind maps with the `@nextcloud/viewer` library, as the viewer app was removed from the server [#375](https://github.com/nextcloud/files_mindmap/pull/375) [#390](https://github.com/nextcloud/files_mindmap/pull/390)
+
+### Fixed
+- fix(viewer): keep the editor iframe from overflowing the viewer [#394](https://github.com/nextcloud/files_mindmap/pull/394)
+
+### Other
+- Drop the Vue dependencies that are unused since the viewer migration [#387](https://github.com/nextcloud/files_mindmap/pull/387)
+- ci: keep stable-0.1 dependencies updated [#391](https://github.com/nextcloud/files_mindmap/pull/391)
+
+## 0.1.5
+
+### Added
+- XMind import: formatting, notes, labels as tags, attached images and folded branches [#430](https://github.com/nextcloud/files_mindmap/pull/430)
+
+### Fixed
+- fix(xmind): open maps saved with XMind 2020 and later [#427](https://github.com/nextcloud/files_mindmap/pull/427)
+- fix(viewer): say when changes to a mind map are not saved [#426](https://github.com/nextcloud/files_mindmap/pull/426)
+- fix(editor): accept http(s) addresses for linked images [#425](https://github.com/nextcloud/files_mindmap/pull/425)
+- fix(editor): fit translated labels into the menus [#428](https://github.com/nextcloud/files_mindmap/pull/428)
+- fix(viewer): load the stylesheet of a legacy theme into the editor again, so admins can restyle it [#433](https://github.com/nextcloud/files_mindmap/pull/433)
+- fix(viewer): translate the editor's messages [#447](https://github.com/nextcloud/files_mindmap/pull/447)
+
+### Other
+- fix(l10n): update translations from main [#450](https://github.com/nextcloud/files_mindmap/pull/450)
+- build(appstore): leave development files out of the app package [#453](https://github.com/nextcloud/files_mindmap/pull/453)
+
 ## 0.1.4
 
 ### Added
@@ -24,24 +53,6 @@ All notable changes to this project will be documented in this file.
 
 ### Other
 - Drop vite-plugin-static-copy [#393](https://github.com/nextcloud/files_mindmap/pull/393)
-
-## 0.2.0-beta.2
-
-All changes are those of 0.1.4-beta.2, listed under 0.1.4.
-
-## 0.2.0-beta.1
-
-Also contains the changes of 0.1.4-beta.1, listed under 0.1.4.
-
-### Changed
-- Require Nextcloud 36 and open mind maps with the `@nextcloud/viewer` library, as the viewer app was removed from the server [#375](https://github.com/nextcloud/files_mindmap/pull/375) [#390](https://github.com/nextcloud/files_mindmap/pull/390)
-
-### Fixed
-- fix(viewer): keep the editor iframe from overflowing the viewer [#394](https://github.com/nextcloud/files_mindmap/pull/394)
-
-### Other
-- Drop the Vue dependencies that are unused since the viewer migration [#387](https://github.com/nextcloud/files_mindmap/pull/387)
-- ci: keep stable-0.1 dependencies updated [#391](https://github.com/nextcloud/files_mindmap/pull/391)
 
 ## 0.1.3
 
