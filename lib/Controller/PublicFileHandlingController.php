@@ -207,6 +207,10 @@ class PublicFileHandlingController extends Controller{
         }
 
         if(($file instanceof File) && $file->isUpdateable()) {
+            if (empty($mtime)) {
+                $this->logger->error('Save request without the modification time of the loaded file: ' . $file->getPath(), ['app' => 'files_mindmap']);
+                return new DataResponse(['message' => $this->l->t('The mind map could not be saved. Please reload it and try again.')], Http::STATUS_BAD_REQUEST);
+            }
             if ($mtime != $file->getMTime()) {
                 $this->logger->error("Anonymous cannot save shared mind map (someone updated it in the meantime): {$mtime} vs. {$file->getMTime()} {$file->getPath()}", ['app' => 'files_mindmap']);
                 return new DataResponse([ 'message' => $this->l->t('The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page.')],Http::STATUS_BAD_REQUEST);

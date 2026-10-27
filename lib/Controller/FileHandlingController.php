@@ -136,6 +136,10 @@ class FileHandlingController extends Controller{
 				}
 			
 				if($file->isUpdateable()) {
+					if (empty($mtime)) {
+						$this->logger->error('Save request without the modification time of the loaded file: ' . $path, ['app' => 'files_mindmap']);
+						return new DataResponse(['message' => $this->l->t('The mind map could not be saved. Please reload it and try again.')], Http::STATUS_BAD_REQUEST);
+					}
 					if ($mtime != $file->getMTime()) {
 						$this->logger->error("User cannot save shared mind map (someone updated it in the meantime): {$mtime} vs. {$file->getMTime()} {$file->getPath()}", ['app' => 'files_mindmap']);
 						return new DataResponse([ 'message' => $this->l->t('The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page.')],Http::STATUS_BAD_REQUEST);
@@ -159,16 +163,13 @@ class FileHandlingController extends Controller{
 				} else {
 					// Not writeable!
 					$this->logger->error('User does not have permission to write to file: ' . $path,
-						['app' => 'files_texteditor']);
+						['app' => 'files_mindmap']);
 					return new DataResponse([ 'message' => $this->l->t('Insufficient permissions')],
 						Http::STATUS_BAD_REQUEST);
 				}
-			} else if ($path === '') {
+			} else {
 				$this->logger->error('No file path supplied');
 				return new DataResponse(['message' => $this->l->t('File path not supplied')], Http::STATUS_BAD_REQUEST);
-			} else {
-				$this->logger->error('No file mtime supplied', ['app' => 'files_texteditor']);
-				return new DataResponse(['message' => $this->l->t('File mtime not supplied')], Http::STATUS_BAD_REQUEST);
 			}
 
 		} catch (HintException $e) {
