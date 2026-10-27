@@ -215,6 +215,12 @@ const FilesMindMap = {
 	},
 
 	setFile(file) {
+		// Forget the previous file, so the editor cannot load or save it in place of this one
+		if (!file) {
+			logger.warn('The viewer passed no file to open')
+			this._file = {}
+			return
+		}
 		const filename = file.filename + ''
 		const basename = file.basename + ''
 
