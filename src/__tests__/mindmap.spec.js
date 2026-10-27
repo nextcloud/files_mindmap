@@ -214,6 +214,12 @@ describe('FilesMindMap', () => {
 			FilesMindMap.setFile({ filename: '/docs/sub/test.km', basename: 'test.km' })
 			expect(FilesMindMap._currentContext).toEqual(expect.objectContaining({ dir: '/docs/sub' }))
 		})
+
+		it('forgets the previous file when the viewer passes none', () => {
+			FilesMindMap.setFile({ filename: '/docs/test.km', basename: 'test.km' })
+			expect(() => FilesMindMap.setFile(undefined)).not.toThrow()
+			expect(FilesMindMap._file).toEqual({})
+		})
 	})
 
 	// ─── Public share detection ────────────────────────────────────────────────

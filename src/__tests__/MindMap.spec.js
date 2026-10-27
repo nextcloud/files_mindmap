@@ -49,6 +49,13 @@ function mountMindMap(dataOverrides = {}) {
 	})
 }
 
+/**
+ * Mount into the document, so the iframe has a window to talk to.
+ */
+function mountAttached() {
+	return shallowMount(MindMap, { attachTo: document.body, global: { mixins: [viewerMixin] } })
+}
+
 describe('MindMap', () => {
 	beforeEach(() => {
 		window.OCA = { FilesMindMap: { setFile: vi.fn() } }
@@ -103,6 +110,46 @@ describe('MindMap', () => {
 				fileid: 3,
 			})
 			expect(window.OCA.FilesMindMap.setFile).toHaveBeenCalled()
+		})
+	})
+
+	describe('Ctrl+S', () => {
+		it('saves the mind map instead of the browser saving the page', () => {
+			const wrapper = mountAttached()
+			const save = vi.fn()
+			wrapper.element.contentWindow.MindMap = { save }
+
+			const event = new KeyboardEvent('keydown', { key: 's', ctrlKey: true, cancelable: true })
+			document.dispatchEvent(event)
+
+			expect(save).toHaveBeenCalledOnce()
+			expect(event.defaultPrevented).toBe(true)
+			wrapper.unmount()
+		})
+
+		it('leaves other keys alone', () => {
+			const wrapper = mountAttached()
+			const save = vi.fn()
+			wrapper.element.contentWindow.MindMap = { save }
+
+			const event = new KeyboardEvent('keydown', { key: 's', cancelable: true })
+			document.dispatchEvent(event)
+
+			expect(save).not.toHaveBeenCalled()
+			expect(event.defaultPrevented).toBe(false)
+			wrapper.unmount()
+		})
+
+		it('stops handling Ctrl+S once the viewer closes', () => {
+			const add = vi.spyOn(document, 'addEventListener')
+			const remove = vi.spyOn(document, 'removeEventListener')
+			const wrapper = mountAttached()
+			const [, handler] = add.mock.calls.find(([type]) => type === 'keydown')
+			wrapper.unmount()
+
+			expect(remove).toHaveBeenCalledWith('keydown', handler)
+			add.mockRestore()
+			remove.mockRestore()
 		})
 	})
 })
