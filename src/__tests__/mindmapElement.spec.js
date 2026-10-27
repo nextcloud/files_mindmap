@@ -82,6 +82,43 @@ describe('MindMap element', () => {
 		await vi.waitFor(() => expect(loaded).toHaveBeenCalledOnce())
 		expect(loaded).toHaveReturned()
 	})
+
+	it('saves the mind map on Ctrl+S instead of the browser saving the page', async () => {
+		const element = await mount()
+		const save = vi.fn()
+		element.querySelector('iframe').contentWindow.MindMap = { save }
+
+		const event = new KeyboardEvent('keydown', { key: 's', ctrlKey: true, cancelable: true })
+		document.dispatchEvent(event)
+
+		expect(save).toHaveBeenCalledOnce()
+		expect(event.defaultPrevented).toBe(true)
+	})
+
+	it('leaves other keys alone', async () => {
+		const element = await mount()
+		const save = vi.fn()
+		element.querySelector('iframe').contentWindow.MindMap = { save }
+
+		const event = new KeyboardEvent('keydown', { key: 's', cancelable: true })
+		document.dispatchEvent(event)
+
+		expect(save).not.toHaveBeenCalled()
+		expect(event.defaultPrevented).toBe(false)
+	})
+
+	it('stops handling Ctrl+S once the viewer removes it', async () => {
+		const element = await mount()
+		const save = vi.fn()
+		element.querySelector('iframe').contentWindow.MindMap = { save }
+		element.remove()
+
+		const event = new KeyboardEvent('keydown', { key: 's', ctrlKey: true, cancelable: true })
+		document.dispatchEvent(event)
+
+		expect(save).not.toHaveBeenCalled()
+		expect(event.defaultPrevented).toBe(false)
+	})
 })
 
 describe('MIMES', () => {

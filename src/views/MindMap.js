@@ -38,7 +38,21 @@ export default class MindMap extends HTMLElement {
 		this._file = file
 	}
 
+	/**
+	 * Save the mind map on Ctrl+S while the focus is outside the editor iframe,
+	 * instead of the browser saving the page.
+	 *
+	 * @param {KeyboardEvent} event the key event
+	 */
+	onKeyDown = (event) => {
+		if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 's') {
+			event.preventDefault()
+			this.querySelector('iframe')?.contentWindow?.MindMap?.save()
+		}
+	}
+
 	async connectedCallback() {
+		document.addEventListener('keydown', this.onKeyDown)
 		try {
 			const FilesMindMap = await loadFilesMindMap()
 			FilesMindMap.setFile(this.file)
@@ -57,6 +71,10 @@ export default class MindMap extends HTMLElement {
 		// The viewer hides the element until `loaded`, and the editor lays out
 		// its toolbar and nodes once on startup, so it must not boot hidden.
 		this.dispatchEvent(new CustomEvent('loaded'))
+	}
+
+	disconnectedCallback() {
+		document.removeEventListener('keydown', this.onKeyDown)
 	}
 
 	attributeChangedCallback() {
