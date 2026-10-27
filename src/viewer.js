@@ -110,6 +110,8 @@ normalizeMouseWheel();
 
 	const MindMap = {
 		_changed: false,
+		_saving: false,
+		_saveQueue: [],
 		_autoSaveTimer: null,
 		_clearStatusMessageTimer: null,
 		_loadStatus: false,
@@ -224,25 +226,55 @@ normalizeMouseWheel();
 		},
 		save(onComplete) {
 			const self = this
-			if (self._changed) {
-				self.updateSaveButtonInfo(t('files_mindmap', 'Saving…'))
-				const data = JSON.stringify(minder.exportJson())
-				window.parent.OCA.FilesMindMap.save(data, function(msg) {
-					self.updateSaveButtonInfo(msg)
-					self._changed = false
-					self.restoreSaveButtonInfo(3000)
-					if (undefined !== onComplete) {
-						onComplete(true, msg)
-					}
-				}, function(msg) {
-					self.updateSaveButtonInfo(msg)
-					self.restoreSaveButtonInfo(3000)
-					if (undefined !== onComplete) {
-						onComplete(false, msg)
-					}
-				})
-				self.restoreSaveButtonInfo(6000)
+			// A second request before the first one returns would fail the server's mtime check
+			if (self._saving) {
+				self._saveQueue.push(onComplete)
+				return
 			}
+			if (!self._changed) {
+				if (undefined !== onComplete) {
+					onComplete(true)
+				}
+				return
+			}
+			const finish = function(status, msg) {
+				self._saving = false
+				if (undefined !== onComplete) {
+					onComplete(status, msg)
+				}
+				const queued = self._saveQueue.splice(0)
+				const notify = function(queuedStatus, queuedMsg) {
+					queued.forEach(function(callback) {
+						if (undefined !== callback) {
+							callback(queuedStatus, queuedMsg)
+						}
+					})
+				}
+				if (queued.length === 0) {
+					return
+				}
+				if (status) {
+					self.save(notify)
+				} else {
+					notify(false, msg)
+				}
+			}
+			self._saving = true
+			// Edits made while the request is out mark the map as changed again
+			self._changed = false
+			self.updateSaveButtonInfo(t('files_mindmap', 'Saving…'))
+			const data = JSON.stringify(minder.exportJson())
+			window.parent.OCA.FilesMindMap.save(data, function(msg) {
+				self.updateSaveButtonInfo(msg)
+				self.restoreSaveButtonInfo(3000)
+				finish(true, msg)
+			}, function(msg) {
+				self._changed = true
+				self.updateSaveButtonInfo(msg)
+				self.restoreSaveButtonInfo(3000)
+				finish(false, msg)
+			})
+			self.restoreSaveButtonInfo(6000)
 		},
 		startAutoSaveTimer() {
 			const self = this
