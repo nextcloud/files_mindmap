@@ -168,6 +168,9 @@
             <li>
                 <a id="export-text" href="javascript:void(0)" target="_self"><?php p($l->t('Export to Text')); ?></a>
             </li>
+            <li id="export-km-item" hidden>
+                <a id="export-km" href="javascript:void(0)" target="_self"><?php p($l->t('Export to KityMinder (.km)')); ?></a>
+            </li>
         </ul>
     </div>
 </div>
