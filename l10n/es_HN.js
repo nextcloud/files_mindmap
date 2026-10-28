@@ -8,7 +8,6 @@ OC.L10N.register(
     "An internal server error occurred." : "Se presentó un error interno en el servidor. ",
     "Insufficient permissions" : "Permisos insuficientes",
     "File path not supplied" : "La ruta del archivo no fue proporcionada",
-    "File mtime not supplied" : "El archivo mtime no fue proporcionado",
     "Save" : "Guardar",
     "Saving…" : "Guardando...",
     "Export" : "Exportar"

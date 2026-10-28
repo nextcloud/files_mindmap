@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Ezin izan da fitxategian idatzi.",
     "Insufficient permissions" : "Baimen gutxiegi",
     "File path not supplied" : "Ez da fitxategiaren biderik eman",
-    "File mtime not supplied" : "Fitxategiaren mtime-a ez da eman",
     "Share not found" : "Partekatzea ez da aurkitu",
     "You are not authorized to open this share" : "Ez duzu partekatze hau irekitzeko baimenik",
     "File not found" : "Ez da fitxategia aurkitu",

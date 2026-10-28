@@ -10,7 +10,6 @@ OC.L10N.register(
     "Could not write to file." : "无法写入到文件。",
     "Insufficient permissions" : "权限不足",
     "File path not supplied" : "未提供文件路径",
-    "File mtime not supplied" : "未提供 mtime",
     "Share not found" : "未找到共享",
     "You are not authorized to open this share" : "您没有权限访问这个共享",
     "File not found" : "文件未找到",

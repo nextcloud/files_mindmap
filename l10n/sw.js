@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Haikuweza kuandika kwenye faili.",
     "Insufficient permissions" : "Ruhusa haitoshi",
     "File path not supplied" : "Njia ya faili haijatolewa",
-    "File mtime not supplied" : "Faili mtime haijatolewa",
     "Share not found" : "Ushirikishaji haupo",
     "You are not authorized to open this share" : "Hujaidhinishwa kufungua kushiriki huku",
     "File not found" : "Faili halipatikani",

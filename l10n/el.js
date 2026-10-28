@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Αδυναμία εγγραφής σε αρχείο.",
     "Insufficient permissions" : "Μη επαρκή δικαιώματα",
     "File path not supplied" : "Η διαδρομή του αρχείου δεν παρέχεται",
-    "File mtime not supplied" : "Ο χρόνος τροποποίησης του αρχείου δεν παρέχεται",
     "Share not found" : "Δεν βρέθηκε ο σύνδεσμος κοινής χρήσης",
     "You are not authorized to open this share" : "Δεν έχετε εξουσιοδότηση να ανοίξετε αυτόν τον σύνδεσμο κοινής χρήσης",
     "File not found" : "Δε βρέθηκε το αρχείο",

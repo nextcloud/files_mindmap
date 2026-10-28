@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Kunne ikke skrive til filen.",
     "Insufficient permissions" : "Utilstrækkelige rettigheder",
     "File path not supplied" : "Filstien er ikke angivet",
-    "File mtime not supplied" : "Filens mtime er ikke angivet",
     "Share not found" : "Delingen blev ikke fundet",
     "You are not authorized to open this share" : "Du har ikke tilladelse til at åbne denne deling",
     "File not found" : "Filen blev ikke fundet",

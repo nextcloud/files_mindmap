@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Faili kirjutamine ei õnnestu.",
     "Insufficient permissions" : "Pole piisavalt õiguseid",
     "File path not supplied" : "Faili asukoht on määramata",
-    "File mtime not supplied" : "Faili mtime puudub",
     "Share not found" : "Jagamist ei leidu",
     "You are not authorized to open this share" : "Sul pole luba selle jagamise avamiseks",
     "File not found" : "Faili ei leitud",

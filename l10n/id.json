@@ -10,7 +10,6 @@
     "Could not write to file." : "Tidak dapat menulis ke file.",
     "Insufficient permissions" : "Izin tidak mencukupi",
     "File path not supplied" : "Jalur file tidak disediakan",
-    "File mtime not supplied" : "mtime file tidak disediakan",
     "Share not found" : "Pembagian tidak ditemukan",
     "You are not authorized to open this share" : "Anda tidak berwenang untuk membuka pembagian ini",
     "File not found" : "File tidak ditemukan",

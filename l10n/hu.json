@@ -10,7 +10,6 @@
     "Could not write to file." : "A fájlt nem lehet írni.",
     "Insufficient permissions" : "Nincs jogosultsága hozzá",
     "File path not supplied" : "Nincs megadva a fájl elérési útja",
-    "File mtime not supplied" : "Nincs megadva a fájl módosítási ideje",
     "Share not found" : "A megosztás nem található",
     "You are not authorized to open this share" : "Nincs jogosultsága megnyitni ezt a megosztást",
     "File not found" : "A fájl nem található",

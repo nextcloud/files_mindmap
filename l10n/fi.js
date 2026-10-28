@@ -11,7 +11,6 @@ OC.L10N.register(
     "Could not write to file." : "Tiedostoon ei voitu kirjoittaa.",
     "Insufficient permissions" : "Oikeudet eivät riitä",
     "File path not supplied" : "TIedoston polkua ei annettu",
-    "File mtime not supplied" : "Tiedoston mtime-arvoa ei ole annettu",
     "Share not found" : "Jakoa ei löytynyt",
     "You are not authorized to open this share" : "Sinulla ei ole valtuuksia avata tätä jakoa",
     "File not found" : "Tiedostoa ei löytynyt",

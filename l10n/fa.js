@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "امکان نوشتن در فایل وجود نداشت",
     "Insufficient permissions" : "مجوزهای ناکافی",
     "File path not supplied" : "مسیر فایل ارائه نشده است",
-    "File mtime not supplied" : "زمان اصلاح فایل (mtime) ارائه نشده است",
     "Share not found" : "اشتراک‌گذاری یافت نشد",
     "You are not authorized to open this share" : "شما مجاز به باز کردن این اشتراک‌گذاری نیستید",
     "File not found" : "فایل یافت نشد",

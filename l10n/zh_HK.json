@@ -10,7 +10,6 @@
     "Could not write to file." : "無法寫入檔案",
     "Insufficient permissions" : "權限不足",
     "File path not supplied" : "沒有提供檔案路徑",
-    "File mtime not supplied" : "沒有提供檔案修改時間",
     "Share not found" : "找不到分享",
     "You are not authorized to open this share" : "你沒有開啟這個分享連結的權限",
     "File not found" : "找不到檔案",

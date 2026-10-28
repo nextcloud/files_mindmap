@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "In die Datei konnte nicht geschrieben werden.",
     "Insufficient permissions" : "Nicht ausreichende Berechtigungen",
     "File path not supplied" : "Dateipfad nicht angegeben",
-    "File mtime not supplied" : "Dateiänderungsdatum nicht angegeben",
     "Share not found" : "Freigabe nicht gefunden",
     "You are not authorized to open this share" : "Du darfst diese Freigabe nicht öffnen.",
     "File not found" : "Datei nicht gefunden",

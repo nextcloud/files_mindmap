@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Не удалось записать в файл.",
     "Insufficient permissions" : "Недостаточно прав доступа",
     "File path not supplied" : "Путь к файлу не указан",
-    "File mtime not supplied" : "Время изменения файла не указано",
     "Share not found" : "Общий ресурс не найден",
     "You are not authorized to open this share" : "У вас нет права открывать этот общий ресурс",
     "File not found" : "Файл не найден",

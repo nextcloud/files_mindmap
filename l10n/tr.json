@@ -10,7 +10,6 @@
     "Could not write to file." : "Dosyaya yazılamadı.",
     "Insufficient permissions" : "İzinler yetersiz",
     "File path not supplied" : "Dosya yolu belirtilmemiş",
-    "File mtime not supplied" : "mtime dosyası belirtilmemiş",
     "Share not found" : "Paylaşım bulunamadı",
     "You are not authorized to open this share" : "Bu paylaşımı açma izniniz yok",
     "File not found" : "Dosya bulunamadı",

@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Det gick inte att skriva till filen.",
     "Insufficient permissions" : "Otillräckliga behörigheter",
     "File path not supplied" : "Ingen filsökväg har angetts",
-    "File mtime not supplied" : "Filens ändringstid har inte angetts",
     "Share not found" : "Delningen hittades inte",
     "You are not authorized to open this share" : "Du har inte behörighet att öppna denna delning",
     "File not found" : "Filen hittades inte",

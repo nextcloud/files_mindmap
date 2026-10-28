@@ -10,7 +10,6 @@
     "Could not write to file." : "No se ha podido escribir en el archivo.",
     "Insufficient permissions" : "Permisos insuficientes",
     "File path not supplied" : "No se ha proporcionado la ruta del archivo",
-    "File mtime not supplied" : "No se ha proporcionado la hora de modificación del archivo (mtime)",
     "Share not found" : "Recurso compartido no encontrado",
     "You are not authorized to open this share" : "No está autorizado a abrir este recurso compartido",
     "File not found" : "Archivo no encontrado",

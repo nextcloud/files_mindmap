@@ -10,7 +10,6 @@ OC.L10N.register(
     "Could not write to file." : "Kunne ikke skrive til fil.",
     "Insufficient permissions" : "Ikke rettigheter",
     "File path not supplied" : "Filbane ikke angitt",
-    "File mtime not supplied" : "Filens mtime ikke angitt",
     "Share not found" : "Deling ikke funnet",
     "You are not authorized to open this share" : "Du har ikke tilgang til å åpne denne delte filen",
     "File not found" : "Finner ikke filen",

@@ -10,7 +10,6 @@ OC.L10N.register(
     "Could not write to file." : "Ni mogoče zapisati v datoteko.",
     "Insufficient permissions" : "Neustrezna dovoljenja",
     "File path not supplied" : "Pot do datoteke ni podana",
-    "File mtime not supplied" : "Datoteka mtime ni podana",
     "Share not found" : "Mesta souporabe ni mogoče najti.",
     "You are not authorized to open this share" : "Za dostop do tega mesta souporabe ni ustreznih dovoljenj",
     "File not found" : "Datoteke ni mogoče najti",

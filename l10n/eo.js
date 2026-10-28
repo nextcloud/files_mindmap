@@ -9,7 +9,6 @@ OC.L10N.register(
     "Could not write to file." : "Ne povis skribi al dosiero.",
     "Insufficient permissions" : "Nesufiĉaj permesoj",
     "File path not supplied" : "Dosiervojo ne provizita.",
-    "File mtime not supplied" : "Ŝanĝotempo (mtime) de la dosiero ne provizita",
     "Share not found" : "Kunhavigo ne troviĝis",
     "You are not authorized to open this share" : "Vi ne permesatas malfermi ĉi tiun kunhavigon",
     "File not found" : "Netrovita dosiero",

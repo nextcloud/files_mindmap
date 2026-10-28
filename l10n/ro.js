@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Nu s-a putut scrie în fișier.",
     "Insufficient permissions" : "Permisiuni insuficiente",
     "File path not supplied" : "Calea fișierului nu a fost furnizată",
-    "File mtime not supplied" : "Nu a fost furnizat mtime-ul fișierului",
     "Share not found" : "Partajarea nu a fost găsită",
     "You are not authorized to open this share" : "Nu ai autorizația de a deschide această partajare",
     "File not found" : "Fișierul nu a fost găsit",

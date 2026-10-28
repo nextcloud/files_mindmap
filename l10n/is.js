@@ -9,7 +9,6 @@ OC.L10N.register(
     "Could not write to file." : "Ekki tókst að skrifa í skrá.",
     "Insufficient permissions" : "Ekki næg réttindi",
     "File path not supplied" : "Skrá slóð fylgir ekki",
-    "File mtime not supplied" : "mtime skrá fylgir ekki",
     "Share not found" : "Sameign fannst ekki",
     "You are not authorized to open this share" : "Þú hefur ekki heimild til að opna þessa sameign",
     "File not found" : "Skrá finnst ekki",

@@ -10,7 +10,6 @@ OC.L10N.register(
     "Could not write to file." : "No s’ha pogut escriure al fitxer.",
     "Insufficient permissions" : "Permisos insuficients",
     "File path not supplied" : "No s'ha proporcionat la ruta del fitxer",
-    "File mtime not supplied" : "No s'ha proporcionat l'hora de modificació del fitxer",
     "Share not found" : "No s'ha trobat la compartició",
     "You are not authorized to open this share" : "No teniu autorització per a obrir aquest element compartit",
     "File not found" : "No s'ha trobat el fitxer",

@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Nepavyko rašyti į failą.",
     "Insufficient permissions" : "Nepakanka leidimų",
     "File path not supplied" : "Nepateiktas failo kelias",
-    "File mtime not supplied" : "Nepateiktas failo mtime",
     "Share not found" : "Bendrinimas nerastas",
     "You are not authorized to open this share" : "Jums nėra leidžiama atverti šio bendrinimo",
     "File not found" : "Failas nerastas",

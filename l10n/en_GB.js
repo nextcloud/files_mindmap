@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Could not write to file",
     "Insufficient permissions" : "Insufficient permissions",
     "File path not supplied" : "File path not supplied",
-    "File mtime not supplied" : "File mtime not supplied",
     "Share not found" : "Share not found",
     "You are not authorized to open this share" : "You are not authorised to open this share",
     "File not found" : "File not found",

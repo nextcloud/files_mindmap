@@ -10,7 +10,6 @@
     "Could not write to file." : "Do súboru sa nepodarilo zapísať",
     "Insufficient permissions" : "Nedostatočné oprávnenia",
     "File path not supplied" : "Nebola uvedená cesta k súboru",
-    "File mtime not supplied" : "Nebol uvedený mtime súboru",
     "Share not found" : "Zdieľanie sa nenašlo",
     "You are not authorized to open this share" : "Nemáte oprávnenie otvoriť toto zdieľanie",
     "File not found" : "Súbor nenájdený",

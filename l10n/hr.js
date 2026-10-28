@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Nije moguće pisati u datoteku.",
     "Insufficient permissions" : "Nedovoljna dopuštenja",
     "File path not supplied" : "Nije isporučen put datoteke",
-    "File mtime not supplied" : "Nije isporučen mtime datoteke",
     "Share not found" : "Dijeljenje nije pronađeno",
     "You are not authorized to open this share" : "Niste ovlašteni otvoriti ovo dijeljenje",
     "File not found" : "Datoteka nije pronađena",

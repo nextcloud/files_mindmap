@@ -9,7 +9,6 @@ OC.L10N.register(
     "Could not write to file." : "לא ניתן לכתוב לקובץ.",
     "Insufficient permissions" : "אין הרשאות מספקות",
     "File path not supplied" : "נתיב קובץ לא סופק",
-    "File mtime not supplied" : "קובץ mtime לא סופק",
     "Share not found" : "השיתוף לא נמצא",
     "You are not authorized to open this share" : "אין לך הרשאה לפתוח את השיתוף הזה",
     "File not found" : "קובץ לא נמצא",

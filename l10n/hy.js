@@ -7,7 +7,6 @@ OC.L10N.register(
     "The file is locked." : "Ֆայլը կողպած է։",
     "An internal server error occurred." : "Սերվերի ներքին սխալ։",
     "File path not supplied" : "Ֆայլի հասցեն տրամադրված չէ",
-    "File mtime not supplied" : "Ֆայլի mtimeը տրամադրված չէ",
     "File not found" : "Նիշքը չգտնվեց",
     "Save" : "Պահպանել",
     "Export" : "Արտահանում"

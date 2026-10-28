@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Níorbh fhéidir scríobh chuig an gcomhad.",
     "Insufficient permissions" : "Ceadanna neamhleor",
     "File path not supplied" : "Conair an chomhaid gan soláthar",
-    "File mtime not supplied" : "Níor soláthraíodh an comhad mtime",
     "Share not found" : "Ní bhfuarthas an sciar",
     "You are not authorized to open this share" : "Níl tú údaraithe an sciar seo a oscailt",
     "File not found" : "Comhad gan aimsiú",

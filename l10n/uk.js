@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "Не вдалося записати до файлу.",
     "Insufficient permissions" : "Недостатньо прав доступу",
     "File path not supplied" : "Невідомий шлях файлу",
-    "File mtime not supplied" : "Невідомий час модифікації файлу",
     "Share not found" : "Спільний ресурс не знайдено",
     "You are not authorized to open this share" : "Недостатньо прав для доступу до спільного ресурсу",
     "File not found" : "Файл не знайдено",

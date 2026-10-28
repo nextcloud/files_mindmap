@@ -10,7 +10,6 @@
     "Could not write to file." : "Non foi posíbel escribir no ficheiro",
     "Insufficient permissions" : "Non ten permisos abondo",
     "File path not supplied" : "Non forneceu unha ruta de ficheiro",
-    "File mtime not supplied" : "Non forneceu o ficheiro mtime",
     "Share not found" : "Non se atopou a compartición",
     "You are not authorized to open this share" : "Vde. non está autorizado a abrir esta compartición",
     "File not found" : "Non se atopou o ficheiro",
