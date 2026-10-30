@@ -180,6 +180,9 @@ normalizeMouseWheel();
 			window.$('#export-text').click(function() {
 				self.exportText()
 			})
+			window.$('#export-km').click(function() {
+				self.exportKm()
+			})
 			window.$('#save-button').click(function() {
 				self.save()
 			})
@@ -349,6 +352,7 @@ normalizeMouseWheel();
 				/* When extension cannot write, hide save checkbox */
 				if (!window.parent.OCA.FilesMindMap._file.supportedWrite) {
 					window.$('#save-div').hide()
+					window.$('#export-km-item').prop('hidden', false)
 				}
 			}, function(msg) {
 				self._loadStatus = false
@@ -414,6 +418,11 @@ normalizeMouseWheel();
 			}, function(data) {
 				console.error('export text fail', data)
 			})
+		},
+
+		exportKm() {
+			const url = 'data:application/km;base64,' + Base64.encode(JSON.stringify(minder.exportJson()))
+			this.download(url, 'km')
 		},
 
 		exportPDF() {
