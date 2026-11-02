@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
 
 ### Other
 - fix(deps): fix npm audit [#469](https://github.com/nextcloud/files_mindmap/pull/469)
+- fix(l10n): update translations from main [#473](https://github.com/nextcloud/files_mindmap/pull/473)
 
 ## 0.1.5
 

@@ -6,7 +6,6 @@
     "An internal server error occurred." : "ເກີດຂໍ້ຜິດພາດພາຍໃນເຊີບເວີ.",
     "Insufficient permissions" : "ສິດໃນການເຂົ້າເຖິງບໍ່ພຽງພໍ.",
     "File path not supplied" : "ບໍ່ໄດ້ລະບຸທີ່ຢູ່ໄຟລ໌",
-    "File mtime not supplied" : "ບໍ່ໄດ້ລະບຸເວລາແກ້ໄຂໄຟລ໌",
     "Share not found" : "ບໍ່ພົບການແບ່ງປັນ",
     "File not found" : "File not found",
     "Save" : "ບັນທຶກ",

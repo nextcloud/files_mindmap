@@ -6,11 +6,12 @@
     "The file is locked." : "Fișierul este blocat.",
     "An internal server error occurred." : "A apărut o eroare internă a serverului.",
     "You cannot write to a folder" : "Nu poți scrie într-un dosar",
+    "The mind map could not be saved. Please reload it and try again." : "Harta mentală nu a putut fi salvată. Reîncarcă-o și încearcă din nou.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Fișierul la care lucrezi a fost actualizat între timp. Nu poți salva modificările tale, deoarece salvarea le-ar suprascrie pe cele noi. Reîncarcă pagina.",
     "Could not write to file." : "Nu s-a putut scrie în fișier.",
     "Insufficient permissions" : "Permisiuni insuficiente",
     "File path not supplied" : "Calea fișierului nu a fost furnizată",
-    "File mtime not supplied" : "Nu a fost furnizat mtime-ul fișierului",
+    "The mind map could not be saved. Please try again later." : "Harta mentală nu a putut fi salvată. Încearcă din nou mai târziu.",
     "Share not found" : "Partajarea nu a fost găsită",
     "You are not authorized to open this share" : "Nu ai autorizația de a deschide această partajare",
     "File not found" : "Fișierul nu a fost găsit",
@@ -42,6 +43,7 @@
     "Export to PDF" : "Exportă ca PDF",
     "Export to Markdown" : "Exportă ca Markdown",
     "Export to Text" : "Exportă ca text",
+    "Export to KityMinder (.km)" : "Exportă ca KityMinder (.km)",
     "Edit" : "Editează"
 },"pluralForm" :"nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));"
 }

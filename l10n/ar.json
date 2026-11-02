@@ -9,7 +9,6 @@
     "Could not write to file." : "لا يمكن الكتابة إلى الملف.",
     "Insufficient permissions" : "صلاحيات غير كافية",
     "File path not supplied" : "مسار الملف لم يتم تعيينه",
-    "File mtime not supplied" : "وقت آخر تعديل للملف لم يتم تعيينه",
     "Share not found" : "مشاركة غير موجودة",
     "You are not authorized to open this share" : "غير مصرح لك بفتح هذه المشاركة",
     "File not found" : "تعذر العثور على الملف",

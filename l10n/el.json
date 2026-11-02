@@ -6,11 +6,12 @@
     "The file is locked." : "Το αρχείο είναι κλειδωμένο.",
     "An internal server error occurred." : "Προέκυψε ένα εσωτερικό σφάλμα διακομιστή.",
     "You cannot write to a folder" : "Δεν μπορείτε να γράψετε σε έναν φάκελο",
+    "The mind map could not be saved. Please reload it and try again." : "Δεν ήταν δυνατή η αποθήκευση του χάρτη σκέψης. Επαναφορτώστε τον και δοκιμάστε ξανά.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Το αρχείο στο οποίο εργάζεστε ενημερώθηκε εν τω μεταξύ. Δεν μπορείτε να αποθηκεύσετε την πρόοδό σας καθώς η αποθήκευση θα αντικαταστήσει αυτές τις αλλαγές. Παρακαλούμε επαναφορτώστε τη σελίδα.",
     "Could not write to file." : "Αδυναμία εγγραφής σε αρχείο.",
     "Insufficient permissions" : "Μη επαρκή δικαιώματα",
     "File path not supplied" : "Η διαδρομή του αρχείου δεν παρέχεται",
-    "File mtime not supplied" : "Ο χρόνος τροποποίησης του αρχείου δεν παρέχεται",
+    "The mind map could not be saved. Please try again later." : "Δεν ήταν δυνατή η αποθήκευση του χάρτη σκέψης. Δοκιμάστε ξανά αργότερα.",
     "Share not found" : "Δεν βρέθηκε ο σύνδεσμος κοινής χρήσης",
     "You are not authorized to open this share" : "Δεν έχετε εξουσιοδότηση να ανοίξετε αυτόν τον σύνδεσμο κοινής χρήσης",
     "File not found" : "Δε βρέθηκε το αρχείο",
@@ -42,6 +43,7 @@
     "Export to PDF" : "Εξαγωγή σε PDF",
     "Export to Markdown" : "Εξαγωγή σε Markdown",
     "Export to Text" : "Εξαγωγή σε Κείμενο",
+    "Export to KityMinder (.km)" : "Εξαγωγή σε KityMinder (.km)",
     "Edit" : "Επεξεργασία"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

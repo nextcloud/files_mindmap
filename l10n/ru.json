@@ -1,16 +1,17 @@
 { "translations": {
     "You cannot open a folder" : "Вы не можете открыть папку",
     "This file is too big to be opened. Please download the file instead." : "Файл слишком большой для открытия. Скачайте его.",
-    "Cannot read the file." : "Не удается прочитать файл.",
+    "Cannot read the file." : "Не удаётся прочитать файл.",
     "Invalid file path supplied." : "Указан некорректный путь.",
     "The file is locked." : "Файл заблокирован.",
     "An internal server error occurred." : "Произошла внутренняя ошибка сервера.",
     "You cannot write to a folder" : "Вы не можете записывать в папку",
+    "The mind map could not be saved. Please reload it and try again." : "Не удалось сохранить интеллект-карту. Откройте её заново и повторите попытку.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Пока вы работали, файл изменился. Сохранение перезапишет эти изменения, поэтому сохранить вашу работу нельзя. Перезагрузите страницу.",
     "Could not write to file." : "Не удалось записать в файл.",
     "Insufficient permissions" : "Недостаточно прав доступа",
     "File path not supplied" : "Путь к файлу не указан",
-    "File mtime not supplied" : "Время изменения файла не указано",
+    "The mind map could not be saved. Please try again later." : "Не удалось сохранить интеллект-карту. Повторите попытку позже.",
     "Share not found" : "Общий ресурс не найден",
     "You are not authorized to open this share" : "У вас нет права открывать этот общий ресурс",
     "File not found" : "Файл не найден",
@@ -42,6 +43,7 @@
     "Export to PDF" : "Экспорт в PDF",
     "Export to Markdown" : "Экспорт в Markdown",
     "Export to Text" : "Экспорт в текст",
+    "Export to KityMinder (.km)" : "Экспорт в KityMinder (.km)",
     "Edit" : "Редактирование"
 },"pluralForm" :"nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);"
 }

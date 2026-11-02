@@ -8,7 +8,6 @@
     "Could not write to file." : "ファイルに書き込めませんでした。",
     "Insufficient permissions" : "権限が不足しています",
     "File path not supplied" : "ファイルパスが足りません",
-    "File mtime not supplied" : "ファイルのアクセス時刻がありません",
     "Share not found" : "共有が見つかりません",
     "You are not authorized to open this share" : "この共有を開く権限がありません",
     "File not found" : "ファイルが見つかりません",

@@ -11,7 +11,6 @@ OC.L10N.register(
     "Could not write to file." : "파일에 쓸 수 없습니다.",
     "Insufficient permissions" : "권한 부족",
     "File path not supplied" : "파일 경로가 지정되지 않았음",
-    "File mtime not supplied" : "파일 수정 시간이 지정되지 않았음",
     "Share not found" : "공유를 찾을 수 없음",
     "You are not authorized to open this share" : "이 공유를 열도록 허가받지 않았음",
     "File not found" : "파일을 찾을 수 없음",

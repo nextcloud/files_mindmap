@@ -8,11 +8,12 @@ OC.L10N.register(
     "The file is locked." : "Filen är låst.",
     "An internal server error occurred." : "Ett internt serverfel uppstod.",
     "You cannot write to a folder" : "Du kan inte skriva till en mapp",
+    "The mind map could not be saved. Please reload it and try again." : "Det gick inte att spara tankekartan. Läs in den igen och försök på nytt.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Filen du arbetar med har ändrats sedan du öppnade den. Det går inte att spara dina ändringar eftersom de då skulle skriva över de nyare ändringarna. Läs in sidan igen.",
     "Could not write to file." : "Det gick inte att skriva till filen.",
     "Insufficient permissions" : "Otillräckliga behörigheter",
     "File path not supplied" : "Ingen filsökväg har angetts",
-    "File mtime not supplied" : "Filens ändringstid har inte angetts",
+    "The mind map could not be saved. Please try again later." : "Det gick inte att spara tankekartan. Försök igen senare.",
     "Share not found" : "Delningen hittades inte",
     "You are not authorized to open this share" : "Du har inte behörighet att öppna denna delning",
     "File not found" : "Filen hittades inte",
@@ -44,6 +45,7 @@ OC.L10N.register(
     "Export to PDF" : "Exportera till PDF",
     "Export to Markdown" : "Exportera till Markdown",
     "Export to Text" : "Exportera till text",
+    "Export to KityMinder (.km)" : "Exportera till KityMinder (.km)",
     "Edit" : "Redigera"
 },
 "nplurals=2; plural=(n != 1);");
