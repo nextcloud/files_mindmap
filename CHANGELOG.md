@@ -5,6 +5,21 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## 0.1.6
+
+### Added
+- feat(viewer): export FreeMind and XMind maps as KityMinder (.km) files [#466](https://github.com/nextcloud/files_mindmap/pull/466)
+
+### Fixed
+- fix(viewer): do not start a save while another one is running [#460](https://github.com/nextcloud/files_mindmap/pull/460)
+- fix(viewer): save on Ctrl+S wherever the focus is [#460](https://github.com/nextcloud/files_mindmap/pull/460)
+- fix(viewer): do not open the previous mind map when the file is unknown [#460](https://github.com/nextcloud/files_mindmap/pull/460)
+- fix(backend): tell users their mind map was not saved, and log why [#462](https://github.com/nextcloud/files_mindmap/pull/462)
+- fix(editor): place node text in Firefox where Chrome places it [#464](https://github.com/nextcloud/files_mindmap/pull/464)
+
+### Other
+- fix(deps): fix npm audit [#469](https://github.com/nextcloud/files_mindmap/pull/469)
+
 ## 0.1.5
 
 ### Added
