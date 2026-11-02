@@ -12,7 +12,6 @@ OC.L10N.register(
     "Could not write to file." : "ھۆججەتكە يازالمىدى.",
     "Insufficient permissions" : "ئىجازەت يېتەرلىك ئەمەس",
     "File path not supplied" : "ھۆججەت يولى تەمىنلەنمىدى",
-    "File mtime not supplied" : "ھۆججەت mtime تەمىنلەنمىدى",
     "Share not found" : "ھەمبەھىر تېپىلمىدى",
     "You are not authorized to open this share" : "بۇ ھەمبەھىرنى ئېچىش ھوقۇقىڭىز يوق",
     "File not found" : "ھۆججەت تېپىلمىدى",

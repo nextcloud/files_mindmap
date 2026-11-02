@@ -6,7 +6,6 @@
     "An internal server error occurred." : "გამოჩნდა შიდა სერვერის შეცდომა.",
     "Insufficient permissions" : "უფლებების უკმარისობა",
     "File path not supplied" : "ფაილის მისამართი არაა მოცემული",
-    "File mtime not supplied" : "ფაილი mtime არაა მოცემული",
     "File not found" : "ფაილი ვერ იქნა ნაპოვნი",
     "Save" : "შენახვა",
     "Saving…" : "მიმდინარეობს დამახსოვრება...",

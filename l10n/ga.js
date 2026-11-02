@@ -8,11 +8,12 @@ OC.L10N.register(
     "The file is locked." : "Tá an comhad faoi ghlas.",
     "An internal server error occurred." : "Tharla earráid freastalaí inmheánach.",
     "You cannot write to a folder" : "Ní féidir leat scríobh chuig fillteán",
+    "The mind map could not be saved. Please reload it and try again." : "Níorbh fhéidir an léarscáil intinne a shábháil. Athlódáil í, le do thoil, agus bain triail as arís.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Nuashonraíodh an comhad a bhfuil tú ag obair air idir an dá linn. Ní féidir leat do dhul chun cinn a shábháil mar go ndéanfaí na hathruithe seo a fhorscríobh má shábhálann tú. Athlódáil an leathanach le do thoil.",
     "Could not write to file." : "Níorbh fhéidir scríobh chuig an gcomhad.",
     "Insufficient permissions" : "Ceadanna neamhleor",
     "File path not supplied" : "Conair an chomhaid gan soláthar",
-    "File mtime not supplied" : "Níor soláthraíodh an comhad mtime",
+    "The mind map could not be saved. Please try again later." : "Níorbh fhéidir an léarscáil intinne a shábháil. Bain triail as arís níos déanaí, le do thoil.",
     "Share not found" : "Ní bhfuarthas an sciar",
     "You are not authorized to open this share" : "Níl tú údaraithe an sciar seo a oscailt",
     "File not found" : "Comhad gan aimsiú",
@@ -44,6 +45,7 @@ OC.L10N.register(
     "Export to PDF" : "Onnmhairiú go PDF",
     "Export to Markdown" : "Easpórtáil go Markdown",
     "Export to Text" : "Easpórtáil go Téacs",
+    "Export to KityMinder (.km)" : "Easpórtáil go KityMinder (.km)",
     "Edit" : "Cuir in eagar"
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");

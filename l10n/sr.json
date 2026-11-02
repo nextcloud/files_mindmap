@@ -10,7 +10,6 @@
     "Could not write to file." : "Не могу да пишем у фајл.",
     "Insufficient permissions" : "Недовољне дозволе",
     "File path not supplied" : "Није добијена путања фајла",
-    "File mtime not supplied" : "Није добијено време измене фајла",
     "Share not found" : "Дељење није нађено",
     "You are not authorized to open this share" : "Нисте овлашћени да отворите ово дељење",
     "File not found" : "Фајл није нађен",

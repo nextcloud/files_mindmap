@@ -8,7 +8,6 @@ OC.L10N.register(
     "An internal server error occurred." : "Ndodhi një gabim i brendshëm shërbyesi.",
     "Insufficient permissions" : "Leje të pamjaftueshme",
     "File path not supplied" : "S’u dha shteg kartele",
-    "File mtime not supplied" : "S’u dha skedari mtime",
     "File not found" : "S’u gjet kartelë",
     "Save" : "Ruaje",
     "Saving…" : "Duke u ruajtur...",

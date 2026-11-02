@@ -6,11 +6,12 @@
     "The file is locked." : "Die Datei ist gesperrt.",
     "An internal server error occurred." : "Es ist ein interner Fehler aufgetreten.",
     "You cannot write to a folder" : "Sie können nicht in einen Ordner schreiben",
+    "The mind map could not be saved. Please reload it and try again." : "Die Mindmap konnte nicht gespeichert werden. Bitte neu laden und erneut versuchen.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Die Datei, an der Sie arbeiten, wurde inzwischen aktualisiert. Sie können Ihren Fortschritt nicht speichern, da das Speichern die Änderungen überschreiben würde. Bitte die Seite neu laden.",
     "Could not write to file." : "In die Datei konnte nicht geschrieben werden.",
     "Insufficient permissions" : "Unzureichende Berechtigungen",
     "File path not supplied" : "Dateipfad nicht angegeben",
-    "File mtime not supplied" : "Dateiänderungsdatum nicht angegeben",
+    "The mind map could not be saved. Please try again later." : "Die Mindmap konnte nicht gespeichert werden. Bitte später noch einmal versuchen.",
     "Share not found" : "Freigabe nicht gefunden",
     "You are not authorized to open this share" : "Sie sind nicht berechtigt, diese Freigabe zu öffnen",
     "File not found" : "Datei nicht gefunden",
@@ -31,7 +32,7 @@
     "This file is not a valid XMind mind map." : "Diese Datei ist keine gültige XMind Mindmap.",
     "The file has unsaved changes. Save them before closing?" : "Es gibt ungespeicherte Änderungen. Speichern vor dem Schließen?",
     "Save" : "Speichern",
-    "Saving…" : "Speichere…",
+    "Saving…" : "Speichere …",
     "Main Topic" : "Hauptthema",
     "This file is not a valid mind map file and may cause file corruption if you continue editing." : "Diese Datei ist keine gültige Mindmap-Datei. Wenn Sie sie weiter bearbeiten, kann die Datei beschädigt werden.",
     "Could not load the file: {error}" : "Datei konnte nicht geladen werden: {error}",
@@ -42,6 +43,7 @@
     "Export to PDF" : "Als PDF exportieren",
     "Export to Markdown" : "Als Markdown exportieren",
     "Export to Text" : "Als Text exportieren",
+    "Export to KityMinder (.km)" : "Als KityMinder (.km) exportieren",
     "Edit" : "Bearbeiten"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }
