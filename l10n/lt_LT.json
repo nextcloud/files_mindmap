@@ -6,10 +6,12 @@
     "The file is locked." : "Failas užrakintas.",
     "An internal server error occurred." : "Įvyko vidinė serverio klaida.",
     "You cannot write to a folder" : "Negalite rašyti į aplanką",
+    "The mind map could not be saved. Please reload it and try again." : "Nepavyko įrašyti idėjų žemėlapio. Įkelkite jį iš naujo ir bandykite dar kartą.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Tuo tarpu failas, su kuriuo dirbate, buvo atnaujintas. Negalite išsaugoti savo darbo, nes išsaugojus šie pakeitimai būtų perrašyti. Įkelkite puslapį iš naujo.",
     "Could not write to file." : "Nepavyko rašyti į failą.",
     "Insufficient permissions" : "Nepakanka leidimų",
     "File path not supplied" : "Nepateiktas failo kelias",
+    "The mind map could not be saved. Please try again later." : "Nepavyko įrašyti idėjų žemėlapio. Bandykite vėliau.",
     "Share not found" : "Bendrinimas nerastas",
     "You are not authorized to open this share" : "Jums nėra leidžiama atverti šio bendrinimo",
     "File not found" : "Failas nerastas",
@@ -40,6 +42,7 @@
     "Export to SVG" : "Eksportuoti į SVG",
     "Export to PDF" : "Eksportuoti į PDF",
     "Export to Markdown" : "Eksportuoti į Markdown",
-    "Export to Text" : "Eksportuoti į „Tekstas“"
+    "Export to Text" : "Eksportuoti į „Tekstas“",
+    "Export to KityMinder (.km)" : "Eksportuoti į KityMinder (.km)"
 },"pluralForm" :"nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);"
 }

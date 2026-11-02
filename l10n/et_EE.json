@@ -6,10 +6,12 @@
     "The file is locked." : "Fail on lukus.",
     "An internal server error occurred." : "Tekkis sisemine serveri viga.",
     "You cannot write to a folder" : "Sa ei saa kausta kirjutada",
+    "The mind map could not be saved. Please reload it and try again." : "Mõttekaardi salvestamine ei õnnestunud. Palun laadi see uuesti ja proovi veel kord.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Fail, millega sa töötasid, on vahepeal muutunud. Kuna sa asendaksid need muudatused, siis sa ei saa oma tööd salvestada. Palun laadi leht uuesti.",
     "Could not write to file." : "Faili kirjutamine ei õnnestu.",
     "Insufficient permissions" : "Pole piisavalt õiguseid",
     "File path not supplied" : "Faili asukoht on määramata",
+    "The mind map could not be saved. Please try again later." : "Mõttekaardi salvestamine ei õnnestunud. Palun proovi hiljem uuesti.",
     "Share not found" : "Jagamist ei leidu",
     "You are not authorized to open this share" : "Sul pole luba selle jagamise avamiseks",
     "File not found" : "Faili ei leitud",
@@ -40,6 +42,7 @@
     "Export to SVG" : "Ekspordi svg-failina",
     "Export to PDF" : "Ekspordi pdf-failina",
     "Export to Markdown" : "Ekspordi Markdown-vormingus",
-    "Export to Text" : "Ekspordi tekstifailina"
+    "Export to Text" : "Ekspordi tekstifailina",
+    "Export to KityMinder (.km)" : "Ekspordi KityMinderi failina (.km)"
 },"pluralForm" :"nplurals=2; plural=(n != 1);"
 }

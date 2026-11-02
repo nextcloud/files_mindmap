@@ -44,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "Easpórtáil go SVG",
     "Export to PDF" : "Onnmhairiú go PDF",
     "Export to Markdown" : "Easpórtáil go Markdown",
-    "Export to Text" : "Easpórtáil go Téacs"
+    "Export to Text" : "Easpórtáil go Téacs",
+    "Export to KityMinder (.km)" : "Easpórtáil go KityMinder (.km)"
 },
 "nplurals=5; plural=(n==1 ? 0 : n==2 ? 1 : n<7 ? 2 : n<11 ? 3 : 4);");
