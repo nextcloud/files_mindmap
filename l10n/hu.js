@@ -8,10 +8,12 @@ OC.L10N.register(
     "The file is locked." : "A fájl zárolva van.",
     "An internal server error occurred." : "Belső kiszolgálóhiba történt.",
     "You cannot write to a folder" : "Nem írhat mappába",
+    "The mind map could not be saved. Please reload it and try again." : "A gondolattérképet nem sikerült menteni. Töltse újra, és próbálja meg ismét.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "A fájl, melyen dolgozin, időközben frissült. Nem mentheti a változtatásait, mert a mentés felülírná ezeket a változtatásokat. Töltse újra az oldalt.",
     "Could not write to file." : "A fájlt nem lehet írni.",
     "Insufficient permissions" : "Nincs jogosultsága hozzá",
     "File path not supplied" : "Nincs megadva a fájl elérési útja",
+    "The mind map could not be saved. Please try again later." : "A gondolattérképet nem sikerült menteni. Próbálja meg később újra.",
     "Share not found" : "A megosztás nem található",
     "You are not authorized to open this share" : "Nincs jogosultsága megnyitni ezt a megosztást",
     "File not found" : "A fájl nem található",
@@ -42,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "Exportálás SVG-ként",
     "Export to PDF" : "Exportálás PDF-ként",
     "Export to Markdown" : "Exportálás Markdownként",
-    "Export to Text" : "Exportálás szövegként"
+    "Export to Text" : "Exportálás szövegként",
+    "Export to KityMinder (.km)" : "Exportálás KityMinder-fájlként (.km)"
 },
 "nplurals=2; plural=(n != 1);");

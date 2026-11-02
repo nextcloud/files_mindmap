@@ -44,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "Eksportér til SVG",
     "Export to PDF" : "Eksportér til PDF",
     "Export to Markdown" : "Eksportér til Markdown",
-    "Export to Text" : "Eksportér til tekst"
+    "Export to Text" : "Eksportér til tekst",
+    "Export to KityMinder (.km)" : "Eksportér til KityMinder (.km)"
 },
 "nplurals=2; plural=(n != 1);");

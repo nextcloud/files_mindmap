@@ -8,10 +8,12 @@ OC.L10N.register(
     "The file is locked." : "il file è bloccato.",
     "An internal server error occurred." : "Si è verificato un errore interno.",
     "You cannot write to a folder" : "Non puoi scrivere in una cartella",
+    "The mind map could not be saved. Please reload it and try again." : "Impossibile salvare la mappa mentale. Ricaricala e riprova.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Il file su cui stai lavorando è stato aggiornato nel frattempo. Non puoi salvare i tuoi progressi perché il salvataggio sovrascriverebbe queste modifiche. Ricarica la pagina.",
     "Could not write to file." : "Impossibile scrivere su file.",
     "Insufficient permissions" : "Permessi insufficienti",
     "File path not supplied" : "Percorso del file non fornito",
+    "The mind map could not be saved. Please try again later." : "Impossibile salvare la mappa mentale. Riprova più tardi.",
     "Share not found" : "Condivisione non trovata",
     "You are not authorized to open this share" : "Non sei autorizzato ad aprire questa condivisione",
     "File not found" : "File non trovato",
@@ -42,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "Esporta in SVG",
     "Export to PDF" : "Esporta in PDF",
     "Export to Markdown" : "Esporta in Markdown",
-    "Export to Text" : "Esporta in testo"
+    "Export to Text" : "Esporta in testo",
+    "Export to KityMinder (.km)" : "Esporta in KityMinder (.km)"
 },
 "nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

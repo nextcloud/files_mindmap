@@ -44,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "Exporter en SVG",
     "Export to PDF" : "Exporter en PDF",
     "Export to Markdown" : "Exporter en Markdown",
-    "Export to Text" : "Exporter en Text"
+    "Export to Text" : "Exporter en Text",
+    "Export to KityMinder (.km)" : "Exporter en KityMinder (.km)"
 },
 "nplurals=3; plural=(n == 0 || n == 1) ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;");

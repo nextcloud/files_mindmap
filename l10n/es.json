@@ -6,10 +6,12 @@
     "The file is locked." : "El archivo está bloqueado.",
     "An internal server error occurred." : "Ha ocurrido un error interno del servidor",
     "You cannot write to a folder" : "No puede escribir en una carpeta",
+    "The mind map could not be saved. Please reload it and try again." : "No se ha podido guardar el mapa mental. Vuelva a cargarlo e inténtelo de nuevo.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "El archivo en el que se encuentra trabajando fue actualizado en el ínterin. No puede guardar su progreso ya que al hacerlo sobrescribiría estos cambios. Por favor, recargue la página. ",
     "Could not write to file." : "No se ha podido escribir en el archivo.",
     "Insufficient permissions" : "Permisos insuficientes",
     "File path not supplied" : "No se ha proporcionado la ruta del archivo",
+    "The mind map could not be saved. Please try again later." : "No se ha podido guardar el mapa mental. Inténtelo de nuevo más tarde.",
     "Share not found" : "Recurso compartido no encontrado",
     "You are not authorized to open this share" : "No está autorizado a abrir este recurso compartido",
     "File not found" : "Archivo no encontrado",
@@ -40,6 +42,7 @@
     "Export to SVG" : "Exportar a SVG",
     "Export to PDF" : "Exportar a PDF",
     "Export to Markdown" : "Exportar a Markdown",
-    "Export to Text" : "Exportar a Texto"
+    "Export to Text" : "Exportar a Texto",
+    "Export to KityMinder (.km)" : "Exportar a KityMinder (.km)"
 },"pluralForm" :"nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;"
 }

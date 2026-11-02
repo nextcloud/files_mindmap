@@ -44,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "Exportovať do SVG",
     "Export to PDF" : "Exportovať do PDF",
     "Export to Markdown" : "Exportovať do Markdownu",
-    "Export to Text" : "Exportovať do textu"
+    "Export to Text" : "Exportovať do textu",
+    "Export to KityMinder (.km)" : "Exportovať do KityMinder (.km)"
 },
 "nplurals=4; plural=(n % 1 == 0 && n == 1 ? 0 : n % 1 == 0 && n >= 2 && n <= 4 ? 1 : n % 1 != 0 ? 2: 3);");
