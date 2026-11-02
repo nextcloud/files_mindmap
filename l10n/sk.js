@@ -10,7 +10,7 @@ OC.L10N.register(
     "You cannot write to a folder" : "Do priečinka nemôžete zapisovať",
     "The mind map could not be saved. Please reload it and try again." : "Myšlienkovú mapu sa nepodarilo uložiť. Znova ju načítajte a skúste to znova.",
     "The file you are working on was updated in the meantime. You cannot save your progress as saving would overwrite these changes. Please reload the page." : "Súbor, na ktorom pracujete, bol medzitým aktualizovaný. Priebeh nemôžete uložiť, pretože uloženie by prepísalo tieto zmeny. Znovu načítajte stránku.",
-    "Could not write to file." : "Do súboru sa nepodarilo zapísať",
+    "Could not write to file." : "Do súboru sa nepodarilo zapísať.",
     "Insufficient permissions" : "Nedostatočné oprávnenia",
     "File path not supplied" : "Nebola uvedená cesta k súboru",
     "The mind map could not be saved. Please try again later." : "Myšlienkovú mapu sa nepodarilo uložiť. Skúste to znova neskôr.",
