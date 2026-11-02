@@ -39,7 +39,7 @@ OC.L10N.register(
     "This file is not a valid mind map file and may cause file corruption if you continue editing." : "Този файл не е валиден файл с мисловна карта и може да се повреди, ако продължите да го редактирате.",
     "Could not load the file: {error}" : "Файлът не можа да бъде зареден: {error}",
     "AutoSave" : "Автоматично запазване",
-    "Export" : "Експорт /изнасям/",
+    "Export" : "Експортиране",
     "Export to PNG" : "Експортиране като PNG",
     "Export to SVG" : "Експортиране като SVG",
     "Export to PDF" : "Експортиране като PDF",

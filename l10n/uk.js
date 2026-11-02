@@ -43,7 +43,7 @@ OC.L10N.register(
     "Export to PNG" : "Експорт до PNG",
     "Export to SVG" : "Експорт у SVG",
     "Export to PDF" : "Експорт до PDF",
-    "Export to Markdown" : "Експорт на уцінку",
+    "Export to Markdown" : "Експорт у Markdown",
     "Export to Text" : "Експорт в текст",
     "Export to KityMinder (.km)" : "Експорт у KityMinder (.km)"
 },
