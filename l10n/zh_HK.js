@@ -44,6 +44,7 @@ OC.L10N.register(
     "Export to SVG" : "匯出為 SVG",
     "Export to PDF" : "匯出為 PDF",
     "Export to Markdown" : "匯出為 Markdown",
-    "Export to Text" : "匯出為文字"
+    "Export to Text" : "匯出為文字",
+    "Export to KityMinder (.km)" : "匯出為 KityMinder 格式（.km）"
 },
 "nplurals=1; plural=0;");
